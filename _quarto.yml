@@ -6,13 +6,15 @@ website:
   title: "k-state_workshop"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - href: cassidy/lathrom.qmd
+        text: Bees Ft Riley
+      - href: rachel/rusten.qmd
+        text: Birds Sandhills
       - about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: yeti
     css: styles.css
     toc: true
 

@@ -1,0 +1,41 @@
+Last Updated: Rusten 11.04.24
+
+See ERC_GrasslandBird_Overview.doc for research design and objectives. This is a brand new project that just completed its first field season this past summer. Several of the variables below may be redundant, but will be built upon with further collection efforts. Columns >20 are values I hope to connect with resulting densities, and may be ignored. Contact Rachel at rrusten2@huskers.unl.edu if you have any questions
+
+	NA lines are added to each Sample.Label for ease of parsing individual species records
+
+Columns 1-8 named (hopefully) appropriately for package
+Column 9 used for user to retain unique point identifier
+Columns 10-15 are avian data collected by structured point count methodology
+Columns 16-19 are typical variables needed to calculate detection curves
+Columns 20-26 relate to landscape condition or "tested" features
+
+Brief explanation of variables found in Rusten_GrasslandBird_dist24.csv 
+
+ColNum	Variable	Explanation
+[,1]	year		Year survey was conducted. Only one year of data (2024)
+	Effort		How many times each grid/point surveyed. Only once since first year of data collection
+	sample.bout	Which survey bout? All are surveyed once.
+	date		Date survey was conducted (M/DD/YYYY)
+	obsname		Unique observer ID
+	Area		Total area surveyed by observer/ morning(hectares)
+	Region.Label	Unique grid ID
+	Sample.Label	Unique point number
+[,9]	GridPointID	My unique identifier for each point (Region.Label-Sample.Label or Grid-PointID)
+[,10]	Minute		Minute individual was first detected ( 1-5)
+	Species		Avian 4-letter alpha code of species detected
+	Aspect		Direction individual was detected (0-7; N=0, S=4)
+	distance	Radial distance from first detection (meters)
+	How		Method individual was detected (V = visual; C = audible; F= flyover; L = lekking)
+	Flock		Number of individual acting similarly of same species (<20m). NOT counter singing males
+[,16]	WindAvg_mph	Average windspeed collected at point over 1 minute
+	WindMax_mph	Max windspeed collected at point over 1 minute
+	RH_Point	Relative humidity collected 
+	Temp_Point	Temerature (degree Farenheit) collected
+[,20]	Tree		Presence/Absence of trees within 200m
+	Shrub		Presence/Absence of shrub patch within 200m
+	Spurge		Presence/Absence of leafy spurge within 200m
+[,23]	LastRxBurn	Year of last prescribed burn in pasture, if known
+	ERC_Verdict	Encroachment vulnerability of Eastern Redcedar at point.
+	ERC_Treat	Year of contracted Eastern Redcedar removal or managment (active = proactive; none = passive; ongoing = current removal contract in action)
+	Group		subset of Region.Labels that are located adjacent and/or managed by same operator - will likely result in similar bird communities

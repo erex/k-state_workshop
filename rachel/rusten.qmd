@@ -1,0 +1,21 @@
+---
+title: "Sandhills Grassland Birds"
+---
+
+## Are grassland restoration actions of woody removal benefiting local native wildlife?
+
+:::: {.columns}
+
+::: {.column width='30%'}
+Goal: Evaluate the effects of Eastern Redcedar removal treatments and management on avian communities in eastern Sandhills Ecoregion in Nebraska, USA
+
+:::
+
+::: {.column width='70%'}
+![](studyarea.png)
+:::
+
+::::
+
+
+
