@@ -18,4 +18,202 @@ Goal: Evaluate the effects of Eastern Redcedar removal treatments and management
 ::::
 
 
+## Becoming acquainted with data
 
+```{r}
+alldata <- read.csv(file="data/Rusten_GrasslandBird_dist24.csv")
+(numstrat <- unique(alldata$Region.Label))
+(numspec <- unique(alldata$Species))
+```
+
+Goodness, there are `r numspec` species recorded during the 2024 field season. Let's focus attention upon four species of interest: GRSP, WEME, DICK, UPSA:
+
+```{r}
+fourspec <- subset(alldata, subset = Species %in% c("GRSP", "WEME", "DICK", "UPSA"))
+table(fourspec$Region.Label, fourspec$Species)
+```
+
+Detections by `Region.Label` may be a bit sparse, particularly for UPSA. Let's see how number of detections changes if we aggregate at the level of `Group`.
+
+```{r}
+table(fourspec$Group, fourspec$Species)
+```
+
+That is an improvement.
+
+### Transects within Region.Label or Group
+
+I'm unsure about the naming scheme for points stations. It seems most sensible for transects to "belong" to strata, but the numbering system does not seem to follow that. Perhaps using `GridPointID` as `Sample.Label` makes more sense? In most instances, it seems there are 12 replicate `GridPointID` values.
+
+```{r}
+unique(fourspec$GridPointID[fourspec$Region.Label=="Double W"])
+```
+
+I'll modify the working data frame to make `GridPointID` the point transect identified `Sample.Label`.
+
+```{r}
+fourspec$Sample.Label <- fourspec$GridPointID
+```
+
+
+### Birds in flocks
+
+Is this of significance?
+
+```{r}
+table(fourspec$Species, fourspec$Flock)
+```
+
+Only `r round(100-(746/(746+13+4)) * 100,1)`\% of dickcissel detections were of flocks >1 individual, which is unlikely to alter the abundance/density estimates noticeably. 
+
+We will see if that makes a difference.
+
+## Exploratory data analysis of detection distances
+
+:::{.callout-caution collapse=false appearance='default' icon=true}
+## Distances recorded as -1
+Don't know why they exist, but they mess with detection function fitting, I'm throwing them out
+:::
+
+```{r}
+fourspec <- subset(fourspec, subset = distance> -1)
+```
+
+
+```{r}
+#| layout-ncol: 2
+hist(fourspec$distance[fourspec$Species=="GRSP"], 
+     main="GRSP", xlab="Radial distance", nc=40)
+hist(fourspec$distance[fourspec$Species=="WEME"], 
+     main="WEME", xlab="Radial distance", nc=40)
+hist(fourspec$distance[fourspec$Species=="DICK"], 
+     main="DICK", xlab="Radial distance", nc=40)
+```
+
+Probably rounding of distances for meadowlark around 200 and 300m, but that shouldn't cause problems.
+
+## Simple analysis for estimates at the `Group` level
+
+Standard practice will be to remove 10% most distant detections.
+
+
+
+```{r}
+#| label: weme
+library(Distance)
+cu <- convert_units("meter", NULL, "hectare")
+weme <- subset(fourspec, Species=="WEME")
+weme.hn <- ds(data=weme, transect = "point",
+         key="hn", truncation = "10%",  convert_units = cu, adjustment = "herm")
+weme.uncos <- ds(data=weme, transect = "point",
+         key="unif", truncation = "10%",  convert_units = cu)
+weme.hr <- ds(data=weme, transect = "point",
+         key="hr", truncation = "10%",  convert_units = cu, adjustment = "poly")
+summarize_ds_models(weme.hn, weme.uncos, weme.hr)
+plot(weme.hr, pdf=TRUE, nc=40, main="WEME, HR, pooled detfn")
+```
+
+
+```{r}
+#| label: dick
+cu <- convert_units("meter", NULL, "hectare")
+dick <- fourspec[fourspec$Species=="DICK",]
+dick.hn <- ds(data=dick, transect = "point",
+         key="hn", truncation = "10%",  convert_units = cu, adjustment = "herm")
+dick.uncos <- ds(data=dick, transect = "point",
+         key="unif", truncation = "10%",  convert_units = cu)
+dick.hr <- ds(data=dick, transect = "point",
+         key="hr", truncation = "10%",  convert_units = cu, adjustment = "poly")
+summarize_ds_models(dick.hn, dick.uncos, dick.hr)
+plot(dick.hr, pdf=TRUE, nc=40, main="DICK, HR, pooled detfn")
+```
+
+```{r}
+#| label: grsp
+cu <- convert_units("meter", NULL, "hectare")
+grsp <- fourspec[fourspec$Species=="GRSP",]
+grsp.hn <- ds(data=grsp, transect = "point",
+         key="hn", truncation = "10%",  convert_units = cu, adjustment = "herm")
+grsp.uncos <- ds(data=grsp, transect = "point",
+         key="unif", truncation = "10%",  convert_units = cu)
+grsp.hr <- ds(data=grsp, transect = "point",
+         key="hr", truncation = "10%",  convert_units = cu, adjustment = "poly")
+summarize_ds_models(grsp.hn, grsp.uncos, grsp.hr)
+plot(grsp.uncos, pdf=TRUE, nc=25, main="GRSP, unicos, pooled detfn")
+```
+
+## Constant detectability across strata?
+
+Clearly there are insufficient detections within strata to fit stratum-specific detection functions. However, as shown in @rexstad, bias will result from using a pooled detection function to estimate density at the stratum level **if** detectability differs between strata.  
+
+The defensible way to estimate stratum-specific detection probabilities with small stratum-specific detections is to use stratum as a covariate. This may not work for the large number of strata we have here. The hazard rate model was preferred for two of the three species and it was second-preferred for the GRSP, so attempt covariate modelling using hazard rate as key function.
+
+```{r}
+weme.hrstrat <- ds(data=weme, transect="point", key="hr", truncation="10%",
+                   convert_units = cu, formula=~Region.Label)
+dick.hrstrat <- ds(data=dick, transect="point", key="hr", truncation="10%",
+                   convert_units = cu, formula=~Region.Label)
+grsp.hrstrat <- ds(data=grsp, transect="point", key="hr", truncation="10%",
+                   convert_units = cu, formula=~Region.Label)
+```
+
+:::{.callout-warning collapse=false appearance='default' icon=true}
+## Convergence warning)
+There are convergence problems with the meadowlark data when using stratum as a covariate
+:::
+
+
+Contrast models with and without Region.Label covariate for each species to provide an evidence-based assessment of constant detectability across strata.
+
+```{r}
+AIC(weme.hr, weme.hrstrat)
+AIC(dick.hr, dick.hrstrat)
+AIC(grsp.uncos, grsp.hrstrat)
+```
+
+If you are fussy, you could use `BIC` rather than `AIC`.
+
+As an experiment, use `Group` as strata and fit group as a covariate. Won't work because `Area` specified for the grid, not group.
+
+```{r}
+#| eval: false
+experiment <- fourspec
+experiment$Region.Label <- experiment$Group
+weme.group <- subset(experiment, Species=="WEME")
+weme.hrgroup <- ds(data=weme.group, transect="point", key="hr", truncation="10%",
+                   convert_units = cu, formula=~Region.Label)
+```
+
+Different idea, remove `Region.Label` for which there are fewer than 13 detections
+
+```{r}
+weme.small <- subset(weme, subset = !(Region.Label %in% 
+                       c("GAR-LOWja", "GAR046-B", "WHE035-A", "GAR041-B")))
+weme.hrsmall <- ds(data=weme.small, transect="point", key="hr", truncation="10%",
+                   convert_units = cu, formula=~Region.Label)
+summary(weme.hrsmall)
+```
+
+The convergence may still not be perfect; however the CVs at the stratum level are reasonable, staying below 0.35.
+
+```{r}
+#| out-height: "600px"
+plot(weme.hrsmall, pdf=TRUE)
+rlabels <- unique(weme.small$Region.Label)
+for (i in 1:length(rlabels)) {
+  add_df_covar_line(weme.hrsmall, data=data.frame(Region.Label=rlabels[i]),
+                    lwd=2, lty=1, pdf=TRUE, col=colours(TRUE)[i])
+}
+legend("topright", title="Strata", legend=rlabels,
+       lwd=2, lty=1, col=colours(TRUE), cex=0.8)
+
+```
+
+The plot of the probability density functions at the stratum level indicates one stratum with a *very* different detection function shape compared to the rest of the strata (WHE014). This may explain the convergence challenge. That stratum might be a candidate for exclusion.
+
+```{r}
+hist(weme$distance[weme$Region.Label=="WHE014"], xlim=c(0,190), nc=10,
+     xlab="Radial distance", main="Stratum WHE014 detections of WEME")
+```
+
+Note the SE of the stratum-$\hat{\beta}$ associated with stratum `WHE014` `r summary(weme.hrsmall$ddf)$coeff$key.scale[27,2]`
