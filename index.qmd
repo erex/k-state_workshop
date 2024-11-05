@@ -1,0 +1,9 @@
+---
+title: "k-state_workshop"
+---
+
+# Distance sampling of several data sets
+
+These are not intended to be complete analyses, but rather the initial steps in a thorough analysis of such data.
+
+![](https://plus.unsplash.com/premium_photo-1711652434787-b815d9681481?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
