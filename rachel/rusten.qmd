@@ -1,5 +1,9 @@
 ---
 title: "Sandhills Grassland Birds"
+author: Eric Rexstad *University of St Andrews*
+date: "`r Sys.Date()`"
+bibliography: rachel.bib
+csl: ../apa.csl
 ---
 
 ## Are grassland restoration actions of woody removal benefiting local native wildlife?
@@ -17,6 +21,13 @@ Goal: Evaluate the effects of Eastern Redcedar removal treatments and management
 
 ::::
 
+:::{.callout-caution collapse=false appearance='default' icon=true}
+## Before beginning, a note about point transects
+- Animal movement can bias distance sampling estimates 
+- Bias is magnified when animals move faster than observers
+- Observers are stationary during point counts
+- See @buckland2006 regarding "snapshot moment" to alleviate bias
+:::
 
 ## Becoming acquainted with data
 
@@ -26,7 +37,7 @@ alldata <- read.csv(file="data/Rusten_GrasslandBird_dist24.csv")
 (numspec <- unique(alldata$Species))
 ```
 
-Goodness, there are `r numspec` species recorded during the 2024 field season. Let's focus attention upon four species of interest: GRSP, WEME, DICK, UPSA:
+Goodness, there are `r length(numspec)` species recorded during the 2024 field season. Let's focus attention upon four species of interest: GRSP, WEME, DICK, UPSA:
 
 ```{r}
 fourspec <- subset(alldata, subset = Species %in% c("GRSP", "WEME", "DICK", "UPSA"))
@@ -96,8 +107,6 @@ Probably rounding of distances for meadowlark around 200 and 300m, but that shou
 
 Standard practice will be to remove 10% most distant detections.
 
-
-
 ```{r}
 #| label: weme
 library(Distance)
@@ -144,11 +153,12 @@ plot(grsp.uncos, pdf=TRUE, nc=25, main="GRSP, unicos, pooled detfn")
 
 ## Constant detectability across strata?
 
-Clearly there are insufficient detections within strata to fit stratum-specific detection functions. However, as shown in @rexstad, bias will result from using a pooled detection function to estimate density at the stratum level **if** detectability differs between strata.  
+Clearly there are insufficient detections within strata to fit stratum-specific detection functions. However, as shown in @rexstad2023, bias will result from using a pooled detection function to estimate density at the stratum level **if** detectability differs between strata.  
 
 The defensible way to estimate stratum-specific detection probabilities with small stratum-specific detections is to use stratum as a covariate. This may not work for the large number of strata we have here. The hazard rate model was preferred for two of the three species and it was second-preferred for the GRSP, so attempt covariate modelling using hazard rate as key function.
 
 ```{r}
+#| eval: false
 weme.hrstrat <- ds(data=weme, transect="point", key="hr", truncation="10%",
                    convert_units = cu, formula=~Region.Label)
 dick.hrstrat <- ds(data=dick, transect="point", key="hr", truncation="10%",
@@ -162,10 +172,10 @@ grsp.hrstrat <- ds(data=grsp, transect="point", key="hr", truncation="10%",
 There are convergence problems with the meadowlark data when using stratum as a covariate
 :::
 
-
 Contrast models with and without Region.Label covariate for each species to provide an evidence-based assessment of constant detectability across strata.
 
 ```{r}
+#| eval: false
 AIC(weme.hr, weme.hrstrat)
 AIC(dick.hr, dick.hrstrat)
 AIC(grsp.uncos, grsp.hrstrat)
@@ -197,7 +207,8 @@ summary(weme.hrsmall)
 The convergence may still not be perfect; however the CVs at the stratum level are reasonable, staying below 0.35.
 
 ```{r}
-#| out-height: "600px"
+#| out-height: "800px"
+#| out-width: "700px"
 plot(weme.hrsmall, pdf=TRUE)
 rlabels <- unique(weme.small$Region.Label)
 for (i in 1:length(rlabels)) {

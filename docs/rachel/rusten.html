@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eric Rexstad University of St Andrews">
+<meta name="dcterms.date" content="2024-11-06">
 
 <title>Sandhills Grassland Birds – k-state_workshop</title>
 <style>
@@ -54,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -203,7 +225,19 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eric Rexstad <em>University of St Andrews</em> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 6, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -220,6 +254,27 @@ window.Quarto = {
 <p>Goal: Evaluate the effects of Eastern Redcedar removal treatments and management on avian communities in eastern Sandhills Ecoregion in Nebraska, USA</p>
 </div><div class="column" style="width:70%;">
 <p><img src="studyarea.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Before beginning, a note about point transects
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Animal movement can bias distance sampling estimates</li>
+<li>Bias is magnified when animals move faster than observers</li>
+<li>Observers are stationary during point counts</li>
+<li>See <span class="citation" data-cites="buckland2006">Buckland (<a href="#ref-buckland2006" role="doc-biblioref">2006</a>)</span> regarding “snapshot moment” to alleviate bias</li>
+</ul>
+</div>
 </div>
 </div>
 </section>
@@ -252,7 +307,7 @@ window.Quarto = {
 [91] "SWHA" </code></pre>
 </div>
 </div>
-<p>Goodness, there are WEME, GRSP, NA, NOFL, WITU, BHCO, MODO, LASP, FISP, BLGR, CONI, AMCR, KILL, BARS, HOLA, RTHA, RHWO, AGOL, AMRO, BLJA, SPTO, NOCA, DICK, CLSW, UPSA, LBCO, NOBO, WEKI, BEVI, RWBL, HOWR, EAKI, GRCA, BRTH, CHSP, SOSP, OROR, NODO, YEWA, BAOR, COGR, MALL, BOBO, MODI, AMCK, MAKE, HCWR, NOFC, WISN, BWTE, YHBL, MAWR, NOPI, EUST, COYE, WIPH, AMBI, SORA, AMKE, LOSH, TRES, EUCD, YBCH, GTGR, WAVI, COHA, STGR, TUVU, UNSP, RWRL, REVI, SPTP, RNEP, EATO, BBHCO, BBCH, NRWS, CANG, VESP, GRPC, WODU, RINP, AWPE, SWSP, BCOH, BAEA, CEWA, LBCU, GCFL, INBU, SWHA species recorded during the 2024 field season. Let’s focus attention upon four species of interest: GRSP, WEME, DICK, UPSA:</p>
+<p>Goodness, there are 91 species recorded during the 2024 field season. Let’s focus attention upon four species of interest: GRSP, WEME, DICK, UPSA:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fourspec <span class="ot">&lt;-</span> <span class="fu">subset</span>(alldata, <span class="at">subset =</span> Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"GRSP"</span>, <span class="st">"WEME"</span>, <span class="st">"DICK"</span>, <span class="st">"UPSA"</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fourspec<span class="sc">$</span>Region.Label, fourspec<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -356,7 +411,7 @@ window.Quarto = {
 <section id="exploratory-data-analysis-of-detection-distances" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-of-detection-distances">Exploratory data analysis of detection distances</h2>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -365,7 +420,7 @@ Distances recorded as -1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Don’t know why they exist, but they mess with detection function fitting, I’m throwing them out</p>
 </div>
@@ -728,45 +783,18 @@ Hazard-rate key function selected.</code></pre>
 </section>
 <section id="constant-detectability-across-strata" class="level2">
 <h2 class="anchored" data-anchor-id="constant-detectability-across-strata">Constant detectability across strata?</h2>
-<p>Clearly there are insufficient detections within strata to fit stratum-specific detection functions. However, as shown in <span class="citation" data-cites="rexstad">@rexstad</span>, bias will result from using a pooled detection function to estimate density at the stratum level <strong>if</strong> detectability differs between strata.</p>
+<p>Clearly there are insufficient detections within strata to fit stratum-specific detection functions. However, as shown in <span class="citation" data-cites="rexstad2023">Rexstad et al. (<a href="#ref-rexstad2023" role="doc-biblioref">2023</a>)</span>, bias will result from using a pooled detection function to estimate density at the stratum level <strong>if</strong> detectability differs between strata.</p>
 <p>The defensible way to estimate stratum-specific detection probabilities with small stratum-specific detections is to use stratum as a covariate. This may not work for the large number of strata we have here. The hazard rate model was preferred for two of the three species and it was second-preferred for the GRSP, so attempt covariate modelling using hazard rate as key function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>weme.hrstrat <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>weme, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
-<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Fitting hazard-rate key function</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>AIC= 9756.701</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>dick.hrstrat <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>dick, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
-<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Fitting hazard-rate key function</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>AIC= 6648.044</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>grsp.hrstrat <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>grsp, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
-<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Fitting hazard-rate key function</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>AIC= 9986.936</code></pre>
-</div>
+<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span>
+<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a>dick.hrstrat <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>dick, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
+<span id="cb107-4"><a href="#cb107-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span>
+<span id="cb107-5"><a href="#cb107-5" aria-hidden="true" tabindex="-1"></a>grsp.hrstrat <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>grsp, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
+<span id="cb107-6"><a href="#cb107-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -775,7 +803,7 @@ Convergence warning)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>There are convergence problems with the meadowlark data when using stratum as a covariate</p>
 </div>
@@ -783,40 +811,25 @@ Convergence warning)
 </div>
 <p>Contrast models with and without Region.Label covariate for each species to provide an evidence-based assessment of constant detectability across strata.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(weme.hr, weme.hrstrat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>             df       AIC
-weme.hr       2 10125.116
-weme.hrstrat 34  9756.701</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(dick.hr, dick.hrstrat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>             df      AIC
-dick.hr       2 6708.399
-dick.hrstrat 31 6648.044</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(grsp.uncos, grsp.hrstrat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>             df       AIC
-grsp.uncos    2 10185.801
-grsp.hrstrat 34  9986.936</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(weme.hr, weme.hrstrat)</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(dick.hr, dick.hrstrat)</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(grsp.uncos, grsp.hrstrat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you are fussy, you could use <code>BIC</code> rather than <code>AIC</code>.</p>
 <p>As an experiment, use <code>Group</code> as strata and fit group as a covariate. Won’t work because <code>Area</code> specified for the grid, not group.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>experiment <span class="ot">&lt;-</span> fourspec</span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>experiment<span class="sc">$</span>Region.Label <span class="ot">&lt;-</span> experiment<span class="sc">$</span>Group</span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>weme.group <span class="ot">&lt;-</span> <span class="fu">subset</span>(experiment, Species<span class="sc">==</span><span class="st">"WEME"</span>)</span>
-<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a>weme.hrgroup <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>weme.group, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
-<span id="cb125-5"><a href="#cb125-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>experiment <span class="ot">&lt;-</span> fourspec</span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>experiment<span class="sc">$</span>Region.Label <span class="ot">&lt;-</span> experiment<span class="sc">$</span>Group</span>
+<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a>weme.group <span class="ot">&lt;-</span> <span class="fu">subset</span>(experiment, Species<span class="sc">==</span><span class="st">"WEME"</span>)</span>
+<span id="cb109-4"><a href="#cb109-4" aria-hidden="true" tabindex="-1"></a>weme.hrgroup <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>weme.group, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
+<span id="cb109-5"><a href="#cb109-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Different idea, remove <code>Region.Label</code> for which there are fewer than 13 detections</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>weme.small <span class="ot">&lt;-</span> <span class="fu">subset</span>(weme, <span class="at">subset =</span> <span class="sc">!</span>(Region.Label <span class="sc">%in%</span> </span>
-<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">c</span>(<span class="st">"GAR-LOWja"</span>, <span class="st">"GAR046-B"</span>, <span class="st">"WHE035-A"</span>, <span class="st">"GAR041-B"</span>)))</span>
-<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a>weme.hrsmall <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>weme.small, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
-<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>weme.small <span class="ot">&lt;-</span> <span class="fu">subset</span>(weme, <span class="at">subset =</span> <span class="sc">!</span>(Region.Label <span class="sc">%in%</span> </span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">c</span>(<span class="st">"GAR-LOWja"</span>, <span class="st">"GAR046-B"</span>, <span class="st">"WHE035-A"</span>, <span class="st">"GAR041-B"</span>)))</span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a>weme.hrsmall <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>weme.small, <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="st">"10%"</span>,</span>
+<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
 </div>
@@ -826,7 +839,7 @@ grsp.hrstrat 34  9986.936</code></pre>
 <div class="cell-output cell-output-stderr">
 <pre><code>AIC= 9103.185</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(weme.hrsmall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(weme.hrsmall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Summary for distance analysis 
@@ -839,44 +852,44 @@ Optimisation:  mrds (nlminb)
 
 Detection function parameters
 Scale coefficient(s):  
-                           estimate          se
-(Intercept)              4.94645613    19.10393
-Region.LabelDismal E    -0.09898944    18.66744
-Region.LabelDouble E    -0.48019884    18.15626
-Region.LabelDouble M    -0.76210390    18.40981
-Region.LabelDouble W     0.16661227    18.65594
-Region.LabelGAR-ML-A     0.06362141    19.01348
-Region.LabelGAR-PLU     -0.35634558    18.67142
-Region.LabelGAR-WIL-A    0.54371938    18.83366
-Region.LabelGAR-WIL-B   -0.04968180    18.88368
-Region.LabelGAR-WIL-C   -0.45769103    18.59536
-Region.LabelGAR045-A     0.01274792    18.73774
-Region.LabelGAR045-B    -0.66905203    18.20697
-Region.LabelGAR046-A    -0.17216272    18.64758
-Region.LabelGAR046-C    -0.25654444    18.59366
-Region.LabelGAR046-H    -0.18178040    18.73904
-Region.LabelGAR046-M     0.68830350   630.19001
-Region.LabelGAR053-A    -0.36344332    18.33877
-Region.LabelGAR053-B    -0.03862097    18.90256
-Region.LabelGAR054      -0.28697516    18.53708
-Region.LabelLOU-SMI-A    0.13299098    17.80267
-Region.LabelLOU-SMI-B   -0.31331641    18.53739
-Region.LabelLOU-SMI-C    0.68207774   535.96564
-Region.LabelLOU-SWMB     0.16202815    19.05529
-Region.LabelValentine A  0.02071491    18.89343
-Region.LabelValentine B -0.45249690    18.90768
-Region.LabelWeggener     0.81667827 99996.11659
-Region.LabelWHE014       0.67359023   291.54242
-Region.LabelWHE035-B    -0.37006710    18.65155
-Region.LabelWHE035-C     0.09894224    18.70889
+                           estimate           se
+(Intercept)              4.94644384 6.524906e-02
+Region.LabelDismal E    -0.09897169 9.105352e-02
+Region.LabelDouble E    -0.48016119 7.968319e-02
+Region.LabelDouble M    -0.76207105 8.714784e-02
+Region.LabelDouble W     0.16661898 1.322038e-01
+Region.LabelGAR-ML-A     0.06363885 1.083243e-01
+Region.LabelGAR-PLU     -0.35631515 1.128226e-01
+Region.LabelGAR-WIL-A    0.54387240 2.285213e+01
+Region.LabelGAR-WIL-B   -0.04968040 1.051569e-01
+Region.LabelGAR-WIL-C   -0.45766880 9.180427e-02
+Region.LabelGAR045-A     0.01275611 1.009299e-01
+Region.LabelGAR045-B    -0.66901660 8.160435e-02
+Region.LabelGAR046-A    -0.17212796 1.246222e-01
+Region.LabelGAR046-C    -0.25653091 8.636444e-02
+Region.LabelGAR046-H    -0.18177527 9.653618e-02
+Region.LabelGAR046-M     0.67845911 2.896217e+04
+Region.LabelGAR053-A    -0.36341714 8.899171e-02
+Region.LabelGAR053-B    -0.03860201 1.024502e-01
+Region.LabelGAR054      -0.28695829 9.157973e-02
+Region.LabelLOU-SMI-A    0.13301362 1.230758e-01
+Region.LabelLOU-SMI-B   -0.31329435 8.420254e-02
+Region.LabelLOU-SMI-C    0.69042831 1.000000e+05
+Region.LabelLOU-SWMB     0.16203644 1.243442e-01
+Region.LabelValentine A  0.02074135 1.347485e-01
+Region.LabelValentine B -0.45248047 1.148953e-01
+Region.LabelWeggener     0.70010828 1.000000e+05
+Region.LabelWHE014       0.66059025 7.290660e+03
+Region.LabelWHE035-B    -0.37004835 8.531678e-02
+Region.LabelWHE035-C     0.09895523 1.061678e-01
 
 Shape coefficient(s):  
-            estimate       se
-(Intercept) 1.976874 2.685991
+            estimate         se
+(Intercept) 1.976925 0.08281545
 
-                        Estimate           SE       CV
-Average p              0.3966269    0.5153681 1.299378
-N in covered region 2347.2940803 3050.7338190 1.299681
+                        Estimate           SE         CV
+Average p              0.3966307   0.01386595 0.03495935
+N in covered region 2347.2717050 105.26737827 0.04484670
 
 Summary statistics:
         Region   Area CoveredArea Effort   n   k       ER     se.ER      cv.ER
@@ -912,156 +925,94 @@ Summary statistics:
 30       Total 7296.1  3674.53243    324 931 324 2.860505 0.0656242 0.02294147
 
 Abundance:
-         Label   Estimate          se         cv         lcl         ucl
-1     BLA049-C  118.70857 3747.133492 31.5658208   0.6834632 20618.11867
-2     Dismal E  141.02344   54.120928  0.3837726  68.0218614   292.37086
-3     Double E  392.41228  437.190491  1.1141101  67.3052378  2287.89615
-4     Double M  524.51942  298.034709  0.5682053 185.7442420  1481.17979
-5     Double W   57.02110   34.300390  0.6015385  19.1461301   169.82053
-6     GAR-ML-A   75.80229   11.678692  0.1540678  55.8671455   102.85092
-7      GAR-PLU  114.42073   27.074128  0.2366191  71.8995417   182.08885
-8    GAR-WIL-A   24.62775    6.430165  0.2610942  13.9007784    43.63254
-9    GAR-WIL-B   88.24475   15.492283  0.1755604  62.1508306   125.29416
-10   GAR-WIL-C  282.93188   78.196441  0.2763790 166.1112264   481.90873
-11    GAR045-A   92.77601   35.380134  0.3813500  44.9535667   191.47284
-12    GAR045-B  529.15165  516.567280  0.9762178 106.2281804  2635.84926
-13    GAR046-A   77.24652   31.214837  0.4040937  35.7964323   166.69329
-14    GAR046-C  216.86782   80.178125  0.3697096 107.4177437   437.83877
-15    GAR046-H  148.55496   37.527077  0.2526141  89.7295974   245.94533
-16    GAR046-M   41.38322    8.257970  0.1995487  26.7879517    63.93065
-17    GAR053-A  245.09655  196.384075  0.8012519  61.5331668   976.25921
-18    GAR053-B   86.57913   16.743650  0.1933913  58.6149799   127.88446
-19      GAR054  202.78577   92.998388  0.4586041  86.0264628   478.01648
-20   LOU-SMI-A   44.90801   77.911017  1.7349023   4.4451332   453.69388
-21   LOU-SMI-B  262.49555  115.070902  0.4383728 115.2836182   597.69041
-22   LOU-SMI-C   47.02639    5.866750  0.1247544  35.7727323    61.82031
-23    LOU-SWMB   54.61721    9.377702  0.1716987  38.8823884    76.71957
-24 Valentine A   47.88484   13.491204  0.2817427  27.3788029    83.74940
-25 Valentine B  231.62251   95.508723  0.4123465 106.3214327   504.59242
-26    Weggener   79.00434    8.563922  0.1083981  62.2785148   100.22213
-27      WHE014   47.02639   10.193113  0.2167530  29.3444692    75.36280
-28    WHE035-B  281.61922   64.253698  0.2281581 180.4733019   439.45219
-29    WHE035-C   83.30214   42.283326  0.5075899  32.5195162   213.38712
-30       Total 4639.66046 5763.759465  1.2422804 696.6133049 30901.57626
-          df
-1  901.01750
-2  339.38371
-3  910.22380
-4  911.86115
-5  629.79354
-6   74.53056
-7   78.63421
-8   10.03372
-9   46.77287
-10 813.03999
-11 373.40631
-12 906.59250
-13 134.95262
-14 828.70885
-15  36.56062
-16  11.00000
-17 908.51692
-18  32.52362
-19 876.62339
-20 911.35019
-21 895.81087
-22  11.00004
-23  71.80487
-24  39.00233
-25 478.55139
-26  11.00000
-27  11.00003
-28 155.97391
-29 513.67071
-30 901.55203
+         Label   Estimate         se         cv        lcl        ucl        df
+1     BLA049-C  118.71167  17.215898 0.14502279   88.86113  158.58972  51.06491
+2     Dismal E  141.02326  27.088578 0.19208588   95.54842  208.14118  29.02546
+3     Double E  392.39835  53.962156 0.13751882  297.99378  516.71032  48.00795
+4     Double M  524.50619  72.901724 0.13899116  399.26033  689.04102 191.09023
+5     Double W   57.02150  12.499347 0.21920412   36.56996   88.91044  27.39779
+6     GAR-ML-A   75.80195  12.582776 0.16599541   54.65124  105.13825  98.58914
+7      GAR-PLU  114.41822  25.780160 0.22531517   73.36720  178.43844  65.33265
+8    GAR-WIL-A   24.62773   7.219954 0.29316359   13.39606   45.27638  15.93603
+9    GAR-WIL-B   88.24706  16.903607 0.19154867   60.40584  128.92037  65.48876
+10   GAR-WIL-C  282.93040  41.073067 0.14517021  212.91382  375.97189 271.52934
+11    GAR045-A   92.77712  17.790440 0.19175461   63.06323  136.49146  34.28347
+12    GAR045-B  529.13549  63.936491 0.12083198  417.22335  671.06592 173.84703
+13    GAR046-A   77.24409  22.183575 0.28718801   43.66875  136.63429  37.13564
+14    GAR046-C  216.86991  30.177011 0.13914799  164.75035  285.47774  96.46861
+15    GAR046-H  148.55852  33.873037 0.22801141   93.38659  236.32550  24.40861
+16    GAR046-M   41.38322   8.274898 0.19995780   26.77614   63.95885  11.09048
+17    GAR053-A  245.09321  38.218103 0.15593293  179.84350  334.01644  64.99384
+18    GAR053-B   86.57872  17.412218 0.20111429   57.85408  129.56520  37.92955
+19      GAR054  202.78650  30.867562 0.15221704  150.25423  273.68525 113.67154
+20   LOU-SMI-A   44.90743  11.486054 0.25577177   26.68221   75.58135  23.11098
+21   LOU-SMI-B  262.49395  34.343577 0.13083569  202.78671  339.78102 114.50332
+22   LOU-SMI-C   47.02639   5.889913 0.12524697   35.75311   61.85424  11.17478
+23    LOU-SWMB   54.61749   9.385770 0.17184549   38.87219   76.74049  72.03872
+24 Valentine A   47.88398  13.004459 0.27158269   27.84123   82.35538  33.78010
+25 Valentine B  231.62395  52.220659 0.22545449  148.62676  360.96900  73.94365
+26    Weggener   79.00434   8.567935 0.10844892   62.27500  100.22779  11.02063
+27      WHE014   47.02639  10.238534 0.21771890   29.31405   75.44100  11.19740
+28    WHE035-B  281.61949  45.881203 0.16291913  203.24896  390.20880  44.33103
+29    WHE035-C   83.30224  16.738897 0.20094175   55.22307  125.65877  23.49401
+30       Total 4639.61877 179.267955 0.03863851 4300.86423 5005.05507 802.33849
 
 Density:
-         Label   Estimate          se         cv         lcl        ucl
-1     BLA049-C 0.46370536 14.63724020 31.5658208 0.002669778 80.5395260
-2     Dismal E 0.55087281  0.21140988  0.3837726 0.265710396  1.1420737
-3     Double E 1.53286045  1.70777536  1.1141101 0.262911085  8.9370943
-4     Double M 2.04890397  1.16419808  0.5682053 0.725563445  5.7858586
-5     Double W 0.22273868  0.13398590  0.6015385 0.074789571  0.6633615
-6     GAR-ML-A 0.29610269  0.04561989  0.1540678 0.218231037  0.4017614
-7      GAR-PLU 0.67030307  0.15860649  0.2366191 0.421204111  1.0667185
-8    GAR-WIL-A 0.09620217  0.02511783  0.2610942 0.054299916  0.1704396
-9    GAR-WIL-B 0.34470605  0.06051673  0.1755604 0.242776682  0.4894303
-10   GAR-WIL-C 1.10520266  0.30545485  0.2763790 0.648871978  1.8824560
-11    GAR045-A 0.36240627  0.13820365  0.3813500 0.175599870  0.7479408
-12    GAR045-B 2.06699864  2.01784094  0.9762178 0.414953830 10.2962862
-13    GAR046-A 0.30174423  0.12193296  0.4040937 0.139829814  0.6511457
-14    GAR046-C 0.84713994  0.31319580  0.3697096 0.419600561  1.7103077
-15    GAR046-H 0.58029280  0.14659015  0.2526141 0.350506240  0.9607239
-16    GAR046-M 0.16165322  0.03225769  0.1995487 0.104640436  0.2497291
-17    GAR053-A 0.95740842  0.76712529  0.8012519 0.240363933  3.8135126
-18    GAR053-B 0.36889274  0.07134065  0.1933913 0.249744269  0.5448848
-19      GAR054 0.79213190  0.36327495  0.4586041 0.336040870  1.8672519
-20   LOU-SMI-A 0.17542193  0.30433991  1.7349023 0.017363802  1.7722417
-21   LOU-SMI-B 1.02537323  0.44949571  0.4383728 0.450326633  2.3347281
-22   LOU-SMI-C 0.18369684  0.02291699  0.1247544 0.139737235  0.2414856
-23    LOU-SWMB 0.21334849  0.03663165  0.1716987 0.151884330  0.2996858
-24 Valentine A 0.20402575  0.05748276  0.2817427 0.116654465  0.3568359
-25 Valentine B 0.90477545  0.37308095  0.4123465 0.415318096  1.9710641
-26    Weggener 0.30861069  0.03345282  0.1083981 0.243275448  0.3914927
-27      WHE014 0.18369684  0.03981685  0.2167530 0.114626833  0.2943860
-28    WHE035-B 1.10007509  0.25099101  0.2281581 0.704973835  1.7166101
-29    WHE035-C 0.32539897  0.16516924  0.5075899 0.127029360  0.8335434
-30       Total 0.63590966  0.78997813  1.2422804 0.095477489  4.2353554
-          df
-1  901.01750
-2  339.38371
-3  910.22380
-4  911.86115
-5  629.79354
-6   74.53056
-7   78.63421
-8   10.03372
-9   46.77287
-10 813.03999
-11 373.40631
-12 906.59250
-13 134.95262
-14 828.70885
-15  36.56062
-16  11.00000
-17 908.51692
-18  32.52362
-19 876.62339
-20 911.35019
-21 895.81087
-22  11.00004
-23  71.80487
-24  39.00233
-25 478.55139
-26  11.00000
-27  11.00003
-28 155.97391
-29 513.67071
-30 901.55203</code></pre>
+         Label   Estimate         se         cv        lcl       ucl        df
+1     BLA049-C 0.46371748 0.06724960 0.14502279 0.34711379 0.6194911  51.06491
+2     Dismal E 0.55087212 0.10581476 0.19208588 0.37323601 0.8130515  29.02546
+3     Double E 1.53280604 0.21078967 0.13751882 1.16403820 2.0183997  48.00795
+4     Double M 2.04885230 0.28477236 0.13899116 1.55961066 2.6915665 191.09023
+5     Double W 0.22274022 0.04882557 0.21920412 0.14285139 0.3473064  27.39779
+6     GAR-ML-A 0.29610137 0.04915147 0.16599541 0.21348141 0.4106963  98.58914
+7      GAR-PLU 0.67028835 0.15102613 0.22531517 0.42980200 1.0453336  65.33265
+8    GAR-WIL-A 0.09620208 0.02820295 0.29316359 0.05232837 0.1768609  15.93603
+9    GAR-WIL-B 0.34471508 0.06602972 0.19154867 0.23596033 0.5035952  65.48876
+10   GAR-WIL-C 1.10519689 0.16044167 0.14517021 0.83169462 1.4686402 271.52934
+11    GAR045-A 0.36241061 0.06949390 0.19175461 0.24634076 0.5331698  34.28347
+12    GAR045-B 2.06693552 0.24975192 0.12083198 1.62977871 2.6213512 173.84703
+13    GAR046-A 0.30173471 0.08665459 0.28718801 0.17058106 0.5337277  37.13564
+14    GAR046-C 0.84714807 0.11787895 0.13914799 0.64355604 1.1151474  96.46861
+15    GAR046-H 0.58030670 0.13231655 0.22801141 0.36479137 0.9231465  24.40861
+16    GAR046-M 0.16165322 0.03232382 0.19995780 0.10459430 0.2498393  11.09048
+17    GAR053-A 0.95739537 0.14928946 0.15593293 0.70251365 1.3047517  64.99384
+18    GAR053-B 0.36889102 0.07418926 0.20111429 0.24650225 0.5520460  37.92955
+19      GAR054 0.79213478 0.12057641 0.15221704 0.58693059 1.0690830 113.67154
+20   LOU-SMI-A 0.17541966 0.04486740 0.25577177 0.10422739 0.2952397  23.11098
+21   LOU-SMI-B 1.02536701 0.13415460 0.13083569 0.79213559 1.3272696 114.50332
+22   LOU-SMI-C 0.18369684 0.02300747 0.12524697 0.13966060 0.2416181  11.17478
+23    LOU-SWMB 0.21334959 0.03666317 0.17184549 0.15184449 0.2997675  72.03872
+24 Valentine A 0.20402205 0.05540886 0.27158269 0.11862476 0.3508964  33.78010
+25 Valentine B 0.90478104 0.20398695 0.22545449 0.58057327 1.4100352  73.94365
+26    Weggener 0.30861069 0.03346850 0.10844892 0.24326171 0.3915148  11.02063
+27      WHE014 0.18369685 0.03999427 0.21771890 0.11450802 0.2946914  11.19740
+28    WHE035-B 1.10007612 0.17922345 0.16291913 0.79394126 1.5242531  44.33103
+29    WHE035-C 0.32539937 0.06538632 0.20094175 0.21571511 0.4908546  23.49401
+30       Total 0.63590394 0.02457038 0.03863851 0.58947441 0.6859905 802.33849</code></pre>
 </div>
 </div>
 <p>The convergence may still not be perfect; however the CVs at the stratum level are reasonable, staying below 0.35.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(weme.hrsmall, <span class="at">pdf=</span><span class="cn">TRUE</span>)</span>
-<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a>rlabels <span class="ot">&lt;-</span> <span class="fu">unique</span>(weme.small<span class="sc">$</span>Region.Label)</span>
-<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rlabels)) {</span>
-<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_df_covar_line</span>(weme.hrsmall, <span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">Region.Label=</span>rlabels[i]),</span>
-<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">pdf=</span><span class="cn">TRUE</span>, <span class="at">col=</span><span class="fu">colours</span>(<span class="cn">TRUE</span>)[i])</span>
-<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb132-7"><a href="#cb132-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">title=</span><span class="st">"Strata"</span>, <span class="at">legend=</span>rlabels,</span>
-<span id="cb132-8"><a href="#cb132-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">colours</span>(<span class="cn">TRUE</span>), <span class="at">cex=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(weme.hrsmall, <span class="at">pdf=</span><span class="cn">TRUE</span>)</span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>rlabels <span class="ot">&lt;-</span> <span class="fu">unique</span>(weme.small<span class="sc">$</span>Region.Label)</span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rlabels)) {</span>
+<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_df_covar_line</span>(weme.hrsmall, <span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">Region.Label=</span>rlabels[i]),</span>
+<span id="cb116-5"><a href="#cb116-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">pdf=</span><span class="cn">TRUE</span>, <span class="at">col=</span><span class="fu">colours</span>(<span class="cn">TRUE</span>)[i])</span>
+<span id="cb116-6"><a href="#cb116-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb116-7"><a href="#cb116-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">title=</span><span class="st">"Strata"</span>, <span class="at">legend=</span>rlabels,</span>
+<span id="cb116-8"><a href="#cb116-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">colours</span>(<span class="cn">TRUE</span>), <span class="at">cex=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rusten_files/figure-html/unnamed-chunk-16-1.png" width="672" height="600" class="figure-img"></p>
+<p><img src="rusten_files/figure-html/unnamed-chunk-16-1.png" width="700" height="800" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The plot of the probability density functions at the stratum level indicates one stratum with a <em>very</em> different detection function shape compared to the rest of the strata (WHE014). This may explain the convergence challenge. That stratum might be a candidate for exclusion.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(weme<span class="sc">$</span>distance[weme<span class="sc">$</span>Region.Label<span class="sc">==</span><span class="st">"WHE014"</span>], <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">190</span>), <span class="at">nc=</span><span class="dv">10</span>,</span>
-<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Radial distance"</span>, <span class="at">main=</span><span class="st">"Stratum WHE014 detections of WEME"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(weme<span class="sc">$</span>distance[weme<span class="sc">$</span>Region.Label<span class="sc">==</span><span class="st">"WHE014"</span>], <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">190</span>), <span class="at">nc=</span><span class="dv">10</span>,</span>
+<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Radial distance"</span>, <span class="at">main=</span><span class="st">"Stratum WHE014 detections of WEME"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1070,12 +1021,20 @@ Density:
 </div>
 </div>
 </div>
-<p>Note the SE of the stratum-<span class="math inline">\(\hat{\beta}\)</span> associated with stratum <code>WHE014</code> 291.5424185</p>
+<p>Note the SE of the stratum-<span class="math inline">\(\hat{\beta}\)</span> associated with stratum <code>WHE014</code> 7290.6598488</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-buckland2006" class="csl-entry" role="listitem">
+Buckland, S. T. (2006). Point transect surveys for songbirds: Robust methodologies. <em>The Auk</em>, <em>123</em>(2), 345–357. <a href="https://doi.org/10.1093/auk/123.2.345">https://doi.org/10.1093/auk/123.2.345</a>
+</div>
+<div id="ref-rexstad2023" class="csl-entry" role="listitem">
+Rexstad, E., Buckland, S., Marshall, L., &amp; Borchers, D. (2023). Pooling robustness in distance sampling: <span>Avoiding</span> bias when there is unmodelled heterogeneity. <em>Ecology and Evolution</em>, <em>13</em>(1), e9684. <a href="https://doi.org/10.1002/ece3.9684">https://doi.org/10.1002/ece3.9684</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
