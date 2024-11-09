@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -117,6 +151,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#status-of-native-bumblebees-bombus-spp.-at-fort-riley-military-reservation-kansas" id="toc-status-of-native-bumblebees-bombus-spp.-at-fort-riley-military-reservation-kansas" class="nav-link active" data-scroll-target="#status-of-native-bumblebees-bombus-spp.-at-fort-riley-military-reservation-kansas">Status of Native Bumblebees (Bombus spp.) at Fort Riley Military Reservation, Kansas</a></li>
+  <li><a href="#becoming-acquainted-with-data" id="toc-becoming-acquainted-with-data" class="nav-link" data-scroll-target="#becoming-acquainted-with-data">Becoming acquainted with data</a></li>
+  <li><a href="#use-2024-to-build-2-level-stratification" id="toc-use-2024-to-build-2-level-stratification" class="nav-link" data-scroll-target="#use-2024-to-build-2-level-stratification">use 2024 to build 2-level stratification</a>
+  <ul class="collapse">
+  <li><a href="#construct-region-table-and-sample-tables" id="toc-construct-region-table-and-sample-tables" class="nav-link" data-scroll-target="#construct-region-table-and-sample-tables">construct region table and sample tables</a></li>
+  </ul></li>
+  <li><a href="#assuming-this-model-is-ok-look-at-the-plot" id="toc-assuming-this-model-is-ok-look-at-the-plot" class="nav-link" data-scroll-target="#assuming-this-model-is-ok-look-at-the-plot">assuming this model is OK, look at the plot</a></li>
+  <li><a href="#then-look-at-the-density-estimates" id="toc-then-look-at-the-density-estimates" class="nav-link" data-scroll-target="#then-look-at-the-density-estimates">then look at the density estimates</a></li>
+  <li><a href="#bring-in-timas-detection-function-function" id="toc-bring-in-timas-detection-function-function" class="nav-link" data-scroll-target="#bring-in-timas-detection-function-function">Bring in TimAs detection function function</a>
+  <ul class="collapse">
+  <li><a href="#apply-this-function-to-the-yr24_hr_2level-fitted-model" id="toc-apply-this-function-to-the-yr24_hr_2level-fitted-model" class="nav-link" data-scroll-target="#apply-this-function-to-the-yr24_hr_2level-fitted-model">apply this function to the yr24_hr_2level fitted model</a></li>
+  <li><a href="#now-for-the-integration-and-conversion-to-detection-probability" id="toc-now-for-the-integration-and-conversion-to-detection-probability" class="nav-link" data-scroll-target="#now-for-the-integration-and-conversion-to-detection-probability">now for the integration and conversion to detection probability</a></li>
+  <li><a href="#do-the-integrated-pa-correspond-to-reported-densities" id="toc-do-the-integrated-pa-correspond-to-reported-densities" class="nav-link" data-scroll-target="#do-the-integrated-pa-correspond-to-reported-densities">do the integrated Pa correspond to reported densities?</a></li>
+  </ul></li>
+  <li><a href="#compare-estimates-with-truncation-at-25m" id="toc-compare-estimates-with-truncation-at-25m" class="nav-link" data-scroll-target="#compare-estimates-with-truncation-at-25m">compare estimates with truncation at 25m</a></li>
   </ul>
 </nav>
     </div>
@@ -152,6 +200,692 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>evaluate environmental factors affecting bumblebee density and abundance using distance sampling methods</p>
+</section>
+<section id="becoming-acquainted-with-data" class="level2">
+<h2 class="anchored" data-anchor-id="becoming-acquainted-with-data">Becoming acquainted with data</h2>
+<p>Reorganise the data columns just a bit</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>yr22 <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path=</span><span class="st">"data/2022-2024_bee_ds_data.xlsx"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sheet =</span> <span class="st">"2022"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `Sample.Label` -&gt; `Sample.Label...5`
+• `Sample.Label` -&gt; `Sample.Label...12`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>yr23 <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path=</span><span class="st">"data/2022-2024_bee_ds_data.xlsx"</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sheet =</span> <span class="st">"2023"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>yr24 <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path=</span><span class="st">"data/2022-2024_bee_ds_data.xlsx"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sheet =</span> <span class="st">"2024"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>yr22<span class="sc">$</span>Sample.Label...<span class="dv">12</span> <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>yr22<span class="sc">$</span>Sample.Label <span class="ot">&lt;-</span> yr22<span class="sc">$</span>Sample.Label...<span class="dv">5</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>yr22<span class="sc">$</span>Sample.Label...<span class="dv">5</span> <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>yr22 <span class="ot">&lt;-</span> yr22[yr22<span class="sc">$</span>distance<span class="sc">&gt;=</span><span class="dv">0</span>,]  <span class="co"># a couple of -1 values</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>(numstrat <span class="ot">&lt;-</span> <span class="fu">unique</span>(yr22<span class="sc">$</span>Region.Label))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA     "FRMR"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(numtrans <span class="ot">&lt;-</span> <span class="fu">unique</span>(yr22<span class="sc">$</span>Sample.Label))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1]  NA   2   3   4   5   6   7   8   9  11  14  15  17  20  21  22  23  25
+ [19]  26  28  29  30  32  33  34  35  36  37  38  39  40  41  42  43  44  45
+ [37]  46  47  48  49  51  52  53  54  55  56  57  58  59  61  62  63  64  65
+ [55]  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  83  84  85
+ [73]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101 102 103
+ [91] 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121
+[109] 122 123 124 126 127 128 130 131 132 134 135 136 137 138 139 140 141 142
+[127] 143 144 145 146 147 148 149 150 151</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(numspec <span class="ot">&lt;-</span> <span class="fu">unique</span>(yr22<span class="sc">$</span>species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA          "bombus"    "carpenter" "unknown"   "bumble"   </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>t22 <span class="ot">&lt;-</span> <span class="fu">table</span>(yr22<span class="sc">$</span>species, yr22<span class="sc">$</span>sample.bout)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>t23 <span class="ot">&lt;-</span> <span class="fu">table</span>(yr23<span class="sc">$</span>species, yr23<span class="sc">$</span>sample.bout)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>t24 <span class="ot">&lt;-</span> <span class="fu">table</span>(yr24<span class="sc">$</span>species, yr24<span class="sc">$</span>sample.bout)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>histfn <span class="ot">&lt;-</span> <span class="cf">function</span>(frame, spec, bout) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(frame<span class="sc">$</span>distance[frame<span class="sc">$</span>species<span class="sc">==</span>spec <span class="sc">&amp;</span> frame<span class="sc">$</span>sample.bout<span class="sc">==</span>bout],</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">main=</span><span class="fu">paste</span>(spec, <span class="st">" bout="</span>, bout), <span class="at">xlab=</span><span class="st">"Distance"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">histfn</span>(yr22, <span class="st">"bombus"</span>, <span class="dv">1</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">histfn</span>(yr22, <span class="st">"bombus"</span>, <span class="dv">2</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">histfn</span>(yr22, <span class="st">"carpenter"</span>, <span class="dv">1</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">histfn</span>(yr22, <span class="st">"carpenter"</span>, <span class="dv">2</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">histfn</span>(yr22, <span class="st">"unknown"</span>, <span class="dv">1</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">histfn</span>(yr22, <span class="st">"unknown"</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-3-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-3-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-3-6.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="use-2024-to-build-2-level-stratification" class="level1">
+<h1>use 2024 to build 2-level stratification</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+But make sure design (effort and transects) are respected
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>There should be 151 transects each 500m in length for each of our “strata”</li>
+<li>even though strata are not geographic, but rather species and bout defined</li>
+</ul>
+</div>
+</div>
+</div>
+<section id="construct-region-table-and-sample-tables" class="level2">
+<h2 class="anchored" data-anchor-id="construct-region-table-and-sample-tables">construct region table and sample tables</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>yr24<span class="sc">$</span>Region.Label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(yr24<span class="sc">$</span>species, yr24<span class="sc">$</span>sample.bout)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>new_region_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Region.Label=</span><span class="fu">unique</span>(yr24<span class="sc">$</span>Region.Label),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Area=</span><span class="dv">28383</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>new_sample_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sample.Label=</span><span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">151</span>), <span class="dv">19</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Region.Label=</span><span class="fu">rep</span>(<span class="fu">unique</span>(yr24<span class="sc">$</span>Region.Label), <span class="dv">151</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Effort=</span><span class="fu">rep</span>(<span class="dv">500</span>, <span class="dv">19</span><span class="sc">*</span><span class="dv">151</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Distance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: mrds</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>This is mrds 3.0.0
+Built: R 4.4.1; ; 2024-10-23 19:10:34 UTC; windows</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'Distance'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:mrds':
+
+    create.bins</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cu <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="st">"meter"</span>, <span class="st">"hectare"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>yr24<span class="sc">$</span>Region.Label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(yr24<span class="sc">$</span>species, yr24<span class="sc">$</span>sample.bout)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>yr24_hn_2level <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">formula=</span><span class="sc">~</span>species<span class="sc">+</span><span class="fu">as.factor</span>(sample.bout))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7429.881</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>yr24_hr_2level <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">formula=</span><span class="sc">~</span>species<span class="sc">+</span><span class="fu">as.factor</span>(sample.bout))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting hazard-rate key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7345.636</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>yr24_hn_species <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">formula=</span><span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7436.327</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>yr24_hr_species <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">formula=</span><span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting hazard-rate key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7348.487</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>yr24_hn_bout <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">formula=</span><span class="sc">~</span><span class="fu">as.factor</span>(sample.bout))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7431.708</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>yr24_hr_bout <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">formula=</span><span class="sc">~</span><span class="fu">as.factor</span>(sample.bout))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting hazard-rate key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7351.755</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>yr24_hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Starting AIC adjustment term selection.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7440.185</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7366.456</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2,3) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7366.071</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2,3,4) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7356.509</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2,3,4,5) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7355.094</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2,3,4,5,6) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>** Warning: An estimator was not chosen. </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>** Error: Number of adjustment parameters(NAP) is,</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>** Error: Due to errors, this ESTIMATOR command will be ignored. **</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7356.859</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Half-normal key function with cosine(2,3,4,5) adjustments selected.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>yr24_hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `distbegin`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Starting AIC adjustment term selection.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting hazard-rate key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7352.17</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting hazard-rate key function with cosine(2) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in check.mono(result, n.pts = control$mono.points): Detection function
+is greater than 1 at some distances</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in check.mono(result, n.pts = control$mono.points): Detection function
+is greater than 1 at some distances</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 7354.173</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Hazard-rate key function selected.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize_ds_models</span>(<span class="co">#yr24_hn, yr24_hr, </span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>                    yr24_hn_bout, yr24_hr_bout, </span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>                    yr24_hn_species, yr24_hr_species, </span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>                    yr24_hn_2level, yr24_hr_2level)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                    Model Key function
+6  \\texttt{yr24\\char`_hr\\char`_2level}  Hazard-rate
+4 \\texttt{yr24\\char`_hr\\char`_species}  Hazard-rate
+2    \\texttt{yr24\\char`_hr\\char`_bout}  Hazard-rate
+5  \\texttt{yr24\\char`_hn\\char`_2level}  Half-normal
+1    \\texttt{yr24\\char`_hn\\char`_bout}  Half-normal
+3 \\texttt{yr24\\char`_hn\\char`_species}  Half-normal
+                            Formula C-vM p-value $\\hat{P_a}$ se($\\hat{P_a}$)
+6 ~species + as.factor(sample.bout) 8.543959e-01    0.3380738       0.01439612
+4                          ~species 8.314922e-01    0.3353362       0.01449183
+2           ~as.factor(sample.bout) 9.548485e-01    0.3435378       0.01449686
+5 ~species + as.factor(sample.bout) 6.466451e-06    0.4269370       0.00795203
+1           ~as.factor(sample.bout) 1.033516e-05    0.4314792       0.00799005
+3                          ~species 1.158099e-05    0.4289147       0.00795288
+  $\\Delta$AIC
+6     0.000000
+4     2.850701
+2     6.119520
+5    84.244711
+1    86.071958
+3    90.690708</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(yr24_hr_2level)<span class="sc">$</span>coeff)  <span class="co"># looking for convergence problems</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="assuming-this-model-is-ok-look-at-the-plot" class="level1">
+<h1>assuming this model is OK, look at the plot</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(yr24_hr_2level, <span class="at">nc=</span><span class="dv">39</span>)</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>sp <span class="ot">&lt;-</span> <span class="fu">unique</span>(yr24<span class="sc">$</span>species)</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>bo <span class="ot">&lt;-</span> <span class="fu">unique</span>(yr24<span class="sc">$</span>sample.bout)</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="fu">palette</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sp)) {</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(bo))</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_df_covar_line</span>(yr24_hr_2level, </span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">species=</span>sp[i], <span class="at">sample.bout=</span>bo[j]),</span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">rainbow</span>(<span class="dv">19</span>)[i])</span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">title=</span><span class="st">"Spec x bout"</span>, <span class="at">legend=</span><span class="fu">unique</span>(yr24<span class="sc">$</span>Region.Label),</span>
+<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">rainbow</span>(<span class="dv">19</span>), <span class="at">cex=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-6-1.png" width="700" height="800" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="then-look-at-the-density-estimates" class="level1">
+<h1>then look at the density estimates</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Label</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">se</th>
+<th style="text-align: right;">cv</th>
+<th style="text-align: right;">lcl</th>
+<th style="text-align: right;">ucl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AMER_BG1</td>
+<td style="text-align: right;">0.193</td>
+<td style="text-align: right;">0.046</td>
+<td style="text-align: right;">0.237</td>
+<td style="text-align: right;">0.122</td>
+<td style="text-align: right;">0.306</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AMER_BG2</td>
+<td style="text-align: right;">0.164</td>
+<td style="text-align: right;">0.047</td>
+<td style="text-align: right;">0.286</td>
+<td style="text-align: right;">0.095</td>
+<td style="text-align: right;">0.286</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">american1</td>
+<td style="text-align: right;">0.369</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.191</td>
+<td style="text-align: right;">0.254</td>
+<td style="text-align: right;">0.536</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">american2</td>
+<td style="text-align: right;">0.556</td>
+<td style="text-align: right;">0.123</td>
+<td style="text-align: right;">0.221</td>
+<td style="text-align: right;">0.361</td>
+<td style="text-align: right;">0.854</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">black_gold1</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">0.342</td>
+<td style="text-align: right;">0.037</td>
+<td style="text-align: right;">0.135</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">black_gold2</td>
+<td style="text-align: right;">0.112</td>
+<td style="text-align: right;">0.038</td>
+<td style="text-align: right;">0.337</td>
+<td style="text-align: right;">0.059</td>
+<td style="text-align: right;">0.213</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bombus1</td>
+<td style="text-align: right;">0.065</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">0.374</td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">0.132</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bombus2</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">0.517</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">0.052</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">brown_belted1</td>
+<td style="text-align: right;">0.676</td>
+<td style="text-align: right;">0.134</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">0.995</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">brown_belted2</td>
+<td style="text-align: right;">0.805</td>
+<td style="text-align: right;">0.167</td>
+<td style="text-align: right;">0.208</td>
+<td style="text-align: right;">0.537</td>
+<td style="text-align: right;">1.207</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carpenter1</td>
+<td style="text-align: right;">1.126</td>
+<td style="text-align: right;">0.175</td>
+<td style="text-align: right;">0.155</td>
+<td style="text-align: right;">0.831</td>
+<td style="text-align: right;">1.525</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">carpenter2</td>
+<td style="text-align: right;">0.551</td>
+<td style="text-align: right;">0.108</td>
+<td style="text-align: right;">0.196</td>
+<td style="text-align: right;">0.376</td>
+<td style="text-align: right;">0.808</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eastern1</td>
+<td style="text-align: right;">0.109</td>
+<td style="text-align: right;">0.039</td>
+<td style="text-align: right;">0.358</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">0.215</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eastern2</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">0.748</td>
+<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">0.038</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">southern_plains1</td>
+<td style="text-align: right;">0.230</td>
+<td style="text-align: right;">0.058</td>
+<td style="text-align: right;">0.252</td>
+<td style="text-align: right;">0.141</td>
+<td style="text-align: right;">0.375</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">southern_plains2</td>
+<td style="text-align: right;">0.196</td>
+<td style="text-align: right;">0.063</td>
+<td style="text-align: right;">0.321</td>
+<td style="text-align: right;">0.106</td>
+<td style="text-align: right;">0.363</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">twsp1</td>
+<td style="text-align: right;">0.060</td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">0.532</td>
+<td style="text-align: right;">0.022</td>
+<td style="text-align: right;">0.160</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">unk1</td>
+<td style="text-align: right;">0.300</td>
+<td style="text-align: right;">0.073</td>
+<td style="text-align: right;">0.244</td>
+<td style="text-align: right;">0.187</td>
+<td style="text-align: right;">0.482</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">unk2</td>
+<td style="text-align: right;">0.107</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">0.327</td>
+<td style="text-align: right;">0.057</td>
+<td style="text-align: right;">0.201</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">0.301</td>
+<td style="text-align: right;">0.021</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.263</td>
+<td style="text-align: right;">0.345</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>quite similar density estimates for, say, bombus2 (5 detects: 0.604) and AMER_BG1 (52 det: 0.885) why is that? because detection probabilities differ how to compute spec x bout-specific detection probabilities? probably integrate det fn over distance for those covariate levels</p>
+<p>Think I did this for a whale person who wanted spec-spec ESW. Find this on the hard disk… TimA!!</p>
+</section>
+<section id="bring-in-timas-detection-function-function" class="level1">
+<h1>Bring in TimAs detection function function</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>gz<span class="ot">&lt;-</span><span class="cf">function</span>(z,</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>             beta, sigintercept, sigcoef, <span class="at">DistWin=</span><span class="cn">FALSE</span>,</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">key=</span><span class="st">"HR"</span>, <span class="at">w=</span><span class="fu">max</span>(z)){</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a><span class="co">#this is a generic detection function that returns the probability of detecting an animal</span></span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    z               generic distance (perpendicular) - can be scalar or vector</span></span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a><span class="co">#    beta            shape coefficient</span></span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a><span class="co">#    sigintercept  intercept coefficient for sigma</span></span>
+<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a><span class="co">#    sigcoef         coefficient for specific factor level</span></span>
+<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    DistWin         coefficients from Distance for Windows or from R</span></span>
+<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a><span class="co">#    key             the detection function key, works for hazard rate and half normal</span></span>
+<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a><span class="co">#    w               truncation distance, by default the max of the distances</span></span>
+<span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a><span class="co">#RETURNS: a probability</span></span>
+<span id="cb82-14"><a href="#cb82-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb82-15"><a href="#cb82-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(key <span class="sc">!=</span> <span class="st">"HN"</span> <span class="sc">&amp;</span> key <span class="sc">!=</span> <span class="st">"HR"</span>) {</span>
+<span id="cb82-16"><a href="#cb82-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Argument 'key' must be either HN or HR"</span>)</span>
+<span id="cb82-17"><a href="#cb82-17" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb82-18"><a href="#cb82-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (DistWin) {</span>
+<span id="cb82-19"><a href="#cb82-19" aria-hidden="true" tabindex="-1"></a>    sigma <span class="ot">&lt;-</span> sigintercept <span class="sc">+</span> <span class="fu">exp</span>(sigcoef)</span>
+<span id="cb82-20"><a href="#cb82-20" aria-hidden="true" tabindex="-1"></a>    exponent <span class="ot">&lt;-</span> beta</span>
+<span id="cb82-21"><a href="#cb82-21" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb82-22"><a href="#cb82-22" aria-hidden="true" tabindex="-1"></a>    numterms <span class="ot">&lt;-</span> <span class="fu">length</span>(sigcoef)</span>
+<span id="cb82-23"><a href="#cb82-23" aria-hidden="true" tabindex="-1"></a>    predictor <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb82-24"><a href="#cb82-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>numterms) {</span>
+<span id="cb82-25"><a href="#cb82-25" aria-hidden="true" tabindex="-1"></a>      predictor <span class="ot">&lt;-</span> predictor <span class="sc">+</span> sigcoef[i]</span>
+<span id="cb82-26"><a href="#cb82-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb82-27"><a href="#cb82-27" aria-hidden="true" tabindex="-1"></a>    sigma <span class="ot">&lt;-</span> <span class="fu">exp</span>(sigintercept <span class="sc">+</span> predictor)</span>
+<span id="cb82-28"><a href="#cb82-28" aria-hidden="true" tabindex="-1"></a>    exponent <span class="ot">&lt;-</span> <span class="fu">exp</span>(beta)</span>
+<span id="cb82-29"><a href="#cb82-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb82-30"><a href="#cb82-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(key<span class="sc">==</span><span class="st">"HR"</span>) {</span>
+<span id="cb82-31"><a href="#cb82-31" aria-hidden="true" tabindex="-1"></a>    scale.dist <span class="ot">&lt;-</span> z<span class="sc">/</span>sigma</span>
+<span id="cb82-32"><a href="#cb82-32" aria-hidden="true" tabindex="-1"></a>    inside <span class="ot">&lt;-</span> <span class="sc">-</span>(scale.dist)<span class="sc">^</span>(<span class="sc">-</span>exponent)</span>
+<span id="cb82-33"><a href="#cb82-33" aria-hidden="true" tabindex="-1"></a>    gx <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(inside)</span>
+<span id="cb82-34"><a href="#cb82-34" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb82-35"><a href="#cb82-35" aria-hidden="true" tabindex="-1"></a>    scale.dist <span class="ot">&lt;-</span> z  <span class="co"># debatably don't scale for half normal</span></span>
+<span id="cb82-36"><a href="#cb82-36" aria-hidden="true" tabindex="-1"></a>    inside <span class="ot">&lt;-</span> <span class="sc">-</span>(scale.dist<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>sigma<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb82-37"><a href="#cb82-37" aria-hidden="true" tabindex="-1"></a>    gx <span class="ot">&lt;-</span> <span class="fu">exp</span>(inside)</span>
+<span id="cb82-38"><a href="#cb82-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb82-39"><a href="#cb82-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(gx)</span>
+<span id="cb82-40"><a href="#cb82-40" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="apply-this-function-to-the-yr24_hr_2level-fitted-model" class="level2">
+<h2 class="anchored" data-anchor-id="apply-this-function-to-the-yr24_hr_2level-fitted-model">apply this function to the yr24_hr_2level fitted model</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>coefs <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>par</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>xmax <span class="ot">&lt;-</span> <span class="fl">38.59703</span></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>xvals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,xmax, <span class="at">length=</span><span class="dv">100</span>)</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>am1 <span class="ot">&lt;-</span> <span class="fu">gz</span>(<span class="at">z=</span>xvals, <span class="at">key=</span><span class="st">"HR"</span>,<span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesamerican"</span>]))</span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>am2 <span class="ot">&lt;-</span> <span class="fu">gz</span>(<span class="at">z=</span>xvals, <span class="at">key=</span><span class="st">"HR"</span>,<span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesamerican"</span>], coefs[<span class="st">"as.factor.sample.bout.2"</span>]))</span>
+<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a>bomb1 <span class="ot">&lt;-</span> <span class="fu">gz</span>(<span class="at">z=</span>xvals, <span class="at">key=</span><span class="st">"HR"</span>,<span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesbombus"</span>]))</span>
+<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a>bomb2 <span class="ot">&lt;-</span> <span class="fu">gz</span>(<span class="at">z=</span>xvals, <span class="at">key=</span><span class="st">"HR"</span>,<span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesbombus"</span>], coefs[<span class="st">"as.factor.sample.bout.2"</span>]))</span>
+<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(xvals, am1, <span class="at">type=</span><span class="st">"l"</span>)</span>
+<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xvals, am2, <span class="at">col=</span><span class="st">"blue"</span>)</span>
+<span id="cb83-14"><a href="#cb83-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xvals, bomb1, <span class="at">col=</span><span class="st">"darkgreen"</span>)</span>
+<span id="cb83-15"><a href="#cb83-15" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xvals, bomb2, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lathrom_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="now-for-the-integration-and-conversion-to-detection-probability" class="level2">
+<h2 class="anchored" data-anchor-id="now-for-the-integration-and-conversion-to-detection-probability">now for the integration and conversion to detection probability</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>am1_p_int <span class="ot">&lt;-</span> <span class="fu">integrate</span>(gz, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax, <span class="at">key=</span><span class="st">"HR"</span>,</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesamerican"</span>]))<span class="sc">$</span>value <span class="sc">/</span> xmax</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>am2_p_int <span class="ot">&lt;-</span> <span class="fu">integrate</span>(gz, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax, <span class="at">key=</span><span class="st">"HR"</span>,</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesamerican"</span>], coefs[<span class="st">"as.factor.sample.bout.2"</span>]))<span class="sc">$</span>value <span class="sc">/</span> xmax</span>
+<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>bomb1_p_int <span class="ot">&lt;-</span> <span class="fu">integrate</span>(gz, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax, <span class="at">key=</span><span class="st">"HR"</span>,</span>
+<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesbombus"</span>]))<span class="sc">$</span>value <span class="sc">/</span> xmax</span>
+<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a>bomb2_p_int <span class="ot">&lt;-</span> <span class="fu">integrate</span>(gz, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax, <span class="at">key=</span><span class="st">"HR"</span>,</span>
+<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
+<span id="cb84-12"><a href="#cb84-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesbombus"</span>], coefs[<span class="st">"as.factor.sample.bout.2"</span>]))<span class="sc">$</span>value <span class="sc">/</span> xmax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="do-the-integrated-pa-correspond-to-reported-densities" class="level2">
+<h2 class="anchored" data-anchor-id="do-the-integrated-pa-correspond-to-reported-densities">do the integrated Pa correspond to reported densities?</h2>
+<p>density = Pa * n / (covered area)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>summ <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>coveredarea <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary<span class="sc">$</span>CoveredArea[<span class="dv">1</span>]</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>d_est <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>am1_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"american1"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"american1"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>am2_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"american2"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"american2"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>bomb1_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"bombus1"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"bombus1"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>bomb2_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"bombus2"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"bombus2"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(am1_p_int, am1_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean relative difference: 9.954112e-07"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(am2_p_int, am2_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean relative difference: 1.188817e-07"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(bomb1_p_int, bomb1_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean relative difference: 2.385153e-06"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(bomb2_p_int, bomb2_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean relative difference: 3.838366e-07"</code></pre>
+</div>
+</div>
+<p>yes, the integration results in a Pa equivalent to that used in the estimates produced by the software</p>
+</section>
+</section>
+<section id="compare-estimates-with-truncation-at-25m" class="level1">
+<h1>compare estimates with truncation at 25m</h1>
 
 
 </section>

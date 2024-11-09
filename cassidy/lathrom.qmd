@@ -17,3 +17,249 @@ title: "Ft Riley bumblebees"
 ::::
 
 evaluate environmental factors affecting bumblebee density and abundance using distance sampling methods
+
+## Becoming acquainted with data
+
+Reorganise the data columns just a bit
+
+```{r}
+library(readxl)
+yr22 <- read_xlsx(path="data/2022-2024_bee_ds_data.xlsx",
+                     sheet = "2022")
+yr23 <- read_xlsx(path="data/2022-2024_bee_ds_data.xlsx",
+                     sheet = "2023")
+yr24 <- read_xlsx(path="data/2022-2024_bee_ds_data.xlsx",
+                     sheet = "2024")
+yr22$Sample.Label...12 <- NULL
+yr22$Sample.Label <- yr22$Sample.Label...5
+yr22$Sample.Label...5 <- NULL
+yr22 <- yr22[yr22$distance>=0,]  # a couple of -1 values
+(numstrat <- unique(yr22$Region.Label))
+(numtrans <- unique(yr22$Sample.Label))
+(numspec <- unique(yr22$species))
+```
+
+
+```{r}
+t22 <- table(yr22$species, yr22$sample.bout)
+t23 <- table(yr23$species, yr23$sample.bout)
+t24 <- table(yr24$species, yr24$sample.bout)
+```
+
+```{r}
+#| layout-ncol: 2
+histfn <- function(frame, spec, bout) {
+  hist(frame$distance[frame$species==spec & frame$sample.bout==bout],
+       main=paste(spec, " bout=", bout), xlab="Distance")
+}
+histfn(yr22, "bombus", 1)
+histfn(yr22, "bombus", 2)
+histfn(yr22, "carpenter", 1)
+histfn(yr22, "carpenter", 2)
+histfn(yr22, "unknown", 1)
+histfn(yr22, "unknown", 2)
+```
+
+
+
+# use 2024 to build 2-level stratification
+:::{.callout-warning collapse=false appearance='default' icon=true}
+## But make sure design (effort and transects) are respected
+- There should be 151 transects each 500m in length for each of our "strata"
+- even though strata are not geographic, but rather species and bout defined
+:::
+
+## construct region table and sample tables
+
+```{r}
+yr24$Region.Label <- paste0(yr24$species, yr24$sample.bout)
+new_region_table <- data.frame(Region.Label=unique(yr24$Region.Label),
+                               Area=28383)
+new_sample_table <- data.frame(Sample.Label=rep(seq(1,151), 19),
+                               Region.Label=rep(unique(yr24$Region.Label), 151),
+                               Effort=rep(500, 19*151))
+```
+
+
+```{r}
+library(Distance)
+cu <- convert_units("meter", "meter", "hectare")
+yr24$Region.Label <- paste0(yr24$species, yr24$sample.bout)
+yr24_hn_2level <- ds(yr24, key="hn", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table,
+                     formula=~species+as.factor(sample.bout))
+yr24_hr_2level <- ds(yr24, key="hr", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table,
+                     formula=~species+as.factor(sample.bout))
+yr24_hn_species <- ds(yr24, key="hn", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table,
+                     formula=~species)
+yr24_hr_species <- ds(yr24, key="hr", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table,
+                     formula=~species)
+yr24_hn_bout <- ds(yr24, key="hn", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table,
+                     formula=~as.factor(sample.bout))
+yr24_hr_bout <- ds(yr24, key="hr", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table,
+                     formula=~as.factor(sample.bout))
+yr24_hn <- ds(yr24, key="hn", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table)
+yr24_hr <- ds(yr24, key="hr", truncation = "10%", convert_units = cu,
+                     region_table = new_region_table,
+                     sample_table = new_sample_table)
+summarize_ds_models(#yr24_hn, yr24_hr, 
+                    yr24_hn_bout, yr24_hr_bout, 
+                    yr24_hn_species, yr24_hr_species, 
+                    yr24_hn_2level, yr24_hr_2level)
+
+print(summary(yr24_hr_2level)$coeff)  # looking for convergence problems
+```
+
+# assuming this model is OK, look at the plot
+
+```{r}
+#| out-height: "800px"
+#| out-width: "700px"
+plot(yr24_hr_2level, nc=39)
+sp <- unique(yr24$species)
+bo <- unique(yr24$sample.bout)
+palette("ggplot2")
+for (i in 1:length(sp)) {
+  for (j in 1:length(bo))
+  add_df_covar_line(yr24_hr_2level, 
+                    data=data.frame(species=sp[i], sample.bout=bo[j]),
+                    lwd=2, lty=1, col=rainbow(19)[i])
+}
+legend("topright", title="Spec x bout", legend=unique(yr24$Region.Label),
+       lwd=2, lty=1, col=rainbow(19), cex=0.8)
+```
+
+# then look at the density estimates
+
+```{r}
+knitr::kable(yr24_hr_2level$dht$individuals$D[,1:6], digits=3)
+```
+
+
+quite similar density estimates for, say, bombus2 (5 detects: 0.604) and AMER_BG1 (52 det: 0.885)
+why is that? because detection probabilities differ
+how to compute spec x bout-specific detection probabilities?
+probably integrate det fn over distance for those covariate levels
+
+Think I did this for a whale person who wanted spec-spec ESW. Find this on the hard disk... TimA!!
+
+# Bring in TimAs detection function function
+```{r}
+gz<-function(z,
+             beta, sigintercept, sigcoef, DistWin=FALSE,
+             key="HR", w=max(z)){
+#this is a generic detection function that returns the probability of detecting an animal
+#    z               generic distance (perpendicular) - can be scalar or vector
+#    beta            shape coefficient
+#    sigintercept  intercept coefficient for sigma
+#    sigcoef         coefficient for specific factor level
+#    DistWin         coefficients from Distance for Windows or from R
+#    key             the detection function key, works for hazard rate and half normal
+#    w               truncation distance, by default the max of the distances
+#
+#RETURNS: a probability
+  
+  if(key != "HN" & key != "HR") {
+    stop("Argument 'key' must be either HN or HR")
+  }
+  if (DistWin) {
+    sigma <- sigintercept + exp(sigcoef)
+    exponent <- beta
+  } else {
+    numterms <- length(sigcoef)
+    predictor <- 0
+    for (i in 1:numterms) {
+      predictor <- predictor + sigcoef[i]
+    }
+    sigma <- exp(sigintercept + predictor)
+    exponent <- exp(beta)
+  }
+  if(key=="HR") {
+    scale.dist <- z/sigma
+    inside <- -(scale.dist)^(-exponent)
+    gx <- 1 - exp(inside)
+  } else {
+    scale.dist <- z  # debatably don't scale for half normal
+    inside <- -(scale.dist^2/(2*sigma^2))
+    gx <- exp(inside)
+  }
+  return(gx)
+}
+```
+
+## apply this function to the yr24_hr_2level fitted model
+
+```{r}
+coefs <- yr24_hr_2level$ddf$par
+xmax <- 38.59703
+xvals <- seq(0,xmax, length=100)
+am1 <- gz(z=xvals, key="HR",beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+          sigcoef = c(coefs["speciesamerican"]))
+am2 <- gz(z=xvals, key="HR",beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+          sigcoef = c(coefs["speciesamerican"], coefs["as.factor.sample.bout.2"]))
+bomb1 <- gz(z=xvals, key="HR",beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+          sigcoef = c(coefs["speciesbombus"]))
+bomb2 <- gz(z=xvals, key="HR",beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+          sigcoef = c(coefs["speciesbombus"], coefs["as.factor.sample.bout.2"]))
+plot(xvals, am1, type="l")
+lines(xvals, am2, col="blue")
+lines(xvals, bomb1, col="darkgreen")
+lines(xvals, bomb2, col="red")
+```
+
+## now for the integration and conversion to detection probability
+
+```{r}
+am1_p_int <- integrate(gz, lower=0, upper=xmax, key="HR",
+                    beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+                    sigcoef = c(coefs["speciesamerican"]))$value / xmax
+am2_p_int <- integrate(gz, lower=0, upper=xmax, key="HR",
+                    beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+                    sigcoef = c(coefs["speciesamerican"], coefs["as.factor.sample.bout.2"]))$value / xmax
+bomb1_p_int <- integrate(gz, lower=0, upper=xmax, key="HR",
+                    beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+                    sigcoef = c(coefs["speciesbombus"]))$value / xmax
+bomb2_p_int <- integrate(gz, lower=0, upper=xmax, key="HR",
+                    beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
+                    sigcoef = c(coefs["speciesbombus"], coefs["as.factor.sample.bout.2"]))$value / xmax
+```
+
+## do the integrated Pa correspond to reported densities?
+
+density = Pa * n / (covered area)
+
+```{r}
+summ <- yr24_hr_2level$dht$individuals$summary
+coveredarea <- yr24_hr_2level$dht$individuals$summary$CoveredArea[1]
+d_est <- yr24_hr_2level$dht$individuals$D
+
+am1_p_data <- summ[summ$Region=="american1", "n"] / (d_est[d_est$Label=="american1", "Estimate"] * coveredarea)
+am2_p_data <- summ[summ$Region=="american2", "n"] / (d_est[d_est$Label=="american2", "Estimate"] * coveredarea)
+bomb1_p_data <- summ[summ$Region=="bombus1", "n"] / (d_est[d_est$Label=="bombus1", "Estimate"] * coveredarea)
+bomb2_p_data <- summ[summ$Region=="bombus2", "n"] / (d_est[d_est$Label=="bombus2", "Estimate"] * coveredarea)
+
+all.equal(am1_p_int, am1_p_data)
+all.equal(am2_p_int, am2_p_data)
+all.equal(bomb1_p_int, bomb1_p_data)
+all.equal(bomb2_p_int, bomb2_p_data)
+
+```
+
+yes, the integration results in a Pa equivalent to that used in the estimates produced by the software
+
+# compare estimates with truncation at 25m
+
+

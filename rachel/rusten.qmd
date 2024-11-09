@@ -217,7 +217,6 @@ for (i in 1:length(rlabels)) {
 }
 legend("topright", title="Strata", legend=rlabels,
        lwd=2, lty=1, col=colours(TRUE), cex=0.8)
-
 ```
 
 The plot of the probability density functions at the stratum level indicates one stratum with a *very* different detection function shape compared to the rest of the strata (WHE014). This may explain the convergence challenge. That stratum might be a candidate for exclusion.
