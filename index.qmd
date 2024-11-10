@@ -1,5 +1,5 @@
 ---
-title: "k-state_workshop"
+title: "Kansas State workshop"
 ---
 
 # Distance sampling of several data sets

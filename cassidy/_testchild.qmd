@@ -1,0 +1,7 @@
+
+# I am `test child`
+
+```{r, child1}
+hist(runif(1000))
+summary(yr24_hr_bout)
+```

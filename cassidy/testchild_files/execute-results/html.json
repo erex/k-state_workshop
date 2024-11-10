@@ -1,0 +1,17 @@
+{
+  "hash": "3e1b78f0e9f41725391b5a8731fe9b6c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n# I am `test child`\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(runif(1000))\n```\n\n::: {.cell-output-display}\n![](testchild_files/figure-html/child1-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "testchild_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
