@@ -3,7 +3,7 @@ title: "Ft Riley bumblebees"
 number-sections: true
 ---
 
-## Status of Native Bumblebees (Bombus spp.) at Fort Riley Military Reservation, Kansas
+# Status of Native Bumblebees (Bombus spp.) at Fort Riley Military Reservation, Kansas
 
 :::: {.columns}
 
@@ -26,7 +26,7 @@ There are three years of survey data. The first year (2022) was described as a p
 :::
 
 
-## Exploratory data analysis for 2024
+# Exploratory data analysis for 2024
 
 
 ```{r}
@@ -70,7 +70,7 @@ histfn(yr24, "southern_plains")
 
 Clearly there will be a struggle to fit detection function models to some of the species x bout combinations. Before we attack that problem, let's tackle a simpler problem: estimating density for the common "brown_belted".
 
-## Brown belted analysis {#sec-brownbelt}
+# Brown belted analysis {#sec-brownbelt}
 
 This species has nearly 200 detections for each sampling bout. Hence, if we wanted bout-specific estimates of density for this species, the most straightforward approach would be to simply pluck detections of `brown_belted` from the 2024 data frame.
 
@@ -342,7 +342,7 @@ knitr::kable(summary(yr24_hr_2level$ddf)$coeff$key.scale,
              caption="Looking for convergence problems in covariate coefficients")
 ```
 
-# Given the preferred model is OK, look at the plot
+## Given the preferred model is OK, look at the plot
 
 ```{r, complexfig}
 #| fig.height: 7
@@ -485,7 +485,7 @@ all.equal(bomb1_p_int, bomb1_p_data)
 all.equal(bomb2_p_int, bomb2_p_data)
 ```
 
-yes, the integration results in a $\hat{P}_a$ equivalent to that used in the estimates produced by the software (as if there was any doubt).
+Yes, the integration results in a $\hat{P}_a$ equivalent to that used in the estimates produced by the software (as if there was any doubt).
 
 Now that the detection probability estimate dilemma is sorted, let's look at the objects of ecological interest, namely the species- and bout-specific density estimates.
 
