@@ -502,8 +502,7 @@ knitr::kable(yr24_hr_2level$dht$individuals$D[,1:6], digits=3,
 
 ## Compare estimates from "basic" analysis
 
-Remember we started the modelling of the 2024 data by looking at the "brown_belted" species in Section 
-@sec-brownbelt. In that analysis, each sampling bout for that species was modelled in isolation, as there were sufficient numbers of detections of that species in each bout.
+Remember we started the modelling of the 2024 data by looking at the "brown_belted" species in @sec-brownbelt. In that analysis, each sampling bout for that species was modelled in isolation, as there were sufficient numbers of detections of that species in each bout.
 
 After choosing the most appropriate models from that pair of analyses, density estimates were
 
