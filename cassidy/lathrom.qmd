@@ -30,13 +30,15 @@ There are three years of survey data. The first year (2022) was described as a p
 
 
 ```{r}
+#| label: tbl-readit
+#| tbl-cap: "Approximate detections by species and bout for 2024"
 library(readxl)
 yr24 <- read_xlsx(path="data/2022-2024_bee_ds_data.xlsx", sheet = "2024")
 (numstrat <- unique(yr24$Region.Label))
 (numtrans <- unique(yr24$Sample.Label))
 (numspec <- unique(yr24$species))
 t24 <- table(yr24$species, yr24$sample.bout)
-knitr::kable(t24, caption="Approximate detections by species and bout for 2024")
+knitr::kable(t24)
 ```
 
 Two things to note about the table above:
@@ -210,14 +212,15 @@ plot(bbhrsim2x, nc=20, main="brown_belted, bout 2, hazard rate, trunc=31")
 We have seen there is no change in the models selected when changing the truncation distance, how about the estimates?
 
 
-```{r, bbtruncest}
+```{r, bbestimates}
 bb1_10 <- bbunicos$dht$individuals$D
 bb2_10 <- bbhrsim$dht$individuals$D
 bb1_31 <- bbunicosx$dht$individuals$D
 bb2_31 <- bbhrsimx$dht$individuals$D
 estimates <- rbind(bb1_10, bb1_31, bb2_10, bb2_31)
 estimates$Label <- c("Bout1 10%", "Bout1 31m", "Bout2 10%", "Bout2 31m")
-knitr::kable(estimates, digits=3, caption="Estimates for brown belted, both bouts, different truncation distances")
+knitr::kable(estimates, digits=3,
+             caption="Estimates for brown belted, both bouts, different truncation distances")
 ```
 
 We see roughly a 3-5\% difference in the point estimates from the more aggressive truncation. Place that difference in the context of the coefficient of variation (~20\%).
@@ -534,6 +537,24 @@ s <- seq(16)
 segments(simplename$index[s], simplename$lcl[s], simplename$index[s], simplename$ucl[s])
 axis(1, at=1:16, labels=simplename$Label[1:16], cex.axis=0.6, las=2)
 ```
+
+## Magical estimates for rare species?
+
+Density estimates are produced for all species in the data frame @tbl-readit; even for species with as few as four detections (eastern2). Is that some kind of magic? No, look closely at the measures of precision associated with the species with small numbers of detection:
+
+```{r, rare_ests}
+library(kableExtra)
+knitr::kable(table.attr="quarto-disable-processing=true",
+             format="html",
+             yr24_hr_2level$dht$individuals$D[, 1:6],
+             row.names = FALSE, digits=3) %>%
+  row_spec(c(5:8,13:14,17), background = "salmon") %>%
+  row_spec(c(18:20), strikeout=TRUE) %>%
+  column_spec(c(2:6), width="4em")
+```
+
+
+Even though density estimates were produces for these species x bout combinations, their precision would suggest the estimates are not terribly reliable. It is comforting that the imprecision of these estimates is consistent with the small number of detections, even if there is some "borrowing of strength" from other species. This use of covariates may help in the modelling of the detection function, but remember the role that encounter rates and their variability plays in density estimation.
 
 # Summary
 

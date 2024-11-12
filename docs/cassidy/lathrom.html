@@ -100,6 +100,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -201,7 +205,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#compare-estimates-from-basic-analysis" id="toc-compare-estimates-from-basic-analysis" class="nav-link" data-scroll-target="#compare-estimates-from-basic-analysis"><span class="header-section-number">5.1</span> Compare estimates from “basic” analysis</a></li>
   </ul></li>
-  <li><a href="#a-plot-of-species--and-bout-specific-density-estimates" id="toc-a-plot-of-species--and-bout-specific-density-estimates" class="nav-link" data-scroll-target="#a-plot-of-species--and-bout-specific-density-estimates"><span class="header-section-number">6</span> A plot of species- and bout-specific density estimates</a></li>
+  <li><a href="#a-plot-of-species--and-bout-specific-density-estimates" id="toc-a-plot-of-species--and-bout-specific-density-estimates" class="nav-link" data-scroll-target="#a-plot-of-species--and-bout-specific-density-estimates"><span class="header-section-number">6</span> A plot of species- and bout-specific density estimates</a>
+  <ul class="collapse">
+  <li><a href="#magical-estimates-for-rare-species" id="toc-magical-estimates-for-rare-species" class="nav-link" data-scroll-target="#magical-estimates-for-rare-species"><span class="header-section-number">6.1</span> Magical estimates for rare species?</a></li>
+  </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7</span> Summary</a></li>
   </ul>
 </nav>
@@ -287,10 +294,15 @@ Multiple years of data, my approach
  [9] "eastern"         "bombus"         </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>t24 <span class="ot">&lt;-</span> <span class="fu">table</span>(yr24<span class="sc">$</span>species, yr24<span class="sc">$</span>sample.bout)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(t24, <span class="at">caption=</span><span class="st">"Approximate detections by species and bout for 2024"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(t24)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-readit" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-readit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Approximate detections by species and bout for 2024
+</figcaption>
+<div aria-describedby="tbl-readit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Approximate detections by species and bout for 2024</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -351,6 +363,9 @@ Multiple years of data, my approach
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</figure>
 </div>
 </div>
 <p>Two things to note about the table above: - many detections for some species and - few detections for species I presume are rare (we’ll deal with that shortly).</p>
@@ -830,7 +845,8 @@ What did we learn from this?
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>bb2_31 <span class="ot">&lt;-</span> bbhrsimx<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>estimates <span class="ot">&lt;-</span> <span class="fu">rbind</span>(bb1_10, bb1_31, bb2_10, bb2_31)</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>estimates<span class="sc">$</span>Label <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Bout1 10%"</span>, <span class="st">"Bout1 31m"</span>, <span class="st">"Bout2 10%"</span>, <span class="st">"Bout2 31m"</span>)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(estimates, <span class="at">digits=</span><span class="dv">3</span>, <span class="at">caption=</span><span class="st">"Estimates for brown belted, both bouts, different truncation distances"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(estimates, <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Estimates for brown belted, both bouts, different truncation distances"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Estimates for brown belted, both bouts, different truncation distances</caption>
@@ -1356,7 +1372,7 @@ Species and bout-specific detection probability estimates
 <div id="tbl-twolevel" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-twolevel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Density estimates when using hazard with species and bout covariates.
+Table&nbsp;2: Density estimates when using hazard with species and bout covariates.
 </figcaption>
 <div aria-describedby="tbl-twolevel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1633,7 +1649,7 @@ Table&nbsp;1: Density estimates when using hazard with species and bout covariat
 </section>
 <section id="a-plot-of-species--and-bout-specific-density-estimates" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> A plot of species- and bout-specific density estimates</h1>
-<p>Our estimates live in a concise table <a href="#tbl-twolevel" class="quarto-xref">Table&nbsp;1</a> produced by our 2-level stratification model. Perhaps we wish, in addition, to generate a plot of the density estimates and their uncertainty. That is accomplished by the following code chunk. Note I have chosen not to include the <code>twsp</code> or <code>unk</code> species from the plot.</p>
+<p>Our estimates live in a concise table <a href="#tbl-twolevel" class="quarto-xref">Table&nbsp;2</a> produced by our 2-level stratification model. Perhaps we wish, in addition, to generate a plot of the density estimates and their uncertainty. That is accomplished by the following code chunk. Note I have chosen not to include the <code>twsp</code> or <code>unk</code> species from the plot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>simplename <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>simplename<span class="sc">$</span>index <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(simplename)[<span class="dv">1</span>]</span>
@@ -1652,6 +1668,198 @@ Table&nbsp;1: Density estimates when using hazard with species and bout covariat
 </div>
 </div>
 </div>
+<section id="magical-estimates-for-rare-species" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="magical-estimates-for-rare-species"><span class="header-section-number">6.1</span> Magical estimates for rare species?</h2>
+<p>Density estimates are produced for all species in the data frame <a href="#tbl-readit" class="quarto-xref">Table&nbsp;1</a>; even for species with as few as four detections (eastern2). Is that some kind of magic? No, look closely at the measures of precision associated with the species with small numbers of detection:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">table.attr=</span><span class="st">"quarto-disable-processing=true"</span>,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">format=</span><span class="st">"html"</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>             yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>],</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">digits=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>,<span class="dv">13</span><span class="sc">:</span><span class="dv">14</span>,<span class="dv">17</span>), <span class="at">background =</span> <span class="st">"salmon"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">20</span>), <span class="at">strikeout=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">width=</span><span class="st">"4em"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table quarto-disable-processing="true">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Label </th>
+   <th style="text-align:right;"> Estimate </th>
+   <th style="text-align:right;"> se </th>
+   <th style="text-align:right;"> cv </th>
+   <th style="text-align:right;"> lcl </th>
+   <th style="text-align:right;"> ucl </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> AMER_BG1 </td>
+   <td style="text-align:right;width: 4em; "> 0.193 </td>
+   <td style="text-align:right;width: 4em; "> 0.046 </td>
+   <td style="text-align:right;width: 4em; "> 0.237 </td>
+   <td style="text-align:right;width: 4em; "> 0.122 </td>
+   <td style="text-align:right;width: 4em; "> 0.306 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AMER_BG2 </td>
+   <td style="text-align:right;width: 4em; "> 0.164 </td>
+   <td style="text-align:right;width: 4em; "> 0.047 </td>
+   <td style="text-align:right;width: 4em; "> 0.286 </td>
+   <td style="text-align:right;width: 4em; "> 0.095 </td>
+   <td style="text-align:right;width: 4em; "> 0.286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> american1 </td>
+   <td style="text-align:right;width: 4em; "> 0.369 </td>
+   <td style="text-align:right;width: 4em; "> 0.071 </td>
+   <td style="text-align:right;width: 4em; "> 0.191 </td>
+   <td style="text-align:right;width: 4em; "> 0.254 </td>
+   <td style="text-align:right;width: 4em; "> 0.536 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> american2 </td>
+   <td style="text-align:right;width: 4em; "> 0.556 </td>
+   <td style="text-align:right;width: 4em; "> 0.123 </td>
+   <td style="text-align:right;width: 4em; "> 0.221 </td>
+   <td style="text-align:right;width: 4em; "> 0.361 </td>
+   <td style="text-align:right;width: 4em; "> 0.854 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: salmon !important;"> black_gold1 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.070 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.024 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.342 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.037 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.135 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: salmon !important;"> black_gold2 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.112 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.038 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.337 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.059 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.213 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: salmon !important;"> bombus1 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.065 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.024 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.374 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.032 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.132 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: salmon !important;"> bombus2 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.020 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.010 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.517 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.008 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.052 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> brown_belted1 </td>
+   <td style="text-align:right;width: 4em; "> 0.676 </td>
+   <td style="text-align:right;width: 4em; "> 0.134 </td>
+   <td style="text-align:right;width: 4em; "> 0.198 </td>
+   <td style="text-align:right;width: 4em; "> 0.459 </td>
+   <td style="text-align:right;width: 4em; "> 0.995 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> brown_belted2 </td>
+   <td style="text-align:right;width: 4em; "> 0.805 </td>
+   <td style="text-align:right;width: 4em; "> 0.167 </td>
+   <td style="text-align:right;width: 4em; "> 0.208 </td>
+   <td style="text-align:right;width: 4em; "> 0.537 </td>
+   <td style="text-align:right;width: 4em; "> 1.207 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> carpenter1 </td>
+   <td style="text-align:right;width: 4em; "> 1.126 </td>
+   <td style="text-align:right;width: 4em; "> 0.175 </td>
+   <td style="text-align:right;width: 4em; "> 0.155 </td>
+   <td style="text-align:right;width: 4em; "> 0.831 </td>
+   <td style="text-align:right;width: 4em; "> 1.525 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> carpenter2 </td>
+   <td style="text-align:right;width: 4em; "> 0.551 </td>
+   <td style="text-align:right;width: 4em; "> 0.108 </td>
+   <td style="text-align:right;width: 4em; "> 0.196 </td>
+   <td style="text-align:right;width: 4em; "> 0.376 </td>
+   <td style="text-align:right;width: 4em; "> 0.808 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: salmon !important;"> eastern1 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.109 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.039 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.358 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.055 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.215 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: salmon !important;"> eastern2 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.010 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.008 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.748 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.003 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.038 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> southern_plains1 </td>
+   <td style="text-align:right;width: 4em; "> 0.230 </td>
+   <td style="text-align:right;width: 4em; "> 0.058 </td>
+   <td style="text-align:right;width: 4em; "> 0.252 </td>
+   <td style="text-align:right;width: 4em; "> 0.141 </td>
+   <td style="text-align:right;width: 4em; "> 0.375 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> southern_plains2 </td>
+   <td style="text-align:right;width: 4em; "> 0.196 </td>
+   <td style="text-align:right;width: 4em; "> 0.063 </td>
+   <td style="text-align:right;width: 4em; "> 0.321 </td>
+   <td style="text-align:right;width: 4em; "> 0.106 </td>
+   <td style="text-align:right;width: 4em; "> 0.363 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: salmon !important;"> twsp1 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.060 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.032 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.532 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.022 </td>
+   <td style="text-align:right;background-color: salmon !important;width: 4em; "> 0.160 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;text-decoration: line-through;"> unk1 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.300 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.073 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.244 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.187 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.482 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;text-decoration: line-through;"> unk2 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.107 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.035 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.327 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.057 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.201 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;text-decoration: line-through;"> Total </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.301 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.021 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.070 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.263 </td>
+   <td style="text-align:right;text-decoration: line-through;width: 4em; "> 0.345 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>Even though density estimates were produces for these species x bout combinations, their precision would suggest the estimates are not terribly reliable. It is comforting that the imprecision of these estimates is consistent with the small number of detections, even if there is some “borrowing of strength” from other species. This use of covariates may help in the modelling of the detection function, but remember the role that encounter rates and their variability plays in density estimation.</p>
+</section>
 </section>
 <section id="summary" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Summary</h1>
