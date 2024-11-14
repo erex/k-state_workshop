@@ -1,0 +1,1556 @@
+Date,Observer,Temperature (F),Wind (mph),StudyLocation,Treatment ,StartTime,PatchID,PointID,Species2min,SpeciesCode2min,Distance2min,Species5min,SpeciesCode5min,Distance5min
+7/12/2024,JS/HQ,71,10,Topeka,Urban,7:12,16,16.1,American Robin,AMRO,1,NA,NA,NA
+7/12/2024,JS/HQ,71,10,Topeka,Urban,7:12,16,16.1,House Finch,HOFI,2,Black-capped Chickadee,BCCH,32.5
+7/12/2024,JS/HQ,71,10,Topeka,Urban,7:12,16,16.1,Mourning Dove,MODO,2,NA,NA,NA
+4/2/2024,ED,63,14,McPherson,Urban,15:35,MC2,MC2.2,House Finch,HOFI,4.2,Common Grackle,COGR,10.2
+7/12/2024,JS/HQ,72,10,Topeka,Urban,7:28,16,16.2,American Crow,AMCR,5,Barn Swallow,BARS,47.5
+7/10/2024,"ED, GA, CL",63,4,McPherson,Rural,6:22,BB8,BB8.1,Chimney Swift,CHSW,5,Ruddy Duck,RUDU,95
+7/16/2024,"ED,GA",76,14,Inman,WMA,7:28,IN1,IN1.2,swallow,NA,5,Red-winged Blackbird,RWBL,25
+8/15/2024,CL,71,5,McPherson,Urban,7:31,MC1,MC1.1,American Robin,AMRO,5,Blue Jay,BLJA,22
+8/13/2024,"BO, IW",68,1,Garden City,WMA,7:47,BR 7,BR 7.2,Northern Bobwhite,NOBO,5,NA,NA,NA
+4/3/2024,BO,36,2,Garden City,Urban,9:01,GC 15,GC 15.1,House Sparrow,HOSP,6.2,House Sparrow,HOSP,12.4
+4/5/2024,BO,48,4,Garden City,Urban,8:53,GC 3,GC 3.2,European Starling,EUST,6.2,Eurasian Collared Dove,EUCD,47.3
+4/1/2024,BO,46,3,Garden City,Urban,9:29,GC18,GC18.1,European Starling,EUST,6.6,Eurasian Collared Dove,EUCD,14.6
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,Blue Jay,BLJA,7,House Sparrow,HOSP,10
+8/15/2024,BO,70,1,Garden City,Urban,8:28,GC 3,GC 3.1,Eurasian Collared Dove,EUCD,8,NA,NA,NA
+8/26/2024,IW,73,1,Garden City,Urban,8:05,GC 19,GC 19.3,Barn Swallow,BARS,8,Eurasian Collared Dove,EUCD,51
+4/4/2024,BO,38,2,Garden City,Urban,8:11,GC 11,GC 11.1,Eurasian Collared Dove,EUCD,8.1,American Robin,AMRO,30.6
+4/3/2024,BO,34,2,Garden City,Urban,8:37,GC 14,GC 14.2,European Starling,EUST,8.7,Grackle,NA,129.8
+4/30/2024,JS/NB,62,10,Topeka,Urban,8:23,14,14.2,Black-capped Chickadee,BCCH,10,House Finch,HOFI,19.2
+4/30/2024,JS/NB,62,10,Topeka,Urban,8:23,14,14.2,Chipping Sparrow,CHSP,10,American Goldfinch,AGOL,42.8
+4/30/2024,JS/NB,66,11,Topeka,Urban,9:43,18,18.1,House Finch,HOFI,10,Common Grackle,COGR,40.7
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,Pied-billed Grebe,PBGR,10,Red-winged Blackbird,RWBL,30
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,House Sparrow,HOSP,10,Red-winged Blackbird,RWBL,35
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,House Sparrow,HOSP,10,Red-winged Blackbird,RWBL,30
+7/25/2024,"CL,GA",73,6,McPherson,Rural,7:50,BB11,BB11.1,Common Yellowthroat,COYE,10,Common Yellowthroat,COYE,82
+8/7/2024,CL,64,6,McPherson,Urban,7:01,MC13,MC13.2,American Goldfinch,AGOL,10,European Starling,EUST,86
+8/1/2024,IW,72,3,Garden City,Rural,8:37,CN 2,CN 2.1,Dicksissel,DICK,10,NA,NA,NA
+8/14/2024,"RR, IW",71,1,Garden City,WMA,6:59,BR 6,BR 6.2,Mourning Dove,MODO,10,Brown-headed Cowbird,BHCO,216
+8/15/2024,IW,70,1,Garden City,Urban,8:51,GC 13,GC 13.1,Grackle,NA,10,NA,NA,NA
+4/1/2024,BO,46,3,Garden City,Urban,9:29,GC18,GC18.1,Eurasian Collared Dove,EUCD,10.1,NA,NA,NA
+4/16/2024,ED,65,23,McPherson,Urban,9:57,MC20,MC20.2,Black-capped Chickadee,BCCH,10.2,Turkey Vulture,TUVU,150.5
+8/7/2024,"BO, RR",68,1,Garden City,Rural,7:26,CN 2,CN 2.3,Red-winged Blackbird,RWBL,10.3,Eastern Kingbird,EAKI,21
+4/30/2024,JS/NB,62,10,Topeka,Urban,8:23,14,14.2,American Robin,AMRO,10.4,House Sparrow,HOSP,31.3
+4/2/2024,ED,63,14,McPherson,Urban,15:35,MC2,MC2.2,House Sparrow,HOSP,10.5,Common Grackle,COGR,15
+4/1/2024,BO,45,3,Garden City,Urban,9:13,GC13,GC13.3,Rock Pigeon,ROPI,10.5,House Sparrow,HOSP,49.1
+7/30/2024,NB,82,15,Topeka,Urban,8:39,20,20.2,House Sparrow,HOSP,10.8,Eastern Bluebird,EABL,32.4
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:38,6,6.1,Blue Jay,BLJA,11,Downy Woodpecker,DOWO,Only Heard
+8/13/2024,CL,73,11,McPherson,Urban,8:59,MC5,MC5.2,Turkey Vulture,TUVU,11,Mississippi Kite,MIKI,91
+8/13/2024,CL,73,11,McPherson,Urban,9:39,MC6,MC6.1,Blue Jay,BLJA,11,European Starling,EUST,46
+4/4/2024,BO,42,2,Garden City,Urban,8:45,GC 12,GC 11.2,Eurasian Collared Dove,EUCD,11,Eurasian Collared Dove,EUCD,28.4
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:23,GC 17,GC 17.2,House Finch,HOFI,11,NA,NA,NA
+4/5/2024,BO,49,4,Garden City,Urban,9:04,GC 2,GC 2.2,House Sparrow,HOSP,11.2,American Robin,AMRO,22.1
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:44,GC 7,GC 7.2,Eurasian Collared Dove,EUCD,11.2,House Sparrow,HOSP,27.4
+4/16/2024,ED,60,18,McPherson,Urban,8:58,MC17,MC17.1,Song Sparrow,SOSP,11.3,Blue Jay,BLJA,91.6
+4/4/2024,BO,37,2,Garden City,Urban,7:42,GC 10,GC 10.1,European Starling,EUST,11.4,NA,NA,NA
+4/4/2024,BO,38,2,Garden City,Urban,8:29,GC 11,GC 11.2,American Robin,AMRO,11.5,European Starling,EUST,20
+4/17/2024,BO,48,2,Garden City,WMA,8:23,BR 5,BR 5.1,White-crowned Sparrow,WCSP,11.8,White-crowned Sparrow,WCSP,49.8
+4/8/2024,JS/NB,47,4,Topeka,WMA,8:41,19,19.2,Downy Woodpecker,DOWO,12,Northern Cardinal,NOCA,21.4
+4/22/2024,JS/NB,48,11,Topeka,Urban,8:31,2,2.2,American Robin,AMRO,12,Blue Jay,BLJA,45.9
+7/10/2024,NB,72,4,Topeka,Urban,8:32,2,2.1,American Robin,AMRO,12,European Starling,EUST,43.3
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,Common Grackle,COGR,12,European Starling,EUST,86
+4/3/2024,BO,36,2,Garden City,Urban,8:49,GC 14,GC 14.1,House Sparrow,HOSP,12,Eurasian Collared Dove,EUCD,20.4
+4/4/2024,BO,42,2,Garden City,Urban,8:45,GC 12,GC 11.2,American Robin,AMRO,12,Eurasian Collared Dove,EUCD,41.9
+8/2/2024,IW,70,1,Garden City,Urban,7:48,GC 12,GC 12.1,White-winged Dove,WWDO,12,NA,NA,NA
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:05,GC 11,GC 11.1,Eurasian Collared Dove,EUCD,12.1,Eurasian Collared Dove,EUCD,29
+4/1/2024,ED,68,20,McPherson,Urban,9:58,MC1,MC1.1,Common Grackle,COGR,12.2,American Robin,AMRO,295.9
+4/4/2024,BO,48,2,Garden City,Urban,9:44,GC 7,GC 7.1,European Starling,EUST,12.3,European Starling,EUST,47.8
+8/13/2024,"BO, IW",68,1,Garden City,WMA,7:47,BR 7,BR 7.2,Northern Bobwhite,NOBO,12.3,Ring-necked Pheasant,RNEP,45
+4/30/2024,JS/NB,59,9,Topeka,Urban,7:58,14,14.1,Ruby-crowned Kinglet,RCKI,12.4,Tennessee Warbler,TEWA,Only Heard
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,American Robin,AMRO,12.4,European Starling,EUST,38.9
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,House Sparrow,HOSP,12.4,Red-bellied Woodpecker,RBWO,30.2
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,European Starling,EUST,12.4,Eurasian Collared Dove,EUCD,99.2
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,Common Grackle,COGR,12.4,NA,NA,NA
+4/5/2024,BO,50,4,Garden City,Urban,9:55,GC 5,GC 5.3,Rock Pigeon,ROPI,12.5,Eurasian Collared Dove,EUCD,58.5
+4/1/2024,BO,46,2,Garden City,Urban,10:24,GC13,GC13.2,American Robin,AMRO,12.6,Eurasian Collared Dove,EUCD,77.2
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,House Sparrow,HOSP,12.7,American Robin,AMRO,73.8
+4/2/2024,BO,44,2,Garden City,Urban,8:27,GC 22,GC 22.1,European Starling,EUST,12.7,European Starling,EUST,15.6
+8/7/2024,NB/HQ,68,5,Topeka,WMA,8:54,17,17.1,Indigo Bunting,INBU,12.8,Northern Cardinal,NOCA,Only Heard
+4/2/2024,BO,44,3,Garden City,Urban,7:56,GC 19,GC 19.2,European Starling,EUST,12.8,Brown-headed Cowbird,BHCO,16.5
+4/5/2024,"ED, NB, JS",50,11,McPherson,Urban,9:32,MC10,MC10.2,American Robin,AMRO,12.9,House Sparrow,HOSP,124.1
+4/3/2024,BO,33,2,Garden City,Urban,7:59,GC 20,GC 20.1,American Robin,AMRO,12.9,American Robin,AMRO,42
+7/22/2024,"CL,GA",68,2,McPherson,Rural,8:36,MC26,MC26.1,Purple Martin,PUMA,13,rooster,do you still want this one marked?,75
+4/24/2024,JS/NB,52,4,Topeka,WMA,8:29,22,22.2,Brown-headed Cowbird,BHCO,13.1,Eastern Bluebird,EABL,138.2
+4/23/2024,ED,60,5,McPherson,WMA,9:13,IN9,IN9.1,Killdeer,KILL,13.1,Ring-necked Pheasant,RNEP,237
+4/1/2024,BO,47,2,Garden City,Urban,9:40,GC17,GC17.1,Grackle,NA,13.1,Brown-headed Cowbird,BHCO,41
+4/3/2024,BO,36,2,Garden City,Urban,9:21,GC 15,GC 15.2,European Starling,EUST,13.1,Red-tailed Hawk,RTHA,230
+8/27/2024,"BO, IW",67,1,Garden City,Urban,7:14,GC 24,GC 24.1,European Starling,EUST,13.1,NA,NA,NA
+4/4/2024,BO,37,2,Garden City,Urban,7:42,GC 10,GC 10.1,American Robin,AMRO,13.2,Eurasian Collared Dove,EUCD,130.9
+4/4/2024,BO,37,2,Garden City,Urban,7:58,GC 10,GC 10.2,Eurasian Collared Dove,EUCD,13.2,NA,NA,NA
+4/2/2024,BO,44,3,Garden City,Urban,7:56,GC 19,GC 19.2,European Starling,EUST,13.3,European Starling,EUST,54
+4/3/2024,BO,33,2,Garden City,Urban,7:59,GC 20,GC 20.1,Eurasian Collared Dove,EUCD,13.6,Eurasian Collared Dove,EUCD,33
+4/4/2024,BO,38,2,Garden City,Urban,8:29,GC 11,GC 11.2,Eurasian Collared Dove,EUCD,13.6,Eurasian Collared Dove,EUCD,43.4
+4/4/2024,BO,38,2,Garden City,Urban,8:29,GC 11,GC 11.2,White-winged Dove,WWDO,13.8,NA,NA,NA
+8/7/2024,"BO, RR",68,1,Garden City,Rural,7:26,CN 2,CN 2.3,Orchard Oriole,OROR,13.8,Western Kingbird,WEKI,17.3
+4/30/2024,JS/NB,68,11,Topeka,Urban,10:30,20,20.2,House Sparrow,HOSP,14,NA,NA,NA
+8/20/2024,CL,67,8,McPherson,Rural,7:27,MC10,MC10.2,Blue Jay,BLJA,14,Great Crested Flycatcher,GCFL,19
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:37,GC 17,GC 17.1,Eurasian Collared Dove,EUCD,14,Grackle,NA,23
+8/15/2024,BO,70,1,Garden City,Urban,9:09,GC 7,GC 7.1,Eurasian Collared Dove,EUCD,14,NA,NA,NA
+8/26/2024,IW,72,0,Garden City,Urban,7:55,GC 19,GC 19.2,European Starling,EUST,14,House Sparrow,HOSP,5
+4/23/2024,NB,57,7,Topeka,Urban,8:28,22,22.2,Mourning Dove,MODO,14.1,Blue Jay,BLJA,53.7
+7/10/2024,NB,63,4,Topeka,Urban,7:11,3,3.1,American Robin,AMRO,14.2,Downy Woodpecker,DOWO,30.2
+4/2/2024,BO,45,3,Garden City,Urban,8:56,GC 23,GC 23.3,Eurasian Collared Dove,EUCD,14.2,European Starling,EUST,38.1
+8/30/2024,BO,63,1,Garden City,Urban,7:53,GC 11,GC 11.2,House Sparrow,HOSP,14.3,European Starling,EUST,73
+4/2/2024,BO,45,4,Garden City,Urban,9:42,GC 24,GC 24.1,Eurasian Collared Dove,EUCD,14.4,American Robin ,AMRO,27
+4/24/2024,BO,50,2,Garden City,Rural,8:28,CN 2,CN 2.3,White-crowned Sparrow,WCSP,14.5,NA,NA,NA
+7/10/2024,NB,63,4,Topeka,Urban,6:07,22,22.1,House Finch,HOFI,14.7,American Robin,AMRO,10.5
+4/29/2024,JS/NB,50,3,Topeka,Urban,8:09,8,8.2,American Robin,AMRO,14.9,House Finch,HOFI,44.3
+4/30/2024,JS/NB,66,11,Topeka,Urban,9:43,18,18.1,American Robin,AMRO,14.9,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:02,GC18,GC18.2,European Starling,EUST,14.9,Eurasian Collared Dove,EUCD,66.2
+4/8/2024,JS/NB,56,4,Topeka,WMA,10:49,17,17.2,Song Sparrow,SOSP,15,NA,NA,NA
+4/22/2024,JS/NB,48,11,Topeka,Urban,8:31,2,2.2,House Wren,HOWR,15,Downy Woodpecker,DOWO,14.6
+4/30/2024,JS/NB,63,11,Topeka,Urban,8:45,11,11.1,American Robin,AMRO,15,Nashville Warbler,NAWA,Only Heard
+4/3/2024,BO,36,2,Garden City,Urban,8:49,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,15,American Robin,AMRO,32.7
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,House Finch,HOFI,15,European Starling,EUST,32
+8/15/2024,BO,70,1,Garden City,Urban,9:09,GC 7,GC 7.1,Eurasian Collared Dove,EUCD,15,Eurasian Collared Dove,EUCD,191
+4/25/2024,JS/NB,56,11,Topeka,WMA,10:17,8,8.1,American Robin,AMRO,15.1,NA,NA,NA
+4/1/2024,BO,46,3,Garden City,Urban,9:29,GC18,GC18.1,Eurasian Collared Dove,EUCD,15.1,NA,NA,NA
+4/10/2024,"ED, NP",59,7,McPherson,WM,10:28,BB4,BB4.3,meadowlark,NA,15.2,NA,NA,NA
+8/7/2024,"BO, RR",68,1,Garden City,Rural,7:26,CN 2,CN 2.3,American Goldfinch,AGOL,15.2,Orchard Oriole,OROR,14.2
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:44,GC 7,GC 7.2,Eurasian Collared Dove,EUCD,15.2,Eurasian Collared Dove,EUCD,48.9
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:05,GC 11,GC 11.1,Eurasian Collared Dove,EUCD,15.2,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:02,GC18,GC18.2,Grackle,NA,15.4,House Sparrow,HOSP,16.6
+8/13/2024,"BO, IW",68,1,Garden City,WMA,7:47,BR 7,BR 7.2,Northern Bobwhite,NOBO,15.4,Western Kingbird,WEKI,79.6
+4/16/2024,ED,58,17,McPherson,Urban,8:16,MC12,MC12.1,European Starling,EUST,15.5,European Starling,EUST,12.9
+4/16/2024,ED,58,17,McPherson,Urban,8:16,MC12,MC12.1,Common Grackle,COGR,15.5,Tufted Titmouse,TUTI,17.6
+4/16/2024,ED,65,23,McPherson,Urban,9:57,MC20,MC20.2,House Sparrow,HOSP,15.5,American Robin,AMRO,60.7
+4/2/2024,BO,45,4,Garden City,Urban,11:27,GC 21,GC 21.2,European Starling,EUST,15.7,Grackle,NA,13.7
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:44,GC 7,GC 7.2,European Starling,EUST,15.8,Eurasian Collared Dove,EUCD,54
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:44,GC 7,GC 7.2,House Sparrow,HOSP,15.8,Eurasian Collared Dove,EUCD,154
+4/5/2024,BO,45,4,Garden City,Urban,7:56,GC 4,GC 4.1,American Robin,AMRO,15.9,European Starling,EUST,16.7
+4/5/2024,BO,49,4,Garden City,Urban,9:04,GC 2,GC 2.2,American Robin,AMRO,15.9,Eurasian Collared Dove,EUCD,15.1
+8/7/2024,CL,65,7,McPherson,Urban,7:27,MC17,MC17.1,House Wren,HOWR,16,Blue Jay,BLJA,40
+4/4/2024,BO,48,2,Garden City,Urban,9:44,GC 7,GC 7.1,Eurasian Collared Dove,EUCD,16,Eurasian Collared Dove,EUCD,34.9
+4/23/2024,NB,57,7,Topeka,Urban,8:28,22,22.2,European Starling,EUST,16.1,American Robin,AMRO,14.4
+4/30/2024,JS/NB,68,11,Topeka,Urban,10:30,20,20.2,Eastern Bluebird,EABL,16.1,NA,NA,NA
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:38,6,6.1,European Starling,EUST,16.3,American Robin,AMRO,18.1
+8/7/2024,CL,64,6,McPherson,Urban,6:38,MC12,MC12.1,Mourning Dove,MODO,16.5,Mourning Dove,MODO,48
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,European Starling,EUST,16.8,House Finch,HOFI,44
+4/2/2024,BO,44,3,Garden City,Urban,7:56,GC 19,GC 19.2,Eurasian Collared Dove,EUCD,16.8,Eurasian Collared Dove,EUCD,23
+4/3/2024,BO,33,2,Garden City,Urban,8:13,GC 20,GC 20.3,American Robin,AMRO,16.8,Eurasian Collared Dove,EUCD,40.5
+8/13/2024,CL,73,11,McPherson,Urban,9:39,MC6,MC6.1,Blue Jay,BLJA,17,Blue Jay,BLJA,43
+8/13/2024,CL,73,11,McPherson,Urban,9:39,MC6,MC6.1,European Starling,EUST,17,Mississippi Kite,MIKI,119
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,17,European Starling,EUST,191
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,Eurasian Collared Dove,EUCD,17,House Sparrow,HOSP,10
+4/5/2024,BO,48,4,Garden City,Urban,8:53,GC 3,GC 3.2,Eurasian Collared Dove,EUCD,17.1,Eurasian Collared Dove,EUCD,26.6
+7/10/2024,NB,72,4,Topeka,Urban,8:32,2,2.1,American Robin,AMRO,17.2,NA,NA,NA
+4/5/2024,BO,49,4,Garden City,Urban,9:26,GC 2,GC 2.1,American Robin,AMRO,17.2,European Starling,EUST,152.9
+8/30/2024,BO,63,1,Garden City,Urban,7:41,GC 10,GC 10.2,Mississippi Kite,MIKI,17.2,Eurasian Collared Dove,EUCD,27
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:07,4,4.1,American Robin,AMRO,17.3,American Robin,AMRO,35.3
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:27,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,17.3,Eurasian Collared Dove,EUCD,157.5
+8/2/2024,NB,70,6,Topeka,WMA,7:30,1,1.2,Common Grackle,COGR,17.5,Common Grackle,COGR,31.8
+4/3/2024,BO,36,2,Garden City,Urban,9:45,GC 16,GC 16.2,Eurasian Collared Dove,EUCD,17.6,European Starling,EUST,126
+4/5/2024,BO,45,4,Garden City,Urban,7:56,GC 4,GC 4.1,House Sparrow,HOSP,17.9,European Starling,EUST,80.6
+8/7/2024,CL,65,7,McPherson,Urban,7:27,MC17,MC17.1,Downy Woodpecker,DOWO,18,Mourning Dove,MODO,42
+4/2/2024,BO,46,3,Garden City,Urban,9:24,GC 23,GC 23.2,Eurasian Collared Dove,EUCD,18.1,European Starling,EUST,26.7
+4/3/2024,BO,33,2,Garden City,Urban,8:13,GC 20,GC 20.3,Grackle,NA,18.1,American Robin ,AMRO,50.3
+4/4/2024,BO,48,2,Garden City,Urban,9:44,GC 7,GC 7.1,American Robin,AMRO,18.1,Eurasian Collared Dove,EUCD,17.7
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:32,GC 15,GC 15.1,House Sparrow,HOSP,18.2,Rock Pigeon,ROPI,198.1
+5/1/2024,JS/NB,59,10,Topeka,Urban,8:14,19,19.2,Common Grackle,COGR,18.3,White-throated Sparrow,WTSP,Only Heard
+7/10/2024,NB,63,4,Topeka,Urban,6:07,22,22.1,American Robin,AMRO,18.3,Common Grackle,COGR,63.6
+4/2/2024,BO,45,4,Garden City,Urban,10:27,GC 21,GC 21.2,Grackle,NA,18.3,American Robin ,AMRO,36.5
+4/15/2024,JS/NB,62,10,Topeka,WMA,8:06,13,13.1,Red-winged Blackbird ,RWBL,18.4,Blue-gray Gnatcatcher,BGGN,49.7
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:07,4,4.1,European Starling,EUST,18.4,NA,NA,NA
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:07,4,4.1,House Sparrow,HOSP,18.4,NA,NA,NA
+4/23/2024,NB,57,7,Topeka,Urban,8:18,22,22.1,Northern Cardinal,NOCA,18.6,Mourning Dove,MODO,127.6
+4/29/2024,JS/NB,50,3,Topeka,Urban,8:09,8,8.2,American Robin,AMRO,18.7,NA,NA,NA
+5/1/2024,JS/NB,58,10,Topeka,Urban,8:00,19,19.1,Downy Woodpecker,DOWO,18.9,Black-capped Chickadee,BCCH,Only Heard
+7/11/2024,NB,69,5,Topeka,WMA,7:55,11,11.1,Northern Cardinal,NOCA,18.9,NA,NA,NA
+8/28/2024,"BO, RR",67,1,Garden City,Urban,7:55,GC 4,GC 4.2,Eurasian Collared Dove,EUCD,18.9,NA,NA,NA
+4/4/2024,"ED, NB, JS",63,9,McPherson,Urban,3:01,MC9,MC9.2,American Robin,AMRO,19,European Starling,EUST,75.3
+7/18/2024,"ED,GA",70,6,McPherson,Urban,8:42,MC16,MC16.1,Field Sparrow,FISP,19,sparrow,NA,29
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,Eurasian Collared Dove,EUCD,19,Eurasian Collared Dove,EUCD,129
+4/23/2024,NB,59,8,Topeka,Urban,9:09,9,9.2,American Goldfinch,AGOL,19.1,NA,NA,NA
+5/1/2024,JS/NB,59,10,Topeka,Urban,8:14,19,19.2,Black-capped Chickadee,BCCH,19.1,Red-bellied Woodpecker,RBWO,Only Heard
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,American Robin,AMRO,19.1,Common Grackle,COGR,68.2
+7/10/2024,NB,74,4,Topeka,Urban,8:45,2,2.2,House Sparrow,HOSP,19.2,American Robin,AMRO,45
+4/4/2024,BO,38,2,Garden City,Urban,8:29,GC 11,GC 11.2,European Starling,EUST,19.2,Eurasian Collared Dove,EUCD,21.3
+4/18/2024,ED,48,7,McPherson,WMA,9:27,IN,IN4.4,Red-winged Blackbird,RWBL,19.4,Eastern Meadowlark,EAME,54.5
+4/4/2024,BO,37,2,Garden City,Urban,7:58,GC 10,GC 10.2,Eurasian Collared Dove,EUCD,19.4,Eurasian Collared Dove,EUCD,36.6
+4/24/2024,RR,59,2,Garden City,Rural,10:31,CN 5,CN 5.3,White-crowned Sparrow,WCSP,19.4,Savannah Sparrow,SAVS,34.5
+4/30/2024,JS/NB,59,9,Topeka,Urban,7:58,14,14.1,Orange-crowned Warbler,OCWA,19.5,Common Yellowthroat,COYE,Only Heard
+5/1/2024,JS/NB,59,10,Topeka,Urban,8:14,19,19.2,American Robin,AMRO,19.6,Mourning Dove,MODO,54.3
+4/30/2024,JS/NB,68,11,Topeka,Urban,10:30,20,20.2,House Finch,HOFI,19.7,Northern Cardinal,NOCA,Only Heard
+4/2/2024,BO,45,4,Garden City,Urban,9:42,GC 24,GC 24.1,Grackle,NA,19.7,Grackle,NA,13.3
+4/12/2024,JS/NB,43,7,Topeka,WMA,8:06,10,10.2,Black-capped Chickadee,BCCH,19.8,NA,NA,NA
+5/3/2024,JS/NB,51,5,Topeka,Urban,7:50,17,17.2,House Sparrow,HOSP,19.9,American Robin,AMRO,20.2
+4/30/2024,JS/NB,63,11,Topeka,Urban,8:45,11,11.1,American Robin,AMRO,20,Red-bellied Woodpecker,RBWO,Only Heard
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Red-winged Blackbird,RWBL,20,Red-winged Blackbird,RWBL,140
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,Barn Swallow,BARS,20,Gadwall,GADW,200
+8/7/2024,CL,65,7,McPherson,Urban,7:27,MC17,MC17.1,European Starling,EUST,20,House Finch,HOFI,45
+8/13/2024,CL,73,11,McPherson,Urban,8:59,MC5,MC5.2,European Starling,EUST,20,Eurasian Collared Dove,EUCD,192
+8/15/2024,CL,71,5,McPherson,Urban,7:31,MC1,MC1.1,American Robin,AMRO,20,NA,NA,NA
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,European Starling,EUST,20,Eurasian Collared Dove,EUCD,22
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,Mississippi Kite,MIKI,20,Eurasian Collared Dove,EUCD,39
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,House Finch,HOFI,20,Eurasian Collared Dove,EUCD,50
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Eurasian Collared Dove,EUCD,20,Eurasian Collared Dove,EUCD,36
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Eurasian Collared Dove,EUCD,20,NA,NA,NA
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,House Sparrow,HOSP,20.1,European Starling,EUST,73.5
+4/3/2024,BO,36,2,Garden City,Urban,9:45,GC 16,GC 16.2,Eurasian Collared Dove,EUCD,20.1,Eurasian Collared Dove,EUCD,80
+4/4/2024,BO,37,2,Garden City,Urban,7:58,GC 10,GC 10.2,European Starling,EUST,20.1,Eurasian Collared Dove,EUCD,77.3
+4/8/2024,JS/NB,51,5,Topeka,WMA,9:29,16,16.1,Northern Cardinal,NOCA,20.3,Red-bellied Woodpecker,RBWO,Only Heard
+8/2/2024,NB,70,6,Topeka,WMA,7:30,1,1.2,Common Grackle,COGR,20.3,Common Grackle,COGR,21.3
+5/3/2024,JS/NB,54,5,Topeka,Urban,8:34,15,15.2,Mourning Dove,MODO,20.4,NA,NA,NA
+4/30/2024,JS/NB,63,11,Topeka,Urban,8:45,11,11.1,Northern Cardinal,NOCA,20.5,Cedar Waxwing,CEDW,Only Heard
+7/10/2024,NB,68,4,Topeka,Urban,7:44,4,4.1,Mourning Dove,MODO,20.5,Common Grackle,COGR,74.8
+5/7/2024,BO,50,3,Garden City,WMA,8:35,BR 1,BR 1.2,American Robin,AMRO,20.6,NA,NA,NA
+8/7/2024,"BO, RR",68,1,Garden City,Rural,7:26,CN 2,CN 2.3,Eastern Kingbird,EAKI,20.6,NA,NA,NA
+4/4/2024,BO,37,2,Garden City,Urban,7:42,GC 10,GC 10.1,Eurasian Collared Dove,EUCD,20.7,European Starling,EUST,16.3
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,House Sparrow,HOFI,20.8,American Robin,AMRO,65.7
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:38,6,6.1,Mourning Dove,MODO,20.9,NA,NA,NA
+7/30/2024,NB,80,13,Topeka,Urban,7:51,19,19.2,Mourning Dove,MODO,20.9,Blue Jay,BLJA,Only Heard
+4/12/2024,ED,55,4,McPherson,Urban,10:29,MC18,MC18.2,House Sparrow,HOSP,20.9,American Robin,AMRO,113
+8/26/2024,IW,72,0,Garden City,Urban,7:55,GC 19,GC 19.2,European Starling,EUST,21,European Starling,EUST,23
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:22,5,5.1,Mourning Dove,MODO,21.1,NA,NA,NA
+4/4/2024,BO,42,2,Garden City,Urban,8:45,GC 12,GC 11.2,American Robin,AMRO,21.1,Eurasian Collared Dove,EUCD,60.1
+8/15/2024,BO,71,2,Garden City,Urban,7:59,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,21.1,Eurasian Collared Dove,EUCD,70.5
+5/3/2024,JS/NB,51,5,Topeka,Urban,7:50,17,17.2,American Robin,AMRO,21.2,House Sparrow,HOSP,20.2
+5/3/2024,JS/NB,51,5,Topeka,Urban,7:50,17,17.2,Chestnut-sided Warbler,CSWA,21.2,NA,NA,NA
+4/5/2024,BO,45,4,Garden City,Urban,8:19,GC 4,GC 4.2,American Robin,AMRO,21.4,Eurasian Collared Dove,EUCD,46.6
+5/1/2024,JS/NB,58,10,Topeka,Urban,8:00,19,19.1,House Sparrow,HOSP,21.5,Common Grackle,COGR,50.9
+4/1/2024,BO,47,2,Garden City,Urban,9:40,GC17,GC17.1,House Sparrow,HOSP,21.5,Eurasian Collared Dove,EUCD,94.6
+4/18/2024,ED,46,6,McPherson,WMA,9:11,IN,IN4.3,Red-winged Blackbird,RWBL,21.7,Ring-necked Pheasant,RNEP,104.5
+4/3/2024,BO,34,2,Garden City,Urban,8:25,GC 20,GC 20.2,European Starling,EUST,21.7,Eurasian Collared Dove,EUCD,36.9
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,European Starling,EUST,21.8,European Starling,EUST,122.8
+4/22/2024,JS/NB,45,11,Topeka,Urban,7:52,5,5.1,Mourning Dove,MODO,21.9,White-throated Sparrow,WTSP,Only Heard
+7/16/2024,NB,79,10,Topeka,Urban,10:38,14,14.2,Mourning Dove,MODO,21.9,American Robin,AMRO,76.5
+4/4/2024,BO,37,2,Garden City,Urban,7:58,GC 10,GC 10.2,Eurasian Collared Dove,EUCD,21.9,European Starling,EUST,104.3
+4/19/2024,JS/NB,43,4,Topeka,WMA,8:05,2,2.2,Northern Cardinal,NOCA,22,Brown-headed Cowbird,BHCO,52.1
+8/20/2024,ED,64,3,Topeka,WMA,7:15,8,8.2,House Sparrow,HOSP,22,European Starling,EUST,80
+8/20/2024,ED,69,5,Topeka,WMA,9:45,19,19.2,Carolina Wren,CARW,22,Eastern Bluebird,EABL,58
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,Common Grackle,COGR,22,Blue Jay,BLJA,79
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.2,Red-winged Blackbird,RWBL,22,Eastern Meadowlark,EAME,103.4
+7/18/2024,"ED,GA",69,6,McPherson,Urban,8:15,MC15,MC15.2,House Sparrow,HOSP,22,Common Grackle,COGR,104
+7/18/2024,"ED,GA",69,6,McPherson,Urban,8:15,MC15,MC15.2,Mourning Dove,MODO,22,Mourning Dove,MODO,149
+7/18/2024,"ED,GA",69,6,McPherson,Urban,8:15,MC15,MC15.2,sparrow,NA,22,sparrow,NA,22
+7/26/2024,"GA,CL",70,5,McPherson,WMA,7:23,IN8,IN8.4,Northern Cardinal,NOCA,22,NA,NA,NA
+7/29/2024,"GA,CL",75,11,McPherson,Urban,6:50,MC9,MC9.1,Western Kingbird,WEKI,22,NA,NA,NA
+7/29/2024,"GA,CL",75,11,McPherson,Urban,6:50,MC9,MC9.1,European Starling,EUST,22,NA,NA,NA
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:37,GC 17,GC 17.1,Eurasian Collared Dove,EUCD,22,Mississippi Kite,MIKI,44
+8/26/2024,IW,73,1,Garden City,Urban,8:05,GC 19,GC 19.3,House Sparrow,HOSP,22,Eurasian Collared Dove,EUCD,206
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:32,GC 23,GC 23.3,Eurasian Collared Dove,EUCD,22,European Starling,EUST,76.3
+4/30/2024,JS/NB,63,11,Topeka,Urban,8:45,11,11.1,Northern Cardinal,NOCA,22.1,American Robin,AMRO,27.6
+7/12/2024,JS/HQ,73,10,Topeka,Urban,7:46,10,10.1,Blue Jay,BLJA,22.1,Blue Jay,BLJA,Only Heard
+4/4/2024,BO,50,2,Garden City,Urban,10:15,GC 6,GC 6.2,European Starling,EUST,22.1,European Starling,EUST,9.9
+8/15/2024,BO,71,2,Garden City,Urban,7:59,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,22.1,NA,NA,NA
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:49,GC 23,GC 23.2,House Sparrow,HOSP,22.2,Eurasian Collared Dove,EUCD,49.7
+4/12/2024,JS/NB,42,7,Topeka,WMA,7:42,10,10.1,House Sparrow,HOSP,22.3,Carolina Wren,CARW,Only Heard
+4/4/2024,"ED, NB, JS",59,10,McPherson,Urban,1:15,MC8,MC8.2,European Starling,EUST,22.4,NA,NA,NA
+4/29/2024,BO,62,2,Garden City,WMA,10:06,BR 10,BR 10.2,Savannah Sparrow,SAVS,22.5,Clay-colored Sparrow,CCSP,117.1
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:38,5,5.2,American Robin,AMRO,22.6,American Robin,AMRO,40.3
+4/17/2024,ED,66,5,McPherson,WMA,10:17,IN,IN6.1,Ring-necked Pheasant,RNEP,22.6,Field Sparrow,FISP,40.4
+4/3/2024,BO,34,2,Garden City,Urban,8:25,GC 20,GC 20.2,Eurasian Collared Dove,EUCD,22.6,Eurasian Collared Dove,EUCD,47.7
+4/5/2024,BO,45,4,Garden City,Urban,8:19,GC 4,GC 4.2,American Robin,AMRO,22.7,American Robin,AMRO,36.7
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:47,GC 4,GC 4.1,House Sparrow,HOSP,22.9,House Sparrow,HOSP,32
+4/25/2024,ED,57,16,McPherson,Rural,8:24,BB3,BB3.2,Ring-necked Pheasant,RNEP,23,American Robin,AMRO,106.8
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Red-winged Blackbird,RWBL,23,House Sparrow,HOSP,70
+8/7/2024,CL,64,6,McPherson,Urban,6:51,MC13,MC13.1,House Sparrow,HOSP,23,NA,NA,NA
+4/3/2024,BO,33,2,Garden City,Urban,8:13,GC 20,GC 20.3,Grackle,NA,23,Brown-headed Cowbird,BHCO,42.6
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Eurasian Collared Dove,EUCD,23,NA,NA,NA
+8/26/2024,IW,72,0,Garden City,Urban,7:55,GC 19,GC 19.2,European Starling,EUST,23,Eurasian Collared Dove,EUCD,60
+8/28/2024,"BO, RR",67,1,Garden City,Urban,7:55,GC 4,GC 4.2,Eurasian Collared Dove,EUCD,23,Eurasian Collared Dove,EUCD,103.5
+4/12/2024,JS/NB,43,7,Topeka,WMA,8:06,10,10.2,Black-capped Chickadee,BCCH,23.1,NA,NA,NA
+8/29/2024,"BO, IW",69,1,Garden City,Urban,7:46,GC 14,GC 14.2,House Sparrow,HOSP,23.1,Rock Pigeon,ROPI,147.8
+5/1/2024,JS/NB,59,10,Topeka,Urban,8:14,19,19.2,American Robin,AMRO,23.2,House Wren,HOWR,Only Heard
+4/4/2024,BO,37,2,Garden City,Urban,7:42,GC 10,GC 10.1,Eurasian Collared Dove,EUCD,23.2,European Starling,EUST,80.5
+8/7/2024,"BO, RR",68,1,Garden City,Rural,7:26,CN 2,CN 2.3,Red-winged Blackbird,RWBL,23.2,Orchard Oriole,OROR,82.3
+4/5/2024,"ED, NB, JS",54,12,McPherson,Urban,10:13,MC11,MC11.2,House Sparrow,HOSP,23.3,European Starling,EUST,150
+4/1/2024,BO,46,2,Garden City,Urban,10:59,GC19,GC19.1,European Starling,EUST,23.3,European Starling,EUST,23.6
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:10,GC 20,GC 20.1,Eurasian Collared Dove,EUCD,23.3,Mississippi Kite,MIKI,64.9
+8/30/2024,BO,63,1,Garden City,Urban,7:53,GC 11,GC 11.2,Eurasian Collared Dove,EUCD,23.4,Eurasian Collared Dove,EUCD,38.9
+4/22/2024,JS/NB,44,11,Topeka,Urban,7:35,5,5.2,American Robin,AMRO,23.5,House Sparrow,HOSP,44.7
+4/22/2024,JS/NB,46,11,Topeka,Urban,8:10,2,2.1,American Robin,AMRO,23.7,Northern Flicker,NOFL,Only Heard
+4/22/2024,JS/NB,44,11,Topeka,Urban,7:35,5,5.2,American Robin,AMRO,23.8,Ruby-crowned Kinglet ,RCKI,Only Heard
+5/1/2024,JS/NB,60,11,Topeka,Urban,8:33,21,21.1,White-crowned Sparrow,WCSP,23.9,Downy Woodpecker,DOWO,Only Heard
+7/10/2024,NB,74,4,Topeka,Urban,8:45,2,2.2,European Starling,EUST,24,American Robin,AMRO,29.4
+7/12/2024,JS/HQ,72,10,Topeka,Urban,7:28,16,16.2,Canada Goose,CANG,24,Western Kingbird,WEKI,35.2
+8/16/2024,NB/ED,71,4,Topeka,WMA,8:01,23,23.2,Black-capped Chickadee,BCCH,24,American Crow,AMCR,Only Heard
+4/4/2024,"ED, NB, JS",62,9,McPherson,Urban,2:32,MC9,MC9.1,European Starling,EUST,24,European Starling,EUST,23.8
+8/26/2024,IW,72,0,Garden City,Urban,7:55,GC 19,GC 19.2,Eurasian Collared Dove,EUCD,24,Eurasian Collared Dove,EUCD,17
+4/4/2024,"ED, NB, JS",59,10,McPherson,Urban,1:15,MC8,MC8.2,American Robin,AMRO,24.1,NA,NA,NA
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:32,GC 23,GC 23.3,European Starling,EUST,24.2,Mourning Dove,MODO,150
+4/22/2024,JS/NB,45,11,Topeka,Urban,7:52,5,5.1,Northern Flicker,NOFL,24.4,Palm Warbler,PAWA,31.4
+7/12/2024,JS/HQ,78,11,Topeka,Urban,9:20,15,15.2,Blue Jay,BLJA,24.4,Blue Jay,BLJA,70.2
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,European Starling,EUST,24.4,House Sparrow,HOSP,23.2
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:49,GC 23,GC 23.2,House Sparrow,HOSP,24.4,Eurasian Collared Dove,EUCD,19.3
+4/23/2024,NB,57,7,Topeka,Urban,8:28,22,22.2,House Sparrow,HOSP,24.5,European Starling,EUST,73.1
+8/15/2024,BO,71,2,Garden City,Urban,7:59,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,24.5,NA,NA,NA
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:11,5,5.2,Pectoral Sandpiper,PESA,24.6,Wilson's Snipe,WISN,59.6
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:02,GC 23,GC 23.1,Eurasian Collared Dove,EUCD,24.6,Eurasian Collared Dove,EUCD,110
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:49,GC 23,GC 23.2,House Sparrow,HOSP,24.8,Rock Pigeon,ROPI,117.9
+4/1/2024,BO,46,2,Garden City,Urban,10:24,GC13,GC13.2,Eurasian Collared Dove,EUCD,24.9,European Starling,EUST,17
+4/4/2024,BO,50,2,Garden City,Urban,10:15,GC 6,GC 6.2,European Starling,EUST,24.9,Eurasian Collared Dove,EUCD,114
+4/23/2024,NB,59,8,Topeka,Urban,10:14,10,10.2,American Robin,AMRO,25,Blue Jay,BLJA,52.2
+4/24/2024,JS/NB,61,5,Topeka,WMA,10:50,20,20.1,Mourning Dove,MODO,25,Eastern Towhee,EATO,Only Heard
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:23,3,3.1,American Robin,AMRO,25,Northern Cardinal,NOCA,94
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,European Starling,EUST,25,NA,NA,NA
+4/5/2024,"ED, NB, JS",72,13,McPherson,Urban,3:02,MC17,MC17.2,American Robin,AMRO,25,American Robin,AMRO,54
+7/19/2024,"ED, CL",66,9,McPherson,Urban,7:55,MC22,MC22.2,Eastern Meadowlark,EAME,25,Field Sparrow,FISP,78
+7/29/2024,"GA,CL",74,11,McPherson,Urban,7:14,MC5,MC5.1,House Finch,HOFI,25,Mississippi Kite,MIKI,24
+8/15/2024,CL,74,5,McPherson,Urban,8:14,MC7,MC7.2,Eurasian Collared Dove,EUCD,25,Mourning Dove,MODO,44
+8/14/2024,"RR, IW",71,1,Garden City,WMA,6:59,BR 6,BR 6.2,Mourning Dove,MODO,25,Mourning Dove,MODO,48
+8/15/2024,IW,70,1,Garden City,Urban,8:28,GC 13,GC 13.2,Eurasian Collared Dove,EUCD,25,Eurasian Collared Dove,EUCD,38
+4/22/2024,JS/NB,45,11,Topeka,Urban,7:52,5,5.1,Honestly no idea,SASB,25.1,Common Grackle,COGR,47
+4/30/2024,JS/NB,68,11,Topeka,Urban,10:08,20,20.1,Blue Jay,BLJA,25.1,NA,NA,NA
+8/28/2024,"BO, RR",67,1,Garden City,Urban,7:55,GC 4,GC 4.2,Eurasian Collared Dove,EUCD,25.1,Eurasian Collared Dove,EUCD,85.1
+4/23/2024,ED,61,6,McPherson,WMA,9:23,IN9,IN9.2,Eastern Meadowlark,EAME,25.2,Mourning Dove,MODO,66.8
+4/24/2024,JS/NB,48,5,Topeka,WMA,7:42,15,15.1,Yellow-rumped Warbler,YRWA,25.3,Mourning Dove,MODO,Only Heard
+4/1/2024,BO,46,2,Garden City,Urban,9:51,GC17,GC17.2,European Starling,EUST,25.3,Eurasian Collared Dove,EUCD,48.6
+4/5/2024,BO,48,4,Garden City,Urban,8:53,GC 3,GC 3.2,White-winged Dove,WWDO,25.3,Eurasian Collared Dove,EUCD,20.7
+4/17/2024,BO,57,2,Garden City,WMA,9:54,BR 4,BR 4.1,White-crowned Sparrow,WCSP,25.4,White-crowned Sparrow,WCSP,141.5
+4/4/2024,BO,48,2,Garden City,Urban,9:52,GC 7,GC 7.2,American Robin,AMRO,25.5,Eurasian Collared Dove,EUCD,47.1
+4/1/2024,BO,45,3,Garden City,Urban,9:01,GC13,GC13.1,Eurasian Collared Dove,EUCD,25.8,Eurasian Collared Dove,EUCD,36
+4/22/2024,BO,49,3,Garden City,WMA,8:49,BR 12,BR 12.2,White-crowned Sparrow,WCSP,25.9,White-crowned Sparrow,WCSP,14.8
+7/16/2024,"ED,GA",76,14,Inman,WMA,7:28,IN1,IN1.2,Dickcissel,DICK,26,sparrow,NA,152
+7/18/2024,"ED,GA",67,5,McPherson,Urban,7:55,MC3,MC3.2,Purple Martin,PUMA,26,European Starling,EUST,43
+8/7/2024,CL,64,6,McPherson,Urban,7:01,MC13,MC13.2,European Starling,EUST,26,Mourning Dove,MODO,74
+4/5/2024,BO,57,4,Garden City,Urban,10:27,GC 5,GC 5.1,Eurasian Collared Dove,EUCD,26,Eurasian Collared Dove,EUCD,80.8
+8/1/2024,IW,73,2,Garden City,Rural,9:15,CN 1,CN 1.3,Eastern Kingbbird,EAKI,26,Eastern Kingbird,EAKI,25
+8/26/2024,IW,72,1,Garden City,Urban,7:27,GC 18,GC 18.2,Grackle,NA,26,Grackle ,NA,76
+4/4/2024,BO,42,2,Garden City,Urban,8:45,GC 12,GC 11.2,Eurasian Collared Dove,EUCD,26.1,NA,NA,NA
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:44,GC 7,GC 7.2,House Sparrow,HOSP,26.4,European Starling,EUST,48.9
+4/4/2024,"ED, NB, JS",37,8,McPherson,Urban,8:28,MC5,MC5.1,European Starling,EUST,26.5,Eurasian Collared Dove,EUCD,11.8
+4/12/2024,JS/NB,43,7,Topeka,WMA,8:06,10,10.2,Downy Woodpecker,DOWO,26.6,Northern Cardinal,NOCA,Only Heard
+7/12/2024,JS/HQ,78,11,Topeka,Urban,9:20,15,15.2,Barn Swallow,BARS,27,American Robin,AMRO,46.1
+7/30/2024,NB,79,12,Topeka,Urban,7:02,18,18.2,Mourning Dove,MODO,27,Cedar Waxwing,CEDW,Only Heard
+7/22/2024,"CL,GA",65,2,McPherson,Rural,7:47,BB9,BB9.1,Dickcissel,DICK,27,Red-winged Blackbird,RWBL,238
+8/21/2024,GA & IW,71,11,McPherson,Rural,9:05,BB4,BB4.2,Dickcissel ,DICK,27,Dickcissel,DICK,34
+8/2/2024,IW,69,1,Garden City,Urban,7:32,GC 8,GC 8.1,Baltimore Oriole,BAOR,27,NA,NA,NA
+8/2/2024,IW,70,1,Garden City,Urban,7:48,GC 12,GC 12.1,Eurasian Collared Dove,EUCD,27,NA,NA,NA
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:23,GC 17,GC 17.2,Eurasian Collared Dove,EUCD,27,NA,NA,NA
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:37,GC 17,GC 17.1,Eurasian Collared Dove,EUCD,27,NA,NA,NA
+8/26/2024,IW,73,0,Garden City,Urban,8:15,GC 22,GC 22.2,Eurasian Collared Dove,EUCD,27,European Starling,EUST,111
+8/26/2024,IW,74,1,Garden City,Urban,8:29,GC 22,GC 22.1,House Sparrow,HOSP,27,Eurasian Collared Dove,EUCD,27
+4/3/2024,BO,33,2,Garden City,Urban,7:59,GC 20,GC 20.1,European Starling,EUST,27.1,European Starling,EUST,22.2
+7/30/2024,NB,86,16,Topeka,Urban,9:40,7,7.1,Eastern Kingbird,EAKI,27.2,House Sparrow,HOSP,76.1
+4/29/2024,BO,62,2,Garden City,WMA,10:06,BR 10,BR 10.2,Western Kingbird,WEKI,27.2,White-crowned Sparrow,WCSP,47.9
+4/5/2024,BO,49,4,Garden City,Urban,9:26,GC 2,GC 2.1,American Robin,AMRO,27.3,NA,NA,NA
+8/27/2024,"BO, IW",67,1,Garden City,Urban,7:14,GC 24,GC 24.1,Mississippi Kite,MIKI,27.3,American Robin,AMRO,13.4
+7/10/2024,NB,63,4,Topeka,Urban,6:46,22,22.2,European Starling,EUST,27.4,American Robin,AMRO,35.4
+8/30/2024,BO,63,1,Garden City,Urban,7:41,GC 10,GC 10.2,European Starling,EUST,27.5,House Sparrow,HOSP,31
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,House Finch,HOFI,28,House Finch,HOFI,52
+8/7/2024,CL,64,6,McPherson,Urban,6:38,MC12,MC12.1,Mourning Dove,MODO,28,Eurasian Collared Dove,EUCD,14
+8/7/2024,CL,66,8,McPherson,Urban,7:51,MC14,MC14.2,House Finch,HOFI,28,Downy Woodpecker,DOWO,67
+8/7/2024,CL,68,9,McPherson,Urban,8:25,MC18,MC18.1,Upland Sandpiper,UPSA,28,Killdeer,KILL,95
+8/14/2024,"RR, IW",74,1,Garden City,Urban,8:55,GC 18,GC 18.2,Eurasian Collared Dove,EUCD,28,House Sparrow,HOSP,47
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:51,6,6.2,American Robin,AMRO,28.1,American Crow,AMCR,72.8
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:22,5,5.1,Common Grackle,COGR,28.1,Mourning Dove,MODO,217
+4/5/2024,BO,45,4,Garden City,Urban,7:56,GC 4,GC 4.1,House Sparrow,HOSP,28.1,Eurasian Collared Dove,EUCD,41
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:44,GC 7,GC 7.2,Eurasian Collared Dove,EUCD,28.2,Eurasian Collared Dove,EUCD,141.6
+8/28/2024,"BO, RR",67,3,Garden City,Urban,7:34,GC 1,GC 1.1,House Sparrow,HOSP,28.3,Eurasian Collared Dove,EUCD,57.8
+4/5/2024,"ED, NB, JS",54,12,McPherson,Urban,10:13,MC11,MC11.2,House Sparrow,HOSP,28.5,NA,NA,NA
+4/2/2024,BO,44,2,Garden City,Urban,8:27,GC 22,GC 22.1,Eurasian Collared Dove,EUCD,28.5,European Starling,EUST,35.8
+4/22/2024,JS/NB,46,11,Topeka,Urban,8:10,2,2.1,European Starling,EUST,28.6,American Robin,AMRO,32.8
+4/30/2024,JS/NB,59,9,Topeka,Urban,7:58,14,14.1,Nashville Warbler,NAWA,28.6,Red-bellied Woodpecker,RBWO,52.9
+4/24/2024,RR,62,2,Garden City,Rural,11:20,CN 3,CN 3.3,Savannah Sparrow,SAVS,28.7,Red-winged Blackbird,RWBL,180.6
+8/7/2024,"BO, RR",68,1,Garden City,Rural,7:26,CN 2,CN 2.3,Orchard Oriole,OROR,28.8,American Coot,AMCO,151.3
+4/12/2024,JS/NB,42,7,Topeka,WMA,7:42,10,10.1,American Robin,AMRO,29,White-breasted Nuthatch,WBNU,48.5
+7/10/2024,NB,66,4,Topeka,Urban,7:29,3,3.2,European Starling,EUST,29,NA,NA,NA
+7/15/2024,"GA, CL",79,14,McPherson,Rural,6:04,BB3,BB3.1,European Starling,EUST,29,European Starling,EUST,45
+7/16/2024,"ED,GA",77,10,Inman,WMA,8:07,IN3,IN3.2,Red-winged Blackbird,RWBL,29,Eastern Meadowlark ,EAME,76
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:32,MC25,MC25.1,Mourning Dove,MODO,29,NA,NA,NA
+7/22/2024,"CL,GA",72,2,McPherson,Rural,9:26,MC24,MC24.1,Eastern Kingbird,EAKI,29,Common Grackle,COGR,81
+4/1/2024,BO,46,2,Garden City,Urban,10:02,GC18,GC18.2,European Starling,EUST,29,Eurasian Collared Dove,EUCD,142.5
+4/4/2024,BO,38,2,Garden City,Urban,8:11,GC 11,GC 11.1,European Starling,EUST,29,American Robin,AMRO,28.1
+4/23/2024,NB,59,8,Topeka,Urban,9:58,16,16.2,Common Grackle,COGR,29.1,Canada Goose,CANG,205
+4/4/2024,"ED, NB, JS",63,9,McPherson,Urban,3:01,MC9,MC9.2,American Robin,AMRO,29.3,European Starling,EUST,15.7
+7/11/2024,NB,76,6,Topeka,WMA,10:11,10,10.2,Chipping Sparrow,CHSP,29.5,House Sparrow,HOSP,34.6
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:27,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,29.5,European Starling,EUST,157.5
+8/30/2024,BO,63,1,Garden City,Urban,7:30,GC 10,GC 10.1,Eurasian Collared Dove,EUCD,29.5,American Robin,AMRO,17.9
+5/3/2024,JS/NB,54,5,Topeka,Urban,8:34,15,15.2,Northern Flicker,NOFL,29.6,Great Crested Flycatcher,GCFL,Only Heard
+4/17/2024,BO,55,2,Garden City,WMA,9:26,BR 4,BR 4.2,White-crowned Sparrow,WCSP,29.6,White-crowned Sparrow,WCSP,225
+5/1/2024,JS/NB,60,11,Topeka,Urban,8:33,21,21.1,White-crowned Sparrow,WCSP,29.7,NA,NA,NA
+4/25/2024,JS/NB,56,11,Topeka,WMA,10:17,8,8.1,Northern Cardinal,NOCA,29.8,Brown-headed Cowbird,BHCO,Only Heard
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,European Starling,EUST,29.9,NA,NA,NA
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,American Robin,AMRO,29.9,NA,NA,NA
+4/19/2024,JS/NB,43,4,Topeka,WMA,7:52,2,2.1,Barred Owl,BDOW,30,Tufted Titmouse,TUTI,Only Heard
+4/19/2024,JS/NB,47,3,Topeka,WMA,9:41,21,21.2,Blue-gray Gnatcatcher,BGGN,30,American Goldfinch,AGOL,25
+4/23/2024,NB,57,7,Topeka,Urban,8:18,22,22.1,American Robin,AMRO,30,Common Grackle,COGR,27.4
+8/20/2024,ED,64,3,Topeka,WMA,7:15,8,8.2,Mourning Dove,MODO,30,Northern Cardinal,NOCA,73
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Mallard,MALL,30,NA,NA,NA
+7/29/2024,"GA,CL",74,11,McPherson,Urban,7:14,MC5,MC5.1,Mourning Dove,MODO,30,House Sparrow,HOSP,28
+8/7/2024,CL,69,9,McPherson,Urban,8:39,MC15,MC15.1,Eastern Kingbird,EAKI,30,Upland Sandpiper,UPSA,92
+8/13/2024,CL,74,11,McPherson,Urban,10:09,MC2,MC2.2,Blue Jay,BLJA,30,European Starling,EUST,109
+8/15/2024,CL,79,5,McPherson,Urban,9:38,MC8,MC8.2,House Finch,HOFI,30,NA,NA,NA
+8/1/2024,IW,67,1,Garden City,Rural,7:01,CN 5,CN 5.2,Blue Grosbeak,BLGR,30,NA,NA,NA
+8/14/2024,"RR, IW",71,1,Garden City,WMA,6:59,BR 6,BR 6.2,Mourning Dove,MODO,30,NA,NA,NA
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,Eurasian Collared Dove,EUCD,30,House Finch,HOFI,18
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,European Starling,EUST,30,NA,NA,NA
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,Eurasian Collared Dove,EUCD,30,NA,NA,NA
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,sparrow,NA,30.1,NA,NA,NA
+4/2/2024,BO,45,3,Garden City,Urban,8:44,GC 22,GC 22.2,Eurasian Collared Dove,EUCD,30.1,NA,NA,NA
+8/28/2024,"BO, RR",67,1,Garden City,Urban,7:55,GC 4,GC 4.2,Eurasian Collared Dove,EUCD,30.1,Eurasian Collared Dove,EUCD,97.2
+4/22/2024,JS/NB,44,11,Topeka,Urban,7:35,5,5.2,American Robin,AMRO,30.2,House Sparrow,HOSP,95
+7/30/2024,NB,80,13,Topeka,Urban,7:30,19,19.1,Red-winged Blackbird,RWBL,30.3,Red-winged Blackbird,RWBL,26.4
+5/3/2024,JS/NB,63,10,Topeka,Urban,10:37,7,7.2,Common Grackle,COGR,30.4,Blue Jay,BLJA,Only Heard
+4/2/2024,BO,45,4,Garden City,Urban,13:27,GC 21,GC 21.2,Grackle,NA,30.4,NA,NA,NA
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:38,6,6.1,House Sparrow,HOSP,30.5,NA,NA,NA
+4/3/2024,BO,38,2,Garden City,Urban,9:56,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,30.5,NA,NA,NA
+4/4/2024,"ED, NB, JS",37,8,McPherson,Urban,8:28,MC5,MC5.1,Wood Duck,WODU,30.6,American Robin,AMRO,31.5
+4/1/2024,BO,46,2,Garden City,Urban,9:51,GC17,GC17.2,European Starling,EUST,30.6,American Robin,AMRO,42.9
+4/5/2024,BO,45,4,Garden City,Urban,8:19,GC 4,GC 4.2,Brown-headed Cowbird,BHCO,30.6,Grackle,NA,82
+4/19/2024,JS/NB,43,4,Topeka,WMA,8:05,2,2.2,Tufted Titmouse,TUTI,30.7,NA,NA,NA
+8/7/2024,"BO, RR",73,1,Garden City,Rural,9:08,Cn 5,CN 5.3,Scissor-Tail Flycatcher,STFL,30.7,Mourning Dove,MODO,36.9
+8/7/2024,"BO, RR",73,1,Garden City,Rural,9:08,Cn 5,CN 5.3,House Sparrow,HOSP,30.7,Mourning Dove,MODO,100.7
+4/4/2024,"ED, NB, JS",37,8,McPherson,Urban,8:28,MC5,MC5.1,American Robin,AMRO,30.8,Mourning Dove,MODO,21.2
+4/4/2024,BO,44,2,Garden City,Urban,8:55,GC 12,GC 12.2,Eurasian Collared Dove,EUCD,30.9,Grackle,NA,64.3
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:37,GC 20,GC 20.2,Western Kingbird,WEKI,30.9,Eurasian Collared Dove,EUCD,53.6
+8/20/2024,ED,63,3,Topeka,WMA,6:17,14,14.1,Indigo Bunting,INBU,31,American Goldfinch,AGOL,70
+8/15/2024,CL,79,5,McPherson,Urban,9:38,MC8,MC8.2,Red-winged Blackbird,RWBL,31,Mourning Dove,MODO,29
+8/21/2024,GA & IW,71,11,McPherson,Rural,9:05,BB4,BB4.2,Lark Sparrow,LASP,31,Dickcissel,DICK,63
+8/1/2024,IW,71,2,Garden City,Rural,8:03,CN 1,CN 1.1,Lark Sparrow,LASP,31,Eastern Kingbird,EAKI,47
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Eurasian Collared Dove,EUCD,31,Grackle ,NA,96
+4/12/2024,JS/NB,50,9,Topeka,WMA,9:48,4,4.1,Swamp Sparrow,SWSP,31.2,Northern Cardinal,NOCA,92
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:38,6,6.1,Mourning Dove,MODO,31.3,NA,NA,NA
+4/30/2024,JS/NB,62,10,Topeka,Urban,8:23,14,14.2,Chipping Sparrow,CHSP,31.3,NA,NA,NA
+4/17/2024,BO,57,2,Garden City,WMA,9:54,BR 4,BR 4.1,White-crowned Sparrow,WCSP,31.4,White-crowned Sparrow,WCSP,212
+5/3/2024,JS/NB,61,9,Topeka,Urban,10:24,7,7.1,Rose-breasted Grosbeak,RBGR,31.5,Blue Jay,BLJA,17.3
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:51,6,6.2,American Robin,AMRO,31.6,European Starling,EUST,36.2
+4/5/2024,BO,48,4,Garden City,Urban,8:53,GC 3,GC 3.2,American Robin,AMRO,31.6,Eurasian Collared Dove,EUCD,15.5
+7/10/2024,NB,63,4,Topeka,Urban,7:11,3,3.1,Mourning Dove,MODO,31.7,Mourning Dove,MODO,61.6
+4/16/2024,ED,58,17,McPherson,Urban,8:16,MC12,MC12.1,Eastern Meadowlark,EAME,31.9,Mourning Dove,MODO,36.4
+4/29/2024,JS/NB,56,4,Topeka,Urban,9:37,12,12.1,Common Grackle,COGR,32,European Starling,EUST,42.7
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:22,MC25,MC25.2,Scissor-tailed Flycatcher,STFL,32,European Starling,EUST,232
+8/7/2024,CL,64,6,McPherson,Urban,6:51,MC13,MC13.1,Eurasian Collared Dove,EUCD,32,NA,NA,NA
+4/3/2024,BO,36,2,Garden City,Urban,8:49,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,32,Eurasian Collared Dove,EUCD,77.6
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,32,House Sparrow,HOSP,38
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,Eurasian Collared Dove,EUCD,32,House Finch,HOFI,50
+8/15/2024,BO,71,2,Garden City,Urban,7:59,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,32,NA,NA,NA
+8/15/2024,BO,71,2,Garden City,Urban,7:59,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,32,NA,NA,NA
+4/23/2024,NB,57,7,Topeka,Urban,8:18,22,22.1,American Robin,AMRO,32.1,American Robin,AMRO,21.4
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:47,3,3.2,American Robin,AMRO,32.1,Chimney Swift,CHSW,Only Heard
+4/10/2024,"ED, NP",55,5,McPherson,WM,9:31,BB2,BB2.1,Brown-headed Cowbird,BHCO,32.4,Mourning Dove,MODO,161.6
+4/25/2024,ED,57,16,McPherson,Rural,8:24,BB3,BB3.2,Killdeer,KILL,32.4,Red-winged Blackbird,RWBL,51.8
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:23,3,3.1,American Robin,AMRO,32.5,House Finch,HOFI,Only Heard
+4/24/2024,JS/NB,48,5,Topeka,WMA,7:42,15,15.1,Ruby-crowned Kinglet,RCKI,32.6,Yellow-rumped Warbler,YRWA,23.8
+5/1/2024,JS/NB,58,10,Topeka,Urban,8:00,19,19.1,Rose-breasted Grosbeak,RBGR,32.6,House Wren,HOWR,Only Heard
+7/10/2024,NB,72,4,Topeka,Urban,8:32,2,2.1,European Starling,EUST,32.7,NA,NA,NA
+7/16/2024,NB,79,10,Topeka,Urban,10:38,14,14.2,American Robin,AMRO,32.7,Mourning Dove,MODO,19.8
+7/16/2024,NB,79,10,Topeka,Urban,10:38,14,14.2,House Sparrow,HOSP,32.7,American Robin,AMRO,56.4
+4/10/2024,JS/NB,55,4,Topeka,WMA,9:59,6,6.1,Harris's Sparrow ,HASP,32.8,Red-bellied Woodpecker,RWBO,Only Heard
+4/22/2024,JS/NB,45,11,Topeka,Urban,7:52,5,5.1,American Robin,AMRO,32.8,European Starling,EUST,31.4
+4/23/2024,ED,61,6,McPherson,WMA,9:23,IN9,IN9.2,Savannah Sparrow,SAVS,32.8,Horned Lark,HOLA,113.8
+8/28/2024,"BO, RR",67,1,Garden City,Urban,7:55,GC 4,GC 4.2,Eurasian Collared Dove,EUCD,32.8,American Robin,AMRO,40.7
+4/18/2024,ED,49,7,McPherson,WMA,9:57,IN,IN4.1,Ring-necked Pheasant,RNEP,32.9,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:02,GC18,GC18.2,Eurasian Collared Dove,EUCD,32.9,Eurasian Collared Dove,EUCD,27.3
+4/29/2024,JS/NB,50,3,Topeka,Urban,8:09,8,8.2,European Starling,EUST,33,Tufted Titmouse,TUTI,Only Heard
+5/3/2024,JS/NB,61,9,Topeka,Urban,10:24,7,7.1,American Robin,AMRO,33,Least Flycatcher,LEFL,Only Heard
+8/20/2024,ED,65,3,Topeka,WMA,7:55,13,13.2,Indigo Bunting,INBU,33,Northern Cardinal,NOCA,52
+8/20/2024,ED,69,5,Topeka,WMA,9:45,19,19.2,Northern Cardinal,NOCA,33,Great Blue Heron,GBHE,107
+4/23/2024,ED,59,5,McPherson,WMA,9:00,IN8,IN8.3,American Goldfinch,AGOL,33,American Goldfinch,AGOL,58.3
+4/23/2024,ED,59,5,McPherson,WMA,9:00,IN8,IN8.3,Eastern Phoebe,EAPH,33,Eastern Meadowlark,EAME,108.2
+7/24/2024,"CL,GA",66,4,McPherson,WMA,7:12,IN7,IN7.1,Red-winged Blackbird,RWBL,33,NA,NA,NA
+8/5/2024,"CL,GA",74,7,McPherson,WMA,8:18,IN2,IN2.2,Barn Swallow,BARS,33,Eastern Meadowlark,EAME,69
+8/15/2024,CL,74,5,McPherson,Urban,8:14,MC7,MC7.2,House Sparrow,HOSP,33,European Starling,EUST,32
+4/5/2024,BO,50,4,Garden City,Urban,9:39,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,33,European Starling,EUST,48
+4/23/2024,NB,57,7,Topeka,Urban,8:28,22,22.2,American Robin,AMRO,33.1,European Starling,EUST,25.2
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:23,GC 21,GC 21.2,Eurasian Collared Dove,EUCD,33.4,European Starling,EUST,21
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,33.4,NA,NA,NA
+4/12/2024,JS/NB,42,7,Topeka,WMA,7:42,10,10.1,Northern Cardinal,NOCA,33.5,White-throated Sparrow,WTSP,Only Heard
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:22,5,5.1,Red-winged Blackbird ,RWBL,33.5,Red-winged Blackbird ,RWBL,48.6
+4/8/2024,JS/NB,56,4,Topeka,WMA,10:49,17,17.2,Eastern Bluebird,EABL,33.7,White-breasted Nuthatch,WBNU,42.2
+4/4/2024,"ED, NB, JS",49,10,McPherson,Urban,10:56,MC7,MC7.1,Mourning Dove,MODO,34,American Robin,AMRO,58
+4/4/2024,"ED, NB, JS",49,10,McPherson,Urban,10:56,MC7,MC7.1,American Robin,AMRO,34,Downy Woodpecker,DOWO,29
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,Northern Flicker,NOFL,34,Common Grackle,COGR,80
+7/16/2024,"ED,GA",76,14,Inman,WMA,7:28,IN1,IN1.2,Eastern Meadowlark ,EAME,34,Dickcissel,DICK,20
+7/19/2024,"ED, CL",66,9,McPherson,Urban,7:55,MC22,MC22.2,American Robin,AMRO,34,NA,NA,NA
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:23,GC 17,GC 17.2,Eurasian Collared Dove,EUCD,34,House Finch,HOFI,32
+8/26/2024,IW,72,1,Garden City,Urban,7:27,GC 18,GC 18.2,Eurasian Collared Dove,EUCD,34,Eurasian Collared Dove,EUCD,34
+4/2/2024,BO,46,3,Garden City,Urban,9:24,GC 23,GC 23.2,European Starling,EUST,34.3,American Robin,AMRO,74
+4/30/2024,JS/NB,66,11,Topeka,Urban,9:43,18,18.1,Blue Jay,BLJA,34.5,Blue Jay,BLJA,35.6
+4/4/2024,"ED, NB, JS",52,11,McPherson,Urban,11:29,MC7,MC7.2,Eurasian Collared Dove,EUCD,34.6,Cooper's Hawk,COHA,170
+4/4/2024,BO,48,2,Garden City,Urban,9:52,GC 7,GC 7.2,Eurasian Collared Dove,EUCD,34.6,European Starling,EUST,17.2
+4/2/2024,ED,68,20,McPherson,Urban,14:26,MC2,MC2.1,Common Grackle,COGR,34.7,Common Grackle,COGR,150.3
+4/4/2024,BO,44,2,Garden City,Urban,8:55,GC 12,GC 12.2,American Robin,AMRO,34.8,Eurasian Collared Dove,EUCD,46.8
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:21,4,4.2,House Finch,HOFI,35,American Robin,AMRO,71.3
+7/12/2024,JS/HQ,71,10,Topeka,Urban,6:55,13,13.2,Downy Woodpecker,DOWO,35,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Red-winged Blackbird,RWBL,35,House Sparrow,HOSP,70
+7/25/2024,"CL,GA",71,5,McPherson,Rural,7:38,BB11,BB11.2,Red-winged Blackbird,RWBL,35,Common Grackle,COGR,130
+7/26/2024,"GA,CL",70,5,McPherson,WMA,7:23,IN8,IN8.4,Indigo Bunting,INBU,35,NA,NA,NA
+8/15/2024,CL,71,5,McPherson,Urban,7:31,MC1,MC1.1,Mourning Dove,MODO,35,Mourning Dove,MODO,15
+8/15/2024,CL,72,5,McPherson,Urban,7:39,MC1,MC1.2,Blue Jay,BLJA,35,NA,NA,NA
+8/15/2024,CL,79,5,McPherson,Urban,9:38,MC8,MC8.2,House Finch,HOFI,35,Northern Cardinal,NOCA,85
+8/14/2024,"RR, IW",71,1,Garden City,WMA,6:59,BR 6,BR 6.2,Mourning Dove,MODO,35,NA,NA,NA
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Eurasian Collared Dove,EUCD,35,Rock Pigeon,ROPI,36
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Mississippi Kite,MIKI,35,Rock Pigeon,ROPI,54
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Eurasian Collared Dove,EUCD,35,Grackle ,NA,86
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Rock Pigeon,ROPI,35,NA,NA,NA
+4/25/2024,ED,59,16,McPherson,Rural,9:57,BB6,BB6.1,Eastern Meadowlark,EAME,35.1,Red-winged Blackbird,RWBL,231.2
+4/12/2024,JS/NB,42,7,Topeka,WMA,7:42,10,10.1,Eastern Bluebird,EABL,35.2,Harris's Sparrow,HASP,Only Heard
+4/12/2024,JS/NB,42,7,Topeka,WMA,7:42,10,10.1,European Starling,EUST,35.2,House Finch,HOFI,Only Heard
+4/23/2024,NB,59,8,Topeka,Urban,9:09,9,9.2,American Robin,AMRO,35.2,European Starling,EUST,179.4
+7/16/2024,NB,76,7,Topeka,Urban,6:57,12,12.1,Mourning Dove,MODO,35.2,European Starling,EUST,Only Heard
+7/11/2024,NB,74,6,Topeka,WMA,9:28,3,3.1,American Goldfinch,AGOL,35.3,Bell's Vireo,BEVI,38.8
+4/17/2024,BO,46,3,Garden City,WMA,7:51,BR 6,BR 6.2,White-crowned Sparrow,WCSP,35.3,White-crowned Sparrow,WCSP,113.6
+4/5/2024,"ED, NB, JS",58,13,McPherson,Urban,10:56,MC15,MC15.1,Red-winged Blackbird,RWBL,35.4,American Robin,AMRO,85
+4/1/2024,BO,46,3,Garden City,Urban,9:29,GC18,GC18.1,European Starling,EUST,35.4,NA,NA,NA
+4/5/2024,BO,49,4,Garden City,Urban,9:04,GC 2,GC 2.2,Eurasian Collared Dove,EUCD,35.4,American Robin,AMRO,67.8
+4/4/2024,"ED, NB, JS",37,8,McPherson,Urban,8:28,MC5,MC5.1,European Starling,EUST,35.5,Eurasian Collared Dove,EUCD,43.1
+4/19/2024,JS/NB,47,4,Topeka,WMA,9:20,21,21.1,Chipping Sparrow,CHSP,35.6,NA,NA,NA
+7/11/2024,NB,74,6,Topeka,WMA,9:28,3,3.1,Dickcissel,DICK,35.6,American Goldfinch,AGOL,83.9
+4/8/2024,JS/NB,52,5,Topeka,WMA,9:46,16,16.2,Tufted Titmouse,TUTI,35.7,NA,NA,NA
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:05,GC 11,GC 11.1,Eurasian Collared Dove,EUCD,35.7,Eurasian Collared Dove,EUCD,80.1
+4/30/2024,JS/NB,66,11,Topeka,Urban,9:43,18,18.1,American Robin,AMRO,35.8,Black-capped Chickadee,BCCH,Only Heard
+8/16/2024,NB/ED,71,4,Topeka,WMA,8:20,23,23.1,Eastern Bluebird,EABL,35.8,Mourning Dove,MODO,Only Heard
+5/1/2024,JS/NB,60,11,Topeka,Urban,8:33,21,21.1,Chipping Sparrow,CHSP,35.9,Black-capped Chickadee,BCCH,Only Heard
+4/22/2024,JS/NB,44,11,Topeka,Urban,7:35,5,5.2,European Starling,EUST,36,Warbling Vireo,WAVI,Only Heard
+7/16/2024,"ED,GA",76,14,Inman,WMA,7:28,IN1,IN1.2,swallow,NA,36,Red-winged Blackbird,RWBL,70
+8/15/2024,CL,72,5,McPherson,Urban,7:39,MC1,MC1.2,Common Grackle,COGR,36,Blue Jay,BLJA,46
+8/21/2024,GA & IW,71,11,McPherson,Rural,9:05,BB4,BB4.2,Red-winged Blackbird,RWBL,36,Lark Sparrow,LASP,54
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,36,NA,NA,NA
+4/22/2024,JS/NB,46,11,Topeka,Urban,8:10,2,2.1,European Starling,EUST,36.1,NA,NA,NA
+4/3/2024,BO,36,2,Garden City,Urban,8:49,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,36.1,Eurasian Collared Dove,EUCD,71
+4/4/2024,"ED, NB, JS",37,8,McPherson,Urban,8:28,MC5,MC5.1,Mourning Dove,MODO,36.3,NA,NA,NA
+8/2/2024,NB,74,7,Topeka,WMA,8:25,2,2.2,Red-eyed Vireo,REVI,36.5,Northern Cardinal,NOCA,Only Heard
+4/3/2024,BO,36,2,Garden City,Urban,9:45,GC 16,GC 16.2,American Robin,AMRO,36.5,Eurasian Collared Dove,EUCD,100.4
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:47,3,3.2,American Robin,AMRO,36.7,NA,NA,NA
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:51,6,6.2,American Robin,AMRO,36.7,NA,NA,NA
+4/1/2024,BO,45,3,Garden City,Urban,9:13,GC13,GC13.3,Eurasian Collared Dove,EUCD,36.7,European Starling,EUST,50.8
+8/26/2024,"BO, RR",70,1,Garden City,Urban,8:35,GC 16,GC 16.2,Eurasian Collared Dove,EUCD,36.7,NA,NA,NA
+4/4/2024,BO,48,2,Garden City,Urban,9:44,GC 7,GC 7.1,Eurasian Collared Dove,EUCD,36.8,Eurasian Collared Dove,EUCD,53.8
+4/5/2024,BO,45,4,Garden City,Urban,8:10,GC 4,GC 4.3,European Starling,EUST,36.8,House Sparrow,HOSP,15.4
+8/20/2024,ED,64,3,Topeka,WMA,7:15,8,8.2,Northern Cardinal,NOCA,37,NA,NA,NA
+8/20/2024,ED,68,4,Topeka,WMA,9:22,20,20.1,Eastern Bluebird,EABL,37,NA,NA,NA
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:32,MC25,MC25.1,Eurasian Collared Dove,EUCD,37,Great Blue Heron,GBHE,153
+8/1/2024,"GA,CL",73,5,McPherson,WMA,6:42,IN8,IN8.1,Barn Swallow,BARS,37,Upland Sandpiper,UPSA,64
+8/21/2024,GA & IW,71,11,McPherson,Rural,9:05,BB4,BB4.2,Dickcissel,DICK,37,Dickcissel,DICK,56
+8/1/2024,IW,71,2,Garden City,Rural,8:03,CN 1,CN 1.1,Lark Sparrow,LASP,37,NA,NA,NA
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,Eurasian Collared Dove,EUCD,37,NA,NA,NA
+7/11/2024,NB,76,6,Topeka,WMA,10:11,10,10.2,Mourning Dove,MODO,37.1,Northern Cardinal,NOCA,35.6
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.2,Red-winged Blackbird,RWBL,37.1,Ring-necked Pheasant,RNEP,89.9
+8/26/2024,"BO, RR",73,1,Garden City,Urban,8:59,GC 15,GC 15.2,Loggerhead Shrike,LOSH,37.2,European Starling,EUST,240
+4/19/2024,JS/NB,47,4,Topeka,WMA,9:20,21,21.1,Tufted Titmouse,TUTI,37.4,Brown-headed Cowbird,BHCO,Only Heard
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:22,5,5.1,European Starling,EUST,37.5,Warbling Vireo,WAVI,Only Heard
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:22,5,5.1,Common Grackle,COGR,37.5,Eastern Kingbird,EAKI,30
+4/23/2024,NB,59,8,Topeka,Urban,10:14,10,10.2,Blue Jay,BLJA,37.6,European Starling,HOSP,27.9
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,House Sparrow,HOSP,37.6,European Starling,EUST,12.4
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,Mourning Dove,MODO,37.6,European Starling,EUST,23.2
+4/1/2024,BO,46,3,Garden City,Urban,9:29,GC18,GC18.1,Eurasian Collared Dove,EUCD,37.6,NA,NA,NA
+8/30/2024,BO,65,1,Garden City,Urban,8:05,GC 7,GC 7.3,House Sparrow,HOSP,37.6,Eurasian Collared Dove,EUCD,116.6
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:38,5,5.2,Common Grackle,COGR,37.9,American Robin,AMRO,37.9
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:38,5,5.2,European Starling,EUST,37.9,House Finch,HOFI,27.9
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:10,GC 20,GC 20.1,Eurasian Collared Dove,EUCD,37.9,Blue Jay,BLJA,76
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,House Sparrow,HOSP,38,NA,NA,NA
+7/16/2024,"ED,GA",75,11,Inman,WMA,6:46,IN2,IN2.1,Eastern Meadowlark ,EAME,38,Dickcissel,DICK,35
+7/25/2024,"CL,GA",71,5,McPherson,Rural,7:38,BB11,BB11.2,Red-winged Blackbird,RWBL,38,Common Yellowthroat,COYE,32
+7/16/2024,NB,76,6,Topeka,Urban,6:36,11,11.2,European Starling,EUST,38.1,Mourning Dove,MODO,77.5
+4/5/2024,BO,50,4,Garden City,Urban,9:39,GC 6,GC 6.1,Grackle,NA,38.1,White-winged Dove,WWDO,39.2
+4/12/2024,JS/NB,50,9,Topeka,WMA,9:48,4,4.1,Northern Cardinal,NOCA,38.3,Downy Woodpecker,DOWO,46.4
+8/15/2024,BO,70,2,Garden City,Urban,7:43,GC 9,GC 9.2,Eurasian Collared Dove,EUCD,38.3,European Starling,EUST,87.2
+4/23/2024,NB,58,8,Topeka,Urban,8:51,9,9.1,European Starling,EUST,38.4,European Starling,EUST,60.1
+4/30/2024,JS/NB,67,11,Topeka,Urban,9:53,18,18.2,American Robin,AMRO,38.5,NA,NA,NA
+4/22/2024,JS/NB,44,11,Topeka,Urban,7:35,5,5.2,American Robin,AMRO,38.6,Common Grackle,COGR,53
+7/10/2024,NB,74,4,Topeka,Urban,8:45,2,2.2,European Starling,EUST,38.6,Mourning Dove,MODO,17.5
+4/18/2024,ED,46,6,McPherson,WMA,9:11,IN,IN4.3,Eastern Meadowlark,EAME,38.6,Eastern Meadowlark,EAME,92.2
+4/4/2024,BO,37,2,Garden City,Urban,7:58,GC 10,GC 10.2,European Starling,EUST,38.9,Eurasian Collared Dove,EUCD,14.9
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:47,GC 4,GC 4.1,European Starling,EUST,38.9,Eurasian Collared Dove,EUCD,27
+8/20/2024,ED,64,4,Topeka,WMA,6:59,8,8.1,American Goldfinch,AGOL,39,NA,NA,NA
+7/16/2024,"ED,GA",75,11,Inman,WMA,6:46,IN2,IN2.1,Dickcissel,DICK,39,sparrow,NA,105
+7/29/2024,"GA,CL",75,11,McPherson,Urban,6:50,MC9,MC9.1,European Starling,EUST,39,NA,NA,NA
+7/30/2024,"GA, CL",82,17,McPherson,Urban,8:24,MC19,MC19.2,Cedar Waxwing,CEDW,39,Western Kingbird,WEKI,60
+8/14/2024,"RR, IW",74,1,Garden City,Urban,8:55,GC 18,GC 18.2,Eurasian Collared Dove,EUCD,39,Eurasian Collared Dove,EUCD,68
+8/15/2024,BO,70,1,Garden City,Urban,8:57,GC 2,GC 2.2,Eurasian Collared Dove,EUCD,39,Barn Swallow,BARS,21
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:42,BB4,BB4.2,Red-winged Blackbird,RWBL,39.1,meadowlark,NA,35.7
+4/18/2024,ED,49,7,McPherson,WMA,9:57,IN,IN4.1,Western Meadowlark,WEME,39.1,Eastern Meadowlark,EAME,38.6
+4/18/2024,ED,46,6,McPherson,WMA,9:11,IN,IN4.3,Red-winged Blackbird,RWBL,39.2,Ring-necked Pheasant,EAME,51.7
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:51,6,6.2,White-throated Sparrow,WTSP,39.3,NA,NA,NA
+4/30/2024,JS/NB,62,10,Topeka,Urban,8:23,14,14.2,Carolina Wren,CARW,39.3,European Starling,EUST,60.6
+4/25/2024,ED,59,16,McPherson,Rural,9:57,BB6,BB6.1,Red-winged Blackbird,RWBL,39.3,Red-winged Blackbird,RWBL,192.3
+4/24/2024,RR,59,2,Garden City,Rural,10:31,CN 5,CN 5.3,White-crowned Sparrow,WCSP,39.3,White-crowned Sparrow,WCSP,49.2
+4/25/2024,ED,59,16,McPherson,Rural,9:57,BB6,BB6.1,Red-winged Blackbird,RWBL,39.4,Red-winged Blackbird,RWBL,59.1
+4/2/2024,BO,45,4,Garden City,Urban,9:42,GC 24,GC 24.1,American Robin,AMRO,39.4,Eurasian Collared Dove,EUCD,21.2
+5/3/2024,JS/NB,53,6,Topeka,Urban,8:20,15,15.1,House Finch,HOFI,39.5,House Sparrow,HOSP,53.6
+5/3/2024,JS/NB,53,6,Topeka,Urban,8:20,15,15.1,House Finch,HOFI,39.7,European Starling,EUST,42.9
+4/4/2024,BO,48,2,Garden City,Urban,9:52,GC 7,GC 7.2,Eurasian Collared Dove,EUCD,39.7,European Starling,EUST,64.1
+4/2/2024,BO,46,3,Garden City,Urban,9:24,GC 23,GC 23.2,American Robin,AMRO,39.8,European Starling,EUST,44.2
+4/3/2024,BO,34,2,Garden City,Urban,8:37,GC 14,GC 14.2,House Sparrow,HOSP,39.8,Eurasian Collared Dove,EUCD,30.4
+4/8/2024,JS/NB,52,5,Topeka,WMA,9:46,16,16.2,Black-capped Chickadee,BCCH,40,Tufted Titmouse,TUTI,58.8
+8/20/2024,ED,68,4,Topeka,WMA,9:22,20,20.1,Green Heron,GRHE,40,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,European Starling,EUST,40,Red-winged Blackbird,RWBL,180
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,Brown-headed Cowbird,BHCO,40,Red-winged Blackbird,RWBL,130
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,swallow,NA,40,European Starling,EUST,119
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Brown-headed Cowbird ,BHCO,40,NA,NA,NA
+7/25/2024,"CL,GA",77,6,McPherson,Rural,8:39,BB13,BB13.1,Dickcissel,DICK,40,NA,NA,NA
+7/26/2024,"GA,CL",70,5,McPherson,WMA,7:23,IN8,IN8.4,Mourning Dove,MODO,40,NA,NA,NA
+4/2/2024,BO,44,2,Garden City,Urban,8:27,GC 22,GC 22.1,European Starling,EUST,40,House Sparrow,HOSP,42.5
+4/2/2024,BO,45,3,Garden City,Urban,8:56,GC 23,GC 23.3,Eurasian Collared Dove,EUCD,40,Eurasian Collared Dove,EUCD,62.7
+7/30/2024,"BO, IW",76,2,Garden City,WMA,7:23,BR 1,BR 1.2,Western Kingbird,WEKI,40,Western Kingbird,WEKI,78
+7/30/2024,"BO, IW",76,2,Garden City,WMA,7:23,BR 1,BR 1.2,Western Kingbird,WEKI,40,NA,NA,NA
+8/2/2024,IW,68,1,Garden City,Urban,7:19,GC 8,GC 8.2,European Starling,EUST,40,Grackle,NA,76
+8/14/2024,"RR, IW",71,1,Garden City,WMA,6:59,BR 6,BR 6.2,Mourning Dove,MODO,40,Mourning Dove,MODO,104
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:10,GC 20,GC 20.1,Mississippi Kite,MIKI,40,Eurasian Collared Dove,EUCD,81.7
+8/30/2024,BO,63,1,Garden City,Urban,7:30,GC 10,GC 10.1,Eurasian Collared Dove,EUCD,40,Eurasian Collared Dove,EUCD,65.5
+4/18/2024,ED,49,7,McPherson,WMA,9:57,IN,IN4.1,Eastern Meadowlark,EAME,40.1,Ring-necked Pheasant,RNEP,48.5
+4/24/2024,RR,56,2,Garden City,Rural,9:37,CN 1,CN 1.3,White-crowned Sparrow,WCSP,40.1,Mourning Dove,MODO,140.7
+4/17/2024,ED,64,4,McPherson,WMA,9:46,IN,IN5.4,Red-winged Blackbird,RWBL,40.2,Ring-necked Pheasant,RNEP,136.3
+4/24/2024,RR,62,2,Garden City,Rural,11:38,CN 3,CN 3.2,White-crowned Sparrow,WCSP,40.2,White-crowned Sparrow,WCSP,54.8
+4/25/2024,JS/NB,56,11,Topeka,WMA,10:17,8,8.1,American Robin,AMRO,40.3,NA,NA,NA
+7/10/2024,NB,77,5,Topeka,Urban,9:30,6,6.1,American Robin,AMRO,40.3,NA,NA,NA
+4/22/2024,JS/NB,48,11,Topeka,Urban,8:31,2,2.2,American Goldfinch,AGOL,40.6,NA,NA,NA
+4/23/2024,NB,59,8,Topeka,Urban,10:14,10,10.2,American Robin,AMRO,41,American Robin,AMRO,34.1
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,Red-winged Blackbird,RWBL,41,Red-winged Blackbird,RWBL,120
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Brown-headed Cowbird,BHCO,41,Brown-headed Cowbird,BHCO,20
+7/16/2024,"ED,GA",77,10,Inman,WMA,8:07,IN3,IN3.2,Red-winged Blackbird,RWBL,41,sparrow,NA,50
+7/18/2024,"ED,GA",66,5,McPherson,Urban,7:39,MC8,MC8.1,Western Kingbird,WEKI,41,sparrow,NA,29
+7/22/2024,"CL,GA",65,2,McPherson,Rural,7:47,BB9,BB9.1,Dickcissel,DICK,41,Red-winged Blackbird,RWBL,191
+7/25/2024,"GA,CL",81,7,McPherson,Rural,9:26,BB12,B12.2,Red-winged Blackbird,RWBL,41,NA,NA,NA
+8/7/2024,CL,67,9,McPherson,Urban,8:08,MC14,MC14.1,House Sparrow,HOSP,41,NA,NA,NA
+8/13/2024,CL,73,11,McPherson,Urban,8:59,MC5,MC5.2,Mississippi Kite,MIKI,41,NA,NA,NA
+8/1/2024,BO,70,2,Garden City,Rural,8:03,CN 3,CN 3.3,Swainson's Hawk,SWHA,41,NA,NA,NA
+4/3/2024,BO,33,2,Garden City,Urban,8:13,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,41.1,NA,NA,NA
+5/1/2024,JS/NB,60,11,Topeka,Urban,8:33,21,21.1,White-crowned Sparrow,WCSP,41.2,Indigo Bunting,INBU,68.6
+4/10/2024,JS/NB,55,4,Topeka,WMA,9:59,6,6.1,Song Sparrow,SOSP,41.3,NA,NA,NA
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:51,6,6.2,American Robin,AMRO,41.3,Northern Flicker,NOFL,Only Heard
+7/30/2024,NB,78,12,Topeka,Urban,6:51,18,18.1,Blue Jay,BLJA,41.3,Blue Jay,BLJA,41.4
+4/29/2024,BO,58,2,Garden City,WMA,9:18,BR 14,BR 14.2,White-crowned Sparrow,WCSP,41.3,NA,NA,NA
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:47,3,3.2,House Sparrow,HOSP,41.4,American Robin,AMRO,43.6
+4/1/2024,BO,47,2,Garden City,Urban,9:40,GC17,GC17.1,American Crow,AMCR,41.5,Eurasian Collared Dove,EUCD,61.7
+4/8/2024,JS/NB,52,5,Topeka,WMA,9:46,16,16.2,Northern Cardinal,NOCA,41.9,Ruby-crowned Kinglet ,RCKI,12.6
+4/16/2024,ED,60,18,McPherson,Urban,8:58,MC17,MC17.1,Northern Cardinal,NOCA,41.9,Song Sparrow,SOSP,86.6
+8/20/2024,ED,64,4,Topeka,WMA,6:59,8,8.1,Northern Cardinal,NOCA,42,NA,NA,NA
+8/20/2024,ED,64,4,Topeka,WMA,6:59,8,8.1,House Sparrow,HOSP,42,NA,NA,NA
+4/4/2024,"ED, NB, JS",63,9,McPherson,Urban,3:01,MC9,MC9.2,Brown Creeper,BRCR,42,Mourning Dove,MODO,70
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,European Starling,EUST,42,Brown-headed Cowbird,BHCO,65
+7/18/2024,"ED,GA",69,6,McPherson,Urban,8:15,MC15,MC15.2,Eurasian Collared Dove,EUCD,42,European Starling,EUST,89
+7/22/2024,"CL,GA",67,2,McPherson,Rural,8:24,MC26,MC26.2,Eurasian Collared Dove,EUCD,42,Purple Martin,PUMA,117
+7/29/2024,"GA,CL",74,11,McPherson,Urban,7:14,MC5,MC5.1,Blue Jay,BLJA,42,House Sparrow,HOSP,14
+7/30/2024,"GA, CL",79,14,McPherson,Urban,6:58,MC21,MC21.2,House Sparrow,HOSP,42,American Robin,AMRO,42
+8/13/2024,CL,73,11,McPherson,Urban,9:48,MC6,MC6.2,Mississippi Kite,MIKI,42,NA,NA,NA
+8/15/2024,CL,72,5,McPherson,Urban,7:39,MC1,MC1.2,Northern Cardinal,NOCA,42,Northern Flicker,NOFL,61
+8/21/2024,GA & IW,71,11,McPherson,Rural,9:05,BB4,BB4.2,Dickcissel,DICK,42,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:59,GC19,GC19.1,Eurasian Collared Dove,EUCD,42,House Sparrow,HOSP,59.5
+8/2/2024,IW,68,1,Garden City,Urban,7:08,GC 16,GC 16.2,Eurasian Collared Dove,EUCD,42,Eurasian Collared Dove,EUCD,42
+8/15/2024,BO,71,2,Garden City,Urban,7:59,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,42,NA,NA,NA
+8/29/2024,"BO, IW",69,1,Garden City,Urban,7:46,GC 14,GC 14.2,House Sparrow,HOSP,42,European Starling,EUST,114.8
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:10,GC 20,GC 20.1,Mississippi Kite,MIKI,42,Blue Jay,BLJA,64.9
+4/3/2024,BO,34,2,Garden City,Urban,8:25,GC 20,GC 20.2,Eurasian Collared Dove,EUCD,42.1,Eurasian Collared Dove,EUCD,48.7
+4/30/2024,JS/NB,68,11,Topeka,Urban,10:08,20,20.1,American Robin,AMRO,42.2,House Finch,HOFI,Only Heard
+8/7/2024,NB/HQ,69,6,Topeka,WMA,9:21,17,17.2,Mourning Dove,MODO,42.4,NA,NA,NA
+4/4/2024,BO,47,2,Garden City,Urban,9:27,GC 8,GC 8.2,Eurasian Collared Dove,EUCD,42.5,European Starling,EUST,74.3
+4/23/2024,NB,59,8,Topeka,Urban,9:58,16,16.2,Common Grackle,COGR,42.6,Northern Cardinal,NOCA,97
+4/4/2024,BO,44,2,Garden City,Urban,8:55,GC 12,GC 12.2,Grackle,NA,42.6,Eurasian Collared Dove,EUCD,58
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:47,3,3.2,Northern Flicker,NOFL,42.7,European Starling,EUST,42
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:42,BB4,BB4.2,Ring-necked Pheasant,RNEP,42.8,Song Sparrow,SOSP,34.5
+4/8/2024,JS/NB,47,4,Topeka,WMA,8:41,19,19.2,Northern Cardinal,NOCA,42.9,Brown-headed Cowbird,BHCO,21.4
+7/16/2024,NB,76,6,Topeka,Urban,6:36,11,11.2,European Starling,EUST,43,European Starling,EUST,88.5
+8/20/2024,ED,64,3,Topeka,WMA,7:15,8,8.2,American Robin,AMRO,43,NA,NA,NA
+7/22/2024,"CL,GA",70,2,McPherson,Rural,9:18,MC24,MC24.2,Eastern Meadowlark ,EAME,43,Scissor-tailed Flycatcher,STFL,168
+7/23/2024,"CL,GA",66,2,McPherson,WMA,7:38,IN6,IN6.2,Red-winged Blackbird,RWBL,43,Red-winged Blackbird,RWBL,36
+7/25/2024,"CL,GA",71,5,McPherson,Rural,7:38,BB11,BB11.2,Red-winged Blackbird,RWBL,43,NA,NA,NA
+8/23/2024,"IW, GA",75,15,McPherson,Rual,10:31,BB 6,BB 6.1,Red-winged Blackbird,RWBL,43,Red-winged Blackbird,RWBL,74
+4/3/2024,BO,36,2,Garden City,Urban,9:21,GC 15,GC 15.2,European Starling,EUST,43,Red-tailed Hawk,RTHA,232
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,43,Lark Sparrow,LASP,38
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:48,GC 18,GC 18.1,Eurasian Collared Dove,EUCD,43,House Finch,HOFI,38
+8/15/2024,IW,70,1,Garden City,Urban,8:40,GC 13,GC 13.3,Rock Pigeon,ROPI,43,NA,NA,NA
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:37,GC 20,GC 20.2,Eurasian Collared Dove,EUCD,43,European Starling,EUST,70.2
+4/1/2024,ED,68,20,McPherson,Urban,9:58,MC1,MC1.1,Common Grackle,COGR,43.1,American Robin,AMRO,41.1
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:47,GC 4,GC 4.1,Eurasian Collared Dove,EUCD,43.1,European Starling,EUST,152
+5/3/2024,JS/NB,54,5,Topeka,Urban,8:34,15,15.2,House Sparrow,HOSP,43.2,Rose-breasted Grosbeak,RBGR,22.2
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:47,3,3.2,American Robin,AMRO,43.3,House Wren,HOWR,Only Heard
+4/17/2024,ED,66,5,McPherson,WMA,10:17,IN,IN6.1,Eastern Meadowlark,EAME,43.4,NA,NA,NA
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:23,3,3.1,European Starling,EUST,43.5,NA,NA,NA
+4/23/2024,ED,65,12,McPherson,WMA,10:41,IN4,IN4.1,Eastern Meadowlark,EAME,43.6,Franklin's Gull,FRGU,164.2
+4/10/2024,"ED, NP",52,5,McPherson,WM,8:58,BB1,BB1.3,Red-winged Blackbird,RWBL,43.9,NA,NA,NA
+4/12/2024,ED,55,4,McPherson,Urban,10:29,MC18,MC18.2,Western Meadowlark,WEME,44,Common Grackle,COGR,53
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Red-winged Blackbird,RWBL,44,Brown-headed Cowbird,BHCO,65
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,44,European Starling,EUST,250
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:42,BB4,BB4.2,Ring-necked Pheasant,RNEP,44.2,Red-winged Blackbird,RWBL,34.5
+4/1/2024,ED,68,20,McPherson,Urban,9:58,MC1,MC1.1,American Robin,AMRO,44.3,House Sparrow,HOSP,69.3
+4/17/2024,BO,57,2,Garden City,WMA,9:54,BR 4,BR 4.1,White-crowned Sparrow,WCSP,44.3,White-crowned Sparrow,WCSP,13.7
+4/5/2024,BO,59,4,Garden City,Urban,10:37,GC 1,GC 1.2,Eurasian Collared Dove,EUCD,44.4,Eurasian Collared Dove,EUCD,107.4
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:32,GC 15,GC 15.1,House Sparrow,HOSP,44.5,House Sparrow,HOSP,36.8
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:47,3,3.2,American Robin,AMRO,44.6,Common Grackle,COGR,144.8
+7/16/2024,NB,76,6,Topeka,Urban,6:36,11,11.2,Mourning Dove,MODO,44.6,Mourning Dove,MODO,61.4
+7/16/2024,NB,76,6,Topeka,Urban,6:36,11,11.2,European Starling,EUST,44.6,European Starling,EUST,61.4
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:21,4,4.2,Northern Cardinal,NOCA,44.7,Eurasian Collared-Dove,EUCD,47.1
+8/7/2024,NB/HQ,69,6,Topeka,WMA,9:21,17,17.2,Red-headed Woodpecker,RHWO,44.7,NA,NA,NA
+4/25/2024,ED,59,16,McPherson,Rural,9:57,BB6,BB6.1,Eastern Meadowlark,EAME,44.7,Eastern Meadowlark,EAME,135.5
+4/18/2024,ED,51,7,McPherson,WMA,10:25,IN2,IN2.2,Eastern Meadowlark,EAME,44.8,Ring-necked Pheasant,RNEP,37.2
+4/5/2024,BO,45,4,Garden City,Urban,8:10,GC 4,GC 4.3,Grackle,NA,44.8,Grackle,NA,46.3
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:30,GC 6,GC 6.2,Eurasian Collared Dove,EUCD,44.8,Eurasian Collared Dove,EUCD,161.3
+4/17/2024,ED,66,5,McPherson,WMA,10:17,IN,IN6.1,Brown Thrasher,BRTH,44.9,NA,NA,NA
+7/12/2024,JS/HQ,72,10,Topeka,Urban,7:28,16,16.2,Barn Swallow,BARS,45,NA,NA,NA
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,European Starling,EUST,45,European Starling,EUST,53.9
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,Brown Thrasher,BRTH,45,European Starling,EUST,120
+8/13/2024,CL,73,11,McPherson,Urban,9:48,MC6,MC6.2,Mississippi Kite,MIKI,45,European Starling,EUST,44
+8/13/2024,CL,73,11,McPherson,Urban,9:48,MC6,MC6.2,European Starling,EUST,45,NA,NA,NA
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,45,House Sparrow,HOSP,29
+8/15/2024,IW,70,1,Garden City,Urban,8:51,GC 13,GC 13.1,European Starling,EUST,45,Eurasian Collared Dove,EUCD,108
+4/5/2024,BO,45,4,Garden City,Urban,7:56,GC 4,GC 4.1,Eurasian Collared Dove,EUCD,45.2,American Robin,AMRO,29.3
+4/2/2024,BO,44,2,Garden City,Urban,8:27,GC 22,GC 22.1,European Starling,EUST,45.4,House Sparrow,HOSP,21.6
+4/4/2024,BO,50,2,Garden City,Urban,10:01,GC 7,GC 7.3,Eurasian Collared Dove,EUCD,45.5,Eurasian Collared Dove,EUCD,130
+4/1/2024,BO,45,3,Garden City,Urban,9:13,GC13,GC13.3,Eurasian Collared Dove,EUCD,45.7,Eurasian Collared Dove,EUCD,20.5
+4/10/2024,"ED, NP",52,5,McPherson,WM,8:58,BB1,BB1.3,Red-winged Blackbird,RWBL,45.8,NA,NA,NA
+4/1/2024,BO,45,3,Garden City,Urban,8:50,GC9,GC9.2,Eurasian Collared Dove,EUCD,45.8,Eurasian Collared Dove,EUCD,89.7
+8/27/2024,"BO, IW",70,1,Garden City,Urban,8:58,GC 4,GC 4.3,Rock Pigeon,ROPI,45.8,Eurasian Collared Dove,EUCD,226
+5/3/2024,JS/NB,63,10,Topeka,Urban,10:37,7,7.2,European Starling,EUST,46,American Robin,AMRO,25.5
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:32,MC25,MC25.1,Mourning Dove ,MODO,46,sparrow,NA,44
+7/25/2024,"GA,CL",81,7,McPherson,Rural,9:26,BB12,B12.2,Red-winged Blackbird,RWBL,46,Red-winged Blackbird,RWBL,98
+8/23/2024,"IW, GA",75,15,McPherson,Rual,10:31,BB 6,BB 6.1,Red-winged Blackbird,RWBL,46,Red-winged Blackbird,RWBL,89
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,Eurasian Collared Dove,EUCD,46,NA,NA,NA
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,European Starling,EUST,46,NA,NA,NA
+8/8/2024,NB,74,7,Topeka,WMA,10:06,12,12.1,Eastern Kingbird,EAKI,46.1,Field Sparrow,FISP,Only Heard
+4/12/2024,ED,54,4,McPherson,Urban,10:08,MC11,MC11.1,Common Grackle,COGR,46.2,Mourning Dove,MODO,88.9
+4/12/2024,JS/NB,43,7,Topeka,WMA,8:06,10,10.2,Brown-headed Cowbird,BHCO,46.5,Tufted Titmouse,TUTI,Only Heard
+4/4/2024,"ED, NB, JS",37,8,McPherson,Urban,8:28,MC5,MC5.1,European Starling,EUST,46.5,Eurasian Collared Dove,EUCD,20.8
+4/4/2024,"ED, NB, JS",37,8,McPherson,Urban,8:28,MC5,MC5.1,House Sparrow,HOSP,46.5,American Robin,AMRO,35.1
+4/2/2024,BO,44,2,Garden City,Urban,8:08,GC 19,GC 19.3,Eurasian Collared Dove,EUCD,46.5,Eurasian Collared Dove,EUCD,55.7
+8/8/2024,NB,72,6,Topeka,WMA,9:33,9,9.1,Indigo Bunting,INBU,46.6,American Crow,AMCR,Only Heard
+4/23/2024,ED,60,5,McPherson,WMA,9:13,IN9,IN9.1,Eastern Meadowlark,EAME,46.6,NA,NA,NA
+4/4/2024,BO,38,2,Garden City,Urban,8:11,GC 11,GC 11.1,American Robin,AMRO,46.6,American Robin,AMRO,62.6
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,Mourning Dove,MODO,46.9,European Starling,EUST,23.3
+4/9/2024,JS/NB,54,6,Topeka,WMA,10:41,25,25.2,Eastern Pheobe,EAPH,47,NA,NA,NA
+4/22/2024,JS/NB,44,11,Topeka,Urban,7:35,5,5.2,Common Grackle,COGR,47,NA,NA,NA
+8/20/2024,ED,65,3,Topeka,WMA,7:55,13,13.2,American Goldfinch,AGOL,47,House Sparrow,HOSP,65
+8/20/2024,ED,69,5,Topeka,WMA,9:53,19,19.1,Carolina Wren,CARW,47,American Goldfinch,AGOL,71
+4/4/2024,"ED, NB, JS",59,10,McPherson,Urban,1:15,MC8,MC8.2,Northern Cardinal,NOCA,47,NA,NA,NA
+7/25/2024,"CL,GA",73,6,McPherson,Rural,7:50,BB11,BB11.1,Red-winged Blackbird,RWBL,47,NA,NA,NA
+8/1/2024,"GA,CL",73,5,McPherson,WMA,7:17,IN5,IN5.4,Dickcissel,DICK,47,Western Kingbird,WEKI,116
+8/14/2024,"RR, IW",74,1,Garden City,Urban,8:55,GC 18,GC 18.2,Eurasian Collared Dove,EUCD,47,European Starling,EUST,40
+8/26/2024,IW,72,1,Garden City,Urban,7:27,GC 18,GC 18.2,Eurasian Collared Dove,EUCD,47,Grackle ,NA,27
+4/23/2024,NB,58,8,Topeka,Urban,8:51,9,9.1,American Robin,AMRO,47.1,House Sparrow,HOSP,46.2
+4/22/2024,JS/NB,48,11,Topeka,Urban,8:31,2,2.2,European Starling,EUST,47.2,American Robin,AMRO,52.7
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:21,4,4.2,American Robin,AMRO,47.2,European Starling,EUST,31.8
+8/8/2024,NB,74,7,Topeka,WMA,10:23,12,12.2,Eastern Meadowlark,EAME,47.3,European Starling,EUST,191.8
+4/24/2024,RR,62,2,Garden City,Rural,11:38,CN 3,CN 3.2,Grackle,NA,47.3,Grackle,NA,11.6
+4/30/2024,JS/NB,63,11,Topeka,Urban,8:45,11,11.1,Black-capped Chickadee,BCCH,47.5,House Finch,HOFI,Only Heard
+4/2/2024,BO,45,4,Garden City,Urban,12:27,GC 21,GC 21.2,European Starling,EUST,47.5,Eurasian Collared Dove,EUCD,27.5
+4/18/2024,ED,45,6,McPherson,WMA,8:58,IN,IN4.2,Eastern Meadowlark,EAME,47.7,Savannah Sparrow,SAVS,141.1
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:07,4,4.1,American Robin,AMRO,47.8,Chipping Sparrow,CHSP,Only Heard
+7/10/2024,NB,63,4,Topeka,Urban,7:11,3,3.1,European Starling,EUST,47.9,NA,NA,NA
+4/25/2024,ED,57,16,McPherson,Rural,8:24,BB3,BB3.2,Killdeer,KILL,47.9,Red-winged Blackbird,RWBL,58.1
+4/22/2024,BO,52,4,Garden City,WMA,9:19,BR 11,BR 11.2,White-crowned Sparrow,WCSP,47.9,NA,NA,NA
+7/25/2024,"GA,CL",81,7,McPherson,Rural,9:26,BB12,B12.2,Red-winged Blackbird,RWBL,48,Red-winged Blackbird,RWBL,27
+8/15/2024,BO,70,1,Garden City,Urban,9:09,GC 7,GC 7.1,Eurasian Collared Dove,EUCD,48,NA,NA,NA
+4/17/2024,ED,61,4,McPherson,WMA,9:16,IN3,IN3.3,Eastern Meadowlark,EAME,48.1,Eastern Meadowlark,EAME,109.3
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,House Sparrow,HOSP,48.2,European Starling,EUST,75.5
+4/23/2024,NB,58,8,Topeka,Urban,8:51,9,9.1,American Robin,AMRO,48.3,American Crow,AMCR,101.4
+5/3/2024,JS/NB,53,6,Topeka,Urban,8:20,15,15.1,House Finch,HOFI,48.3,House Finch,HOFI,13.1
+8/16/2024,NB/ED,71,4,Topeka,WMA,8:20,23,23.1,Eastern Bluebird,EABL,48.3,NA,NA,NA
+4/3/2024,BO,38,2,Garden City,Urban,9:56,GC 16,GC 16.1,House Sparrow,HOSP,48.6,Eurasian Collared Dove,EUCD,88.3
+7/10/2024,NB,63,4,Topeka,Urban,7:11,3,3.1,Blue Jay,BLJA,48.8,NA,NA,NA
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:22,5,5.1,Brown-headed Cowbird,BHCO,49,Common Grackle,COGR,36.6
+5/3/2024,JS/NB,53,6,Topeka,Urban,8:20,15,15.1,European Starling,EUST,49,European Starling,EUST,8
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,European Starling,EUST,49,Common Grackle,COGR,125.5
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Red-winged Blackbird,RWBL,49,Red-winged Blackbird,RWBL,82
+8/13/2024,CL,73,11,McPherson,Urban,9:48,MC6,MC6.2,Mourning Dove,MODO,49,NA,NA,NA
+8/14/2024,"RR, IW",74,1,Garden City,Urban,8:55,GC 18,GC 18.2,Eurasian Collared Dove,EUCD,49,Eurasian Collared Dove,EUCD,28
+8/16/2024,NB/ED,68,3,Topeka,WMA,7:14,22,22.2,Blue-gray Gnatcatcher,BGGN,49.1,American Crow,AMCR,Only Heard
+4/24/2024,BO,55,2,Garden City,Rural,9:05,CN 3,CN 3.1,Savannah Sparrow,SAVS,49.1,White-crowned Sparrow,WCSP,22.5
+4/4/2024,BO,38,2,Garden City,Urban,8:11,GC 11,GC 11.1,American Robin,AMRO,49.2,Eurasian Collared Dove,EUCD,21.2
+5/1/2024,JS/NB,58,10,Topeka,Urban,8:00,19,19.1,Blue Jay,BLJA,49.3,Horned Lark,HOLA,Only Heard
+8/15/2024,NB/HQ,77,9,Topeka,WMA,8:54,6,6.2,Northern Cardinal,NOCA,49.3,Dickcissel,DICK,47.1
+4/4/2024,BO,38,2,Garden City,Urban,8:11,GC 11,GC 11.1,American Robin,AMRO,49.3,Eurasian Collared Dove,EUCD,19.1
+5/3/2024,JS/NB,61,9,Topeka,Urban,10:24,7,7.1,Eastern Kingbird,EAKI,49.5,European Starling,EUST,27
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:23,GC 21,GC 21.2,European Starling,EUST,49.7,European Starling,EUST,78.1
+8/8/2024,NB,72,6,Topeka,WMA,9:33,9,9.1,Northern Cardinal,NOCA,49.8,Downy Woodpecker,DOWO,52.6
+4/23/2024,ED,61,6,McPherson,WMA,9:23,IN9,IN9.2,Eastern Meadowlark,EAME,49.8,Upland Sandpiper,UPSA,121.4
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,49.8,Eurasian Collared Dove,EUCD,41.6
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Mississippi Kite,MIKI,49.8,NA,NA,NA
+4/19/2024,JS/NB,47,3,Topeka,WMA,9:41,21,21.2,Canada Goose,CANG,50,NA,NA,NA
+4/4/2024,"ED, NB, JS",44,10,McPherson,Urban,9:41,MC6,MC6.1,European Starling,EUST,50,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Brown-headed Cowbird,BHCO,50,Red-winged Blackbird,RWBL,120
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Red-winged Blackbird,RWBL,50,Brown-headed Cowbird,BHCO,35
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,European Starling,EUST,50,Red-winged Blackbird,RWBL,151
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,Red-winged Blackbird,RWBL,50,Brown-headed Cowbird,BHCO,50
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,Brown-headed Cowbird,BHCO,50,Red-winged Blackbird,RWBL,103
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,House Wren,HOWR,50,Barn Swallow,BARS,60
+7/19/2024,"ED, CL",68,10,McPherson,Urban,8:20,MC23,MC23.1,Eastern Meadowlark,EAME,50,NA,NA,NA
+7/25/2024,"CL,GA",73,6,McPherson,Rural,7:50,BB11,BB11.1,Red-winged Blackbird,RWBL,50,NA,NA,NA
+8/13/2024,CL,75,12,McPherson,Urban,10:28,MC2,MC2.1,Mourning Dove,MODO,50,House Sparrow,HOSP,52
+4/1/2024,BO,44,3,Garden City,Urban,8:20,GC9,GC9.1,European Starling,EUST,50,European Starling,EUST,59
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,50,Eurasian Collared Dove,EUCD,88.2
+4/19/2024,JS/NB,43,4,Topeka,WMA,8:05,2,2.2,Blue Jay,BLJA,50.1,NA,NA,NA
+4/3/2024,BO,36,2,Garden City,Urban,8:49,GC 14,GC 14.1,Grackle,NA,50.1,European Starling,EUST,32.7
+5/6/2024,BO,66,4,Garden City,WMA,8:15,BR 7,BR 7.1,White-crowned Sparrow,WCSP,50.1,NA,NA,NA
+4/10/2024,JS/NB,50,4,Topeka,WMA,8:30,11,11.1,European Starling,EUST,50.2,American Robin,AMRO,114.1
+5/3/2024,JS/NB,54,5,Topeka,Urban,8:34,15,15.2,American Robin,AMRO,50.2,Red-bellied Woodpecker,RBWO,Only Heard
+4/23/2024,NB,58,8,Topeka,Urban,8:51,9,9.1,European Starling,EUST,50.3,European Starling,EUST,70.6
+4/5/2024,BO,61,4,Garden City,Urban,10:49,GC 1,GC 1.1,Eurasian Collared Dove,EUCD,50.3,Eurasian Collared Dove,EUCD,26.5
+5/3/2024,JS/NB,63,10,Topeka,Urban,10:37,7,7.2,Common Grackle,COGR,50.4,American Robin,AMRO,40.2
+7/12/2024,JS/HQ,76,11,Topeka,Urban,8:49,9,9.2,House Finch,HOFI,50.4,Northern Cardinal,NOCA,Only Heard
+7/12/2024,JS/HQ,76,11,Topeka,Urban,8:49,9,9.2,Mourning Dove,MODO,50.4,Blue Jay,BLJA,Only Heard
+8/1/2024,BO,70,2,Garden City,Rural,8:20,CN 3,CN 3.1,Lark Sparrow,LASP,50.4,Barn Swallow,BARS,183.3
+4/15/2024,JS/NB,62,10,Topeka,WMA,8:06,13,13.1,Brown-headed Cowbird,BHCO,50.9,Northern Cardinal,NOCA,14.5
+4/25/2024,JS/NB,56,11,Topeka,WMA,10:17,8,8.1,American Robin,AMRO,51,NA,NA,NA
+8/20/2024,ED,64,3,Topeka,WMA,7:15,8,8.2,Blue Jay,BLJA,51,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,Red-winged Blackbird,RWBL,51,Red-winged Blackbird,RWBL,150
+8/7/2024,CL,64,6,McPherson,Urban,7:01,MC13,MC13.2,Mississippi Kite,MIKI,51,Mourning Dove,MODO,43
+4/2/2024,BO,45,3,Garden City,Urban,8:44,GC 22,GC 22.2,Rock Pigeon,ROPI,51,Rock Pigeon,ROPI,109.5
+4/1/2024,BO,46,3,Garden City,Urban,9:29,GC18,GC18.1,Eurasian Collared Dove,EUCD,51.1,NA,NA,NA
+8/7/2024,"BO, RR",70,1,Garden City,Rural,7:58,CN 5,CN 5.1,Mourning Dove,MODO,51.1,Red-winged Blackbird,RWBL,220
+8/7/2024,"BO, RR",73,1,Garden City,Rural,9:08,Cn 5,CN 5.3,Western Kingbird,WEKI,51.1,NA,NA,NA
+7/30/2024,NB,82,15,Topeka,Urban,8:39,20,20.2,House Finch,HOFI,51.2,House Sparrow,HOSP,85.8
+4/19/2024,JS/NB,43,4,Topeka,WMA,8:05,2,2.2,White-throated Sparrow,WTSP,51.3,NA,NA,NA
+8/7/2024,"BO, RR",70,1,Garden City,Rural,7:58,CN 5,CN 5.1,Mourning Dove,MODO,51.3,Swainson's Hawk,SWHA,246
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:32,GC 15,GC 15.1,House Sparrow,HOSP,51.3,House Sparrow,HOSP,64.9
+4/5/2024,"ED, NB, JS",50,11,McPherson,Urban,9:32,MC10,MC10.2,House Sparrow,HOSP,51.4,NA,NA,NA
+4/24/2024,BO,54,2,Garden City,Rural,8:48,CN 1,CN 1.1,White-crowned Sparrow,WCSP,51.4,Savannah Sparrow,SAVS,57.1
+4/25/2024,JS/NB,55,11,Topeka,WMA,8:47,3,3.2,House Finch,HOFI,51.6,NA,NA,NA
+4/3/2024,"ED, NB, JS",53,20,McPherson,Urban,13:40,MC4,MC4.2,American Robin,AMRO,51.8,NA,NA,NA
+8/27/2024,"BO, IW",67,1,Garden City,Urban,7:14,GC 24,GC 24.1,Mississippi Kite,MIKI,51.9,NA,NA,NA
+8/20/2024,ED,63,3,Topeka,WMA,6:17,14,14.1,American Goldfinch,AGOL,52,NA,NA,NA
+8/20/2024,ED,63,3,Topeka,WMA,6:31,14,14.2,Indigo Bunting,INBU,52,Canada Goose,CANG,157
+4/5/2024,"ED, NB, JS",67,17,McPherson,Urban,1:19,MC13,MC 13.2,House Sparrow,HOSP,52,European Starling,EUST,39
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,Eastern Meadowlark ,EAME,52,NA,NA,NA
+7/26/2024,"GA,CL",70,5,McPherson,WMA,7:23,IN8,IN8.4,Dickcissel,DICK,52,Blue-gray Gnatcatcher,BGGN,200
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:37,GC 17,GC 17.1,Mississippi Kite,MIKI,52,House Finch,HOFI,14
+4/23/2024,ED,63,8,McPherson,WMA,10:11,IN8,IN8.1,Eastern Meadowlark,EAME,52.1,Eastern Meadowlark,EAME,49
+4/22/2024,BO,52,4,Garden City,WMA,9:19,BR 11,BR 11.2,White-crowned Sparrow,WCSP,52.2,NA,NA,NA
+4/12/2024,JS/NB,42,7,Topeka,WMA,7:42,10,10.1,Tufted Titmouse,TUTI,52.3,House Sparrow,HOSP,100
+4/18/2024,ED,51,7,McPherson,WMA,10:25,IN2,IN2.2,Red-winged Blackbird,RWBL,52.3,Ring-necked Pheasant,RNEP,87.9
+8/7/2024,NB/HQ,69,6,Topeka,WMA,9:21,17,17.2,European Starling,EUST,52.6,American Robin,AMRO,22
+4/5/2024,"ED, NB, JS",66,3,McPherson,Urban,12:52,MC13,MC13.1,American Robin,AMRO,52.8,Yellow-bellied Sapsucker,YBSA,12.2
+4/22/2024,JS/NB,48,11,Topeka,Urban,8:31,2,2.2,American Robin,AMRO,52.9,American Robin,AMRO,28.4
+8/15/2024,NB/HQ,74,8,Topeka,WMA,7:45,4,4.2,Indigo Bunting,INBU,52.9,Red-bellied Woodpecker,RBWO,Only Heard
+4/5/2024,BO,50,4,Garden City,Urban,9:39,GC 6,GC 6.1,Eurasian Collared Dove,EUCD,52.9,Eurasian Collared Dove,EUCD,68.7
+7/12/2024,JS/HQ,77,11,Topeka,Urban,9:05,15,15.1,Mourning Dove,MODO,53,House Sparrow,HOSP,58.9
+4/5/2024,"ED, NB, JS",54,12,McPherson,Urban,10:13,MC11,MC11.2,House Sparrow,HOSP,53,House Sparrow,HOSP,48
+4/5/2024,"ED, NB, JS",54,12,McPherson,Urban,10:13,MC11,MC11.2,House Sparrow,HOSP,53,NA,NA,NA
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:32,MC25,MC25.1,Eurasian Collared Dove,EUCD,53,NA,NA,NA
+7/19/2024,"ED, CL",66,9,McPherson,Urban,7:55,MC22,MC22.2,American Goldfinch,AGOL,53,Indigo Bunting,INBU,2
+8/13/2024,CL,73,11,McPherson,Urban,9:39,MC6,MC6.1,Mississippi Kite,MIKI,53,Mourning Dove,MODO,88
+8/15/2024,BO,70,1,Garden City,Urban,9:09,GC 7,GC 7.1,Eurasian Collared Dove,EUCD,53,Eurasian Collared Dove,EUCD,46
+8/27/2024,"BO, IW",67,1,Garden City,Urban,7:14,GC 24,GC 24.1,Eurasian Collared Dove,EUCD,53,NA,NA,NA
+4/12/2024,ED,55,4,McPherson,Urban,10:20,MC18,MC18.1,Mourning Dove,MODO,53.2,American Robin,AMRO,48.4
+4/12/2024,JS/NB,45,8,Topeka,WMA,8:26,7,7.1,Eastern Meadowlark,EAME,53.4,Red-bellied Woodpecker,RBWO,Only Heard
+4/29/2024,JS/NB,56,4,Topeka,Urban,9:37,12,12.1,American Robin,AMRO,53.4,Common Grackle,COGR,22.1
+8/28/2024,"BO, RR",67,3,Garden City,Urban,7:34,GC 1,GC 1.1,Eurasian Collared Dove,EUCD,53.5,Eurasian Collared Dove,EUCD,29.6
+4/24/2024,RR,62,2,Garden City,Rural,11:20,CN 3,CN 3.3,White-crowned Sparrow,WCSP,53.6,NA,NA,NA
+4/2/2024,BO,45,3,Garden City,Urban,8:44,GC 22,GC 22.2,Eurasian Collared Dove,EUCD,53.7,Brown-headed Cowbird,BHCO,119.8
+4/29/2024,JS/NB,50,3,Topeka,Urban,8:09,8,8.2,American Robin,AMRO,53.9,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Brown-headed Cowbird,BHCO,54,American Robin,AMRO,25
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,Horned Lark,HOLA,54,Brown-headed Cowbird,BHCO,30
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Dickcissel,DICK,54,Killdeer,KILL,157
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Red-winged Blackbird,RWBL,54,NA,NA,NA
+7/30/2024,"GA, CL",83,18,McPherson,Urban,8:56,MC19,MC19.1,Upland Sandpiper,UPSA,54,Field Sparrow,FISP,143
+8/16/2024,"IW, GA",67,9,McPherson,Rural,7:32,BB 1,BB 1.1,Red-winged Blackbird,RWBL,54,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:59,GC19,GC19.1,European Starling,EUST,54,Eurasian Collared Dove,EUCD,32.8
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,54,NA,NA,NA
+8/2/2024,IW,70,1,Garden City,Urban,7:48,GC 12,GC 12.1,Eurasian Collared Dove,EUCD,54,NA,NA,NA
+8/26/2024,IW,74,1,Garden City,Urban,8:29,GC 22,GC 22.1,Eurasian Collared Dove,EUCD,54,European Starling,EUST,50
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:49,GC 23,GC 23.2,European Starling,EUST,54,European Starling,EUST,137.1
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:02,GC 23,GC 23.1,American Robin,AMRO,54,Eurasian Collared Dove,EUCD,36
+4/5/2024,BO,48,4,Garden City,Urban,8:37,GC 3,GC 3.1,American Robin,AMRO,54.2,Eurasian Collared Dove,EUCD,100.6
+7/30/2024,"BO, IW",75,2,Garden City,WMA,7:06,BR 2,BR 2.1,Western Kingbird,WEKI,54.3,Western Kingbird,WEKI,182.2
+4/4/2024,BO,48,2,Garden City,Urban,9:44,GC 7,GC 7.1,Eurasian Collared Dove,EUCD,54.4,Grackle,NA,35.2
+4/30/2024,JS/NB,64,11,Topeka,Urban,9:03,11,11.2,Common Grackle,COGR,54.5,House Finch,HOFI,38
+4/30/2024,JS/NB,66,11,Topeka,Urban,9:43,18,18.1,American Robin,AMRO,54.5,NA,NA,NA
+4/4/2024,"ED, NB, JS",52,11,McPherson,Urban,11:29,MC7,MC7.2,Mourning Dove,MODO,54.7,NA,NA,NA
+4/22/2024,JS/NB,44,11,Topeka,Urban,7:35,5,5.2,Lincoln's Sparrow,LISP,54.9,NA,NA,NA
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,Brown-headed Cowbird,BHCO,55,Great-tailed Grackle,GTGR,105
+8/7/2024,CL,64,6,McPherson,Urban,6:51,MC13,MC13.1,Blue Jay,BLJA,55,NA,NA,NA
+8/15/2024,IW,70,1,Garden City,Urban,8:51,GC 13,GC 13.1,Eurasian Collared Dove,EUCD,55,NA,NA,NA
+5/1/2024,JS/NB,58,10,Topeka,Urban,8:00,19,19.1,Northern Cardinal,NOCA,55.2,NA,NA,NA
+4/2/2024,BO,45,4,Garden City,Urban,10:15,GC 21,GC 21.1,Eurasian Collared Dove,EUCD,55.2,Eurasian Collared Dove,EUCD,115.5
+5/3/2024,JS/NB,51,5,Topeka,Urban,7:50,17,17.2,Common Grackle,COGR,55.4,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:59,GC19,GC19.1,Eurasian Collared Dove,EUCD,55.4,Eurasian Collared Dove,EUCD,22.5
+8/7/2024,"BO, RR",70,1,Garden City,Rural,7:58,CN 5,CN 5.1,Mourning Dove,MODO,55.7,Mourning Dove,MODO,56.2
+5/1/2024,JS/NB,60,11,Topeka,Urban,8:33,21,21.1,White-crowned Sparrow,WCSP,55.9,Northern Cardinal,NOCA,Only Heard
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:05,GC 11,GC 11.1,Eurasian Collared Dove,EUCD,55.9,NA,NA,NA
+4/10/2024,JS/NB,55,4,Topeka,WMA,9:59,6,6.1,Song Sparrow,SOSP,56,Tufted Titmouse,TUTI,Only Heard
+4/5/2024,"ED, NB, JS",72,13,McPherson,Urban,3:02,MC17,MC17.2,American Robin,AMRO,56,Turkey Vulture,TUVU,191
+7/16/2024,"ED,GA",76,14,Inman,WMA,7:28,IN1,IN1.2,swallow,NA,56,Dickcissel,DICK,50
+7/25/2024,"GA,CL",81,7,McPherson,Rural,9:26,BB12,B12.2,Red-winged Blackbird,RWBL,56,Red-winged Blackbird,RWBL,181
+7/29/2024,"GA,CL",74,11,McPherson,Urban,7:03,MC9,MC9.2,Mississippi Kite,MIKI,56,Mourning Dove,MODO,98
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,56,NA,NA,NA
+4/4/2024,BO,44,2,Garden City,Urban,8:55,GC 12,GC 12.2,American Robin,AMRO,56.1,Grackle,NA,55.5
+4/12/2024,ED,50,3,McPherson,Urban,9:41,MC21,MC21.1,American Robin,AMRO,56.2,European Starling,EUST,30.7
+4/10/2024,"ED, NP",52,5,McPherson,WM,8:58,BB1,BB1.3,Brown-headed Cowbird,BHCO,56.3,meadowlark,NA,36.2
+4/10/2024,JS/NB,48,3,Topeka,WMA,7.44,12,12.1,Red-winged Blackbird ,RWBL,56.5,Red-winged Blackbird ,RWBL,92.8
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:30,GC 6,GC 6.2,Eurasian Collared Dove,EUCD,56.5,Eurasian Collared Dove,EUCD,14.6
+8/26/2024,"BO, RR",73,1,Garden City,Urban,8:59,GC 15,GC 15.2,Eurasian Collared Dove,EUCD,56.6,Mississippi Kite,MIKI,240
+4/12/2024,JS/NB,46,8,Topeka,WMA,8:39,7,7.2,Northern Cardinal,NOCA,56.7,Mourning Dove,MODO,169.7
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:44,GC 7,GC 7.2,Eurasian Collared Dove,EUCD,56.9,Eurasian Collared Dove,EUCD,27.4
+8/20/2024,ED,64,4,Topeka,WMA,6:59,8,8.1,Black-capped Chickadee,BCCH,57,NA,NA,NA
+8/20/2024,ED,65,3,Topeka,WMA,7:47,13,13.1,Eastern Bluebird,EABL,57,American Crow,AMCR,156
+8/7/2024,CL,64,6,McPherson,Urban,7:01,MC13,MC13.2,House Sparrow,HOSP,57,European Starling,EUST,30
+8/13/2024,CL,73,11,McPherson,Urban,9:39,MC6,MC6.1,Mississippi Kite,MIKI,57,European Starling,EUST,88
+8/15/2024,BO,70,2,Garden City,Urban,7:43,GC 9,GC 9.2,Eurasian Collared Dove,EUCD,57.4,Eurasian Collared Dove,EUCD,87.2
+4/12/2024,ED,50,3,McPherson,Urban,9:41,MC21,MC21.1,House Sparrow,HOSP,57.7,NA,NA,NA
+4/17/2024,ED,65,4,McPherson,WMA,9:57,IN,IN6.4,Field Sparrow,FISP,57.7,Killdeer,KILL,59.6
+4/29/2024,BO,46,2,Garden City,WMA,8:04,BR 14,BR 14.1,White-crowned Sparrow,WCSP,57.7,White-crowned Sparrow,WCSP,58.4
+8/2/2024,NB,70,6,Topeka,WMA,7:30,1,1.2,Common Grackle,COGR,57.8,Common Grackle,COGR,6.5
+4/30/2024,JS/NB,64,11,Topeka,Urban,9:03,11,11.2,American Robin,AMRO,57.9,American Robin,AMRO,73
+7/16/2024,"ED,GA",77,10,Inman,WMA,8:07,IN3,IN3.2,Red-winged Blackbird,RWBL,58,Mourning Dove,MODO,76
+8/1/2024,IW,71,3,Garden City,Rural,8:19,CN 1,CN 1.2,Meadowlark,,58,NA,NA,NA
+4/24/2024,RR,62,2,Garden City,Rural,11:38,CN 3,CN 3.2,Grackle,NA,58.1,Red-winged Blackbird,RWBL,23.6
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,58.1,NA,NA,NA
+4/15/2024,JS/NB,70,11,Topeka,WMA,10:18,1,1.1,Northern Cardinal,NOCA,58.4,American Goldfinch,AGOL,Only Heard
+4/23/2024,NB,59,8,Topeka,Urban,9:58,16,16.2,Common Grackle,COGR,58.4,NA,NA,NA
+4/12/2024,ED,55,4,McPherson,Urban,10:20,MC18,MC18.1,European Starling,EUST,58.5,NA,NA,NA
+4/12/2024,ED,50,3,McPherson,Urban,9:41,MC21,MC21.1,Song Sparrow,SOSP,58.6,Double-crested Cormorant,DCCO,127.1
+4/23/2024,NB,57,7,Topeka,Urban,8:18,22,22.1,Common Grackle,COGR,58.7,Common Grackle,COGR,13.8
+7/12/2024,JS/HQ,76,11,Topeka,Urban,8:49,9,9.2,Eastern Phoebe,EAPH,58.7,House Finch,HOFI,47.9
+4/25/2024,ED,57,16,McPherson,Rural,9:11,BB5,BB5.2,Red-winged Blackbird,RWBL,58.7,Red-winged Blackbird,RWBL,86.6
+4/2/2024,ED,63,14,McPherson,Urban,15:35,MC2,MC2.2,Common Grackle,COGR,58.9,Red-winged Blackbird,RWBL,19.5
+4/12/2024,ED,50,3,McPherson,Urban,9:30,MC21,MC21.2,Canada Goose,CANG,58.9,American Robin,AMRO,92.3
+7/24/2024,"CL,GA",66,4,McPherson,WMA,7:12,IN7,IN7.1,Red-winged Blackbird,RWBL,59,European Starling,EUST,72
+8/16/2024,IW,69,9,McPherson,Rural,7:54,BB 1,BB 1.3,Brown-headed Cowbird,BHCO,59,Brown-headed Cowbird,BHCO,59
+8/21/2024,GA & IW,71,11,McPherson,Rural,9:05,BB4,BB4.2,Dickcissel,DICK,59,Lark Sparrow,LASP,37
+4/24/2024,BO,55,2,Garden City,Rural,9:05,CN 3,CN 3.1,Ring-necked Pheasant,RNEP,59.2,Savannah Sparrow,SAVS,12.6
+4/29/2024,JS/NB,56,4,Topeka,Urban,9:37,12,12.1,European Starling,EUST,59.4,Northern Cardinal,NOCA,23.1
+4/2/2024,BO,44,3,Garden City,Urban,7:56,GC 19,GC 19.2,Eurasian Collared Dove,EUCD,59.4,Eurasian Collared Dove,EUCD,13.3
+8/27/2024,"BO, IW",66,1,Garden City,Urban,7:01,GC 24,GC 24.2,Eurasian Collared Dove,EUCD,59.7,NA,NA,NA
+7/12/2024,JS/HQ,74,10,Topeka,Urban,8:08,17,17.2,House Finch,HOFI,60,Carolina Wren,CARW,Only Heard
+4/4/2024,"ED, NB, JS",52,11,McPherson,Urban,11:29,MC7,MC7.2,House Finch ,HOFI,60,NA,NA,NA
+7/16/2024,"ED,GA",77,10,Inman,WMA,8:07,IN3,IN3.2,Dickcissel,DICK,60,NA,NA,NA
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:22,MC25,MC25.2,American Robin,AMRO,60,Scissor-tailed Flycatcher,STFL,57
+7/22/2024,"CL,GA",67,2,McPherson,Rural,8:24,MC26,MC26.2,Northern Cardinal,NOCA,60,Mourning Dove,MODO,29
+7/23/2024,"CL,GA",66,2,McPherson,WMA,7:38,IN6,IN6.2,meadow lark,NA,60,Dickcissel,DICK,99
+7/23/2024,"CL,GA",66,2,McPherson,WMA,7:38,IN6,IN6.2,dove,NA,60,Northern Bobwhite ,NOBO,40
+7/30/2024,"GA, CL",79,14,McPherson,Urban,6:58,MC21,MC21.2,Barn Swallow,BARS,60,Eurasian Collared Dove,EUCD,18
+7/30/2024,"GA, CL",79,14,McPherson,Urban,6:58,MC21,MC21.2,Mourning Dove,MODO,60,House Finch,HOFI,44
+8/2/2024,"GA,CL",71,2,McPherson,WMA,7:47,IN4,IN4.3,Red-winged Blackbird,RWBL,60,Red-winged Blackbird,RWBL,160
+8/2/2024,IW,69,1,Garden City,Urban,7:32,GC 8,GC 8.1,Grackle,NA,60,NA,NA,NA
+4/2/2024,BO,44,2,Garden City,Urban,8:27,GC 22,GC 22.1,Eurasian Collared Dove,EUCD,60.1,European Starling,EUST,16.7
+4/10/2024,JS/NB,48,3,Topeka,WMA,7.44,12,12.1,Red-winged Blackbird ,RWBL,60.3,Red-winged Blackbird ,RWBL,80.7
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,European Starling,EUST,60.4,European Starling,EUST,30.4
+4/2/2024,BO,44,2,Garden City,Urban,8:08,GC 19,GC 19.3,Eurasian Collared Dove,EUCD,60.8,NA,NA,NA
+4/22/2024,JS/NB,48,11,Topeka,Urban,8:31,2,2.2,American Goldfinch,AGOL,60.9,Common Grackle,COGR,57.5
+4/29/2024,JS/NB,57,5,Topeka,Urban,9:55,12,12.2,Northern Flicker,NOFL,60.9,Northern Cardinal,NOCA,113.4
+4/22/2024,BO,45,3,Garden City,WMA,8:08,BR 15,BR 15.2,White-crowned Sparrow,WCSP,60.9,NA,NA,NA
+7/24/2024,"CL,GA",66,4,McPherson,WMA,7:12,IN7,IN7.1,Red-winged Blackbird,RWBL,61,NA,NA,NA
+8/7/2024,CL,64,6,McPherson,Urban,6:51,MC13,MC13.1,Mourning Dove,MODO,61,European Starling,EUST,64
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,61,European Starling,EUST,105
+4/23/2024,NB,57,7,Topeka,Urban,8:28,22,22.2,Mourning Dove,MODO,61.1,European Starling,EUST,17.3
+8/1/2024,BO,72,2,Garden City,Rural,8:34,CN 4,CN 4.2,Dicksissel,DICK,61.7,Western Kingbird,WEKI,50.3
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,61.8,NA,NA,NA
+4/12/2024,ED,54,4,McPherson,Urban,10:08,MC11,MC11.1,Northern Cardinal,NOCA,62,NA,NA,NA
+8/15/2024,CL,71,5,McPherson,Urban,7:31,MC1,MC1.1,Blue Jay,BLJA,62,NA,NA,NA
+4/22/2024,BO,49,3,Garden City,WMA,8:49,BR 12,BR 12.2,White-crowned Sparrow,WCSP,62,White-crowned Sparrow,WCSP,25.3
+4/25/2024,ED,59,16,McPherson,Rural,9:57,BB6,BB6.1,Eastern Meadowlark,EAME,62.1,Eastern Meadowlark,EAME,75.1
+4/17/2024,BO,51,2,Garden City,WMA,9:07,BR 8,BR 8.1,Western Meadowlark,WEME,62.1,Northern Harrier,NOHA,95.8
+4/24/2024,JS/NB,49,4,Topeka,WMA,7:57,15,15.2,Tufted Titmouse,TUTI,62.2,Yellow-rumped Warbler,YRWA,Only Heard
+7/12/2024,JS/HQ,74,10,Topeka,Urban,8:08,17,17.2,Northern Cardinal,NOCA,62.2,Blue Jay,BLJA,Only Heard
+4/17/2024,ED,65,4,McPherson,WMA,9:57,IN,IN6.4,Eastern Meadowlark,EAME,62.2,American Robin,AMRO,134.3
+4/3/2024,BO,33,2,Garden City,Urban,7:59,GC 20,GC 20.1,American Robin,AMRO,62.4,Eurasian Collared Dove,EUCD,53.2
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:10,BB4,BB4.1,Red-winged Blackbird,RWBL,62.5,NA,NA,NA
+4/4/2024,"ED, NB, JS",59,10,McPherson,Urban,1:15,MC8,MC8.2,American Robin,AMRO,62.7,European Starling,EUST,84.1
+4/5/2024,BO,55,4,Garden City,Urban,10:13,GC 5,GC 5.2,Eurasian Collared Dove,EUCD,62.9,Eurasian Collared Dove,EUCD,90.7
+7/12/2024,JS/HQ,72,10,Topeka,Urban,7:28,16,16.2,Red-winged Blackbird,RWBL,63.5,NA,NA,NA
+4/29/2024,JS/NB,56,4,Topeka,Urban,9:37,12,12.1,European Starling,EUST,63.8,Yellow Warbler,YEWA,Only Heard
+8/15/2024,BO,70,2,Garden City,Urban,7:17,GC 5,GC 5.3,Grackle,NA,63.8,European Starling,EUST,39.6
+7/10/2024,"ED, GA, CL",64,4,McPherson,Rural,6:43,BB7,BB7.1,Red-winged Blackbird,RWBL,64,Northern Bobwhite,NOBO,248
+8/7/2024,CL,64,6,McPherson,Urban,6:51,MC13,MC13.1,Mississippi Kite,MIKI,64,House Sparrow,HOSP,27
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,64,Great-tailed Grackle,GTGR,89
+4/4/2024,BO,44,2,Garden City,Urban,8:55,GC 12,GC 12.2,Grackle,NA,64.3,European Starling,EUST,113.6
+8/7/2024,NB/HQ,69,6,Topeka,WMA,9:21,17,17.2,European Starling,EUST,64.4,NA,NA,NA
+8/15/2024,BO,70,2,Garden City,Urban,7:33,GC 9,GC 9.1,Grackle,NA,64.5,Eurasian Collared Dove,EUCD,58.4
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:47,GC 4,GC 4.1,White-winged Dove,WWDO,64.5,Eurasian Collared Dove,EUCD,152
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:47,GC 4,GC 4.1,Eurasian Collared Dove,EUCD,64.5,Eurasian Collared Dove,EUCD,224
+4/17/2024,BO,49,2,Garden City,WMA,8:38,BR 5,BR 5.2,White-crowned Sparrow,WCSP,64.8,NA,NA,NA
+8/15/2024,BO,70,2,Garden City,Urban,7:43,GC 9,GC 9.2,Eurasian Collared Dove,EUCD,64.8,Grackle ,NA,68.9
+4/18/2024,ED,48,7,McPherson,WMA,9:27,IN,IN4.4,Eastern Meadowlark,EAME,64.9,Eastern Meadowlark,EAME,131.1
+4/2/2024,BO,45,4,Garden City,Urban,9:57,GC 24,GC 24.2,European Starling,EUST,64.9,Eurasian Collared Dove,EUCD,63.1
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,Common Grackle,COGR,65,House Sparrow,HOSP,15
+7/19/2024,"ED, CL",66,9,McPherson,Urban,7:55,MC22,MC22.2,Northern Cardinal,NOCA,65,NA,NA,NA
+7/24/2024,"CL,GA",66,4,McPherson,WMA,7:12,IN7,IN7.1,Red-winged Blackbird,RWBL,65,Common Yellowthroat,COYE,129
+7/25/2024,"CL,GA",77,6,McPherson,Rural,8:39,BB13,BB13.1,Red-winged Blackbird,RWBL,65,Western Meadowlark,WEME,87
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.1,Red-winged Blackbird,RWBL,65.2,Song Sparrow,SOSP,46.7
+4/24/2024,BO,54,2,Garden City,Rural,8:48,CN 1,CN 1.1,White-crowned Sparrow,WCSP,65.2,Western Meadowlark,WEME,141.5
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:51,6,6.2,European Starling,EUST,65.3,NA,NA,NA
+4/23/2024,ED,64,10,McPherson,WMA,10:28,IN4,IN4.2,Eastern Meadowlark,EAME,65.4,Ring-necked Pheasant,RNEP,193.2
+8/15/2024,BO,70,2,Garden City,Urban,7:17,GC 5,GC 5.3,Eurasian Collared Dove,EUCD,65.8,House Sparrow,HOSP,29.8
+8/20/2024,ED,69,5,Topeka,WMA,9:53,19,19.1,Northern Cardinal,NOCA,66,NA,NA,NA
+7/23/2024,"CL,GA",66,2,McPherson,WMA,7:38,IN6,IN6.2,European Starling,EUST,66,NA,NA,NA
+8/8/2024,NB,74,7,Topeka,WMA,10:06,12,12.1,Indigo Bunting,INBU,66.1,Baltimore Oriole,BAOR,69
+4/2/2024,ED,68,20,McPherson,Urban,14:26,MC2,MC2.1,Blue Jay,BLJA,66.2,NA,NA,NA
+4/12/2024,ED,50,3,McPherson,Urban,9:30,MC21,MC21.2,Red-winged Blackbird,RWBL,66.3,Purple Martin,PUMA,39.8
+7/12/2024,JS/HQ,75,11,Topeka,Urban,8:33,9,9.1,House Sparrow,HOSP,66.5,Northern Cardinal,NOCA,Only Heard
+4/23/2024,ED,64,10,McPherson,WMA,10:28,IN4,IN4.2,Red-winged Blackbird,RWBL,66.7,Eastern Meadowlark,EAME,216
+4/3/2024,BO,34,2,Garden City,Urban,8:25,GC 20,GC 20.2,Eurasian Collared Dove,EUCD,66.9,Eurasian Collared Dove,EUCD,39.2
+4/9/2024,JS/NB,47,7,Topeka,WMA,8:35,18,18.2,Northern Cardinal,NOCA,67.2,NA,NA,NA
+4/1/2024,ED,68,20,McPherson,Urban,9:58,MC1,MC1.1,House Sparrow,HOSP,67.4,NA,NA,NA
+4/3/2024,BO,38,2,Garden City,Urban,9:56,GC 16,GC 16.1,Grackle,NA,67.7,NA,NA,NA
+4/1/2024,ED,68,20,McPherson,Urban,9:58,MC1,MC1.1,Common Grackle,COGR,67.8,NA,NA,
+4/8/2024,JS/NB,56,4,Topeka,WMA,10:49,17,17.2,Red-bellied Woodpecker,RBWO,67.9,NA,NA,NA
+4/17/2024,ED,65,4,McPherson,WMA,9:57,IN,IN6.4,American Robin,AMRO,67.9,Eastern Meadowlark,EAME,140.2
+8/21/2024,GA & IW,70,11,McPherson,Rural,8:43,BB4,BB4.1,Red-winged Blackbird ,RWBL,68,NA,NA,NA
+4/4/2024,BO,48,2,Garden City,Urban,9:52,GC 7,GC 7.2,Eurasian Collared Dove,EUCD,68,European Starling,EUST,34
+8/14/2024,"RR, IW",74,1,Garden City,Urban,8:55,GC 18,GC 18.2,House Sparrow,HOSP,68,Eurasian Collared Dove,EUCD,60
+8/15/2024,BO,70,2,Garden City,Urban,7:43,GC 9,GC 9.2,Eurasian Collared Dove,EUCD,68,European Starling,EUST,148.3
+4/5/2024,BO,48,4,Garden City,Urban,8:53,GC 3,GC 3.2,Eurasian Collared Dove,EUCD,68.3,Eurasian Collared Dove,EUCD,28.2
+8/30/2024,BO,65,1,Garden City,Urban,8:05,GC 7,GC 7.3,Eurasian Collared Dove,EUCD,68.4,Eurasian Collared Dove,EUCD,72
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:10,BB4,BB4.1,Red-winged Blackbird,RWBL,68.5,Red-winged Blackbird,RWBL,161.7
+7/29/2024,NB,77,9,Topeka,WMA,7:56,5,5.1,Indigo Bunting,INBU,68.9,Northern Cardinal,NOCA,Only Heard
+4/5/2024,"ED, NB, JS",54,12,McPherson,Urban,10:13,MC11,MC11.2,European Starling,EUST,69,NA,NA,NA
+7/19/2024,"ED, CL",69,10,McPherson,Urban,8:29,MC27,MC27.1,Mourning Dove,MODO,69,European Starling,EUST,49
+7/26/2024,"GA,CL",68,5,McPherson,WMA,6:58,IN8,IN8.2,Dickcissel,DICK,69,Dickcissel,DICK,74
+7/30/2024,"GA, CL",80,15,McPherson,Urban,7:56,MC20,MC20.2,European Starling,EUST,69,Red-winged Blackbird,RWBL,118
+8/15/2024,IW,70,1,Garden City,Urban,8:51,GC 13,GC 13.1,Rock Pigeon,ROPI,69,Eurasian Collared Dove,EUCD,87
+5/1/2024,JS/NB,60,11,Topeka,Urban,8:51,21,21.2,European Starling,EUST,69.1,European Starling,EUST,200
+4/24/2024,BO,55,2,Garden City,Rural,9:05,CN 3,CN 3.1,White-crowned Sparrow,WCSP,69.2,Savannah Sparrow,SAVS,174
+8/16/2024,NB/ED,71,4,Topeka,WMA,8:20,23,23.1,Green Heron,GRHE,69.4,Eastern Bluebird,EABL,35.8
+4/18/2024,ED,45,6,McPherson,WMA,8:58,IN,IN4.2,Upland Sandpiper,UPSA,69.9,Red-winged Blackbird,RWBL,177.5
+8/26/2024,"BO, RR",70,1,Garden City,Urban,8:35,GC 16,GC 16.2,Mississippi Kite,MIKI,69.9,NA,NA,NA
+7/10/2024,"ED, GA, CL",63,4,McPherson,Rural,6:22,BB8,BB8.1,Red-winged Blackbird,RWBL,70,House Finch,HOFI,150
+7/15/2024,"GA, CL",79,14,McPherson,Rural,6:04,BB3,BB3.1,Red-winged Blackbird,RWBL,70,House Sparrow,HOSP,40
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,Ring-necked Pheasant,RNEP,70,swallow,NA,5
+8/1/2024,"GA,CL",73,5,McPherson,WMA,7:17,IN5,IN5.4,Northern Bobwhite ,NOBO,70,meadowlark,NA,112
+8/7/2024,CL,64,6,McPherson,Urban,6:38,MC12,MC12.1,Mississippi Kite,MIKI,70,Blue Jay,BLJA,49
+8/2/2024,IW,68,1,Garden City,Urban,7:08,GC 16,GC 16.2,Eurasian Collared Dove,EUCD,70,Eurasian Collared Dove,EUCD,96
+4/30/2024,JS/NB,64,11,Topeka,Urban,9:03,11,11.2,European Starling,EUST,70.2,European Starling,EUST,58.2
+4/25/2024,ED,59,16,McPherson,Rural,10:12,BB6,BB6.2,Cooper's Hawk,COHA,70.2,Eastern Meadowlark,EAME,54.7
+4/22/2024,BO,45,3,Garden City,WMA,8:08,BR 15,BR 15.2,White-crowned Sparrow,WCSP,70.2,NA,NA,NA
+8/27/2024,"BO, IW",66,1,Garden City,Urban,7:01,GC 24,GC 24.2,Eurasian Collared Dove,EUCD,70.6,Eurasian Collared Dove,EUCD,121.5
+4/29/2024,BO,58,2,Garden City,WMA,9:18,BR 14,BR 14.2,White-crowned Sparrow,WCSP,70.7,White-crowned Sparrow,WCSP,69.3
+8/13/2024,CL,73,11,McPherson,Urban,8:59,MC5,MC5.2,Turkey Vulture,TUVU,71,European Starling,EUST,20
+5/1/2024,JS/NB,60,11,Topeka,Urban,8:33,21,21.1,American Robin,AMRO,71.6,NA,NA,NA
+5/3/2024,JS/NB,63,10,Topeka,Urban,10:37,7,7.2,Common Grackle,COGR,71.7,House Sparrow,HOSP,Only Heard
+7/12/2024,JS/HQ,75,11,Topeka,Urban,8:33,9,9.1,Cliff Swallow,CLSW,71.7,Eurasian Collared-Dove,EUCD,32.2
+4/25/2024,ED,56,15,McPherson,Rural,7:56,BB5,BB5.1,Killdeer,KILL,71.7,Savannah Sparrow,SAVS,131.8
+8/20/2024,ED,66,3,Topeka,WMA,8:27,15,15.2,Northern Flicker,NOFL,72,American Crow,AMCR,120
+8/27/2024,"BO, IW",70,1,Garden City,Urban,8:58,GC 4,GC 4.3,European Starling,EUST,72,Eurasian Collared Dove,EUCD,183.6
+4/17/2024,BO,48,2,Garden City,WMA,8:23,BR 5,BR 5.1,White-crowned Sparrow,WCSP,72.2,White-crowned Sparrow,WCSP,70.7
+4/29/2024,BO,48,2,Garden City,WMA,8:19,BR 13,BR 13.1,White-crowned Sparrow,WCSP,72.2,NA,NA,NA
+4/18/2024,ED,46,6,McPherson,WMA,9:11,IN,IN4.3,Red-winged Blackbird,RWBL,72.3,Western Meadowlark,WEME,55.6
+8/7/2024,"BO, RR",73,1,Garden City,Rural,9:08,Cn 5,CN 5.3,Brown-headed Cowbird,BHCO,72.3,NA,NA,NA
+8/16/2024,NB/ED,68,3,Topeka,WMA,7:14,22,22.2,Northern Cardinal,NOCA,72.4,Eastern Phoebe,EAPH,62.4
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:47,GC 4,GC 4.1,Eurasian Collared Dove,EUCD,72.5,NA,NA,NA
+4/10/2024,"ED, NP",52,5,McPherson,WM,8:58,BB1,BB1.3,Red-winged Blackbird,RWBL,72.6,NA,NA,NA
+4/5/2024,BO,61,4,Garden City,Urban,10:49,GC 1,GC 1.1,Eurasian Collared Dove,EUCD,72.7,Eurasian Collared Dove,EUCD,83.8
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,Common Grackle,COGR,72.9,NA,NA,NA
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:37,GC 20,GC 20.2,Eurasian Collared Dove,EUCD,72.9,Mississippi Kite,MIKI,232
+8/20/2024,ED,69,5,Topeka,WMA,9:53,19,19.1,Turkey Vulture,TUVU,73,NA,NA,NA
+8/15/2024,CL,75,6,McPherson,Urban,8:30,MC10,MC10.1,Blue Jay,BLJA,73,House Sparrow,HOSP,43
+8/2/2024,IW,69,1,Garden City,Urban,7:32,GC 8,GC 8.1,European Starling,EUST,73,NA,NA,NA
+4/5/2024,"ED, NB, JS",58,13,McPherson,Urban,10:56,MC15,MC15.1,American Robin ,AMRO,73.5,NA,NA,NA
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:53,GC 12,GC 12.2,Eurasian Collared Dove,EUCD,73.5,NA,NA,NA
+4/8/2024,JS/NB,51,5,Topeka,WMA,9:29,16,16.1,Blue Jay,BLJA,73.7,NA,NA,NA
+7/10/2024,"ED, GA, CL",64,4,McPherson,Rural,6:43,BB7,BB7.1,Red-winged Blackbird,RWBL,74,Dickcissel,DICK,120
+7/16/2024,"ED,GA",77,10,Inman,WMA,7:55,IN3,IN3.1,Red-winged Blackbird,RWBL,74,Red-winged Blackbird,RWBL,126
+8/2/2024,IW,70,1,Garden City,Urban,7:48,GC 12,GC 12.1,Eurasian Collared Dove,EUCD,74,NA,NA,NA
+4/4/2024,"ED, NB, JS",59,10,McPherson,Urban,1:15,MC8,MC8.2,American Robin,AMRO,74.1,European Starling,EUST,95.8
+4/12/2024,JS/NB,53,9,Topeka,WMA,9:59,4,4.2,Northern Cardinal,NOCA,74.2,NA,NA,NA
+4/12/2024,JS/NB,53,9,Topeka,WMA,9:59,4,4.2,Red-bellied Woodpecker,RBWO,74.2,NA,NA,NA
+4/24/2024,RR,62,2,Garden City,Rural,11:20,CN 3,CN 3.3,Mourning Dove,MODO,74.7,NA,NA,NA
+4/30/2024,JS/NB,67,11,Topeka,Urban,9:53,18,18.2,Common Grackle,COGR,74.8,European Starling,EUST,44.5
+4/2/2024,BO,44,2,Garden City,Urban,8:08,GC 19,GC 19.3,Eurasian Collared Dove,EUCD,74.9,Rock Pigeon,ROPI,49.5
+4/15/2024,JS/NB,70,11,Topeka,WMA,10:18,1,1.1,Brown-headed Cowbird,BHCO,75,NA,NA,NA
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.1,meadowlark,NA,75,Red-winged Blackbird,RWBL,131.6
+7/10/2024,"ED, GA, CL",64,4,McPherson,Rural,6:43,BB7,BB7.1,Red-winged Blackbird,RWBL,75,Red-winged Blackbird,RWBL,175
+7/19/2024,"ED, CL",66,9,McPherson,Urban,7:55,MC22,MC22.2,Northern Cardinal,NOCA,75,Gray Catbird,GRCA,28
+7/25/2024,"CL,GA",77,6,McPherson,Rural,8:39,BB13,BB13.1,Dickcissel,DICK,75,Red-winged Blackbird,RWBL,75
+8/1/2024,IW,72,3,Garden City,Rural,8:37,CN 2,CN 2.1,Meadowlark,,75,NA,NA,NA
+8/13/2024,"BO, IW",68,1,Garden City,WMA,7:47,BR 7,BR 7.2,Ring-necked Pheasant,RNEP,75,NA,NA,NA
+8/27/2024,"BO, IW",67,1,Garden City,Urban,7:14,GC 24,GC 24.1,Mississippi Kite,MIKI,75.1,Eurasian Collared Dove,EUCD,21.7
+4/10/2024,"ED, NP",52,5,McPherson,WM,8:58,BB1,BB1.3,Red-winged Blackbird,RWBL,75.6,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:24,GC13,GC13.2,Eurasian Collared Dove,EUCD,75.7,Grackle,NA,13.4
+4/29/2024,BO,69,2,Garden City,WMA,10:41,BR 9,BR 9.2,White-crowned Sparrow,WCSP,75.7,NA,NA,NA
+8/7/2024,"BO, RR",73,1,Garden City,Rural,9:08,Cn 5,CN 5.3,Savannah Sparrow,SAVS,75.8,Savannah Sparrow,SAVS,118
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:07,4,4.1,American Robin,AMRO,76,Mourning Dove,MODO,38.7
+7/10/2024,"ED, GA, CL",63,4,McPherson,Rural,6:22,BB8,BB8.1,Red-winged Blackbird,RWBL,76,Red-winged Blackbird,RWBL,124
+7/24/2024,"CL,GA",70,5,McPherson,WMA,8:01,IN8,IN8.2,Dickcissel,DICK,76,Mourning Dove,MODO,246
+7/25/2024,"GA,CL",81,7,McPherson,Rural,9:26,BB12,B12.2,Red-winged Blackbird,RWBL,76,NA,NA,NA
+7/30/2024,"GA, CL",82,17,McPherson,Urban,8:24,MC19,MC19.2,Red-winged Blackbird,RWBL,76,Mourning Dove,MODO,73
+8/7/2024,CL,67,9,McPherson,Urban,8:08,MC14,MC14.1,Northern Cardinal,NOCA,76,Blue Jay,BLJA,132
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,76,NA,NA,NA
+8/2/2024,IW,68,1,Garden City,Urban,7:19,GC 8,GC 8.2,Eurasian Collared Dove,EUCD,76,NA,NA,NA
+8/2/2024,IW,69,1,Garden City,Urban,7:32,GC 8,GC 8.1,Eurasian Collared Dove,EUCD,76,NA,NA,NA
+8/2/2024,IW,69,1,Garden City,Urban,7:32,GC 8,GC 8.1,Grackle,NA,76,NA,NA,NA
+8/2/2024,IW,70,1,Garden City,Urban,7:48,GC 12,GC 12.1,Eurasian Collared Dove,EUCD,76,NA,NA,NA
+8/15/2024,IW,70,1,Garden City,Urban,8:28,GC 13,GC 13.2,Eurasian Collared Dove,EUCD,76,Grackle ,NA,23
+8/15/2024,IW,70,1,Garden City,Urban,8:51,GC 13,GC 13.1,Grackle,NA,76,NA,NA,NA
+8/26/2024,IW,72,0,Garden City,Urban,7:41,GC 19,GC 19.1,Mississippi Kite,MIKI,76,NA,NA,NA
+8/26/2024,IW,74,1,Garden City,Urban,8:29,GC 22,GC 22.1,Eurasian Collared Dove,EUCD,76,Eurasian Collared Dove,EUCD,46
+4/18/2024,ED,50,7,McPherson,WMA,10:12,IN,IN2.3,Eastern Meadowlark,EAME,76.1,Red-winged Blackbird,RWBL,175
+4/25/2024,JS/NB,55,11,Topeka,WMA,9:07,4,4.1,American Robin,AMRO,76.6,House Finch,HOFI,25
+4/2/2024,BO,45,4,Garden City,Urban,9:42,GC 24,GC 24.1,Eurasian Collared Dove,EUCD,76.7,Eurasian Collared Dove,EUCD,13.6
+4/24/2024,JS/NB,52,4,Topeka,WMA,8:29,22,22.2,Turkey Vulture,TUVU,77,NA,NA,NA
+8/20/2024,ED,64,4,Topeka,WMA,6:59,8,8.1,Mourning Dove,MODO,77,NA,NA,NA
+7/19/2024,"ED, CL",66,9,McPherson,Urban,7:55,MC22,MC22.2,American Robin,AMRO,77,Field Sparrow,FISP,1
+7/22/2024,"CL,GA",68,2,McPherson,Rural,8:36,MC26,MC26.1,Red-winged Blackbird,RWBL,77,European Starling,EUST,57
+4/5/2024,BO,57,4,Garden City,Urban,10:27,GC 5,GC 5.1,American Robin,AMRO,77.2,Eurasian Collared Dove,EUCD,20.2
+4/5/2024,BO,45,4,Garden City,Urban,8:10,GC 4,GC 4.3,Grackle,NA,77.4,NA,NA,NA
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Mississippi Kite,MIKI,77.6,NA,NA,NA
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:32,GC 23,GC 23.3,European Starling,EUST,77.7,Eurasian Collared Dove,EUCD,150
+7/10/2024,"ED, GA, CL",63,4,McPherson,Rural,6:22,BB8,BB8.1,Red-winged Blackbird,RWBL,78,Red-winged Blackbird,RWBL,94
+7/22/2024,"CL,GA",67,2,McPherson,Rural,8:24,MC26,MC26.2,Eurasian Collared Dove,EUCD,78,Red-winged Blackbird,RWBL,141
+8/7/2024,CL,65,7,McPherson,Urban,7:27,MC17,MC17.1,Red-winged Blackbird,RWBL,78,Blue Jay,BLJA,111
+8/21/2024,GA & IW,70,11,McPherson,Rural,8:43,BB4,BB4.1,Red-winged Blackbird & Brown-headed Cowbird,"RWBL, BHCO",78,NA,NA,NA
+8/1/2024,IW,67,1,Garden City,Rural,7:01,CN 5,CN 5.2,Blue Grosbeak,BLGR,78,Brown Thrasher,BRTH,34
+8/14/2024,"RR, IW",71,1,Garden City,WMA,6:59,BR 6,BR 6.2,Mourning Dove,MODO,78,NA,NA,NA
+8/30/2024,BO,63,1,Garden City,Urban,7:30,GC 10,GC 10.1,European Starling,EUST,78.1,Eurasian Collared Dove,EUCD,101.2
+4/25/2024,ED,57,16,McPherson,Rural,9:11,BB5,BB5.2,Red-winged Blackbird,RWBL,78.9,Red-winged Blackbird,RWBL,115.8
+4/1/2024,BO,44,3,Garden City,Urban,8:20,GC9,GC9.1,Eurasian Collared Dove,EUCD,78.9,Eurasian Collared Dove,EUCD,70
+7/10/2024,"ED, GA, CL",64,4,McPherson,Rural,6:43,BB7,BB7.1,Red-winged Blackbird,RWBL,79,NA,NA,NA
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:10,GC 20,GC 20.1,Mississippi Kite,MIKI,79,Eurasian Collared Dove,EUCD,147.9
+4/17/2024,BO,46,3,Garden City,WMA,7:51,BR 6,BR 6.2,White-crowned Sparrow,WCSP,79.1,White-crowned Sparrow,WCSP,243
+4/18/2024,ED,48,7,McPherson,WMA,9:27,IN,IN4.4,Red-winged Blackbird,RWBL,79.6,Red-winged Blackbird,RWBL,50
+7/10/2024,NB,66,4,Topeka,Urban,7:29,3,3.2,American Robin,AMRO,80,NA,NA,NA
+7/12/2024,JS/HQ,77,11,Topeka,Urban,9:05,15,15.1,House Finch,HOFI,80,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,Barn Swallow ,BARS,80,House Sparrow,HOSP,20
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Red-winged Blackbird,RWBL,80,Brown-headed Cowbird,BHCO,60
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Red-winged Blackbird,RWBL,80,Mourning Dove,MODO,50
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Dickcissel,DICK,80,Brown-headed Cowbird,BHCO,35
+7/24/2024,"CL,GA",66,4,McPherson,WMA,7:12,IN7,IN7.1,Northern Bobwhite ,NOBO,80,NA,NA,NA
+7/26/2024,"GA,CL",70,5,McPherson,WMA,7:23,IN8,IN8.4,Northern Bobwhite,NOBO,80,NA,NA,NA
+8/1/2024,"GA,CL",75,5,McPherson,WMA,8:41,IN4,IN4.2,Upland Sandpiper,UPSA,80,Blue Grosbeak,BLGR,250
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,80,NA,NA,NA
+8/15/2024,IW,70,1,Garden City,Urban,8:51,GC 13,GC 13.1,Eurasian Collared Dove,EUCD,80,NA,NA,NA
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:30,GC 6,GC 6.2,Eurasian Collared Dove,EUCD,80,Grackle,NA,24.3
+8/8/2024,NB,72,6,Topeka,WMA,9:33,9,9.1,Mourning Dove,MODO,80.1,Pileated Woodpecker,PIWO,Only Heard
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:10,BB4,BB4.1,meadowlark,NA,80.1,NA,NA,NA
+4/2/2024,BO,45,4,Garden City,Urban,9:32,GC 23,GC 23.1,Eurasian Collared Dove,EUCD,80.1,Eurasian Collared Dove,EUCD,139.2
+4/3/2024,BO,36,2,Garden City,Urban,9:01,GC 15,GC 15.1,Grackle,NA,80.1,House Sparrow,HOSP,18
+4/5/2024,BO,50,4,Garden City,Urban,9:55,GC 5,GC 5.3,Eurasian Collared Dove,EUCD,80.1,European Starling,EUST,44
+4/23/2024,NB,59,8,Topeka,Urban,9:58,16,16.2,Common Grackle,COGR,80.2,Canada Goose,CANG,168
+8/28/2024,"BO, RR",67,3,Garden City,Urban,7:34,GC 1,GC 1.1,House Sparrow,HOSP,80.3,Rock Pigeon,ROPI,87.7
+4/10/2024,"ED, NP",55,5,McPherson,WM,9:31,BB2,BB2.1,American Robin,AMRO,80.4,Mourning Dove,MODO,203
+8/15/2024,BO,70,2,Garden City,Urban,7:43,GC 9,GC 9.2,European Starling,EUST,80.4,European Starling,EUST,184
+4/23/2024,ED,61,6,McPherson,WMA,9:39,IN8,IN8.4,Eastern Meadowlark,EAME,80.5,Red-winged Blackbird,RWBL,140.2
+4/18/2024,ED,49,7,McPherson,WMA,9:57,IN,IN4.1,Savannah Sparrow,SAVS,80.7,Eastern Meadowlark,EAME,114.4
+8/21/2024,GA & IW,68,103,McPherson,Rural,8:21,BB5,BB5.2,Blue-winged Teal,BWTE,81,NA,NA,NA
+4/1/2024,BO,44,3,Garden City,Urban,8:20,GC9,GC9.1,American Robin,AMRO,81,NA,NA,NA
+8/28/2024,"BO, RR",70,1,Garden City,Urban,8:30,GC 6,GC 6.2,Eurasian Collared Dove,EUCD,81,European Starling,EUST,79.4
+8/30/2024,BO,63,1,Garden City,Urban,7:53,GC 11,GC 11.2,Eurasian Collared Dove,EUCD,81.1,Mississippi Kite,MIKI,67.7
+7/12/2024,JS/HQ,72,10,Topeka,Urban,7:28,16,16.2,American Crow,AMCR,81.4,NA,NA,NA
+8/27/2024,"BO, IW",67,1,Garden City,Urban,7:14,GC 24,GC 24.1,Eurasian Collared Dove,EUCD,81.9,NA,NA,NA
+4/24/2024,JS/NB,49,4,Topeka,WMA,7:57,15,15.2,Eastern Bluebird,EABL,82,Northern Cardinal,NOCA,Only Heard
+4/17/2024,BO,55,2,Garden City,WMA,9:26,BR 4,BR 4.2,White-crowned Sparrow,WCSP,82,White-crowned Sparrow,WCSP,139.7
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:23,GC 17,GC 17.2,Mississippi Kite,MIKI,82,Eurasian Collared Dove,EUCD,111
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:05,GC 11,GC 11.1,Eurasian Collared Dove,EUCD,82.5,Eurasian Collared Dove,EUCD,86
+4/17/2024,BO,49,2,Garden City,WMA,8:38,BR 5,BR 5.2,White-crowned Sparrow,WCSP,82.9,White-crowned Sparrow,WCSP,101.9
+4/29/2024,JS/NB,56,4,Topeka,Urban,9:37,12,12.1,American Robin,AMRO,83,Common Grackle,COGR,61.1
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,swallow,NA,83,NA,NA,NA
+7/23/2024,"CL,GA",74,2,McPherson,WMA,9:22,MC27,MC27.3,Scissor-tailed Flycatcher,STFL,83,Dickcissel,DICK,139
+8/7/2024,CL,66,8,McPherson,Urban,7:51,MC14,MC14.2,European Starling,EUST,83,Eurasian Collared Dove,EUCD,120
+4/18/2024,ED,50,7,McPherson,WMA,10:12,IN,IN2.3,Killdeer,KILL,83.1,Red-winged Blackbird,RWBL,176.7
+8/29/2024,"BO, IW",69,1,Garden City,Urban,7:46,GC 14,GC 14.2,Eurasian Collared Dove,EUCD,83.2,European Starling,EUST,123.1
+8/29/2024,"BO, IW",69,1,Garden City,Urban,7:46,GC 14,GC 14.2,House Sparrow,HOSP,83.2,NA,NA,NA
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:27,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,83.3,Eurasian Collared Dove,EUCD,83.3
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:10,GC 20,GC 20.1,Blue Jay,BLJA,83.3,Eurasian Collared Dove,EUCD,35.9
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:53,GC 12,GC 12.2,Eurasian Collared Dove,EUCD,83.3,NA,NA,NA
+4/2/2024,ED,68,20,McPherson,Urban,14:26,MC2,MC2.1,Common Grackle,COGR,83.4,NA,NA,NA
+8/27/2024,"BO, IW",67,1,Garden City,Urban,7:14,GC 24,GC 24.1,Mourning Dove,MODO,83.4,NA,NA,NA
+4/12/2024,JS/NB,45,8,Topeka,WMA,8:26,7,7.1,Red-winged Blackbird ,RWBL,83.9,Northern Cardinal,NOCA,130.6
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Red-winged Blackbird,RWBL,84,Mourning Dove,MODO,200
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:32,GC 23,GC 23.3,Eurasian Collared Dove,EUCD,84,Rock Pigeon,ROPI,134
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:22,5,5.1,Blue-winged Teal,BWTE,84.2,Northern Flicker,NOFL,Only Heard
+4/19/2024,JS/NB,43,4,Topeka,WMA,7:52,2,2.1,Eastern Bluebird,EABL,84.2,Eastern Meadowlark,EAME,Only Heard
+4/19/2024,JS/NB,43,4,Topeka,WMA,7:52,2,2.1,Lark Sparrow,LASP,84.2,NA,NA,NA
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:21,4,4.2,Mourning Dove,MODO,84.2,House Finch,HOFI,25
+8/30/2024,BO,63,1,Garden City,Urban,7:41,GC 10,GC 10.2,Mississippi Kite,MIKI,84.2,Eurasian Collared Dove,EUCD,42.2
+4/18/2024,ED,45,6,McPherson,WMA,8:48,IN,IN5.1,Killdeer,KILL,84.3,Ring-necked Pheasant,RNEP,203.2
+4/5/2024,"ED, NB, JS",67,17,McPherson,Urban,1:19,MC13,MC 13.2,Mourning Dove,MODO,84.4,House Sparrow,HOSP,46
+7/16/2024,NB,79,10,Topeka,Urban,10:38,14,14.2,Mourning Dove,MODO,84.6,NA,NA,NA
+4/30/2024,JS/NB,66,11,Topeka,Urban,9:43,18,18.1,American Robin,AMRO,84.7,American Robin,AMRO,41.6
+4/5/2024,BO,45,4,Garden City,Urban,8:10,GC 4,GC 4.3,Eurasian Collared Dove,EUCD,84.7,Eurasian Collared Dove,EUCD,114.1
+8/2/2024,IW,68,1,Garden City,Urban,7:19,GC 8,GC 8.2,Grackle,NA,85,Rock Pigeon ,ROPI,80
+4/3/2024,"ED, NB, JS",53,20,McPherson,Urban,13:40,MC4,MC4.2,House Finch,HOFI,85.1,NA,NA,NA
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:37,GC 20,GC 20.2,Eurasian Collared Dove,EUCD,85.3,Eurasian Collared Dove,EUCD,70.2
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,Red-winged Blackbird,RWBL,86,Red-winged Blackbird,RWBL,100
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Red-winged Blackbird,RWBL,86,Red-winged Blackbird,RWBL,220
+7/19/2024,"ED, CL",68,10,McPherson,Urban,8:20,MC23,MC23.1,Mourning Dove,MODO,86,Indigo Bunting,INBU,107
+7/23/2024,"CL,GA",66,2,McPherson,WMA,7:38,IN6,IN6.2,Dickcissel,DICK,86,Dickcissel,DICK,30
+7/30/2024,"GA, CL",80,15,McPherson,Urban,7:56,MC20,MC20.2,European Starling,EUST,86,NA,NA,NA
+8/23/2024,"IW, GA",75,15,McPherson,Rual,10:31,BB 6,BB 6.1,Red-winged Blackbird,RWBL,86,Red-winged Blackbird,RWBL,88
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,86,Eurasian Collared Dove,EUCD,38
+4/16/2024,ED,59,18,McPherson,Urban,8:42,MC19,MC19.1,European Starling,EUST,86.2,Song Sparrow,SOSP,111.5
+8/12/2024,NB/HQ,70,4,Topeka,WMA,7:58,25,25.1,Indigo Bunting,INBU,86.3,Hairy Woodpecker,HAWO,24.1
+4/17/2024,BO,48,2,Garden City,WMA,8:23,BR 5,BR 5.1,White-crowned Sparrow,WCSP,86.5,White-crowned Sparrow,WCSP,50.3
+4/24/2024,RR,61,2,Garden City,Rural,11:10,CN 4,CN 4.3,Red-winged Blackbird,RWBL,86.6,NA,NA,NA
+5/3/2024,JS/NB,53,6,Topeka,Urban,8:20,15,15.1,European Starling,EUST,87,NA,NA,NA
+7/25/2024,"CL,GA",73,6,McPherson,Rural,7:50,BB11,BB11.1,Brown-headed Cowbird,BHCO,87,NA,NA,NA
+8/1/2024,"GA,CL",75,5,McPherson,WMA,8:41,IN4,IN4.2,Upland Sandpiper,UPSA,87,sparrow,NA,67
+8/5/2024,"CL,GA",69,7,McPherson,WMA,6:59,IN3,IN3.2,Northern Bobwhite,NOBO,87,Red-winged Blackbird,RWBL,
+8/15/2024,CL,75,6,McPherson,Urban,8:30,MC10,MC10.1,Mississippi Kite,MIKI,87,Mississippi Kite,MIKI,138
+8/7/2024,"BO, RR",70,1,Garden City,Rural,7:58,CN 5,CN 5.1,Mourning Dove,MODO,87,Red-winged Blackbird,RWBL,69.7
+8/26/2024,IW,73,1,Garden City,Urban,8:05,GC 19,GC 19.3,Rock Pigeon,ROPI,87,Rock Pigeon,ROPI,206
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:02,GC 23,GC 23.1,Eurasian Collared Dove,EUCD,87,NA,NA,NA
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:02,GC 23,GC 23.1,Mourning Dove,MODO,87,NA,NA,NA
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,Mourning Dove,MODO,87.2,NA,NA,NA
+4/23/2024,NB,59,8,Topeka,Urban,9:24,13,13.1,Northern Cardinal,NOCA,87.3,Northern Cardinal,NOCA,42.6
+4/17/2024,ED,61,4,McPherson,WMA,9:16,IN3,IN3.3,Red-winged Blackbird,RWBL,87.3,NA,NA,NA
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,87.4,Eurasian Collared Dove,EUCD,134.2
+4/4/2024,"ED, NB, JS",47,10,McPherson,Urban,10:14,MC6,MC6.2,Mourning Dove,MODO,87.7,European Starling,EUST,129.1
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.2,Western Meadowlark,WEME,87.7,Song Sparrow,SOSP,70.4
+4/15/2024,JS/NB,61,10,Topeka,WMA,7:51,13,13.2,Brown Thrasher,BRTH,87.9,Northern Parula,NOPA,Only Heard
+4/22/2024,BO,49,3,Garden City,WMA,8:49,BR 12,BR 12.2,White-crowned Sparrow,WCSP,87.9,White-crowned Sparrow,WCSP,162.1
+7/10/2024,"ED, GA, CL",64,4,McPherson,Rural,6:43,BB7,BB7.1,Red-winged Blackbird,RWBL,88,Eastern Meadowlark,EAME,136
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,Red-winged Blackbird,RWBL,88,Red-winged Blackbird,RWBL,40
+8/13/2024,CL,74,11,McPherson,Urban,10:09,MC2,MC2.2,Eurasian Collared Dove,EUCD,88,Mourning Dove,MODO,30
+4/24/2024,RR,58,2,Garden City,Rural,10:11,CN 2,CN 2.1,Mourning Dove,MODO,88.1,NA,NA,NA
+4/17/2024,ED,64,4,McPherson,WMA,9:46,IN,IN5.4,Eastern Meadowlark,EAME,88.5,Eastern Meadowlark,EAME,80.6
+4/18/2024,ED,49,7,McPherson,WMA,9:57,IN,IN4.1,Red-winged Blackbird,RWBL,88.9,Savannah Sparrow,SAVS,60.8
+4/22/2024,BO,52,4,Garden City,WMA,9:19,BR 11,BR 11.2,White-crowned Sparrow,WCSP,88.9,NA,NA,NA
+4/4/2024,"ED, NB, JS",41,9,McPherson,Urban,9:06,MC5,MC5.2,European Starling,EUST,89,NA,NA,NA
+7/25/2024,"CL,GA",77,6,McPherson,Rural,8:39,BB13,BB13.1,Dickcissel,DICK,89,Red-winged Blackbird,RWBL,48
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:11,5,5.2,American Wigeon,AMWI,89.8,Northern Cardinal,NOCA,Only Heard
+4/5/2024,BO,48,4,Garden City,Urban,8:37,GC 3,GC 3.1,European Starling,EUST,89.9,Killdeer,KILL,49
+8/1/2024,"GA,CL",74,4,McPherson,WMA,7:41,IN6,IN6.1,Dickcissel,DICK,90,Upland Sandpiper,UPSA,24
+8/13/2024,CL,75,12,McPherson,Urban,10:28,MC2,MC2.1,Mississippi Kite,MIKI,90,House Finch,HOFI,10
+8/29/2024,"BO, IW",69,1,Garden City,Urban,7:46,GC 14,GC 14.2,European Starling,EUST,90.1,European Starling,EUST,28.2
+4/1/2024,BO,45,3,Garden City,Urban,8:50,GC9,GC9.2,Grackle,,90.3,Brown-headed Cowbird,BHCO,110.2
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,90.3,NA,NA,NA
+7/12/2024,JS/HQ,77,11,Topeka,Urban,9:05,15,15.1,Western Kingbird,WEKI,90.4,Mourning Dove,MODO,58.9
+7/19/2024,"ED, CL",68,10,McPherson,Urban,8:20,MC23,MC23.1,Mourning Dove,MODO,91,Mourning Dove,MODO,83
+7/19/2024,"ED, CL",68,10,McPherson,Urban,8:20,MC23,MC23.1,European Starling,EUST,91,House Sparrow,HOSP,107
+8/16/2024,IW,71,10,McPherson,Rural,9:16,BB 3,BB 3.2,Red-winged Blackbird,RWBL,91,Brown-headed Cowbird,BHCO,116
+8/16/2024,IW,71,10,McPherson,Rural,9:16,BB 3,BB 3.2,Red-winged Blackbird,RWBL,91,Red-winged Blackbird,RWBL,116
+8/2/2024,IW,68,1,Garden City,Urban,7:19,GC 8,GC 8.2,Grackle,NA,91,Eurasian Collared Dove,EUCD,76
+8/2/2024,IW,70,1,Garden City,Urban,7:48,GC 12,GC 12.1,Eurasian Collared Dove,EUCD,91,NA,NA,NA
+8/20/2024,CL,67,8,McPherson,Rural,7:09,MC4,MC4.2,European Starling,EUST,92,NA,NA,NA
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:27,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,92.8,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Red-winged Blackbird,RWBL,93,Brown-headed Cowbird,BHCO,67
+7/25/2024,"GA,CL",78,7,McPherson,Rural,8:53,BB13,BB13.3,Red-winged Blackbird,RWBL,93,Mourning Dove,MODO,98
+4/1/2024,ED,68,20,McPherson,Urban,9:58,MC1,MC1.1,Common Grackle,COGR,93.3,American Robin,AMRO,155.3
+4/10/2024,"ED, NP",52,5,McPherson,WM,8:58,BB1,BB1.3,Western Meadowlark,WEME,93.7,NA,NA,NA
+4/1/2024,BO,46,2,Garden City,Urban,10:24,GC13,GC13.2,Eurasian Collared Dove,EUCD,93.8,Eurasian Collared Dove,EUCD,115.5
+7/22/2024,"CL,GA",72,2,McPherson,Rural,9:26,MC24,MC24.1,Eastern Meadowlark ,EAME,94,Red-tailed Hawk,RTHA,250
+8/13/2024,CL,75,12,McPherson,Urban,10:28,MC2,MC2.1,Blue Jay,BLJA,94,NA,NA,NA
+8/15/2024,CL,73,5,McPherson,Urban,7:59,MC7,MC7.1,Barn Swallow,BARS,94,House Sparrow,HOSP,82
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:53,GC 12,GC 12.2,European Starling,EUST,94,Eurasian Collared Dove,EUCD,83.8
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:53,GC 12,GC 12.2,Eurasian Collared Dove,EUCD,94,NA,NA,NA
+8/28/2024,"BO, RR",67,1,Garden City,Urban,7:55,GC 4,GC 4.2,Mississippi Kite,MIKI,94.4,NA,NA,NA
+4/5/2024,BO,45,4,Garden City,Urban,8:10,GC 4,GC 4.3,Eurasian Collared Dove,EUCD,94.6,NA,NA,NA
+4/18/2024,ED,48,7,McPherson,WMA,9:27,IN,IN4.4,Red-winged Blackbird,RWBL,94.8,Red-winged Blackbird,RWBL,92.2
+4/10/2024,"ED, NP",59,7,McPherson,WM,10:28,BB4,BB4.3,Red-winged Blackbird,RWBL,94.9,Song Sparrow,SOSP,61.8
+4/10/2024,"ED, NP",59,7,McPherson,WM,10:28,BB4,BB4.3,Ring-necked Pheasant,RNEP,94.9,NA,NA,NA
+8/26/2024,IW,73,1,Garden City,Urban,8:05,GC 19,GC 19.3,Eurasian Collared Dove,EUCD,95,Eurasian Collared Dove,EUCD,86
+8/26/2024,IW,73,0,Garden City,Urban,8:15,GC 22,GC 22.2,European Starling,EUST,95,House Sparrow,HOSP,37
+4/15/2024,JS/NB,66,11,Topeka,WMA,8:52,8,8.1,Blue Jay,BLJA,95.5,NA,NA,NA
+4/23/2024,NB,59,8,Topeka,Urban,9:58,16,16.2,Common Grackle,COGR,95.5,NA,NA,NA
+4/4/2024,BO,50,2,Garden City,Urban,10:01,GC 7,GC 7.3,Eurasian Collared Dove,EUCD,95.6,European Starling,EUST,36.9
+8/2/2024,IW,68,1,Garden City,Urban,7:08,GC 16,GC 16.2,Grackle,NA,96,NA,NA,NA
+4/24/2024,RR,56,2,Garden City,Rural,9:37,CN 1,CN 1.3,White-crowned Sparrow,WCSP,96.3,Savannah Sparrow,SAVS,46.2
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Red-winged Blackbird,RWBL,97,Red-winged Blackbird,RWBL,90
+8/1/2024,"GA,CL",74,4,McPherson,WMA,7:41,IN6,IN6.1,Northern Bobwhite,NOBO,97,Dickcissel,DICK,76
+8/7/2024,CL,64,6,McPherson,Urban,7:01,MC13,MC13.2,Blue Jay,BLJA,97,Downy Woodpecker,DOWO,16
+4/12/2024,JS/NB,46,8,Topeka,WMA,8:39,7,7.2,Song Sparrow,SOSP,97.3,Brown-headed Cowbird,BHCO,150.7
+8/16/2024,NB/ED,68,3,Topeka,WMA,7:14,22,22.2,Downy Woodpecker,DOWO,97.5,Canada Goose,CANG,Only Heard
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:27,GC 14,GC 14.1,White-winged Dove,WWDO,97.8,NA,NA,NA
+7/24/2024,"CL,GA",68,4,McPherson,WMA,7:35,IN7,IN7.2,Field Sparrow,FISP,98,Red-winged Blackbird,RWBL,244
+4/24/2024,RR,58,2,Garden City,Rural,9:59,CN 1,CN 1.2,Red-winged Blackbird,RWBL,98.1,Red-winged Blackbird,RWBL,242
+8/26/2024,"BO, RR",70,1,Garden City,Urban,7:54,GC 20,GC 20.3,Eurasian Collared Dove,EUCD,98.9,NA,NA,NA
+8/2/2024,"GA,CL",74,3,McPherson,WMA,8:18,IN4,IN4.1,Red-winged Blackbird,RWBL,99,Northern Bobwhite,NOBO,120
+5/7/2024,BO,50,3,Garden City,WMA,8:35,BR 1,BR 1.2,Western Kingbird,WEKI,99,NA,NA,NA
+4/12/2024,ED,55,4,McPherson,Urban,10:20,MC18,MC18.1,Common Grackle,COGR,99.2,American Robin,AMRO,96.9
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Barn Swallow,BARS,100,Mallard,MALL,30
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,Red-winged Blackbird,RWBL,100,Rose-breasted Grossbreak,RBGR,30
+4/15/2024,JS/NB,68,11,Topeka,WMA,9:41,3,3.1,Brown-headed Cowbird,BHCO,100.1,NA,NA,NA
+8/1/2024,BO,69,2,Garden City,Rural,7:51,CN 3,CN 3.2,Swainson's Hawk,SWHA,100.5,NA,NA,NA
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:22,5,5.1,Green-winged Teal,GWTE,101,Downy Woodpecker,DOWO,44.6
+8/20/2024,ED,64,3,Topeka,WMA,7:15,8,8.2,Turkey Vulture,TUVU,101,NA,NA,NA
+4/17/2024,ED,61,4,McPherson,WMA,9:16,IN3,IN3.3,Red-winged Blackbird,RWBL,101.2,Ring-necked Pheasant,RNEP,57.6
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:23,GC 21,GC 21.2,Eurasian Collared Dove,EUCD,101.8,Eurasian Collared Dove,EUCD,113.6
+4/15/2024,JS/NB,71,11,Topeka,WMA,10:35,1,1.2,Northern Cardinal,NOCA,101.9,Red-bellied Woodpecker,RBWO,Only Heard
+7/10/2024,"ED, GA, CL",64,4,McPherson,Rural,6:43,BB7,BB7.1,Red-winged Blackbird,RWBL,102,NA,NA,NA
+8/2/2024,IW,68,1,Garden City,Urban,6:59,GC 16,GC 16.1,Eurasian Collared Dove,EUCD,102,NA,NA,NA
+8/30/2024,BO,65,1,Garden City,Urban,8:05,GC 7,GC 7.3,Eurasian Collared Dove,EUCD,102.3,European Starling,EUST,44
+7/16/2024,NB,76,7,Topeka,Urban,6:57,12,12.1,European Starling,EUST,102.6,European Starling,EUST,79
+8/20/2024,ED,65,3,Topeka,WMA,7:47,13,13.1,Northern Cardinal,NOCA,103,NA,NA,NA
+4/5/2024,"ED, NB, JS",45,9,McPherson,Urban,8:40,MC10,MC10.1,meadowlark,NA,103,NA,NA,NA
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,European Starling,EUST,103,Red-winged Blackbird,RWBL,155
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,House Finch,HOFI,103,Brown-headed Cowbird,BHCO,122
+7/22/2024,"CL,GA",67,2,McPherson,Rural,8:24,MC26,MC26.2,Mourning Dove,MODO,103,Chipping Sparrow,CHSP,150
+7/30/2024,"GA, CL",84,18,McPherson,Urban,9:09,MC18,MC18.2,Killdeer,KILL,103,NA,NA,NA
+4/10/2024,JS/NB,48,3,Topeka,WMA,7.44,12,12.1,Red-winged Blackbird ,RWBL,103.5,Brown-headed Cowbird,BHCO,96.4
+4/4/2024,BO,44,2,Garden City,Urban,9:06,GC 8,GC 8.1,European Starling,EUST,103.6,Eurasian Collared Dove,EUCD,104.8
+4/4/2024,"ED, NB, JS",49,10,McPherson,Urban,10:56,MC7,MC7.1,Canada Goose,CANG,104,Common Grackle,COGR,57
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Barn Swallow,BARS,104,European Starling,EUST,100
+7/16/2024,"ED,GA",75,11,Inman,WMA,6:46,IN2,IN2.1,Dickcissel,DICK,104,swallow,NA,30
+8/1/2024,"GA,CL",73,5,McPherson,WMA,6:42,IN8,IN8.1,Red-winged Blackbird,RWBL,104,NA,NA,NA
+8/23/2024,"IW, GA",75,15,McPherson,Rual,10:31,BB 6,BB 6.1,Red-winged Blackbird,RWBL,104,NA,NA,NA
+8/30/2024,BO,63,1,Garden City,Urban,7:53,GC 11,GC 11.2,Eurasian Collared Dove,EUCD,104.5,Eurasian Collared Dove,EUCD,99
+4/24/2024,RR,62,2,Garden City,Rural,10:58,CN 5,CN 5.2,White-crowned Sparrow,WCSP,104.9,Western Meadowlark,WEME,191.6
+8/20/2024,ED,63,3,Topeka,WMA,6:31,14,14.2,Northern Cardinal,NOCA,105,NA,NA,NA
+4/1/2024,ED,72,10,McPherson,Urban,12:05,MC1,MC1.2,Mourning Dove,MODO,105.6,American Robin,AMRO,23.8
+4/15/2024,JS/NB,70,11,Topeka,WMA,10:18,1,1.1,Blue Jay,BLJA,105.9,Eastern Phoebe,EAPH,85.8
+7/24/2024,"CL,GA",70,5,McPherson,WMA,8:01,IN8,IN8.2,Dickcissel,DICK,106,NA,NA,NA
+4/3/2024,BO,34,2,Garden City,Urban,8:37,GC 14,GC 14.2,Rock Pigeon,ROPI,106.3,European Starling,EUST,37
+4/17/2024,ED,63,4,McPherson,WMA,9:33,IN5,IN5.2,Eastern Meadowlark,EAME,106.6,Red-winged Blackbird,RWBL,50.1
+8/20/2024,ED,65,3,Topeka,WMA,7:47,13,13.1,Red-headed Woodpecker,RHWO,107,NA,NA,NA
+7/19/2024,"ED, CL",68,10,McPherson,Urban,8:20,MC23,MC23.1,Indigo Bunting,INBU,107,House Sparrow,HOSP,166
+4/17/2024,BO,55,2,Garden City,WMA,9:26,BR 4,BR 4.2,White-crowned Sparrow,WCSP,107.3,White-crowned Sparrow,WCSP,52.8
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.2,Red-winged Blackbird,RWBL,107.4,NA,NA,NA
+8/27/2024,"BO, IW",66,1,Garden City,Urban,7:01,GC 24,GC 24.2,Eurasian Collared Dove,EUCD,107.5,NA,NA,NA
+4/12/2024,ED,50,3,McPherson,Urban,9:41,MC21,MC21.1,European Starling,EUST,107.7,Common Grackle,COGR,52.2
+4/24/2024,RR,55,2,Garden City,Rural,9:48,CN 4,CN 4.1,Red-winged Blackbird,RWBL,107.8,Red-winged Blackbird,RWBL,118.5
+7/29/2024,"RR,IW",76,1,Garden City,WMA,8:30,BR 11,BR 11.2,Northern Bobwhite,NOBO,108,NA,NA,NA
+8/26/2024,IW,73,0,Garden City,Urban,8:15,GC 22,GC 22.2,Rock Pigeon,ROPI,108,NA,NA,NA
+8/5/2024,BO,72,2,Garden City,WMA,8:23,BR 8,BR 8.1,Mourning Dove,MODO,108.1,NA,NA,NA
+8/29/2024,"BO, IW",68,1,Garden City,Urban,7:27,GC 14,GC 14.1,Eurasian Collared Dove,EUCD,108.6,NA,NA,NA
+4/24/2024,BO,50,2,Garden City,Rural,8:12,CN 2,CN 2.2,Brown-headed Cowbird,BHCO,109,White-crowned Sparrow,WCSP,173.5
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.2,Red-winged Blackbird,RWBL,109.2,NA,NA,NA
+4/10/2024,"ED, NP",56,6,McPherson,WM,9:48,BB2,BB2.2,Red-winged Blackbird,RWBL,109.2,meadowlark,NA,161.6
+4/18/2024,ED,45,6,McPherson,WMA,8:58,IN,IN4.2,Ring-necked Pheasant,RNEP,109.5,Savannah Sparrow,SAVS,49.9
+4/1/2024,BO,45,3,Garden City,Urban,9:01,GC13,GC13.1,Rock Pigeon,ROPI,109.8,House Sparrow,HOSP,34.7
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Red-winged Blackbird,RWBL,110,NA,NA,NA
+7/30/2024,"GA, CL",81,16,McPherson,Urban,8:11,MC20,MC20.1,Mississippi Kite,MIKI,110,Barn Swallow,BARS,159
+4/24/2024,RR,62,2,Garden City,Rural,11:20,CN 3,CN 3.3,Brown-headed Cowbird,BHCO,110,NA,NA,NA
+7/29/2024,"RR,IW",76,1,Garden City,WMA,8:30,BR 11,BR 11.2,American Robin,AMRO,110,NA,NA,NA
+4/1/2024,ED,68,20,McPherson,Urban,9:58,MC1,MC1.1,American Robin,AMRO,110.3,Common Grackle,COGR,94.5
+7/22/2024,"CL,GA",65,2,McPherson,Rural,7:47,BB9,BB9.1,Dickcissel,DICK,111,Eastern Meadowlark ,EAME,190
+8/14/2024,"RR, IW",73,1,Garden City,Urban,8:23,GC 17,GC 17.2,Juvenial Swansons Hawk,SWHA,111,NA,NA,NA
+8/2/2024,NB,71,6,Topeka,WMA,7:49,1,1.1,Common Grackle,COGR,111.1,NA,NA,NA
+8/5/2024,BO,72,2,Garden City,WMA,8:23,BR 8,BR 8.1,American Robin,AMRO,111.4,NA,NA,NA
+5/3/2024,JS/NB,61,9,Topeka,Urban,10:24,7,7.1,American Robin,AMRO,111.5,NA,NA,NA
+4/29/2024,BO,48,2,Garden City,WMA,8:19,BR 13,BR 13.1,White-crowned Sparrow,WCSP,111.5,White-crowned Sparrow,WCSP,129.8
+8/27/2024,"BO, IW",70,1,Garden City,Urban,8:58,GC 4,GC 4.3,Eurasian Collared Dove,EUCD,111.9,Eurasian Collared Dove,EUCD,124.3
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Brown-headed Cowbird,BHCO,112,Red-winged Blackbird,RWBL,90
+8/16/2024,IW,69,9,McPherson,Rural,7:54,BB 1,BB 1.3,Red-winged Blackbird,RWBL,112,Brown-headed Cowbird,BHCO,121
+8/15/2024,BO,70,2,Garden City,Urban,7:04,GC 5,GC 5.2,Rock Pigeon,ROPI,112,Eurasian Collared Dove,EUCD,67.2
+4/16/2024,ED,58,17,McPherson,Urban,8:16,MC12,MC12.1,American Robin,AMRO,112.4,European Starling,EUST,15.8
+7/12/2024,JS/HQ,75,11,Topeka,Urban,8:33,9,9.1,Common Grackle,COGR,112.6,House Sparrow,HOSP,52.9
+4/5/2024,BO,50,4,Garden City,Urban,9:55,GC 5,GC 5.3,Eurasian Collared Dove,EUCD,112.6,Eurasian Collared Dove,EUCD,44
+4/3/2024,BO,36,2,Garden City,Urban,9:01,GC 15,GC 15.1,Rock Pigeon,ROPI,112.7,European Starling,EUST,47.6
+8/30/2024,BO,65,1,Garden City,Urban,8:05,GC 7,GC 7.3,European Starling,EUST,112.8,Eurasian Collared Dove,EUCD,92.4
+4/12/2024,ED,55,4,McPherson,Urban,10:29,MC18,MC18.2,European Starling,EUST,113,Western Meadowlark,WEME,46.9
+4/24/2024,JS/NB,52,4,Topeka,WMA,8:29,22,22.2,Blue Jay,BLJA,113.1,American Goldfinch,AGOL,Only Heard
+8/27/2024,"BO, IW",69,1,Garden City,Urban,8:02,GC 23,GC 23.1,Eurasian Collared Dove,EUCD,113.2,European Starling,EUST,54.1
+4/29/2024,JS/NB,57,5,Topeka,Urban,9:55,12,12.2,Northern Rough-winged Swallow,NRWS,113.4,Chipping Sparrow,CHSP,Only Heard
+4/29/2024,JS/NB,57,5,Topeka,Urban,9:55,12,12.2,American Robin,AMRO,113.4,NA,NA,NA
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:10,BB4,BB4.1,Red-winged Blackbird,RWBL,113.6,Red-winged Blackbird,RWBL,103.2
+4/25/2024,ED,59,16,McPherson,Rural,10:12,BB6,BB6.2,Eastern Meadowlark,EAME,113.7,Red-winged Blackbird,RWBL,76.4
+4/5/2024,BO,55,4,Garden City,Urban,10:13,GC 5,GC 5.2,Eurasian Collared Dove,EUCD,113.9,NA,NA,NA
+4/17/2024,BO,47,3,Garden City,WMA,8:05,BR 6,BR 6.1,White-crowned Sparrow,WCSP,114,Red-winged Blackbird,WCSP,120.3
+4/29/2024,BO,46,2,Garden City,WMA,8:04,BR 14,BR 14.1,White-crowned Sparrow,WCSP,114,White-crowned Sparrow,WCSP,241
+7/10/2024,"ED, GA, CL",64,4,McPherson,Rural,6:43,BB7,BB7.1,Red-winged Blackbird,RWBL,115,NA,NA,NA
+4/24/2024,JS/NB,53,4,Topeka,WMA,9:02,23,23.2,Brown-headed Cowbird,BHCO,116,NA,NA,NA
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,116,NA,NA,NA
+8/21/2024,G & IW,73,12,McPherson,Rural,9:30,BB5,BB5.1,Blue-winged Teal,BWTE,116,Red-winged Blackbird and Brown-headed Cowbird,"RWBL, BHCO",248
+4/16/2024,ED,63,22,McPherson,Urban,9:30,MC18,MC18.2,American Robin,AMRO,116.4,Eastern Meadowlark,EAME,150.8
+4/17/2024,ED,64,4,McPherson,WMA,9:46,IN,IN5.4,Red-winged Blackbird,RWBL,116.6,Red-winged Blackbird,RWBL,163.5
+8/20/2024,ED,65,3,Topeka,WMA,7:55,13,13.2,American Crow,AMCR,117,NA,NA,NA
+8/1/2024,"GA,CL",75,5,McPherson,WMA,8:41,IN4,IN4.2,Northern Bobwhite,NOBO,117,sparrow,NA,104
+8/13/2024,CL,74,11,McPherson,Urban,10:09,MC2,MC2.2,European Starling,EUST,117,Blue Jay,BLJA,52
+4/1/2024,BO,46,3,Garden City,Urban,9:29,GC18,GC18.1,American Crow,AMCR,117.7,NA,NA,NA
+7/16/2024,"ED,GA",75,11,Inman,WMA,6:46,IN2,IN2.1,sparrow,NA,118,Red-winged Blackbird,RWBL,185
+7/31/2024,IW,82,2,Garden City,WMA,9;10,BR 11,Br 11.1,Western Kingbird,WEKI,118,NA,NA,NA
+4/4/2024,"ED, NB, JS",59,10,McPherson,Urban,1:15,MC8,MC8.2,European Starling,EUST,118.1,NA,NA,NA
+4/17/2024,BO,48,2,Garden City,WMA,8:23,BR 5,BR 5.1,Mourning Dove,MODO,118.4,NA,NA,NA
+8/5/2024,"CL,GA",69,7,McPherson,WMA,6:49,IN3,IN3.1,Red-winged Blackbird,RWBL,119,Dickcissel,DICK,94
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:11,5,5.2,American Wigeon,AMWI,119.2,Brown-headed Cowbird,BHCO,176
+4/18/2024,ED,50,7,McPherson,WMA,10:12,IN,IN2.3,Eastern Meadowlark,EAME,119.8,Ring-necked Pheasant,RNEP,196
+8/15/2024,BO,70,2,Garden City,Urban,7:33,GC 9,GC 9.1,Eurasian Collared Dove,EUCD,119.8,Eurasian Collared Dove,EUCD,21.6
+4/12/2024,JS/NB,45,8,Topeka,WMA,8:26,7,7.1,Eastern Phoebe,EAPH,120,NA,NA,NA
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Red-winged Blackbird,RWBL,120,European Starling,EUST,50
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:49,BB8,BB8.1,Barn Swallow,BARS,120,Red-winged Blackbird,RWBL,61
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,Brown-headed Cowbird,BHCO,120,European Starling,EUST,209
+8/2/2024,"GA,CL",74,3,McPherson,WMA,8:18,IN4,IN4.1,Red-winged Blackbird,RWBL,120,Red-winged Blackbird,RWBL,80
+8/16/2024,"IW, GA",67,9,McPherson,Rural,7:32,BB 1,BB 1.1,Red-winged Blackbird,RWBL,120,Red-winged Blackbird,RWBL,120
+7/29/2024,"RR,IW",76,1,Garden City,WMA,8:30,BR 11,BR 11.2,Western Kingbird,WEKI,120,NA,NA,NA
+8/15/2024,IW,70,1,Garden City,Urban,8:51,GC 13,GC 13.1,Grackle,NA,120,NA,NA,NA
+8/16/2024,NB/ED,71,4,Topeka,WMA,8:01,23,23.2,Northern Cardinal,NOCA,120.6,Eastern Bluebird,EABL,Only Heard
+4/4/2024,"ED, NB, JS",49,10,McPherson,Urban,10:56,MC7,MC7.1,American Robin,AMRO,121,European Starling,EUST,153
+8/16/2024,"IW, GA",67,9,McPherson,Rural,7:32,BB 1,BB 1.1,Red-winged Blackbird,RWBL,121,NA,NA,NA
+8/16/2024,IW,69,9,McPherson,Rural,7:54,BB 1,BB 1.3,Red-winged Blackbird,RWBL,121,NA,NA,NA
+4/4/2024,"ED, NB, JS",59,10,McPherson,Urban,1:15,MC8,MC8.2,European Starling,EUST,121.3,American Robin,AMRO,22.3
+8/16/2024,NB/ED,71,4,Topeka,WMA,8:01,23,23.2,Indigo Bunting,INBU,121.9,Mourning Dove,MODO,Only Heard
+8/5/2024,"CL,GA",73,6,McPherson,WMA,8:01,IN2,IN2.3,Red-winged Blackbird,RWBL,122,NA,NA,NA
+8/2/2024,IW,69,1,Garden City,Urban,7:32,GC 8,GC 8.1,European Starling,EUST,122,NA,NA,NA
+8/15/2024,BO,70,1,Garden City,Urban,8:45,GC 3,GC 3.2,Eurasian Collared Dove,EUCD,122,Eurasian Collared Dove,EUCD,12
+8/30/2024,BO,65,1,Garden City,Urban,8:05,GC 7,GC 7.3,European Starling,EUST,122,European Starling,EUST,41.3
+8/7/2024,"BO, RR",70,1,Garden City,Rural,7:58,CN 5,CN 5.1,Mourning Dove,MODO,122.3,Brown-headed Cowbird,BHCO,10.5
+4/10/2024,"ED, NP",55,5,McPherson,WM,9:31,BB2,BB2.1,Red-winged Blackbird,RWBL,122.7,NA,NA,NA
+4/5/2024,BO,49,4,Garden City,Urban,9:26,GC 2,GC 2.1,European Starling,EUST,122.8,NA,NA,NA
+4/4/2024,"ED, NB, JS",49,10,McPherson,Urban,10:56,MC7,MC7.1,American Robin,AMRO,123.1,Mallard,MALL,150.6
+4/16/2024,ED,60,18,McPherson,Urban,8:58,MC17,MC17.1,Northern Cardinal,NOCA,123.1,NA,NA,NA
+4/10/2024,JS/NB,55,4,Topeka,WMA,9:59,6,6.1,Red-winged Blackbird ,RWBL,123.6,Swamp Sparrow,SWSP,42.5
+8/13/2024,CL,75,12,McPherson,Urban,10:28,MC2,MC2.1,European Starling,EUST,124,NA,NA,NA
+8/16/2024,IW,69,9,McPherson,Rural,8:08,BB1,BB 1.2,Brown-headed Cowbird,BHCO,124,Brown-headed Cowbird,BHCO,177
+4/15/2024,JS/NB,62,10,Topeka,WMA,8:06,13,13.1,Black-capped Chickadee,BCCH,124.4,Downy Woodpecker,DOWO,Only Heard
+4/4/2024,BO,50,2,Garden City,Urban,10:15,GC 6,GC 6.2,Eurasian Collared Dove,EUCD,124.5,NA,NA,NA
+7/12/2024,JS/HQ,70,9,Topeka,Urban,6:22,5,5.1,Eastern Kingbird,EAKI,125,Northern Cardinal,NOCA,Only Heard
+8/29/2024,"BO, IW",70,1,Garden City,Urban,8:32,GC 15,GC 15.1,Eurasian Collared Dove,EUCD,125,NA,NA,NA
+4/24/2024,RR,56,2,Garden City,Rural,9:37,CN 1,CN 1.3,Red-winged Blackbird,RWBL,125.9,Savannah Sparrow,SAVS,93.9
+8/16/2024,IW,69,9,McPherson,Rural,7:54,BB 1,BB 1.3,Brown-headed Cowbird,BHCO,126,Red-winged Blackbird,RWBL,45
+8/16/2024,IW,69,9,McPherson,Rural,7:54,BB 1,BB 1.3,Red-winged Blackbird,RWBL,126,Red-winged Blackbird,RWBL,121
+4/5/2024,"ED, NB, JS",54,12,McPherson,Urban,10:13,MC11,MC11.2,Common Grackle,COGR,127,Common Grackle,COGR,220
+7/16/2024,"ED,GA",76,14,Inman,WMA,7:28,IN1,IN1.2,Red-winged Blackbird,RWBL,127,sparrow,NA,100
+7/25/2024,"CL,GA",73,6,McPherson,Rural,7:50,BB11,BB11.1,Brown-headed Cowbird,BHCO,127,Field Sparrow,FISP,25
+8/7/2024,CL,64,6,McPherson,Urban,6:38,MC12,MC12.1,European Starling,EUST,127,NA,NA,NA
+8/26/2024,"BO, RR",70,1,Garden City,Urban,8:35,GC 16,GC 16.2,Eurasian Collared Dove,EUCD,127,House Sparrow,HOSP,101.2
+4/12/2024,ED,50,3,McPherson,Urban,9:30,MC21,MC21.2,Double-crested Cormorant,DCCO,128.3,Red-winged Blackbird,RWBL,67.4
+4/2/2024,BO,45,4,Garden City,Urban,9:32,GC 23,GC 23.1,European Starling,EUST,128.3,American Robin ,AMRO,15.9
+7/25/2024,"CL,GA",73,6,McPherson,Rural,7:50,BB11,BB11.1,Red-winged Blackbird,RWBL,129,NA,NA,NA
+8/20/2024,CL,67,8,McPherson,Rural,7:09,MC4,MC4.2,Red-winged Blackbird,RWBL,129,European Starling,EUST,129
+4/25/2024,ED,56,15,McPherson,Rural,7:56,BB5,BB5.1,Red-winged Blackbird,RWBL,129.1,Eastern Meadowlark,EAME,62
+4/15/2024,JS/NB,62,10,Topeka,WMA,8:06,13,13.1,Red-winged Blackbird ,RWBL,129.2,Tufted Titmouse,TUTI,47.1
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:11,5,5.2,Red-winged Blackbird ,RWBL,129.6,Pectoral Sandpiper,PESA,50
+4/25/2024,JS/NB,56,11,Topeka,WMA,9:21,4,4.2,Mourning Dove,MODO,129.7,Common Grackle,COGR,Only Heard
+7/12/2024,JS/HQ,72,10,Topeka,Urban,7:28,16,16.2,Mallard,MALL,130,NA,NA,NA
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,Brown-headed Cowbird,BHCO,130,European Starling,EUST,50
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,European Starling,EUST,130,Brown-headed Cowbird,BHCO,63
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,dabbling duck,NA,130,Red-winged Blackbird,RWBL,198
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,House Sparrow,HOSP,130,Brown-headed Cowbird,BHCO,50
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,Eastern Kingbird,EAKI,130,Red-winged Blackbird,RWBL,125
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,Purple Martin,PUMA,130,meadow lark,NA,65
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Field Sparrow,FISP,130,Red-winged Blackbird,RWBL,106
+7/25/2024,"GA,CL",78,7,McPherson,Rural,8:53,BB13,BB13.3,Eastern Kingbird,EAKI,130,sparrow,NA,140
+7/25/2024,"GA,CL",78,7,McPherson,Rural,8:53,BB13,BB13.3,Red-winged Blackbird,RWBL,130,Tufted Titmouse,TUTI,83
+4/10/2024,JS/NB,51,4,Topeka,WMA,8:46,11,11.2,Northern Cardinal,NOCA,130.8,Red-winged Blackbird ,RWBL,249
+8/30/2024,BO,65,1,Garden City,Urban,8:05,GC 7,GC 7.3,Eurasian Collared Dove,EUCD,131.1,Eurasian Collared Dove,EUCD,65.5
+7/16/2024,"ED,GA",76,14,Inman,WMA,7:28,IN1,IN1.2,sparrow,NA,132,American Robin,AMRO,130
+4/17/2024,BO,57,2,Garden City,WMA,9:54,BR 4,BR 4.1,White-crowned Sparrow,WCSP,132.5,White-crowned Sparrow,WCSP,49.7
+4/23/2024,ED,61,6,McPherson,WMA,9:39,IN8,IN8.4,Eastern Bluebird,EABL,132.7,Blue Jay,BLJA,89.2
+4/16/2024,ED,63,22,McPherson,Urban,9:30,MC18,MC18.2,Red-winged Blackbird,RWBL,133,Eastern Meadowlark,EAME,97.2
+7/22/2024,"CL,GA",65,2,McPherson,Rural,7:47,BB9,BB9.1,Red-winged Blackbird,RWBL,133,Dickcissel,DICK,52
+7/23/2024,"CL,GA",74,2,McPherson,WMA,9:22,MC27,MC27.3,meadowlark,NA,133,European Starling,EUST,142
+7/11/2024,NB,70,6,Topeka,WMA,8:32,7,7.2,Red-winged Blackbird,RWBL,133.1,Dickcissel,DICK,75
+4/23/2024,ED,59,5,McPherson,WMA,9:00,IN8,IN8.3,Blue Jay,BLJA,133.6,Ring-necked Pheasant,RNEP,153.7
+4/29/2024,BO,48,2,Garden City,WMA,8:19,BR 13,BR 13.1,White-crowned Sparrow,WCSP,133.6,NA,NA,NA
+4/24/2024,RR,56,2,Garden City,Rural,9:25,CN 4,CN 4.2,Red-winged Blackbird,RWBL,134.4,Red-winged Blackbird,RWBL,119
+4/10/2024,"ED, NP",59,7,McPherson,WM,10:28,BB4,BB4.3,meadowlark,NA,134.7,Song Sparrow,SOSP,72.9
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,Dickcissel,DICK,135,Dickcissel,DICK,32
+7/25/2024,"CL,GA",77,6,McPherson,Rural,8:39,BB13,BB13.1,Common Yellowthroat,COYE,135,Red-winged Blackbird,RWBL,137
+8/20/2024,CL,67,8,McPherson,Rural,7:09,MC4,MC4.2,Mourning Dove,MODO,135,European Starling,EUST,106
+7/15/2024,"GA, CL",78,12,McPherson,Rural,6:24,BB7,BB7.2,Red-winged Blackbird,RWBL,136,House Sparrow,HOSP,50
+7/30/2024,"BO, IW",76,2,Garden City,WMA,7:23,BR 1,BR 1.2,Western Kingbird,WEKI,136,NA,NA,NA
+4/22/2024,BO,55,4,Garden City,WMA,9:40,BR 11,BR 11.1,White-crowned Sparrow,WCSP,136.4,White-crowned Sparrow,WCSP,205
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Red-winged Blackbird,RWBL,137,duck,NA,121
+4/16/2024,ED,63,22,McPherson,Urban,9:30,MC18,MC18.2,European Starling,EUST,137.3,Red-winged Blackbird,RWBL,144.6
+7/16/2024,"ED,GA",76,11,Inman,WMA,7:13,IN1,IN1.1,European Starling,EUST,138,Red-winged Blackbird,RWBL,134
+8/30/2024,BO,63,1,Garden City,Urban,7:41,GC 10,GC 10.2,Eurasian Collared Dove,EUCD,139.1,European Starling,EUST,35.7
+4/24/2024,BO,50,2,Garden City,Rural,8:12,CN 2,CN 2.2,Western Meadowlark,WEME,139.9,White-crowned Sparrow,WCSP,148.9
+7/10/2024,"ED, GA, CL",63,4,McPherson,Rural,6:22,BB8,BB8.1,Red-winged Blackbird,RWBL,140,Red-winged Blackbird,RWBL,146
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Red-winged Blackbird,RWBL,141,Red-winged Blackbird,RWBL,70
+4/12/2024,ED,50,3,McPherson,Urban,9:30,MC21,MC21.2,Double-crested Cormorant,DCCO,141.5,European Starling,EUST,34
+7/19/2024,"ED, CL",69,10,McPherson,Urban,8:29,MC27,MC27.1,Mourning Dove,MODO,142,Mourning Dove,MODO,136
+8/1/2024,"GA,CL",73,5,McPherson,WMA,7:17,IN5,IN5.4,Red-winged Blackbird,RWBL,142,Upland Sandpiper,UPSA,30
+5/3/2024,JS/NB,63,10,Topeka,Urban,10:37,7,7.2,Common Grackle,COGR,142.5,Northern Cardinal,NOCA,Only Heard
+4/29/2024,BO,50,2,Garden City,WMA,8:32,BR 13,BR 13.2,Western Meadowlark,WEME,143,White-crowned Sparrow,WCSP,102.6
+7/10/2024,"ED, GA, CL",63,4,McPherson,Rural,6:22,BB8,BB8.1,Red-winged Blackbird,RWBL,144,Red-winged Blackbird,RWBL,81
+4/5/2024,"ED, NB, JS",50,11,McPherson,Urban,9:32,MC10,MC10.2,Mourning Dove,MODO,144.2,Mourning Dove,MODO,76
+4/23/2024,ED,61,6,McPherson,WMA,9:39,IN8,IN8.4,Northern Cardinal,NOCA,144.2,Northern Cardinal,NOCA,158.1
+4/23/2024,ED,65,12,McPherson,WMA,10:41,IN4,IN4.1,Red-winged Blackbird,RWBL,144.4,NA,NA,NA
+4/25/2024,ED,57,16,McPherson,Rural,9:11,BB5,BB5.2,Red-winged Blackbird,RWBL,144.5,Eastern Meadowlark,EAME,51.6
+8/26/2024,"BO, RR",69,2,Garden City,Urban,7:23,GC 21,GC 21.2,Eurasian Collared Dove,EUCD,144.5,Eurasian Collared Dove,EUCD,21
+4/10/2024,JS/NB,53,4,Topeka,WMA,8:59,9,9.1,Fish Crow,FICR,145,Carolina Wren,CARW,Only Heard
+4/10/2024,"ED, NP",59,7,McPherson,WM,10:28,BB4,BB4.3,Red-winged Blackbird,RWBL,145.1,NA,NA,NA
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.1,Western Meadowlark,WEME,146.6,NA,NA,NA
+4/12/2024,JS/NB,49,9,Topeka,WMA,9:22,5,5.1,Killdeer,KILL,147,Pectoral Sandpiper,PESA,67.7
+4/2/2024,ED,68,20,McPherson,Urban,14:26,MC2,MC2.1,Common Grackle,COGR,147.2,NA,NA,NA
+4/4/2024,"ED, NB, JS",49,10,McPherson,Urban,10:56,MC7,MC7.1,Common Grackle,COGR,147.8,American Robin,AMRO,149
+4/2/2024,BO,45,3,Garden City,Urban,8:44,GC 22,GC 22.2,Eurasian Collared Dove,EUCD,148.8,House Sparrow,HOSP,56.5
+7/30/2024,"GA, CL",79,14,McPherson,Urban,6:58,MC21,MC21.2,Eurasian Collared Dove,EUCD,150,American Robin,AMRO,45
+7/29/2024,"RR,IW",76,1,Garden City,WMA,8:30,BR 11,BR 11.2,Blue Grosbeak,BLGR,150,NA,NA,NA
+7/31/2024,IW,82,2,Garden City,WMA,9;10,BR 11,Br 11.1,Swainson's Hawk,SWHA,150,NA,NA,NA
+8/28/2024,"BO, RR",66,3,Garden City,Urban,7:17,GC 1,Gc 1.2,Eurasian Collared Dove,EUCD,150,Grackle,NA,228
+4/3/2024,"ED, NB, JS",53,20,McPherson,Urban,13:40,MC4,MC4.2,Double-crested Cormorant,DCCO,150.1,NA,NA,NA
+4/17/2024,BO,51,2,Garden City,WMA,9:07,BR 8,BR 8.1,Western Meadowlark,WEME,150.2,White-crowned Sparrow,WCSP,100.4
+4/1/2024,ED,72,10,McPherson,Urban,12:05,MC1,MC1.2,Common Grackle,COGR,150.9,Common Grackle,COGR,71
+4/2/2024,BO,44,2,Garden City,Urban,8:08,GC 19,GC 19.3,Rock Pigeon,ROPI,151.3,American Robin,AMRO,10.1
+4/23/2024,ED,59,5,McPherson,WMA,9:00,IN8,IN8.3,Red-winged Blackbird,RWBL,152.3,Eastern Meadowlark,EAME,41.6
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.2,Eastern Meadowlark,EAME,152.7,Red-winged Blackbird,RWBL,104.9
+4/10/2024,JS/NB,49,3,Topeka,WMA,8:05,12,12.2,Purple Martin,PUMA,153,Eastern Meadowlark,EAME,Only Heard
+7/22/2024,"CL,GA",68,2,McPherson,Rural,8:36,MC26,MC26.1,Eastern Kingbird,EAKI,153,NA,NA,NA
+7/25/2024,"GA,CL",78,7,McPherson,Rural,8:53,BB13,BB13.3,Red-winged Blackbird,RWBL,153,Red-winged Blackbird,RWBL,96
+8/13/2024,"BO, IW",68,1,Garden City,WMA,7:47,BR 7,BR 7.2,Ring-necked Pheasant,RNEP,153,NA,NA,NA
+8/26/2024,"BO, RR",70,1,Garden City,Urban,8:24,GC 16,CG 16.1,Eurasian Collared Dove,EUCD,153,NA,NA,NA
+8/27/2024,"BO, IW",70,1,Garden City,Urban,8:58,GC 4,GC 4.3,Eurasian Collared Dove,EUCD,154.6,Eurasian Collared Dove,EUCD,203
+8/15/2024,CL,77,6,McPherson,Urban,9:21,MC11,MC11.1,Killdeer,KILL,155,Northern Cardinal,NOCA,149
+4/29/2024,BO,46,2,Garden City,WMA,8:04,BR 14,BR 14.1,White-crowned Sparrow,WCSP,155,Clay-colored Sparrow,CCSP,115.4
+4/17/2024,BO,64,2,Garden City,WMA,10:28,BR 8,BR 8.2,White-crowned Sparrow,WCSP,155.1,White-crowned Sparrow,WCSP,232
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,Red-winged Blackbird,RWBL,157,Red-winged Blackbird,RWBL,70
+8/5/2024,"CL,GA",73,6,McPherson,WMA,8:01,IN2,IN2.3,Eastern Kingbird,EAKI,159,Upland Sandpiper,UPSA,51
+8/27/2024,"BO, IW",66,1,Garden City,Urban,7:01,GC 24,GC 24.2,Grackle,NA,159,NA,NA,NA
+4/17/2024,ED,65,4,McPherson,WMA,9:57,IN,IN6.4,Ring-necked Pheasant,RNEP,159.9,NA,NA,NA
+8/2/2024,"GA,CL",71,2,McPherson,WMA,7:47,IN4,IN4.3,Northern Bobwhite,NOBO,160,NA,NA,NA
+4/24/2024,RR,58,2,Garden City,Rural,10:11,CN 2,CN 2.1,Wild Turkey,WITU,160,NA,NA,NA
+8/20/2024,CL,67,8,McPherson,Rural,7:09,MC4,MC4.2,European Starling,EUST,161,NA,NA,NA
+7/19/2024,"ED, CL",69,10,McPherson,Urban,8:29,MC27,MC27.1,Western Meadowlark,WEME,163,Mourning Dove,MODO,123
+8/1/2024,BO,70,2,Garden City,Rural,8:20,CN 3,CN 3.1,Barn Swallow,BARS,163.2,Red-winged Blackbird,RWBL,242
+5/3/2024,JS/NB,61,9,Topeka,Urban,10:24,7,7.1,Brown Thrasher0,BRTH,163.5,NA,NA,NA
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.1,Ring-necked Pheasant,RNEP,164.4,Brown-headed Cowbird,BHCO,62.4
+4/25/2024,ED,56,15,McPherson,Rural,7:56,BB5,BB5.1,Red-winged Blackbird,RWBL,164.6,Mourning Dove,MODO,86.2
+7/10/2024,"ED, GA, CL",63,4,McPherson,Rural,6:22,BB8,BB8.1,Red-winged Blackbird,RWBL,167,Brown-headed Cowbird,BHCO,72
+8/26/2024,"BO, RR",70,1,Garden City,Urban,8:24,GC 16,CG 16.1,Eurasian Collared Dove,EUCD,167.8,NA,NA,NA
+4/17/2024,ED,63,4,McPherson,WMA,9:33,IN5,IN5.2,Ring-necked Pheasant,RNEP,169.7,Lesser Yellowlegs,LEYE,193.2
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,European Starling,EUST,170,Red-winged Blackbird,RWBL,90
+8/16/2024,NB/ED,71,4,Topeka,WMA,8:20,23,23.1,Red-tailed Hawk,RTHA,170.6,Eastern Bluebird,EABL,37.4
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,Red-winged Blackbird,RWBL,171,European Starling,EUST,200
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Field Sparrow,FISP,172,Eastern Kingbird,EAKI,48
+8/1/2024,BO,69,2,Garden City,Rural,7:51,CN 3,CN 3.2,Great Blue Heron,GBHE,172.2,NA,NA,NA
+4/5/2024,"ED, NB, JS",72,13,McPherson,Urban,3:02,MC17,MC17.2,American Robin,AMRO,173,House Sparrow,HOSP,59
+4/10/2024,JS/NB,49,3,Topeka,WMA,8:05,12,12.2,Purple Martin,PUMA,174,Eastern Bluebird,EABL,Only Heard
+8/2/2024,"GA,CL",71,3,McPherson,WMA,7:35,IN4,IN4.4,Red-winged Blackbird,RWBL,175,Upland Sandpiper,UPSA,52
+8/2/2024,"GA,CL",71,2,McPherson,WMA,7:47,IN4,IN4.3,Red-winged Blackbird,RWBL,175,NA,NA,NA
+7/11/2024,NB,70,6,Topeka,WMA,8:24,7,7.1,Barn Swallow,BARS,175.5,Field Sparrow,FISP,138.5
+5/7/2024,BO,48,3,Garden City,WMA,8:14,BR 2,BR 2.2,Mourning Dove,MODO,176.4,American Robin,AMRO,46.5
+8/27/2024,"BO, IW",68,1,Garden City,Urban,7:32,GC 23,GC 23.3,Eurasian Collared Dove,EUCD,176.4,NA,NA,NA
+5/8/2024,BO,46,2,Garden City,WMA,8:12,BR 3,BR 3.1,Western Kingbird,WEKI,176.8,Western Kingbird,WEKI,34.6
+4/10/2024,"ED, NP",52,5,McPherson,WM,before 9,BB1,BB1.1,Red-winged Blackbird,RWBL,176.9,Ring-necked Pheasant,RNEP,52.9
+8/20/2024,ED,66,3,Topeka,WMA,8:27,15,15.2,Great Blue Heron,GBHE,177,Canada Goose,CANG,115
+8/1/2024,"GA,CL",73,5,McPherson,WMA,7:17,IN5,IN5.4,Red-winged Blackbird,RWBL,178,NA,NA,NA
+4/25/2024,ED,57,16,McPherson,Rural,9:11,BB5,BB5.2,Killdeer,KILL,178.1,Ring-necked Pheasant,RNEP,82.4
+4/24/2024,RR,58,2,Garden City,Rural,10:11,CN 2,CN 2.1,Western Meadowlark,WEME,179.2,NA,NA,NA
+4/17/2024,ED,63,4,McPherson,WMA,9:33,IN5,IN5.2,Red-winged Blackbird,RWBL,179.8,Ring-necked Pheasant,RNEP,92.2
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:22,MC25,MC25.2,European Starling,EUST,180,Brown-headed Cowbird,BHCO,232
+8/2/2024,"GA,CL",71,3,McPherson,WMA,7:35,IN4,IN4.4,Northern Bobwhite,NOBO,180,NA,NA,NA
+4/17/2024,BO,47,3,Garden City,WMA,8:05,BR 6,BR 6.1,Red-winged Blackbird,RWBL,180.1,White-crowned Sparrow,WCSP,122
+7/23/2024,"CL,GA",74,2,McPherson,WMA,9:22,MC27,MC27.3,meadowlark,NA,182,Dickcissel,DICK,72
+4/23/2024,ED,59,5,McPherson,WMA,9:00,IN8,IN8.3,Eastern Meadowlark,EAME,182.3,Brown-headed Cowbird,BHCO,11.8
+8/20/2024,CL,67,8,McPherson,Rural,7:48,MC11,MC11.1,European Starling,EUST,183,NA,NA,NA
+4/10/2024,"ED, NP",58,7,McPherson,WM,10:10,BB4,BB4.1,Red-winged Blackbird,RWBL,183.3,NA,NA,NA
+4/18/2024,ED,45,6,McPherson,WMA,8:48,IN,IN5.1,Red-winged Blackbird,RWBL,184.6,Western Meadowlark,WEME,70.1
+4/5/2024,BO,59,4,Garden City,Urban,10:37,GC 1,GC 1.2,Rock Pigeon,ROPI,186.6,NA,NA,NA
+8/16/2024,IW,69,9,McPherson,Rural,8:08,BB1,BB 1.2,Red Wing Blackbird,RWBL,187,Red-winged Blackbird,RWBL,177
+7/30/2024,"BO, IW",77,1,Garden City,WMA,7:52,BR 1,BR 1.1,Western Kingbird,WEKI,188,Western Kingbird,WEKI,220
+4/5/2024,BO,61,4,Garden City,Urban,10:49,GC 1,GC 1.1,Canada Goose,CANG,188.1,Eurasian Collared Dove,EUCD,23.7
+7/30/2024,"BO, IW",75,2,Garden City,WMA,7:06,BR 2,BR 2.1,Western Kingbird,WEKI,189,Western Kingbird,WEKI,97
+7/30/2024,"BO, IW",75,2,Garden City,WMA,7:06,BR 2,BR 2.1,Grackle,NA,189,Western Kingbird,WEKI,103
+7/15/2024,"GA, CL",79,12,McPherson,Rural,7:37,BB12,BB12.1,European Starling,EUST,190,European Starling,EUST,133
+4/24/2024,JS/NB,52,4,Topeka,WMA,8:29,22,22.2,Eastern Meadowlark,EAME,190.6,NA,NA,NA
+4/1/2024,ED,72,10,McPherson,Urban,12:05,MC1,MC1.2,American Robin,AMRO,190.6,Common Grackle,COGR,17.4
+4/24/2024,RR,62,2,Garden City,Rural,11:20,CN 3,CN 3.3,Red-winged Blackbird,RWBL,192,NA,NA,NA
+7/30/2024,"BO, IW",77,1,Garden City,WMA,7:52,BR 1,BR 1.1,Mourning Dove,MODO,192,NA,NA,NA
+4/3/2024,"ED, NB, JS",53,20,McPherson,Urban,13:40,MC4,MC4.2,Canada Goose,CANG,193.3,Double-crested Cormorant,DCCO,
+4/12/2024,JS/NB,50,9,Topeka,WMA,9:48,4,4.1,Red-tailed Hawk,RTHA,193.5,Blue Jay,BLJA,Only Heard
+4/10/2024,"ED, NP",56,6,McPherson,WM,9:48,BB2,BB2.2,Red-winged Blackbird,RWBL,195.3,Brown-headed Cowbird,BHCO,159.2
+4/12/2024,JS/NB,53,9,Topeka,WMA,9:59,4,4.2,American Crow,AMCR,195.4,NA,NA,NA
+8/5/2024,"CL,GA",69,7,McPherson,WMA,6:49,IN3,IN3.1,Mourning Dove,MODO,198,Upland Sandpiper,UPSA,72
+8/7/2024,"BO, RR",68,1,Garden City,Rural,7:26,CN 2,CN 2.3,Dicksissel,DICK,199.9,NA,NA,NA
+8/27/2024,"BO, IW",70,1,Garden City,Urban,8:58,GC 4,GC 4.3,Eurasian Collared Dove,EUCD,199.9,Eurasian Collared Dove,EUCD,239
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Red-winged Blackbird,RWBL,200,Red-winged Blackbird,RWBL,30
+7/15/2024,"GA, CL",78,12,McPherson,Rural,7:03,BB8,BB8.2,Upland Sandpiper,UPSA,200,Brown-headed Cowbird,BHCO,25
+7/15/2024,"GA, CL",81,13,McPherson,Rural,8:10,BB12,BB12.3,Red-winged Blackbird,RWBL,200,European Starling,EUST,110
+7/16/2024,"ED,GA",77,10,Inman,WMA,7:55,IN3,IN3.1,Red-winged Blackbird,RWBL,200,Dickcissel,DICK,39
+4/18/2024,ED,45,6,McPherson,WMA,8:48,IN,IN5.1,Eastern Meadowlark,EAME,201,Red-winged Blackbird,RWBL,203
+4/16/2024,ED,61,20,McPherson,Urban,9:18,MC18,MC18.1,American Robin,AMRO,203,House Finch,HOFI,143.1
+8/7/2024,CL,64,6,McPherson,Urban,6:38,MC12,MC12.1,Mourning Dove,MODO,206,NA,NA,NA
+5/8/2024,BO,44,2,Garden City,WMA,7:43,BR 2,BR 2.1,American Robin,AMRO,207,White-crowned Sparrow,WCSP,87.4
+8/7/2024,CL,68,9,McPherson,Urban,8:25,MC18,MC18.1,Indigo Bunting,INBU,214,Blue Jay,BLJA,143
+8/5/2024,"CL,GA",72,8,McPherson,WMA,6:29,IN3,IN3.3,Common Nighthawk,CONI,215,Northern Bobwhite,NOBO,78
+4/17/2024,BO,57,2,Garden City,WMA,9:54,BR 4,BR 4.1,Northern Harrier,NOHA,215,White-crowned Sparrow,WCSP,21.8
+7/15/2024,"GA, CL",79,14,McPherson,Rural,6:04,BB3,BB3.1,European Starling,EUST,216,Red-winged Blackbird,RWBL,30
+7/30/2024,"BO, IW",75,2,Garden City,WMA,6:55,BR 2,BR 2.2,Mourning Dove,MODO,218,Northern Mockingbird,NOMO,197
+4/16/2024,ED,61,20,McPherson,Urban,9:18,MC18,MC18.1,American Robin,AMRO,219,Eastern Meadowlark,EAME,214
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Red-winged Blackbird,RWBL,220,Brown-headed Cowbird,BHCO,111
+4/23/2024,ED,63,8,McPherson,WMA,10:11,IN8,IN8.1,Red-winged Blackbird,RWBL,221,NA,NA,NA
+8/7/2024,CL,68,9,McPherson,Urban,8:25,MC18,MC18.1,Northern Cardinal,NOCA,221,NA,NA,NA
+4/5/2024,"ED, NB, JS",50,11,McPherson,Urban,9:32,MC10,MC10.2,Canada Goose,CANG,223,Common Grackle,COGR,106.2
+7/30/2024,"GA, CL",81,16,McPherson,Urban,8:11,MC20,MC20.1,Red-winged Blackbird,RWBL,226,NA,NA,NA
+7/30/2024,"BO, IW",75,2,Garden City,WMA,6:55,BR 2,BR 2.2,Western Kingbird,WEKI,226,Western Kingbird,WEKI,181
+4/23/2024,ED,60,5,McPherson,WMA,9:13,IN9,IN9.1,Eastern Meadowlark,EAME,227,Eastern Meadowlark,EAME,67
+5/8/2024,BO,48,2,Garden City,WMA,8:28,BR 3,BR 3.2,White-crowned Sparrow,WCSP,229,White-crowned Sparrow,WCSP,85.3
+8/28/2024,"BO, RR",66,3,Garden City,Urban,7:17,GC 1,Gc 1.2,Rock Pigeon,ROPI,229,Eurasian Collared Dove,EUCD,23.6
+4/10/2024,JS/NB,54,4,Topeka,WMA,9:18,9,9.2,Blue Jay,BLJA,233,Red-bellied Woodpecker,RBWO,Only Heard
+4/10/2024,JS/NB,54,4,Topeka,WMA,9:18,9,9.2,European Starling,EUST,233,House Sparrow,HOSP,Only Heard
+4/4/2024,"ED, NB, JS",49,10,McPherson,Urban,10:56,MC7,MC7.1,Canada Goose,CANG,234,Blue Jay,BLJA,121
+4/10/2024,"ED, NP",55,5,McPherson,WM,9:31,BB2,BB2.1,Ring-necked Pheasant,RNEP,239,meadowlark,NA,156.2
+4/10/2024,"ED, NP",55,5,McPherson,WM,9:31,BB2,BB2.1,Red-winged Blackbird,RWBL,239,meadowlark,NA,212.2
+4/22/2024,BO,46,3,Garden City,WMA,8:24,BR 15,BR 15.1,White-crowned Sparrow,WCSP,239,NA,NA,NA
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Red-winged Blackbird,RWBL,240,Red-winged Blackbird,RWBL,160
+4/24/2024,RR,61,2,Garden City,Rural,11:10,CN 4,CN 4.3,Red-winged Blackbird,RWBL,240,White-crowned Sparrow,WCSP,26.8
+8/28/2024,"BO, RR",67,3,Garden City,Urban,7:34,GC 1,GC 1.1,Rock Pigeon,ROPI,240,Rock Pigeon,ROPI,73.4
+8/28/2024,"BO, RR",67,1,Garden City,Urban,7:55,GC 4,GC 4.2,Mississippi Kite,MIKI,240,NA,NA,NA
+8/5/2024,BO,68,3,Garden City,WMA,7:42,BR 4,BR 4.1,Eurasian Collared Dove,EUCD,243,Western Kingbird,WEKI,158.7
+7/19/2024,"ED, CL",69,10,McPherson,Urban,8:29,MC27,MC27.1,Red-winged Blackbird,RWBL,245,Mourning Dove,MODO,114
+4/24/2024,RR,56,2,Garden City,Rural,9:25,CN 4,CN 4.2,Red-winged Blackbird,RWBL,246,Grackle,NA,78.1
+8/5/2024,BO,69,3,Garden City,WMA,8:10,BR 4,BR 4.2,Black-billed Magpie,BBMA,246,NA,NA,NA
+4/25/2024,ED,56,15,McPherson,Rural,7:36,BB3,BB3.3,Red-winged Blackbird,RWBL,247,Red-winged Blackbird,RWBL,110.7
+7/22/2024,"CL,GA",70,2,McPherson,Rural,9:18,MC24,MC24.2,Eastern Meadowlark ,EAME,247,Eastern Meadowlark ,EAME,49
+7/26/2024,"GA,CL",68,5,McPherson,WMA,6:58,IN8,IN8.2,Mourning Dove,MODO,248,Dickcissel,DICK,80
+8/28/2024,"BO, RR",66,3,Garden City,Urban,7:17,GC 1,Gc 1.2,Eurasian Collared Dove,EUCD,248,NA,NA,NA
+7/15/2024,"GA, CL",84,14,McPherson,Rural,8:51,BB13,BB13.2,Red-winged Blackbird,RWBL,250,Red-winged Blackbird,RWBL,56
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:32,MC25,MC25.1,House Sparrow,HOSP,250,NA,NA,NA
+7/18/2024,"ED,GA",73,7,McPherson,Urban,9:32,MC25,MC25.1,Northern Cardinal,NOCA,250,NA,NA,NA
+7/19/2024,"ED, CL",68,10,McPherson,Urban,8:20,MC23,MC23.1,Mourning Dove,MODO,250,Eastern Kingbird,EAKI,75
+7/19/2024,"ED, CL",68,10,McPherson,Urban,8:20,MC23,MC23.1,Red-winged Blackbird,RWBL,250,Eastern Kingbird,EAKI,123
+7/22/2024,"CL,GA",63,2,McPherson,Rural,7:21,BB9,BB9.2,Blue-winged Teal,BWTE,250,NA,NA,NA
+7/26/2024,"GA,CL",68,5,McPherson,WMA,6:58,IN8,IN8.2,Indigo Bunting,INBU,250,Dickcissel,DICK,54
+7/26/2024,"GA,CL",76,7,McPherson,WMA,8:42,IN9,IN9.2,Dickcissel,DICK,250,Dickcissel,DICK,114
+8/5/2024,"CL,GA",69,7,McPherson,WMA,6:59,IN3,IN3.2,Blue Grosbeak,BLGR,149,Eastern Kingbird,EAKI,

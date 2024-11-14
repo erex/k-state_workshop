@@ -4,6 +4,7 @@ author: Eric Rexstad *University of St Andrews*
 date: "`r Sys.Date()`"
 bibliography: rachel.bib
 csl: ../apa.csl
+number-sections: true
 ---
 
 ## Are grassland restoration actions of woody removal benefiting local native wildlife?

@@ -1,0 +1,37 @@
+---
+title: "Mourning doves"
+author: Eric Rexstad *University of St Andrews*
+date: "`r Sys.Date()`"
+number-sections: true
+---
+
+# What are mourning doves up to?
+
+:::: {.columns}
+
+::: {.column width='30%'}
+
+## Study Locations
+- Topeka (east)
+- McPherson (central)
+- Garden City (west). 
+
+## Treatments include 
+- WMAs (wildlife managed areas)
+- urban (developed)
+- rural.
+:::
+
+::: {.column width='70%'}
+![Map of Kansas](Kansasmap.png)
+
+:::
+
+::::
+
+# Get acquainted with data
+
+```{r}
+pegg <- read.csv("Distance_2024.csv")
+
+```
