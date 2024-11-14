@@ -193,7 +193,7 @@
     "href": "natalie/pegg.html",
     "title": "Mourning doves",
     "section": "",
-    "text": "1 What are mourning doves up to?\n\n\nstuff\n\n\n\n\nMap of Kansas"
+    "text": "1 What are mourning doves up to?\n\n\nStudy Locations\n\nTopeka (east)\nMcPherson (central)\nGarden City (west)\n\nTreatments include \n\nWMAs (wildlife managed areas)\nurban (developed)\nrural\n\n\n\n\n\nMap of Kansas\n\n\n\n\n\n\n2 Get acquainted with data\n\npegg &lt;- read.csv(\"Distance_2024.csv\")"
   },
   {
     "objectID": "natalie/pegg.html#study-locations",

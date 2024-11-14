@@ -11,15 +11,17 @@ number-sections: true
 
 ::: {.column width='30%'}
 
-## Study Locations
+**Study Locations**
+
 - Topeka (east)
 - McPherson (central)
-- Garden City (west). 
+- Garden City (west) 
 
-## Treatments include 
+**Treatments include **
+
 - WMAs (wildlife managed areas)
 - urban (developed)
-- rural.
+- rural
 :::
 
 ::: {.column width='70%'}

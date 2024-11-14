@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eric Rexstad University of St Andrews">
+<meta name="dcterms.date" content="2024-11-14">
 
 <title>Mourning doves – k-state_workshop</title>
 <style>
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -118,6 +153,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#what-are-mourning-doves-up-to" id="toc-what-are-mourning-doves-up-to" class="nav-link active" data-scroll-target="#what-are-mourning-doves-up-to"><span class="header-section-number">1</span> What are mourning doves up to?</a></li>
+  <li><a href="#get-acquainted-with-data" id="toc-get-acquainted-with-data" class="nav-link" data-scroll-target="#get-acquainted-with-data"><span class="header-section-number">2</span> Get acquainted with data</a></li>
   </ul>
 </nav>
     </div>
@@ -143,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">November 14, 2024</p>
     </div>
   </div>
   
@@ -159,7 +195,18 @@ ul.task-list li input[type="checkbox"] {
 <h1 data-number="1"><span class="header-section-number">1</span> What are mourning doves up to?</h1>
 <div class="columns">
 <div class="column" style="width:30%;">
-<p>stuff</p>
+<p><strong>Study Locations</strong></p>
+<ul>
+<li>Topeka (east)</li>
+<li>McPherson (central)</li>
+<li>Garden City (west)</li>
+</ul>
+<p><strong>Treatments include </strong></p>
+<ul>
+<li>WMAs (wildlife managed areas)</li>
+<li>urban (developed)</li>
+<li>rural</li>
+</ul>
 </div><div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -168,6 +215,12 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div>
+</div>
+</section>
+<section id="get-acquainted-with-data" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Get acquainted with data</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pegg <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Distance_2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
