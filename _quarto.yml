@@ -8,13 +8,13 @@ website:
     left:
       - file: cassidy/lathrom.qmd
         text: "Bees Ft Riley"
-      - sidebar:Sandhills
+      - sidebar:sandhills
       - file: natalie/pegg.qmd
         text: "Mourning doves"
       - about.qmd
 
 sidebar:
- - id: Sandhills
+ - id: sandhills
    title: "Sandhill birds"
    contents:
     - text: "Region as grid"
