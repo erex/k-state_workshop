@@ -6,11 +6,21 @@ website:
   title: "k-state_workshop"
   navbar:
     left:
-      - href: cassidy/lathrom.qmd
-        text: Bees Ft Riley
-      - href: rachel/rusten.qmd
-        text: Birds Sandhills
+      - file: cassidy/lathrom.qmd
+        text: "Bees Ft Riley"
+      - sidebar:Sandhills
+      - file: natalie/pegg.qmd
+        text: "Mourning doves"
       - about.qmd
+
+sidebar:
+ - id: Sandhills
+   title: "Sandhill birds"
+   contents:
+    - text: "Region as grid"
+      href: rachel/rusten.qmd
+    - text: "Region as group"
+      href: rachel/rusten_grids.qmd
 
 format:
   html:

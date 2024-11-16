@@ -1,0 +1,353 @@
+---
+title: "Sandhills Grassland Birds grids as strata"
+author: Eric Rexstad *University of St Andrews*
+date: "`r Sys.Date()`"
+date-format: "DD MMMM YYYY"
+number-sections: true
+bibliography: rachel.bib
+csl: ../apa.csl
+---
+
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Second analysis of grassland birds
+- Alternative definition of strata
+  - Previously 33 strata were defined
+- This analysis uses "group" as the stratification criterion
+  - Resulting in 19 strata, with a resulting increase in number of detections underpinning the 19 estimates of density
+:::
+
+
+# Becoming acquainted with data
+
+I will also make the adjustment with `Group` becoming `Region.Label` and `GroupArea` becoming `Area`
+```{r}
+alldata <- read.csv(file="data/Rusten_GrasslandBird_dist24_NEW.csv")
+colnames(alldata)[colnames(alldata) == 'Region.Label'] <- 'formerRegion.Label'
+colnames(alldata)[colnames(alldata) == 'Area'] <- 'formerArea'
+colnames(alldata)[colnames(alldata) == 'Group'] <- 'Region.Label'
+colnames(alldata)[colnames(alldata) == 'GroupArea'] <- 'Area'
+(namstrat <- unique(alldata$Region.Label))
+(namspec <- unique(alldata$Species))
+```
+
+Goodness, there are `r length(namspec)` species recorded during the 2024 field season. Let's focus attention upon three species of interest: GRSP, WEME, DICK:
+
+```{r}
+threespec <- subset(alldata, subset = Species %in% c("GRSP", "WEME", "DICK"))
+knitr::kable(table(threespec$Region.Label, threespec$Species),
+             caption="This table identical to second table in report of first analysis.")
+```
+
+## Transects within strata
+
+The revised data has placed transect labels in the field `Sample.Label` where the labels should be. This is a departure from the previous data set when the transect labels resided in a (now removed) field `GridPointID`. That makes life easier, as there is no field renaming to perform.
+
+Problems can arise when subsetting the data, with concomitant loss of information about the survey design. The inclusion of a record for each point transect (using NA for species and distance) maintains the integrity of the design within the flatfile. The next code chunk creates a `sample table` that encapsulates the design information such that the data can be subset (by species for example), while having the survey design information available during the analysis.
+
+```{r}
+GroupArea <- mat.or.vec(length(namstrat),1)
+j <- 0
+for (i in namstrat) {
+  j <- j+1
+  GroupArea[j] <- unique(alldata[alldata$Region.Label==i, "Area"])
+}
+regionTable <- data.frame(Region.Label=namstrat, Area=GroupArea)
+
+numtran <- mat.or.vec(length(namstrat),1)
+namtran <- list()
+j <- 0
+for (i in namstrat) {
+  j <- j+1
+  numtran[j] <- length(unique(alldata[alldata$Region.Label==i, "Sample.Label"]))
+  namtran[[j]] <- unique(alldata[alldata$Region.Label==i, "Sample.Label"])
+#  print(paste(i, numtran[j], sep=" "))
+}
+repeatGroups <- c(rep(namstrat[1], numtran[1]),
+                  rep(namstrat[2], numtran[2]),
+                  rep(namstrat[3], numtran[3]),
+                  rep(namstrat[4], numtran[4]),
+                  rep(namstrat[5], numtran[5]),
+                  rep(namstrat[6], numtran[6]),
+                  rep(namstrat[7], numtran[7]),
+                  rep(namstrat[8], numtran[8]),
+                  rep(namstrat[9], numtran[9]),
+                  rep(namstrat[10], numtran[10]),
+                  rep(namstrat[11], numtran[11]),
+                  rep(namstrat[12], numtran[12]),
+                  rep(namstrat[13], numtran[13]),
+                  rep(namstrat[14], numtran[14]),
+                  rep(namstrat[15], numtran[15]),
+                  rep(namstrat[16], numtran[16]),
+                  rep(namstrat[17], numtran[17]),
+                  rep(namstrat[18], numtran[18]),
+                  rep(namstrat[19], numtran[19]))
+pointStations <- c(namtran, recursive=TRUE)
+sampleTable <- data.frame(Sample.Label=pointStations,
+                          Region.Label=repeatGroups,
+                          Effort=1)
+```
+
+:::{.callout-caution collapse=false appearance='default' icon=true}
+## Distances recorded as -1
+Don't know why they exist, but they mess with detection function fitting, I'm throwing them out
+:::
+
+```{r}
+alldata <- subset(alldata, subset = distance> -1)
+```
+
+
+With data wrangling complete, we can begin our model fitting. I do not repeat the histogram of detection distances by common species, as they can be seen in the previous report.
+
+# Simple analysis for estimates at the `Group` level
+
+Standard practice will be to remove 10% most distant detections.
+
+```{r}
+#| label: loadpkg
+#| message: false
+library(Distance)
+cu <- convert_units("meter", NULL, "hectare")
+```
+
+To use on several species, make a small function to fit 3 candidate models and apply to *Western meadowlark*. By eye, I've chosen an absolute truncation distance of 170m.
+
+```{r}
+#| label: threecand
+#| message: false
+#| warning: false
+#| fig-cap: "Fitted detection function, WEME, pooled over groups"
+three <- function(dframe=alldata, spec, trunpct="10%", 
+                  rt=regionTable, st=sampleTable) {
+  thisspec <- subset(dframe, Species==spec)
+  this.hn <- ds(data=thisspec, transect = "point",
+                region_table = rt, sample_table = st,
+                key="hn", truncation = trunpct,  convert_units = cu, 
+                adjustment = "herm")
+  this.uncos <- ds(data=thisspec, transect = "point",
+                region_table = rt, sample_table = st,
+                   key="unif", truncation = trunpct, convert_units = cu)
+  this.hr <- ds(data=thisspec, transect = "point",
+                region_table = rt, sample_table = st,
+                key="hr", truncation = trunpct,  convert_units = cu,
+                adjustment = "poly")
+  criticism <- summarize_ds_models(this.hn, this.uncos, this.hr)
+  print(knitr::kable(criticism[,2:7], row.names = FALSE, digits=3,
+               caption=paste("Model criticism for", spec)))
+  mytitle <- paste(spec, criticism$'Key function'[1], " pooled over Groups")
+  if(grepl("uncos", criticism$Model[1])) plot(this.uncos, pdf=TRUE, nc=40, main=mytitle)
+  if(grepl("hn", criticism$Model[1])) plot(this.hn, pdf=TRUE, nc=40,main=mytitle)
+  if(grepl("hr", criticism$Model[1])) plot(this.hr, pdf=TRUE, nc=40,main=mytitle)
+  return(list(hn=this.hn, unicos=this.uncos, hr=this.hr))
+}
+wemeres <- three(alldata, "WEME", 170, rt=regionTable, st=sampleTable)
+```
+
+
+```{r}
+#| label: grspcand
+#| message: false
+#| warning: false
+#| fig-cap: "Fitted detection function, GRSP, pooled over groups"
+grspres <- three(alldata, "GRSP", "10%", rt=regionTable, st=sampleTable)
+```
+
+```{r}
+#| label: dickcand
+#| message: false
+#| warning: false
+#| fig-cap: "Fitted detection function, DICK, pooled over groups"
+dickres <- three(alldata, "DICK", "10%", rt=regionTable, st=sampleTable)
+```
+
+# Constant detectability across strata?
+
+Clearly there are insufficient detections within strata to fit stratum-specific detection functions. However, as shown in @rexstad2023, bias will result from using a pooled detection function to estimate density at the stratum level **if** detectability differs between strata.  
+
+The defensible way to estimate stratum-specific detection probabilities with small stratum-specific detections is to use stratum as a covariate. This may not work for the large number of strata we have here. The hazard rate model was preferred for two of the three species and it was second-preferred for the GRSP, so attempt covariate modelling using hazard rate as key function.
+
+```{r}
+#| message: false
+#| label: regioncovariate
+weme.hrstrat <- ds(data=alldata[alldata$Species=="WEME",], transect="point", 
+                   key="hr", truncation=170,
+                   region_table = regionTable, sample_table = sampleTable,
+                   convert_units = cu, formula=~Region.Label)
+grsp.hrstrat <- ds(data=alldata[alldata$Species=="GRSP",], transect="point", 
+                   key="hr", truncation="10%",
+                   region_table = regionTable, sample_table = sampleTable,
+                   convert_units = cu, formula=~Region.Label)
+dick.hrstrat <- ds(data=alldata[alldata$Species=="DICK",], transect="point", 
+                   key="hr", truncation="10%",
+                   region_table = regionTable, sample_table = sampleTable,
+                   convert_units = cu, formula=~Region.Label)
+```
+
+:::{.callout-warning collapse=false appearance='default' icon=true}
+## Convergence warning)
+There are convergence warnings for all three species when using stratum as a covariate
+:::
+
+Contrast models with and without Region.Label covariate for each species to provide an evidence-based assessment of constant detectability across strata.
+
+```{r}
+#| label: aic
+AIC(wemeres[["hr"]], weme.hrstrat)
+AIC(dickres[["hr"]], dick.hrstrat)
+AIC(grspres[["hr"]], grsp.hrstrat)
+```
+
+These AIC comparisons indicate that there is some evidence to suggest detectability differs between Groups for each of the three species.
+
+We could also use BIC to assess the effect of Group on detection probability
+
+```{r}
+#| label: bic
+altmetric <- function(modelobj) {
+  nval <- length(modelobj$ddf$fitted)
+  AICcall <- AIC(modelobj)
+  k <- AICcall$df
+  AICval <- AICcall$AIC
+  AICc <- AICval + (2*k*(k+1)) / (nval-k-1)
+  BIC <- AIC(modelobj, k = log(nval))$AIC
+  return(BIC)
+}
+wconst <- altmetric(wemeres[["hr"]])
+wregion <- altmetric(weme.hrstrat)
+dconst <- altmetric(dickres[["hr"]])
+dregion <- altmetric(dick.hrstrat)
+gconst <- altmetric(grspres[["hr"]])
+gregion <- altmetric(grsp.hrstrat)
+bictab <- data.frame(constant=c(wconst, dconst, gconst),
+                     Groupcov=c(wregion, dregion, gregion))
+row.names(bictab) <- c("WEME", "DICK", "GRSP")
+knitr::kable(bictab, caption="BIC comparison for Region.Label effect on detectability for three species. BIC prefers a model of constant detectability across Region.Labels.")
+```
+
+The BIC findings contradict the AIC findings of a Region.Label effect upon detection probability. BIC places a heavier penalty as number of detections increases. In reality, the differences in the shapes of the region-specific detection functions are not substantial; meaning that if detection probabilites differ between regions, that difference is small.
+
+# Density estimates by Group, assuming constant detectability across strata
+
+```{r}
+knitr::kable(wemeres[["hr"]][["dht"]][["individuals"]][["summary"]], digits=3,
+             caption="Summary of WEME detections")
+knitr::kable(dickres[["hr"]][["dht"]][["individuals"]][["summary"]], digits=3,
+             caption="Summary of DICK detections")
+knitr::kable(grspres[["hr"]][["dht"]][["individuals"]][["summary"]], digits=3,
+             caption="Summary of GRSP detections")
+```
+
+```{r}
+knitr::kable(wemeres$hr$dht$individuals$D, digits=3,
+             caption="Density estimates by Group for WEME")
+knitr::kable(dickres$hr$dht$individuals$D, digits=3,
+             caption="Density estimates by Group for DICK")
+knitr::kable(grspres$hr$dht$individuals$D, digits=3,
+             caption="Density estimates by Group for GRSP")
+```
+
+# Other species, besides the three thusfar assessed
+
+```{r}
+detects <- sort(table(alldata$Species))
+knitr::kable(rev(detects[detects>200]))
+```
+
+I'll carry on through BHCO, FISP, MODO and LASP; remaining species have average detections fewer than 10 per Group.
+
+```{r}
+#| label: bhcocand
+#| message: false
+#| warning: false
+#| fig-cap: "Fitted detection function, BHCO, pooled over groups"
+bhcores <- three(alldata, "BHCO", "10%", rt=regionTable, st=sampleTable)
+```
+
+```{r}
+#| label: fispcand
+#| message: false
+#| warning: false
+#| fig-cap: "Fitted detection function, FISP, pooled over groups"
+fispres <- three(alldata, "FISP", "10%", rt=regionTable, st=sampleTable)
+```
+
+```{r}
+#| label: modocand
+#| message: false
+#| warning: false
+#| fig-cap: "Fitted detection function, MODO, pooled over groups"
+modores <- three(alldata, "MODO", "10%", rt=regionTable, st=sampleTable)
+```
+
+```{r}
+#| label: laspcand
+#| message: false
+#| warning: false
+#| fig-cap: "Fitted detection function, LASP, pooled over groups"
+laspres <- three(alldata, "LASP", "10%", rt=regionTable, st=sampleTable)
+```
+
+And fitting Region.Label covariate models
+
+```{r}
+#| message: false
+#| label: regioncovariate4
+bhco.hrstrat <- ds(data=alldata[alldata$Species=="BHCO",], transect="point", 
+                   key="hr", truncation=170,
+                   region_table = regionTable, sample_table = sampleTable,
+                   convert_units = cu, formula=~Region.Label)
+fisp.hrstrat <- ds(data=alldata[alldata$Species=="FISP",], transect="point", 
+                   key="hr", truncation="10%",
+                   region_table = regionTable, sample_table = sampleTable,
+                   convert_units = cu, formula=~Region.Label)
+modo.hrstrat <- ds(data=alldata[alldata$Species=="MODO",], transect="point", 
+                   key="hr", truncation="10%",
+                   region_table = regionTable, sample_table = sampleTable,
+                   convert_units = cu, formula=~Region.Label)
+lasp.hrstrat <- ds(data=alldata[alldata$Species=="LASP",], transect="point", 
+                   key="hr", truncation="10%",
+                   region_table = regionTable, sample_table = sampleTable,
+                   convert_units = cu, formula=~Region.Label)
+```
+
+
+Finally BIC model selection for hazard rate models with and without a Region.Label covariate for the final four species:
+
+```{r}
+#| message: false
+#| label: regioncov4
+bconst <- altmetric(bhcores[["hr"]])
+bregion <- altmetric(bhco.hrstrat)
+fconst <- altmetric(fispres[["hr"]])
+fregion <- altmetric(fisp.hrstrat)
+mconst <- altmetric(modores[["hr"]])
+mregion <- altmetric(modo.hrstrat)
+lconst <- altmetric(laspres[["hr"]])
+lregion <- altmetric(lasp.hrstrat)
+bictab <- data.frame(constant=c(bconst, fconst, mconst, lconst),
+                     Groupcov=c(bregion, fregion, mregion, lregion))
+row.names(bictab) <- c("BHCO", "FISP", "MODO", "LASP")
+knitr::kable(bictab, caption="BIC comparison for Region.Label effect on detectability for remaining four species. BIC prefers a model of constant detectability across Region.Labels.")
+```
+
+```{r}
+knitr::kable(bhcores[["hr"]][["dht"]][["individuals"]][["summary"]], digits=3,
+             caption="Summary of BHCO detections")
+knitr::kable(fispres[["hr"]][["dht"]][["individuals"]][["summary"]], digits=3,
+             caption="Summary of FISP detections")
+knitr::kable(modores[["hr"]][["dht"]][["individuals"]][["summary"]], digits=3,
+             caption="Summary of MODO detections")
+knitr::kable(laspres[["hr"]][["dht"]][["individuals"]][["summary"]], digits=3,
+             caption="Summary of LASP detections")
+```
+
+```{r}
+knitr::kable(bhcores$hr$dht$individuals$D, digits=3,
+             caption="Density estimates by Group for BHCO")
+knitr::kable(fispres$hr$dht$individuals$D, digits=3,
+             caption="Density estimates by Group for FISP")
+knitr::kable(modores$hr$dht$individuals$D, digits=3,
+             caption="Density estimates by Group for MODO")
+knitr::kable(laspres$hr$dht$individuals$D, digits=3,
+             caption="Density estimates by Group for LASP")
+```

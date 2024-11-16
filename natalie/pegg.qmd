@@ -2,6 +2,7 @@
 title: "Mourning doves"
 author: Eric Rexstad *University of St Andrews*
 date: "`r Sys.Date()`"
+date-format: "DD MMMM YYYY"
 number-sections: true
 ---
 
@@ -35,5 +36,13 @@ number-sections: true
 
 ```{r}
 pegg <- read.csv("Distance_2024.csv")
+```
+
+
+```{r}
+table(pegg$StudyLocation, pegg$Treatment)
+pegg$Treatment <- ifelse(pegg$Treatment=="Rual", "Rural", pegg$Treatment)
+pegg$Treatment <- ifelse(pegg$Treatment=="WM", "WMA", pegg$Treatment)
+table(pegg$StudyLocation, pegg$Treatment)
 
 ```

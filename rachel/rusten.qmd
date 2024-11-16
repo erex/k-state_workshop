@@ -1,7 +1,8 @@
 ---
-title: "Sandhills Grassland Birds"
+title: "Sandhills Grassland Birds version 1"
 author: Eric Rexstad *University of St Andrews*
 date: "`r Sys.Date()`"
+date-format: "DD MMMM YYYY"
 bibliography: rachel.bib
 csl: ../apa.csl
 number-sections: true

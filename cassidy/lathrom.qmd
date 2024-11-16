@@ -2,6 +2,7 @@
 title: "Ft Riley bumblebees"
 author: Eric Rexstad *University of St Andrews*
 date: "`r Sys.Date()`"
+date-format: "DD MMMM YYYY"
 number-sections: true
 ---
 

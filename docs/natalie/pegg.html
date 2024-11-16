@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eric Rexstad University of St Andrews">
-<meta name="dcterms.date" content="2024-11-14">
+<meta name="dcterms.date" content="2024-11-16">
 
 <title>Mourning doves – k-state_workshop</title>
 <style>
@@ -129,8 +129,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Bees Ft Riley</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../rachel/rusten.html"> 
-<span class="menu-text">Birds Sandhills</span></a>
+    <span class="nav-link">
+<span class="menu-text">sidebar:Sandhills</span>
+    </span>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../natalie/pegg.html" aria-current="page"> 
+<span class="menu-text">Mourning doves</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
@@ -179,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 14, 2024</p>
+      <p class="date">16 November 2024</p>
     </div>
   </div>
   
@@ -221,6 +226,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="2"><span class="header-section-number">2</span> Get acquainted with data</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pegg <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Distance_2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pegg<span class="sc">$</span>StudyLocation, pegg<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             
+              Rual Rural Urban  WM WMA
+  Garden City    0    62   430   0  81
+  Inman          0     0     0   0  25
+  McPherson      4   177   247  37 111
+  Topeka         0     0   190   0 191</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pegg<span class="sc">$</span>Treatment <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pegg<span class="sc">$</span>Treatment<span class="sc">==</span><span class="st">"Rual"</span>, <span class="st">"Rural"</span>, pegg<span class="sc">$</span>Treatment)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pegg<span class="sc">$</span>Treatment <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pegg<span class="sc">$</span>Treatment<span class="sc">==</span><span class="st">"WM"</span>, <span class="st">"WMA"</span>, pegg<span class="sc">$</span>Treatment)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pegg<span class="sc">$</span>StudyLocation, pegg<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             
+              Rural Urban WMA
+  Garden City    62   430  81
+  Inman           0     0  25
+  McPherson     181   247 148
+  Topeka          0   190 191</code></pre>
+</div>
 </div>
 
 
