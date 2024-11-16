@@ -3,24 +3,18 @@ project:
   output-dir: docs
 
 website:
-  title: "k-state_workshop"
-  navbar:
-    left:
-      - file: cassidy/lathrom.qmd
-        text: "Bees Ft Riley"
-      - sidebar:sandhills
-      - file: natalie/pegg.qmd
-        text: "Mourning doves"
+  title: "Kansas State workshop, December 2024"
+  sidebar:
+    contents:
+      - text: "Bees Ft Riley"
+        href: cassidy/lathrom.qmd
+      - section: "Sandhill birds"
+        contents:
+          - rachel/rusten.qmd
+          - rachel/rusten_grids.qmd
+      - text: "Mourning doves"
+        href: natalie/pegg.qmd
       - about.qmd
-
-sidebar:
- - id: sandhills
-   title: "Sandhill birds"
-   contents:
-    - text: "Region as grid"
-      href: rachel/rusten.qmd
-    - text: "Region as group"
-      href: rachel/rusten_grids.qmd
 
 format:
   html:
