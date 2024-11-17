@@ -5,6 +5,8 @@ project:
 website:
   title: "Kansas State workshop, December 2024"
   sidebar:
+    background: primary
+    collapse-level: 1
     contents:
       - text: "Bees Ft Riley"
         href: cassidy/lathrom.qmd
