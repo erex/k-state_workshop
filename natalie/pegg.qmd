@@ -1,5 +1,5 @@
 ---
-title: "Mourning doves"
+title: "Mourning doves 🕊️"
 author: Eric Rexstad *University of St Andrews*
 date: "`r Sys.Date()`"
 date-format: "DD MMMM YYYY"

@@ -1,5 +1,5 @@
 ---
-title: "Sandhills Grassland Birds grids as strata"
+title: "Sandhills Grassland Birds groups as strata  🐦"
 author: Eric Rexstad *University of St Andrews*
 date: "`r Sys.Date()`"
 date-format: "DD MMMM YYYY"
