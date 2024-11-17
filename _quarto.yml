@@ -8,19 +8,21 @@ website:
     background: primary
     collapse-level: 1
     contents:
-      - text: "Bees Ft Riley"
+      - text: "Bees Ft Riley 🐝"
         href: cassidy/lathrom.qmd
-      - section: "Sandhill birds"
+      - section: "Sandhill birds 🐦"
         contents:
           - rachel/rusten.qmd
           - rachel/rusten_grids.qmd
-      - text: "Mourning doves"
+      - text: "Mourning doves 🕊️"
         href: natalie/pegg.qmd
       - about.qmd
 
 format:
   html:
-    theme: yeti
+    theme: 
+      - yeti
+      - eric_theme.scss
     css: styles.css
     toc: true
 
