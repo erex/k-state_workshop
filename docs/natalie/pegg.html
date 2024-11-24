@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eric Rexstad University of St Andrews">
-<meta name="dcterms.date" content="2024-11-17">
+<meta name="dcterms.date" content="2024-11-24">
 
 <title>Mourning doves 🕊️ – Kansas State workshop, December 2024</title>
 <style>
@@ -193,7 +193,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#what-are-mourning-doves-up-to" id="toc-what-are-mourning-doves-up-to" class="nav-link active" data-scroll-target="#what-are-mourning-doves-up-to"><span class="header-section-number">1</span> What are mourning doves up to?</a></li>
-  <li><a href="#get-acquainted-with-data" id="toc-get-acquainted-with-data" class="nav-link" data-scroll-target="#get-acquainted-with-data"><span class="header-section-number">2</span> Get acquainted with data</a></li>
+  <li><a href="#get-acquainted-with-survey-design" id="toc-get-acquainted-with-survey-design" class="nav-link" data-scroll-target="#get-acquainted-with-survey-design"><span class="header-section-number">2</span> Get acquainted with survey design</a></li>
+  <li><a href="#get-acquainted-with-survey-data" id="toc-get-acquainted-with-survey-data" class="nav-link" data-scroll-target="#get-acquainted-with-survey-data"><span class="header-section-number">3</span> Get acquainted with survey data</a></li>
+  <li><a href="#sizes-of-study-area-treatment-combinations" id="toc-sizes-of-study-area-treatment-combinations" class="nav-link" data-scroll-target="#sizes-of-study-area-treatment-combinations"><span class="header-section-number">4</span> Sizes of study area treatment combinations</a></li>
+  <li><a href="#rename-columns" id="toc-rename-columns" class="nav-link" data-scroll-target="#rename-columns"><span class="header-section-number">5</span> Rename columns</a></li>
+  <li><a href="#toss-unusual-location_treatment" id="toc-toss-unusual-location_treatment" class="nav-link" data-scroll-target="#toss-unusual-location_treatment"><span class="header-section-number">6</span> Toss unusual <code>Location_Treatment</code></a></li>
+  <li><a href="#also-remove-from-study_design2024" id="toc-also-remove-from-study_design2024" class="nav-link" data-scroll-target="#also-remove-from-study_design2024"><span class="header-section-number">7</span> Also remove from <code>Study_design2024</code></a></li>
+  <li><a href="#do-we-need-region-and-sample-tables" id="toc-do-we-need-region-and-sample-tables" class="nav-link" data-scroll-target="#do-we-need-region-and-sample-tables"><span class="header-section-number">8</span> Do we need region and sample tables?</a></li>
+  <li><a href="#load-package-and-set-conversion-units" id="toc-load-package-and-set-conversion-units" class="nav-link" data-scroll-target="#load-package-and-set-conversion-units"><span class="header-section-number">9</span> Load package and set conversion units</a></li>
+  <li><a href="#mourning-doves" id="toc-mourning-doves" class="nav-link" data-scroll-target="#mourning-doves"><span class="header-section-number">10</span> Mourning doves</a>
+  <ul class="collapse">
+  <li><a href="#pooled-detection-function" id="toc-pooled-detection-function" class="nav-link" data-scroll-target="#pooled-detection-function"><span class="header-section-number">10.1</span> Pooled detection function</a></li>
+  <li><a href="#model-criticism" id="toc-model-criticism" class="nav-link" data-scroll-target="#model-criticism"><span class="header-section-number">10.2</span> Model criticism</a></li>
+  <li><a href="#location-x-treatment-specific-detection-function" id="toc-location-x-treatment-specific-detection-function" class="nav-link" data-scroll-target="#location-x-treatment-specific-detection-function"><span class="header-section-number">10.3</span> Location x treatment specific detection function</a></li>
+  </ul></li>
+  <li><a href="#next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma" id="toc-next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma" class="nav-link" data-scroll-target="#next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma"><span class="header-section-number">11</span> Next step would be to eliminate <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code></a>
+  <ul class="collapse">
+  <li><a href="#for-the-moment-show-estimates-from-pooled-hr-model" id="toc-for-the-moment-show-estimates-from-pooled-hr-model" class="nav-link" data-scroll-target="#for-the-moment-show-estimates-from-pooled-hr-model"><span class="header-section-number">11.1</span> For the moment, show estimates from pooled HR model</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">17 November 2024</p>
+      <p class="date">24 November 2024</p>
     </div>
   </div>
   
@@ -257,35 +274,614 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="get-acquainted-with-data" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Get acquainted with data</h1>
+<section id="get-acquainted-with-survey-design" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Get acquainted with survey design</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pegg <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Distance_2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pegg <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"study_design2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pegg<span class="sc">$</span>StudyLocation, pegg<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>combos <span class="ot">&lt;-</span> <span class="fu">unique</span>(pegg<span class="sc">$</span>Location_Treatment)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>patch <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(combos))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>point <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(combos))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(combos)) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  patch[i] <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(pegg[pegg<span class="sc">$</span>Location_Treatment<span class="sc">==</span>combos[i], <span class="st">"PatchID"</span>]))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  point[i] <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(pegg[pegg<span class="sc">$</span>Location_Treatment<span class="sc">==</span>combos[i], <span class="st">"PointID"</span>]))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Treatment=</span>combos, <span class="at">Patches=</span>patch, <span class="at">Points=</span>point)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(design, <span class="at">caption=</span><span class="st">"Pegg study design 2024"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Pegg study design 2024</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Treatment</th>
+<th style="text-align: right;">Patches</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Garden City_Rural</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Garden City_Urban</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Garden City_WMA</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inman_WMA</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Rual</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_Rural</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Urban</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_WM</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_WMA</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topeka_Urban</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Topeka_WMA</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">44</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="get-acquainted-with-survey-data" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Get acquainted with survey data</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>peggdat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"2024dovedata2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Just pick one combination to see what is what</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>numecdo <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(combos))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nummodo <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(combos))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(combos)) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  numecdo[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(peggdat<span class="sc">$</span>Distance) <span class="sc">&amp;</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                      peggdat<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Eurasian Collared Dove"</span> <span class="sc">&amp;</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                      peggdat<span class="sc">$</span>Location_Treatment<span class="sc">==</span>combos[i])</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  nummodo[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(peggdat<span class="sc">$</span>Distance) <span class="sc">&amp;</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                      peggdat<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span> <span class="sc">&amp;</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                      peggdat<span class="sc">$</span>Location_Treatment<span class="sc">==</span>combos[i])</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>detects <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Treatment=</span>combos, <span class="at">ECDOdet=</span>numecdo, <span class="at">MODOdet=</span>nummodo)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(detects, <span class="at">caption=</span><span class="st">"Detections by Loc x Tmt and species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Detections by Loc x Tmt and species</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Treatment</th>
+<th style="text-align: right;">ECDOdet</th>
+<th style="text-align: right;">MODOdet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Garden City_Rural</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Garden City_Urban</td>
+<td style="text-align: right;">227</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Garden City_WMA</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inman_WMA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Rual</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_Rural</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Urban</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_WM</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_WMA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topeka_Urban</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Topeka_WMA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Garden city urban has lots of ECDO detections</p>
+</section>
+<section id="sizes-of-study-area-treatment-combinations" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Sizes of study area treatment combinations</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sizes <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path=</span><span class="st">"StudyAreasAndTreatments.xlsx"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sizes<span class="sc">$</span>Location_Treatment <span class="ot">&lt;-</span> <span class="fu">paste</span>(sizes<span class="sc">$</span><span class="st">`</span><span class="at">Study Area</span><span class="st">`</span>, sizes<span class="sc">$</span>Treatment, <span class="at">sep=</span><span class="st">"_"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>peggdat.area <span class="ot">&lt;-</span> <span class="fu">merge</span>(peggdat, sizes, <span class="at">by=</span><span class="st">"Location_Treatment"</span>, <span class="at">all.x=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rename-columns" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Rename columns</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(peggdat.area)[<span class="fu">colnames</span>(peggdat.area) <span class="sc">==</span> <span class="st">'Location_Treatment'</span>] <span class="ot">&lt;-</span> <span class="st">'Region.Label'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(peggdat.area)[<span class="fu">colnames</span>(peggdat.area) <span class="sc">==</span> <span class="st">'PointID'</span>] <span class="ot">&lt;-</span> <span class="st">'Sample.Label'</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(peggdat.area)[<span class="fu">colnames</span>(peggdat.area) <span class="sc">==</span> <span class="st">'Effort_Point'</span>] <span class="ot">&lt;-</span> <span class="st">'Effort'</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(peggdat.area)[<span class="fu">colnames</span>(peggdat.area) <span class="sc">==</span> <span class="st">'hectares'</span>] <span class="ot">&lt;-</span> <span class="st">'Area'</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>peggdat.area<span class="sc">$</span>Area <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(peggdat.area<span class="sc">$</span>Area)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(peggdat.area)[<span class="fu">colnames</span>(peggdat.area) <span class="sc">==</span> <span class="st">'Distance'</span>] <span class="ot">&lt;-</span> <span class="st">'distance'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="toss-unusual-location_treatment" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Toss unusual <code>Location_Treatment</code></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>removethese <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Inman_WMA"</span>, <span class="st">"McPherson_Rual"</span>, <span class="st">"McPherson_WM"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>clean.data <span class="ot">&lt;-</span> peggdat.area[<span class="sc">!</span>(peggdat.area<span class="sc">$</span>Region.Label <span class="sc">%in%</span> removethese), ]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>combo.clean <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data<span class="sc">$</span>Region.Label)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(clean.data<span class="sc">$</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             
-              Rual Rural Urban  WM WMA
-  Garden City    0    62   430   0  81
-  Inman          0     0     0   0  25
-  McPherson      4   177   247  37 111
-  Topeka         0     0   190   0 191</code></pre>
+<pre><code>[1] "Garden City_Rural" "Garden City_Urban" "Garden City_WMA"  
+[4] "McPherson_Rural"   "McPherson_Urban"   "McPherson_WMA"    
+[7] "Topeka_Urban"      "Topeka_WMA"       </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pegg<span class="sc">$</span>Treatment <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pegg<span class="sc">$</span>Treatment<span class="sc">==</span><span class="st">"Rual"</span>, <span class="st">"Rural"</span>, pegg<span class="sc">$</span>Treatment)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pegg<span class="sc">$</span>Treatment <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pegg<span class="sc">$</span>Treatment<span class="sc">==</span><span class="st">"WM"</span>, <span class="st">"WMA"</span>, pegg<span class="sc">$</span>Treatment)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pegg<span class="sc">$</span>StudyLocation, pegg<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="also-remove-from-study_design2024" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Also remove from <code>Study_design2024</code></h1>
+<p><strong>don’t think this is needed</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>clean.design <span class="ot">&lt;-</span> pegg[<span class="sc">!</span>(pegg<span class="sc">$</span>Location_Treatment <span class="sc">%in%</span> removethese), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="do-we-need-region-and-sample-tables" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Do we need region and sample tables?</h1>
+<p>If each visit and point is represented in the data, then we might not need tables. Let’s find out.<br>
+<strong>Not the case, if we subset by species, we destroy all points without detections</strong> overestimate</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>regtab <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Region.Label=</span><span class="fu">unique</span>(clean.data<span class="sc">$</span>Region.Label),</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Area=</span><span class="fu">unique</span>(clean.data<span class="sc">$</span>Area))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>gcr <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">1</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>pts.gcr <span class="ot">&lt;-</span> <span class="fu">length</span>(gcr)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>gcu <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">2</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>pts.gcu <span class="ot">&lt;-</span> <span class="fu">length</span>(gcu)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>gcw <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">3</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>pts.gcw <span class="ot">&lt;-</span> <span class="fu">length</span>(gcw)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>mr <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">4</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>pts.mr <span class="ot">&lt;-</span> <span class="fu">length</span>(mr)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">5</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>pts.mu <span class="ot">&lt;-</span> <span class="fu">length</span>(mu)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>mw <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">6</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>pts.mw <span class="ot">&lt;-</span> <span class="fu">length</span>(mw)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>tu <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">7</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>pts.tu <span class="ot">&lt;-</span> <span class="fu">length</span>(tu)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>tw <span class="ot">&lt;-</span> <span class="fu">unique</span>(clean.data[clean.data<span class="sc">$</span>Region.Label<span class="sc">==</span>combo.clean[<span class="dv">8</span>], <span class="st">"Sample.Label"</span>])</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>pts.tw <span class="ot">&lt;-</span> <span class="fu">length</span>(tw)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>allpts <span class="ot">&lt;-</span> <span class="fu">c</span>(gcr, gcu, gcw, mr, mu, mw, tu, tw)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>regionstring <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(combo.clean[<span class="dv">1</span>], pts.gcr),</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(combo.clean[<span class="dv">2</span>], pts.gcu),</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(combo.clean[<span class="dv">3</span>], pts.gcw),</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(combo.clean[<span class="dv">4</span>], pts.mr),</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(combo.clean[<span class="dv">5</span>], pts.mu),</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(combo.clean[<span class="dv">6</span>], pts.mw),</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(combo.clean[<span class="dv">7</span>], pts.tu),</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">rep</span>(combo.clean[<span class="dv">8</span>], pts.tw))</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>eff <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(allpts))</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(allpts)) {</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  eff[i] <span class="ot">&lt;-</span> clean.data[clean.data<span class="sc">$</span>Sample.Label<span class="sc">==</span>allpts[i], <span class="st">"Effort"</span>]</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>samtab <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sample.Label=</span>allpts,</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Region.Label=</span>regionstring,</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Effort=</span>eff)</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>eff <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(allpts))</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(allpts)) {</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>  eff[i] <span class="ot">&lt;-</span> clean.data[clean.data<span class="sc">$</span>Sample.Label<span class="sc">==</span>allpts[i], <span class="st">"Effort"</span>]</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="load-package-and-set-conversion-units" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Load package and set conversion units</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Distance)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cu <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="cn">NULL</span>, <span class="st">"hectare"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mourning-doves" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Mourning doves</h1>
+<section id="pooled-detection-function" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="pooled-detection-function"><span class="header-section-number">10.1</span> Pooled detection function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>modo.pool.unif <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"unif"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>modo.pool.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adj=</span><span class="st">"herm"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>modo.pool.hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">adj=</span><span class="st">"poly"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="model-criticism" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="model-criticism"><span class="header-section-number">10.2</span> Model criticism</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize_ds_models</span>(modo.pool.unif, modo.pool.hn, modo.pool.hr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             
-              Rural Urban WMA
-  Garden City    62   430  81
-  Inman           0     0  25
-  McPherson     181   247 148
-  Topeka          0   190 191</code></pre>
+<pre><code>                     Model                                      Key function
+3   \\texttt{modo.pool.hr}                                       Hazard-rate
+1 \\texttt{modo.pool.unif} Uniform with cosine adjustment terms of order 1,2
+2   \\texttt{modo.pool.hn}                                       Half-normal
+  Formula C-vM p-value $\\hat{P_a}$ se($\\hat{P_a}$) $\\Delta$AIC
+3      ~1    0.8878239    0.1618245       0.04071732     0.000000
+1    &lt;NA&gt;    0.2448428    0.1982327       0.02202525     3.757254
+2      ~1    0.1212906    0.2147303       0.02331904     5.065259</code></pre>
 </div>
 </div>
+</section>
+<section id="location-x-treatment-specific-detection-function" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="location-x-treatment-specific-detection-function"><span class="header-section-number">10.3</span> Location x treatment specific detection function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>modo.hn.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hn"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>modo.hr.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize_ds_models</span>(modo.hn.region, modo.hr.region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     Model Key function       Formula C-vM p-value $\\hat{P_a}$
+2 \\texttt{modo.hr.region}  Hazard-rate ~Region.Label    0.5497442    0.1414494
+1 \\texttt{modo.hn.region}  Half-normal ~Region.Label    0.4812433    0.1575224
+  se($\\hat{P_a}$) $\\Delta$AIC
+2         319.6063     0.000000
+1         901.7174     4.061256</code></pre>
+</div>
+</div>
+<p><strong>look at ugly SE(Pa) for both models, convergence trouble</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modo.hr.region<span class="sc">$</span>ddf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Summary for ds object
+Number of observations :  70 
+Distance range         :  0  -  142.66 
+AIC                    :  664.5423 
+Optimisation           :  mrds (nlminb) 
+
+Detection function:
+ Hazard-rate key function 
+
+Detection function parameters 
+Scale coefficient(s): 
+                                estimate           se
+(Intercept)                    4.3686531 3.520670e-01
+Region.LabelGarden City_Urban  0.2568244 7.067202e+00
+Region.LabelGarden City_WMA   -0.7176506 4.575404e-01
+Region.LabelMcPherson_Rural    1.3277385 6.462278e+04
+Region.LabelMcPherson_Urban   -0.4431121 3.848422e-01
+Region.LabelMcPherson_WMA     -0.6396865 1.000000e+05
+Region.LabelTopeka_Urban      -1.1235875 4.208473e-01
+Region.LabelTopeka_WMA        -0.6590405 4.339164e-01
+
+Shape coefficient(s):  
+            estimate        se
+(Intercept) 1.221442 0.1761784
+
+                       Estimate           SE       CV
+Average p             0.1414494     319.6063 2259.510
+N in covered region 494.8767577 1118179.2180 2259.510
+EDR                  53.6540749   60615.9720 1129.755</code></pre>
+</div>
+</div>
+<p><strong>McPherson Rural and WMA, Garden City Urban all causing problems</strong></p>
+<p>Probably not a surprise given the numbers of detections in those locations x treatments</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.hr.region<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary, <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns.</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Region</th>
+<th style="text-align: right;">Area</th>
+<th style="text-align: right;">CoveredArea</th>
+<th style="text-align: right;">Effort</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">k</th>
+<th style="text-align: right;">ER</th>
+<th style="text-align: right;">se.ER</th>
+<th style="text-align: right;">cv.ER</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Garden City_Rural</td>
+<td style="text-align: right;">20.230</td>
+<td style="text-align: right;">166.237</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0.269</td>
+<td style="text-align: right;">0.332</td>
+<td style="text-align: right;">1.232</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Garden City_Urban</td>
+<td style="text-align: right;">2284.370</td>
+<td style="text-align: right;">703.310</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">0.018</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.701</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Garden City_WMA</td>
+<td style="text-align: right;">1521.618</td>
+<td style="text-align: right;">230.174</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">0.222</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">0.523</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_Rural</td>
+<td style="text-align: right;">1007.840</td>
+<td style="text-align: right;">300.505</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">0.043</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">0.786</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Urban</td>
+<td style="text-align: right;">1827.561</td>
+<td style="text-align: right;">466.742</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">0.329</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">0.240</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_WMA</td>
+<td style="text-align: right;">539.040</td>
+<td style="text-align: right;">262.143</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">0.021</td>
+<td style="text-align: right;">0.854</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Topeka_Urban</td>
+<td style="text-align: right;">19250.760</td>
+<td style="text-align: right;">402.805</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">0.254</td>
+<td style="text-align: right;">0.062</td>
+<td style="text-align: right;">0.243</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topeka_WMA</td>
+<td style="text-align: right;">4249.200</td>
+<td style="text-align: right;">479.530</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">0.133</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.298</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">30700.619</td>
+<td style="text-align: right;">3011.447</td>
+<td style="text-align: right;">471</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">0.212</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.188</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Next step would be to eliminate <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code></h1>
+<section id="for-the-moment-show-estimates-from-pooled-hr-model" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="for-the-moment-show-estimates-from-pooled-hr-model"><span class="header-section-number">11.1</span> For the moment, show estimates from pooled HR model</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.pool.hr<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO density (per hectare) using pooled detection function across location x treatment combos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>MODO density (per hectare) using pooled detection function across location x treatment combos</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Label</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">se</th>
+<th style="text-align: right;">cv</th>
+<th style="text-align: right;">lcl</th>
+<th style="text-align: right;">ucl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Garden City_Rural</td>
+<td style="text-align: right;">0.260</td>
+<td style="text-align: right;">0.327</td>
+<td style="text-align: right;">1.257</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">2.069</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Garden City_Urban</td>
+<td style="text-align: right;">0.018</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.744</td>
+<td style="text-align: right;">0.005</td>
+<td style="text-align: right;">0.066</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Garden City_WMA</td>
+<td style="text-align: right;">0.215</td>
+<td style="text-align: right;">0.125</td>
+<td style="text-align: right;">0.581</td>
+<td style="text-align: right;">0.072</td>
+<td style="text-align: right;">0.639</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_Rural</td>
+<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">0.034</td>
+<td style="text-align: right;">0.825</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">0.177</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Urban</td>
+<td style="text-align: right;">0.318</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">0.348</td>
+<td style="text-align: right;">0.163</td>
+<td style="text-align: right;">0.621</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">McPherson_WMA</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">0.021</td>
+<td style="text-align: right;">0.890</td>
+<td style="text-align: right;">0.005</td>
+<td style="text-align: right;">0.113</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Topeka_Urban</td>
+<td style="text-align: right;">0.245</td>
+<td style="text-align: right;">0.086</td>
+<td style="text-align: right;">0.350</td>
+<td style="text-align: right;">0.125</td>
+<td style="text-align: right;">0.482</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topeka_WMA</td>
+<td style="text-align: right;">0.129</td>
+<td style="text-align: right;">0.050</td>
+<td style="text-align: right;">0.390</td>
+<td style="text-align: right;">0.061</td>
+<td style="text-align: right;">0.272</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">0.205</td>
+<td style="text-align: right;">0.064</td>
+<td style="text-align: right;">0.314</td>
+<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">0.376</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Note the magnitude of CVs for <code>Garden City_Rural</code>, <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code></strong></p>
+<p>Most of those large CVs were caused by very low density, but that is not the case for <code>Garden City_Rural</code>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

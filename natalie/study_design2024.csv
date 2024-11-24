@@ -1,0 +1,463 @@
+"","Location_Treatment","Date","PatchID","PointID","Count"
+"1","Garden City_Rural","4/24/2024","CN1","CN1.1",2
+"2","Garden City_Rural","4/24/2024","CN1","CN1.2",1
+"3","Garden City_Rural","4/24/2024","CN1","CN1.3",3
+"4","Garden City_Rural","4/24/2024","CN2","CN2.1",3
+"5","Garden City_Rural","4/24/2024","CN2","CN2.2",2
+"6","Garden City_Rural","4/24/2024","CN2","CN2.3",1
+"7","Garden City_Rural","4/24/2024","CN3","CN3.1",3
+"8","Garden City_Rural","4/24/2024","CN3","CN3.2",3
+"9","Garden City_Rural","4/24/2024","CN3","CN3.3",5
+"10","Garden City_Rural","4/24/2024","CN4","CN4.1",1
+"11","Garden City_Rural","4/24/2024","CN4","CN4.2",2
+"12","Garden City_Rural","4/24/2024","CN4","CN4.3",2
+"13","Garden City_Rural","4/24/2024","CN5","CN5.2",1
+"14","Garden City_Rural","4/24/2024","CN5","CN5.3",2
+"15","Garden City_Rural","8/1/2024","CN1","CN1.1",2
+"16","Garden City_Rural","8/1/2024","CN1","CN1.2",1
+"17","Garden City_Rural","8/1/2024","CN1","CN1.3",1
+"18","Garden City_Rural","8/1/2024","CN2","CN2.1",2
+"19","Garden City_Rural","8/1/2024","CN3","CN3.1",2
+"20","Garden City_Rural","8/1/2024","CN3","CN3.2",2
+"21","Garden City_Rural","8/1/2024","CN3","CN3.3",1
+"22","Garden City_Rural","8/1/2024","CN4","CN4.2",1
+"23","Garden City_Rural","8/1/2024","CN5","CN5.2",2
+"24","Garden City_Rural","8/7/2024","CN2","CN2.3",7
+"25","Garden City_Rural","8/7/2024","CN5","CN5.1",5
+"26","Garden City_Rural","8/7/2024","CN5","CN5.3",5
+"27","Garden City_Urban","4/1/2024","GC13","GC13.1",2
+"28","Garden City_Urban","4/1/2024","GC13","GC13.2",4
+"29","Garden City_Urban","4/1/2024","GC13","GC13.3",3
+"30","Garden City_Urban","4/1/2024","GC17","GC17.1",3
+"31","Garden City_Urban","4/1/2024","GC17","GC17.2",2
+"32","Garden City_Urban","4/1/2024","GC18","GC18.1",7
+"33","Garden City_Urban","4/1/2024","GC18","GC18.2",4
+"34","Garden City_Urban","4/1/2024","GC19","GC19.1",4
+"35","Garden City_Urban","4/1/2024","GC9","GC9.1",3
+"36","Garden City_Urban","4/1/2024","GC9","GC9.2",2
+"37","Garden City_Urban","4/2/2024","GC19","GC19.2",4
+"38","Garden City_Urban","4/2/2024","GC19","GC19.3",4
+"39","Garden City_Urban","4/2/2024","GC21","GC21.1",1
+"40","Garden City_Urban","4/2/2024","GC21","GC21.2",4
+"41","Garden City_Urban","4/2/2024","GC22","GC22.1",5
+"42","Garden City_Urban","4/2/2024","GC22","GC22.2",4
+"43","Garden City_Urban","4/2/2024","GC23","GC23.1",2
+"44","Garden City_Urban","4/2/2024","GC23","GC23.2",3
+"45","Garden City_Urban","4/2/2024","GC23","GC23.3",2
+"46","Garden City_Urban","4/2/2024","GC24","GC24.1",4
+"47","Garden City_Urban","4/2/2024","GC24","GC24.2",1
+"48","Garden City_Urban","4/3/2024","GC14","GC14.1",5
+"49","Garden City_Urban","4/3/2024","GC14","GC14.2",3
+"50","Garden City_Urban","4/3/2024","GC15","GC15.1",3
+"51","Garden City_Urban","4/3/2024","GC15","GC15.2",2
+"52","Garden City_Urban","4/3/2024","GC16","GC16.1",3
+"53","Garden City_Urban","4/3/2024","GC16","GC16.2",3
+"54","Garden City_Urban","4/3/2024","GC20","GC20.1",4
+"55","Garden City_Urban","4/3/2024","GC20","GC20.2",4
+"56","Garden City_Urban","4/3/2024","GC20","GC20.3",4
+"57","Garden City_Urban","4/4/2024","GC10","GC10.1",4
+"58","Garden City_Urban","4/4/2024","GC10","GC10.2",5
+"59","Garden City_Urban","4/4/2024","GC11","GC11.1",5
+"60","Garden City_Urban","4/4/2024","GC11","GC11.2",4
+"61","Garden City_Urban","4/4/2024","GC12","GC12.2",9
+"62","Garden City_Urban","4/4/2024","GC6","GC6.2",3
+"63","Garden City_Urban","4/4/2024","GC7","GC7.1",5
+"64","Garden City_Urban","4/4/2024","GC7","GC7.2",4
+"65","Garden City_Urban","4/4/2024","GC7","GC7.3",2
+"66","Garden City_Urban","4/4/2024","GC8","GC8.1",1
+"67","Garden City_Urban","4/4/2024","GC8","GC8.2",1
+"68","Garden City_Urban","4/5/2024","GC1","GC1.1",3
+"69","Garden City_Urban","4/5/2024","GC1","GC1.2",2
+"70","Garden City_Urban","4/5/2024","GC2","GC2.1",3
+"71","Garden City_Urban","4/5/2024","GC2","GC2.2",3
+"72","Garden City_Urban","4/5/2024","GC3","GC3.1",2
+"73","Garden City_Urban","4/5/2024","GC3","GC3.2",5
+"74","Garden City_Urban","4/5/2024","GC4","GC4.1",4
+"75","Garden City_Urban","4/5/2024","GC4","GC4.2",3
+"76","Garden City_Urban","4/5/2024","GC4","GC4.3",5
+"77","Garden City_Urban","4/5/2024","GC5","GC5.1",2
+"78","Garden City_Urban","4/5/2024","GC5","GC5.2",2
+"79","Garden City_Urban","4/5/2024","GC5","GC5.3",3
+"80","Garden City_Urban","4/5/2024","GC6","GC6.1",3
+"81","Garden City_Urban","8/14/2024","GC17","GC17.1",4
+"82","Garden City_Urban","8/14/2024","GC17","GC17.2",5
+"83","Garden City_Urban","8/14/2024","GC18","GC18.1",8
+"84","Garden City_Urban","8/14/2024","GC18","GC18.2",5
+"85","Garden City_Urban","8/15/2024","GC13","GC13.1",7
+"86","Garden City_Urban","8/15/2024","GC13","GC13.2",2
+"87","Garden City_Urban","8/15/2024","GC13","GC13.3",9
+"88","Garden City_Urban","8/15/2024","GC2","GC2.2",1
+"89","Garden City_Urban","8/15/2024","GC3","GC3.1",1
+"90","Garden City_Urban","8/15/2024","GC3","GC3.2",1
+"91","Garden City_Urban","8/15/2024","GC5","GC5.2",1
+"92","Garden City_Urban","8/15/2024","GC5","GC5.3",2
+"93","Garden City_Urban","8/15/2024","GC6","GC6.1",6
+"94","Garden City_Urban","8/15/2024","GC7","GC7.1",4
+"95","Garden City_Urban","8/15/2024","GC9","GC9.1",2
+"96","Garden City_Urban","8/15/2024","GC9","GC9.2",5
+"97","Garden City_Urban","8/2/2024","GC12","GC12.1",6
+"98","Garden City_Urban","8/2/2024","GC16","GC16.1",8
+"99","Garden City_Urban","8/2/2024","GC16","GC16.2",3
+"100","Garden City_Urban","8/2/2024","GC8","GC8.1",6
+"101","Garden City_Urban","8/2/2024","GC8","GC8.2",4
+"102","Garden City_Urban","8/26/2024","GC15","GC15.2",2
+"103","Garden City_Urban","8/26/2024","GC16","GC16.1",2
+"104","Garden City_Urban","8/26/2024","GC16","GC16.2",3
+"105","Garden City_Urban","8/26/2024","GC18","GC18.2",3
+"106","Garden City_Urban","8/26/2024","GC19","GC19.1",8
+"107","Garden City_Urban","8/26/2024","GC19","GC19.2",4
+"108","Garden City_Urban","8/26/2024","GC19","GC19.3",4
+"109","Garden City_Urban","8/26/2024","GC20","GC20.2",4
+"110","Garden City_Urban","8/26/2024","GC20","GC20.3",10
+"111","Garden City_Urban","8/26/2024","GC21","GC21.1",2
+"112","Garden City_Urban","8/26/2024","GC21","GC21.2",2
+"113","Garden City_Urban","8/26/2024","GC22","GC22.1",3
+"114","Garden City_Urban","8/26/2024","GC22","GC22.2",3
+"115","Garden City_Urban","8/27/2024","GC23","GC23.1",5
+"116","Garden City_Urban","8/27/2024","GC23","GC23.2",4
+"117","Garden City_Urban","8/27/2024","GC23","GC23.3",5
+"118","Garden City_Urban","8/27/2024","GC24","GC24.1",7
+"119","Garden City_Urban","8/27/2024","GC24","GC24.2",4
+"120","Garden City_Urban","8/27/2024","GC4","GC4.1",6
+"121","Garden City_Urban","8/27/2024","GC4","GC4.3",5
+"122","Garden City_Urban","8/28/2024","GC1","GC1.1",4
+"123","Garden City_Urban","8/28/2024","GC1","GC1.2",3
+"124","Garden City_Urban","8/28/2024","GC4","GC4.2",7
+"125","Garden City_Urban","8/28/2024","GC6","GC6.2",4
+"126","Garden City_Urban","8/28/2024","GC7","GC7.2",7
+"127","Garden City_Urban","8/29/2024","GC11","GC11.1",5
+"128","Garden City_Urban","8/29/2024","GC12","GC12.2",4
+"129","Garden City_Urban","8/29/2024","GC14","GC14.1",6
+"130","Garden City_Urban","8/29/2024","GC14","GC14.2",5
+"131","Garden City_Urban","8/29/2024","GC15","GC15.1",4
+"132","Garden City_Urban","8/29/2024","GC20","GC20.1",6
+"133","Garden City_Urban","8/30/2024","GC10","GC10.1",3
+"134","Garden City_Urban","8/30/2024","GC10","GC10.2",4
+"135","Garden City_Urban","8/30/2024","GC11","GC11.2",4
+"136","Garden City_Urban","8/30/2024","GC7","GC7.3",6
+"137","Garden City_WMA","4/17/2024","BR4","BR4.1",5
+"138","Garden City_WMA","4/17/2024","BR4","BR4.2",3
+"139","Garden City_WMA","4/17/2024","BR5","BR5.1",4
+"140","Garden City_WMA","4/17/2024","BR5","BR5.2",2
+"141","Garden City_WMA","4/17/2024","BR6","BR6.1",2
+"142","Garden City_WMA","4/17/2024","BR6","BR6.2",2
+"143","Garden City_WMA","4/17/2024","BR8","BR8.1",2
+"144","Garden City_WMA","4/17/2024","BR8","BR8.2",1
+"145","Garden City_WMA","4/22/2024","BR 15","BR15.1",1
+"146","Garden City_WMA","4/22/2024","BR 15","BR15.2",2
+"147","Garden City_WMA","4/22/2024","BR11","BR11.1",1
+"148","Garden City_WMA","4/22/2024","BR11","BR11.2",3
+"149","Garden City_WMA","4/22/2024","BR12","BR12.2",3
+"150","Garden City_WMA","4/29/2024","BR10","BR10.2",2
+"151","Garden City_WMA","4/29/2024","BR13","BR13.1",3
+"152","Garden City_WMA","4/29/2024","BR13","BR13.2",1
+"153","Garden City_WMA","4/29/2024","BR14","BR14.1",3
+"154","Garden City_WMA","4/29/2024","BR14","BR14.2",2
+"155","Garden City_WMA","4/29/2024","BR9","BR9.2",1
+"156","Garden City_WMA","5/6/2024","BR7","BR7.1",1
+"157","Garden City_WMA","5/7/2024","BR1","BR1.2",2
+"158","Garden City_WMA","5/7/2024","BR2","BR2.2",1
+"159","Garden City_WMA","5/8/2024","BR2","BR2.1",1
+"160","Garden City_WMA","5/8/2024","BR3","BR3.1",1
+"161","Garden City_WMA","5/8/2024","BR3","BR3.2",1
+"162","Garden City_WMA","7/29/2024","BR11","BR11.2",4
+"163","Garden City_WMA","7/30/2024","BR1","BR1.1",2
+"164","Garden City_WMA","7/30/2024","BR1","BR1.2",3
+"165","Garden City_WMA","7/30/2024","BR2","BR2.1",3
+"166","Garden City_WMA","7/30/2024","BR2","BR2.2",2
+"167","Garden City_WMA","7/31/2024","BR11","BR11.1",2
+"168","Garden City_WMA","8/13/2024","BR7","BR7.2",5
+"169","Garden City_WMA","8/14/2024","BR6","BR6.2",6
+"170","Garden City_WMA","8/5/2024","BR4","BR4.1",1
+"171","Garden City_WMA","8/5/2024","BR4","BR4.2",1
+"172","Garden City_WMA","8/5/2024","BR8","BR8.1",2
+"173","Inman_WMA","7/16/2024","IN1","IN1.1",8
+"174","Inman_WMA","7/16/2024","IN1","IN1.2",7
+"175","Inman_WMA","7/16/2024","IN2","IN2.1",4
+"176","Inman_WMA","7/16/2024","IN3","IN3.1",2
+"177","Inman_WMA","7/16/2024","IN3","IN3.2",4
+"178","McPherson_Rual","8/23/2024","BB6","BB6.1",4
+"179","McPherson_Rural","4/25/2024","BB3","BB3.2",3
+"180","McPherson_Rural","4/25/2024","BB3","BB3.3",1
+"181","McPherson_Rural","4/25/2024","BB5","BB5.1",3
+"182","McPherson_Rural","4/25/2024","BB5","BB5.2",4
+"183","McPherson_Rural","4/25/2024","BB6","BB6.1",5
+"184","McPherson_Rural","4/25/2024","BB6","BB6.2",2
+"185","McPherson_Rural","7/10/2024","BB7","BB7.1",7
+"186","McPherson_Rural","7/10/2024","BB8","BB8.1",7
+"187","McPherson_Rural","7/15/2024","BB12","BB12.1",11
+"188","McPherson_Rural","7/15/2024","BB12","BB12.3",10
+"189","McPherson_Rural","7/15/2024","BB13","BB13.2",10
+"190","McPherson_Rural","7/15/2024","BB3","BB3.1",3
+"191","McPherson_Rural","7/15/2024","BB7","BB7.2",8
+"192","McPherson_Rural","7/15/2024","BB8","BB8.1",12
+"193","McPherson_Rural","7/15/2024","BB8","BB8.2",9
+"194","McPherson_Rural","7/22/2024","BB9","BB9.1",4
+"195","McPherson_Rural","7/22/2024","BB9","BB9.2",9
+"196","McPherson_Rural","7/22/2024","MC24","MC24.1",2
+"197","McPherson_Rural","7/22/2024","MC24","MC24.2",2
+"198","McPherson_Rural","7/22/2024","MC26","MC26.1",3
+"199","McPherson_Rural","7/22/2024","MC26","MC26.2",4
+"200","McPherson_Rural","7/25/2024","BB11","BB11.1",6
+"201","McPherson_Rural","7/25/2024","BB11","BB11.2",3
+"202","McPherson_Rural","7/25/2024","BB12","B12.2",5
+"203","McPherson_Rural","7/25/2024","BB13","BB13.1",5
+"204","McPherson_Rural","7/25/2024","BB13","BB13.3",4
+"205","McPherson_Rural","8/16/2024","BB1","BB1.1",3
+"206","McPherson_Rural","8/16/2024","BB1","BB1.2",2
+"207","McPherson_Rural","8/16/2024","BB1","BB1.3",5
+"208","McPherson_Rural","8/16/2024","BB3","BB3.2",2
+"209","McPherson_Rural","8/20/2024","MC10","MC10.2",1
+"210","McPherson_Rural","8/20/2024","MC11","MC11.1",8
+"211","McPherson_Rural","8/20/2024","MC4","MC4.2",4
+"212","McPherson_Rural","8/21/2024","BB4","BB4.1",2
+"213","McPherson_Rural","8/21/2024","BB4","BB4.2",6
+"214","McPherson_Rural","8/21/2024","BB5","BB5.1",1
+"215","McPherson_Rural","8/21/2024","BB5","BB5.2",1
+"216","McPherson_Urban","4/1/2024","MC1","MC1.1",7
+"217","McPherson_Urban","4/1/2024","MC1","MC1.2",3
+"218","McPherson_Urban","4/12/2024","MC11","MC11.1",2
+"219","McPherson_Urban","4/12/2024","MC18","MC18.1",3
+"220","McPherson_Urban","4/12/2024","MC18","MC18.2",3
+"221","McPherson_Urban","4/12/2024","MC21","MC21.1",4
+"222","McPherson_Urban","4/12/2024","MC21","MC21.2",4
+"223","McPherson_Urban","4/16/2024","MC12","MC12.1",4
+"224","McPherson_Urban","4/16/2024","MC17","MC17.1",3
+"225","McPherson_Urban","4/16/2024","MC18","MC18.1",2
+"226","McPherson_Urban","4/16/2024","MC18","MC18.2",3
+"227","McPherson_Urban","4/16/2024","MC19","MC19.1",1
+"228","McPherson_Urban","4/16/2024","MC20","MC20.2",2
+"229","McPherson_Urban","4/2/2024","MC2","MC2.1",4
+"230","McPherson_Urban","4/2/2024","MC2","MC2.2",3
+"231","McPherson_Urban","4/3/2024","MC4","MC4.2",4
+"232","McPherson_Urban","4/4/2024","MC5","MC5.1",7
+"233","McPherson_Urban","4/4/2024","MC5","MC5.2",8
+"234","McPherson_Urban","4/4/2024","MC6","MC6.1",9
+"235","McPherson_Urban","4/4/2024","MC6","MC6.2",8
+"236","McPherson_Urban","4/4/2024","MC7","MC7.1",7
+"237","McPherson_Urban","4/4/2024","MC7","MC7.2",3
+"238","McPherson_Urban","4/4/2024","MC8","MC8.2",7
+"239","McPherson_Urban","4/4/2024","MC9","MC9.1",1
+"240","McPherson_Urban","4/4/2024","MC9","MC9.2",3
+"241","McPherson_Urban","4/5/2024","MC10","MC10.1",9
+"242","McPherson_Urban","4/5/2024","MC10","MC10.2",4
+"243","McPherson_Urban","4/5/2024","MC11","MC11.2",6
+"244","McPherson_Urban","4/5/2024","MC13","MC 13.2",2
+"245","McPherson_Urban","4/5/2024","MC13","MC13.1",1
+"246","McPherson_Urban","4/5/2024","MC15","MC15.1",2
+"247","McPherson_Urban","4/5/2024","MC17","MC17.2",3
+"248","McPherson_Urban","7/18/2024","MC15","MC15.2",4
+"249","McPherson_Urban","7/18/2024","MC16","MC16.1",1
+"250","McPherson_Urban","7/18/2024","MC25","MC25.1",6
+"251","McPherson_Urban","7/18/2024","MC25","MC25.2",3
+"252","McPherson_Urban","7/18/2024","MC3","MC3.2",1
+"253","McPherson_Urban","7/18/2024","MC8","MC8.1",1
+"254","McPherson_Urban","7/19/2024","MC22","MC22.2",6
+"255","McPherson_Urban","7/19/2024","MC23","MC23.1",7
+"256","McPherson_Urban","7/19/2024","MC27","MC27.1",4
+"257","McPherson_Urban","7/29/2024","MC5","MC5.1",3
+"258","McPherson_Urban","7/29/2024","MC9","MC9.1",3
+"259","McPherson_Urban","7/29/2024","MC9","MC9.2",1
+"260","McPherson_Urban","7/30/2024","MC18","MC18.2",1
+"261","McPherson_Urban","7/30/2024","MC19","MC19.1",1
+"262","McPherson_Urban","7/30/2024","MC19","MC19.2",2
+"263","McPherson_Urban","7/30/2024","MC20","MC20.1",2
+"264","McPherson_Urban","7/30/2024","MC20","MC20.2",2
+"265","McPherson_Urban","7/30/2024","MC21","MC21.2",4
+"266","McPherson_Urban","8/13/2024","MC2","MC2.1",4
+"267","McPherson_Urban","8/13/2024","MC2","MC2.2",3
+"268","McPherson_Urban","8/13/2024","MC5","MC5.2",4
+"269","McPherson_Urban","8/13/2024","MC6","MC6.1",5
+"270","McPherson_Urban","8/13/2024","MC6","MC6.2",4
+"271","McPherson_Urban","8/15/2024","MC1","MC1.1",4
+"272","McPherson_Urban","8/15/2024","MC1","MC1.2",3
+"273","McPherson_Urban","8/15/2024","MC10","MC10.1",2
+"274","McPherson_Urban","8/15/2024","MC11","MC11.1",1
+"275","McPherson_Urban","8/15/2024","MC7","MC7.1",1
+"276","McPherson_Urban","8/15/2024","MC7","MC7.2",2
+"277","McPherson_Urban","8/15/2024","MC8","MC8.2",3
+"278","McPherson_Urban","8/7/2024","MC12","MC12.1",5
+"279","McPherson_Urban","8/7/2024","MC13","MC13.1",5
+"280","McPherson_Urban","8/7/2024","MC13","MC13.2",5
+"281","McPherson_Urban","8/7/2024","MC14","MC14.1",2
+"282","McPherson_Urban","8/7/2024","MC14","MC14.2",2
+"283","McPherson_Urban","8/7/2024","MC15","MC15.1",1
+"284","McPherson_Urban","8/7/2024","MC17","MC17.1",4
+"285","McPherson_Urban","8/7/2024","MC18","MC18.1",3
+"286","McPherson_WM","4/10/2024","BB1","BB1.1",5
+"287","McPherson_WM","4/10/2024","BB1","BB1.2",6
+"288","McPherson_WM","4/10/2024","BB1","BB1.3",6
+"289","McPherson_WM","4/10/2024","BB2","BB2.1",5
+"290","McPherson_WM","4/10/2024","BB2","BB2.2",2
+"291","McPherson_WM","4/10/2024","BB4","BB4.1",5
+"292","McPherson_WM","4/10/2024","BB4","BB4.2",3
+"293","McPherson_WM","4/10/2024","BB4","BB4.3",5
+"294","McPherson_WMA","4/17/2024","IN3","IN3.3",3
+"295","McPherson_WMA","4/17/2024","IN5","IN5.2",3
+"296","McPherson_WMA","4/17/2024","IN5","IN5.4",3
+"297","McPherson_WMA","4/17/2024","IN6","IN6.1",3
+"298","McPherson_WMA","4/17/2024","IN6","IN6.4",4
+"299","McPherson_WMA","4/18/2024","IN2","IN2.2",2
+"300","McPherson_WMA","4/18/2024","IN2","IN2.3",3
+"301","McPherson_WMA","4/18/2024","IN4","IN4.1",5
+"302","McPherson_WMA","4/18/2024","IN4","IN4.2",3
+"303","McPherson_WMA","4/18/2024","IN4","IN4.3",4
+"304","McPherson_WMA","4/18/2024","IN4","IN4.4",4
+"305","McPherson_WMA","4/18/2024","IN5","IN5.1",3
+"306","McPherson_WMA","4/23/2024","IN4","IN4.1",2
+"307","McPherson_WMA","4/23/2024","IN4","IN4.2",2
+"308","McPherson_WMA","4/23/2024","IN8","IN8.1",2
+"309","McPherson_WMA","4/23/2024","IN8","IN8.3",5
+"310","McPherson_WMA","4/23/2024","IN8","IN8.4",3
+"311","McPherson_WMA","4/23/2024","IN9","IN9.1",3
+"312","McPherson_WMA","4/23/2024","IN9","IN9.2",3
+"313","McPherson_WMA","7/23/2024","IN6","IN6.2",5
+"314","McPherson_WMA","7/23/2024","MC27","MC27.3",3
+"315","McPherson_WMA","7/24/2024","IN7","IN7.1",5
+"316","McPherson_WMA","7/24/2024","IN7","IN7.2",1
+"317","McPherson_WMA","7/24/2024","IN8","IN8.2",2
+"318","McPherson_WMA","7/26/2024","IN8","IN8.2",3
+"319","McPherson_WMA","7/26/2024","IN8","IN8.4",5
+"320","McPherson_WMA","7/26/2024","IN9","IN9.2",1
+"321","McPherson_WMA","8/1/2024","IN4","IN4.2",3
+"322","McPherson_WMA","8/1/2024","IN5","IN5.4",4
+"323","McPherson_WMA","8/1/2024","IN6","IN6.1",2
+"324","McPherson_WMA","8/1/2024","IN8","IN8.1",2
+"325","McPherson_WMA","8/2/2024","IN4","IN4.1",2
+"326","McPherson_WMA","8/2/2024","IN4","IN4.3",3
+"327","McPherson_WMA","8/2/2024","IN4","IN4.4",2
+"328","McPherson_WMA","8/5/2024","IN2","IN2.2",1
+"329","McPherson_WMA","8/5/2024","IN2","IN2.3",2
+"330","McPherson_WMA","8/5/2024","IN3","IN3.1",2
+"331","McPherson_WMA","8/5/2024","IN3","IN3.2",2
+"332","McPherson_WMA","8/5/2024","IN3","IN3.3",1
+"333","Topeka_Urban","4/22/2024","T2","T2.1",5
+"334","Topeka_Urban","4/22/2024","T2","T2.2",4
+"335","Topeka_Urban","4/22/2024","T5","T5.1",4
+"336","Topeka_Urban","4/22/2024","T5","T5.2",7
+"337","Topeka_Urban","4/23/2024","T10","T10.2",3
+"338","Topeka_Urban","4/23/2024","T13","T13.1",1
+"339","Topeka_Urban","4/23/2024","T16","T16.2",5
+"340","Topeka_Urban","4/23/2024","T22","T22.1",4
+"341","Topeka_Urban","4/23/2024","T22","T22.2",5
+"342","Topeka_Urban","4/23/2024","T9","T9.1",4
+"343","Topeka_Urban","4/23/2024","T9","T9.2",2
+"344","Topeka_Urban","4/29/2024","T12","T12.1",5
+"345","Topeka_Urban","4/29/2024","T12","T12.2",3
+"346","Topeka_Urban","4/29/2024","T8","T8.2",4
+"347","Topeka_Urban","4/30/2024","T11","T11.1",5
+"348","Topeka_Urban","4/30/2024","T11","T11.2",3
+"349","Topeka_Urban","4/30/2024","T14","T14.1",3
+"350","Topeka_Urban","4/30/2024","T14","T14.2",5
+"351","Topeka_Urban","4/30/2024","T18","T18.1",6
+"352","Topeka_Urban","4/30/2024","T18","T18.2",2
+"353","Topeka_Urban","4/30/2024","T20","T20.1",2
+"354","Topeka_Urban","4/30/2024","T20","T20.2",3
+"355","Topeka_Urban","5/1/2024","T19","T19.1",5
+"356","Topeka_Urban","5/1/2024","T19","T19.2",4
+"357","Topeka_Urban","5/1/2024","T21","T21.1",6
+"358","Topeka_Urban","5/1/2024","T21","T21.2",1
+"359","Topeka_Urban","5/3/2024","T15","T15.1",5
+"360","Topeka_Urban","5/3/2024","T15","T15.2",4
+"361","Topeka_Urban","5/3/2024","T17","T17.2",4
+"362","Topeka_Urban","5/3/2024","T7","T7.1",5
+"363","Topeka_Urban","5/3/2024","T7","T7.2",5
+"364","Topeka_Urban","7/10/2024","PL6","T6.1",1
+"365","Topeka_Urban","7/10/2024","T2","T2.1",5
+"366","Topeka_Urban","7/10/2024","T2","T2.2",1
+"367","Topeka_Urban","7/10/2024","T22","T22.1",2
+"368","Topeka_Urban","7/10/2024","T22","T22.2",1
+"369","Topeka_Urban","7/10/2024","T3","T3.1",4
+"370","Topeka_Urban","7/10/2024","T3","T3.2",2
+"371","Topeka_Urban","7/10/2024","T4","T4.1",1
+"372","Topeka_Urban","7/12/2024","T10","T10.1",1
+"373","Topeka_Urban","7/12/2024","T13","T13.2",1
+"374","Topeka_Urban","7/12/2024","T15","T15.1",3
+"375","Topeka_Urban","7/12/2024","T15","T15.2",2
+"376","Topeka_Urban","7/12/2024","T16","T16.1",3
+"377","Topeka_Urban","7/12/2024","T16","T16.2",6
+"378","Topeka_Urban","7/12/2024","T17","T17.2",2
+"379","Topeka_Urban","7/12/2024","T5","T5.1",5
+"380","Topeka_Urban","7/12/2024","T5","T5.2",3
+"381","Topeka_Urban","7/12/2024","T9","T9.1",3
+"382","Topeka_Urban","7/12/2024","T9","T9.2",3
+"383","Topeka_Urban","7/16/2024","T11","T11.2",4
+"384","Topeka_Urban","7/16/2024","T12","T12.1",2
+"385","Topeka_Urban","7/16/2024","T14","T14.2",4
+"386","Topeka_Urban","7/30/2024","T18","T18.1",1
+"387","Topeka_Urban","7/30/2024","T18","T18.2",1
+"388","Topeka_Urban","7/30/2024","T19","T19.1",1
+"389","Topeka_Urban","7/30/2024","T19","T19.2",1
+"390","Topeka_Urban","7/30/2024","T20","T20.2",2
+"391","Topeka_Urban","7/30/2024","T7","T7.1",1
+"392","Topeka_WMA","4/10/2024","PL11","PL11.1",1
+"393","Topeka_WMA","4/10/2024","PL11","PL11.2",1
+"394","Topeka_WMA","4/10/2024","PL12","PL12.1",3
+"395","Topeka_WMA","4/10/2024","PL12","PL12.2",2
+"396","Topeka_WMA","4/10/2024","PL6","PL6.1",4
+"397","Topeka_WMA","4/10/2024","PL9","PL9.1",1
+"398","Topeka_WMA","4/10/2024","PL9","PL9.2",2
+"399","Topeka_WMA","4/12/2024","PL10","PL10.1",6
+"400","Topeka_WMA","4/12/2024","PL10","PL10.2",4
+"401","Topeka_WMA","4/12/2024","PL4","PL4.1",3
+"402","Topeka_WMA","4/12/2024","PL4","PL4.2",3
+"403","Topeka_WMA","4/12/2024","PL5","PL5.1",5
+"404","Topeka_WMA","4/12/2024","PL5","PL5.2",4
+"405","Topeka_WMA","4/12/2024","PL7","PL7.1",3
+"406","Topeka_WMA","4/12/2024","PL7","PL7.2",2
+"407","Topeka_WMA","4/15/2024","PL1","PL1.2",4
+"408","Topeka_WMA","4/15/2024","PL13","PL13.1",4
+"409","Topeka_WMA","4/15/2024","PL13","PL13.2",1
+"410","Topeka_WMA","4/15/2024","PL3","PL3.1",1
+"411","Topeka_WMA","4/15/2024","PL8","PL8.1",1
+"412","Topeka_WMA","4/19/2024","PL2","PL2.1",5
+"413","Topeka_WMA","4/19/2024","T2","T2.2",2
+"414","Topeka_WMA","4/19/2024","T21","T21.1",2
+"415","Topeka_WMA","4/19/2024","T21","T21.2",2
+"416","Topeka_WMA","4/24/2024","PL15","PL15.1",2
+"417","Topeka_WMA","4/24/2024","PL15","PL15.2",2
+"418","Topeka_WMA","4/24/2024","PL20","PL20.1",1
+"419","Topeka_WMA","4/24/2024","PL22","PL22.2",4
+"420","Topeka_WMA","4/24/2024","PL23","PL23.2",1
+"421","Topeka_WMA","4/25/2024","PL3","PL3.1",3
+"422","Topeka_WMA","4/25/2024","PL3","PL3.2",7
+"423","Topeka_WMA","4/25/2024","PL4","PL4.1",6
+"424","Topeka_WMA","4/25/2024","PL4","PL4.2",5
+"425","Topeka_WMA","4/25/2024","PL6","PL6.1",5
+"426","Topeka_WMA","4/25/2024","PL6","PL6.2",6
+"427","Topeka_WMA","4/25/2024","PL8","PL8.1",4
+"428","Topeka_WMA","4/8/2024","PL16","PL16.1",2
+"429","Topeka_WMA","4/8/2024","PL16","PL16.2",3
+"430","Topeka_WMA","4/8/2024","PL17","PL17.2",3
+"431","Topeka_WMA","4/8/2024","PL19","PL19.2",2
+"432","Topeka_WMA","4/9/2024","PL18","PL18.2",1
+"433","Topeka_WMA","4/9/2024","PL25","PL25.2",1
+"434","Topeka_WMA","7/11/2024","PL10","PL10.2",2
+"435","Topeka_WMA","7/11/2024","PL11","PL11.1",1
+"436","Topeka_WMA","7/11/2024","PL3","PL3.1",2
+"437","Topeka_WMA","7/11/2024","PL7","PL7.1",1
+"438","Topeka_WMA","7/11/2024","PL7","PL7.2",1
+"439","Topeka_WMA","7/29/2024","PL5","PL5.1",1
+"440","Topeka_WMA","8/12/2024","PL25","PL25.1",1
+"441","Topeka_WMA","8/15/2024","PL4","PL4.2",1
+"442","Topeka_WMA","8/15/2024","PL6","PL6.2",1
+"443","Topeka_WMA","8/16/2024","PL22","PL22.2",3
+"444","Topeka_WMA","8/16/2024","PL23","PL23.1",4
+"445","Topeka_WMA","8/16/2024","PL23","PL23.2",3
+"446","Topeka_WMA","8/2/2024","PL1","PL1.2",4
+"447","Topeka_WMA","8/2/2024","T2","T2.2",1
+"448","Topeka_WMA","8/20/2024","PL13","PL13.1",3
+"449","Topeka_WMA","8/20/2024","PL13","PL13.2",3
+"450","Topeka_WMA","8/20/2024","PL14","PL14.1",2
+"451","Topeka_WMA","8/20/2024","PL14","PL14.2",2
+"452","Topeka_WMA","8/20/2024","PL15","PL15.2",2
+"453","Topeka_WMA","8/20/2024","PL19","PL19.1",3
+"454","Topeka_WMA","8/20/2024","PL19","PL19.2",2
+"455","Topeka_WMA","8/20/2024","PL20","PL20.1",2
+"456","Topeka_WMA","8/20/2024","PL8","PL8.1",5
+"457","Topeka_WMA","8/20/2024","PL8","PL8.2",6
+"458","Topeka_WMA","8/7/2024","PL17","PL17.1",1
+"459","Topeka_WMA","8/7/2024","PL17","PL17.2",4
+"460","Topeka_WMA","8/8/2024","PL12","PL12.1",2
+"461","Topeka_WMA","8/8/2024","PL12","PL12.2",1
+"462","Topeka_WMA","8/8/2024","PL9","PL9.1",3

@@ -26,7 +26,7 @@
     "href": "natalie/pegg.html",
     "title": "Mourning doves 🕊️",
     "section": "",
-    "text": "1 What are mourning doves up to?\n\n\nStudy Locations\n\nTopeka (east)\nMcPherson (central)\nGarden City (west)\n\nTreatments include \n\nWMAs (wildlife managed areas)\nurban (developed)\nrural\n\n\n\n\n\nMap of Kansas\n\n\n\n\n\n\n2 Get acquainted with data\n\npegg &lt;- read.csv(\"Distance_2024.csv\")\n\n\ntable(pegg$StudyLocation, pegg$Treatment)\n\n             \n              Rual Rural Urban  WM WMA\n  Garden City    0    62   430   0  81\n  Inman          0     0     0   0  25\n  McPherson      4   177   247  37 111\n  Topeka         0     0   190   0 191\n\npegg$Treatment &lt;- ifelse(pegg$Treatment==\"Rual\", \"Rural\", pegg$Treatment)\npegg$Treatment &lt;- ifelse(pegg$Treatment==\"WM\", \"WMA\", pegg$Treatment)\ntable(pegg$StudyLocation, pegg$Treatment)\n\n             \n              Rural Urban WMA\n  Garden City    62   430  81\n  Inman           0     0  25\n  McPherson     181   247 148\n  Topeka          0   190 191",
+    "text": "Study Locations\n\nTopeka (east)\nMcPherson (central)\nGarden City (west)\n\nTreatments include \n\nWMAs (wildlife managed areas)\nurban (developed)\nrural\n\n\n\n\n\nMap of Kansas",
     "crumbs": [
       "Mourning doves 🕊️"
     ]
@@ -222,6 +222,46 @@
     "crumbs": [
       "Sandhill birds 🐦",
       "Sandhills Grassland Birds grid as strata 🐦"
+    ]
+  },
+  {
+    "objectID": "natalie/pegg.html#pooled-detection-function",
+    "href": "natalie/pegg.html#pooled-detection-function",
+    "title": "Mourning doves 🕊️",
+    "section": "10.1 Pooled detection function",
+    "text": "10.1 Pooled detection function\n\nmodo.pool.unif &lt;- ds(data=clean.data[clean.data$Species==\"Mourning Dove\",], \n                   region_table = regtab, sample_table = samtab,\n                   transect = \"point\", key=\"unif\", truncation = \"10%\", convert_units = cu)\nmodo.pool.hn &lt;- ds(data=clean.data[clean.data$Species==\"Mourning Dove\",], \n                   region_table = regtab, sample_table = samtab,\n                   transect = \"point\", key=\"hn\", adj=\"herm\", truncation = \"10%\", convert_units = cu)\nmodo.pool.hr &lt;- ds(data=clean.data[clean.data$Species==\"Mourning Dove\",], \n                   region_table = regtab, sample_table = samtab,\n                   transect = \"point\", key=\"hr\", adj=\"poly\", truncation = \"10%\", convert_units = cu)",
+    "crumbs": [
+      "Mourning doves 🕊️"
+    ]
+  },
+  {
+    "objectID": "natalie/pegg.html#model-criticism",
+    "href": "natalie/pegg.html#model-criticism",
+    "title": "Mourning doves 🕊️",
+    "section": "10.2 Model criticism",
+    "text": "10.2 Model criticism\n\nsummarize_ds_models(modo.pool.unif, modo.pool.hn, modo.pool.hr)\n\n                     Model                                      Key function\n3   \\\\texttt{modo.pool.hr}                                       Hazard-rate\n1 \\\\texttt{modo.pool.unif} Uniform with cosine adjustment terms of order 1,2\n2   \\\\texttt{modo.pool.hn}                                       Half-normal\n  Formula C-vM p-value $\\\\hat{P_a}$ se($\\\\hat{P_a}$) $\\\\Delta$AIC\n3      ~1    0.8878239    0.1618245       0.04071732     0.000000\n1    &lt;NA&gt;    0.2448428    0.1982327       0.02202525     3.757254\n2      ~1    0.1212906    0.2147303       0.02331904     5.065259",
+    "crumbs": [
+      "Mourning doves 🕊️"
+    ]
+  },
+  {
+    "objectID": "natalie/pegg.html#location-x-treatment-specific-detection-function",
+    "href": "natalie/pegg.html#location-x-treatment-specific-detection-function",
+    "title": "Mourning doves 🕊️",
+    "section": "10.3 Location x treatment specific detection function",
+    "text": "10.3 Location x treatment specific detection function\n\nmodo.hn.region &lt;- ds(data=clean.data[clean.data$Species==\"Mourning Dove\",], \n                   region_table = regtab, sample_table = samtab,\n                   transect = \"point\", key=\"hn\",\n                   formula=~Region.Label,\n                   truncation = \"10%\", convert_units = cu)\nmodo.hr.region &lt;- ds(data=clean.data[clean.data$Species==\"Mourning Dove\",], \n                   region_table = regtab, sample_table = samtab,\n                   transect = \"point\", key=\"hr\",\n                   formula=~Region.Label,\n                   truncation = \"10%\", convert_units = cu)\n\n\nsummarize_ds_models(modo.hn.region, modo.hr.region)\n\n                     Model Key function       Formula C-vM p-value $\\\\hat{P_a}$\n2 \\\\texttt{modo.hr.region}  Hazard-rate ~Region.Label    0.5497442    0.1414494\n1 \\\\texttt{modo.hn.region}  Half-normal ~Region.Label    0.4812433    0.1575224\n  se($\\\\hat{P_a}$) $\\\\Delta$AIC\n2         319.6063     0.000000\n1         901.7174     4.061256\n\n\nlook at ugly SE(Pa) for both models, convergence trouble\n\nsummary(modo.hr.region$ddf)\n\n\nSummary for ds object\nNumber of observations :  70 \nDistance range         :  0  -  142.66 \nAIC                    :  664.5423 \nOptimisation           :  mrds (nlminb) \n\nDetection function:\n Hazard-rate key function \n\nDetection function parameters \nScale coefficient(s): \n                                estimate           se\n(Intercept)                    4.3686531 3.520670e-01\nRegion.LabelGarden City_Urban  0.2568244 7.067202e+00\nRegion.LabelGarden City_WMA   -0.7176506 4.575404e-01\nRegion.LabelMcPherson_Rural    1.3277385 6.462278e+04\nRegion.LabelMcPherson_Urban   -0.4431121 3.848422e-01\nRegion.LabelMcPherson_WMA     -0.6396865 1.000000e+05\nRegion.LabelTopeka_Urban      -1.1235875 4.208473e-01\nRegion.LabelTopeka_WMA        -0.6590405 4.339164e-01\n\nShape coefficient(s):  \n            estimate        se\n(Intercept) 1.221442 0.1761784\n\n                       Estimate           SE       CV\nAverage p             0.1414494     319.6063 2259.510\nN in covered region 494.8767577 1118179.2180 2259.510\nEDR                  53.6540749   60615.9720 1129.755\n\n\nMcPherson Rural and WMA, Garden City Urban all causing problems\nProbably not a surprise given the numbers of detections in those locations x treatments\n\nknitr::kable(modo.hr.region$dht$individuals$summary, digits=3,\n             caption=\"MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns.\")\n\n\nMODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns.\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegion\nArea\nCoveredArea\nEffort\nn\nk\nER\nse.ER\ncv.ER\n\n\n\n\nGarden City_Rural\n20.230\n166.237\n26\n7\n15\n0.269\n0.332\n1.232\n\n\nGarden City_Urban\n2284.370\n703.310\n110\n2\n55\n0.018\n0.013\n0.701\n\n\nGarden City_WMA\n1521.618\n230.174\n36\n8\n27\n0.222\n0.116\n0.523\n\n\nMcPherson_Rural\n1007.840\n300.505\n47\n2\n33\n0.043\n0.033\n0.786\n\n\nMcPherson_Urban\n1827.561\n466.742\n73\n24\n44\n0.329\n0.079\n0.240\n\n\nMcPherson_WMA\n539.040\n262.143\n41\n1\n24\n0.024\n0.021\n0.854\n\n\nTopeka_Urban\n19250.760\n402.805\n63\n16\n38\n0.254\n0.062\n0.243\n\n\nTopeka_WMA\n4249.200\n479.530\n75\n10\n44\n0.133\n0.040\n0.298\n\n\nTotal\n30700.619\n3011.447\n471\n70\n280\n0.212\n0.040\n0.188",
+    "crumbs": [
+      "Mourning doves 🕊️"
+    ]
+  },
+  {
+    "objectID": "natalie/pegg.html#for-the-moment-show-estimates-from-pooled-hr-model",
+    "href": "natalie/pegg.html#for-the-moment-show-estimates-from-pooled-hr-model",
+    "title": "Mourning doves 🕊️",
+    "section": "11.1 For the moment, show estimates from pooled HR model",
+    "text": "11.1 For the moment, show estimates from pooled HR model\n\nknitr::kable(modo.pool.hr$dht$individuals$D[,1:6], digits=3, \n             caption=\"MODO density (per hectare) using pooled detection function across location x treatment combos\")\n\n\nMODO density (per hectare) using pooled detection function across location x treatment combos\n\n\nLabel\nEstimate\nse\ncv\nlcl\nucl\n\n\n\n\nGarden City_Rural\n0.260\n0.327\n1.257\n0.033\n2.069\n\n\nGarden City_Urban\n0.018\n0.013\n0.744\n0.005\n0.066\n\n\nGarden City_WMA\n0.215\n0.125\n0.581\n0.072\n0.639\n\n\nMcPherson_Rural\n0.041\n0.034\n0.825\n0.010\n0.177\n\n\nMcPherson_Urban\n0.318\n0.110\n0.348\n0.163\n0.621\n\n\nMcPherson_WMA\n0.024\n0.021\n0.890\n0.005\n0.113\n\n\nTopeka_Urban\n0.245\n0.086\n0.350\n0.125\n0.482\n\n\nTopeka_WMA\n0.129\n0.050\n0.390\n0.061\n0.272\n\n\nTotal\n0.205\n0.064\n0.314\n0.111\n0.376\n\n\n\n\n\nNote the magnitude of CVs for Garden City_Rural, Garden City_Urban, McPherson_Rural and McPherson_WMA\nMost of those large CVs were caused by very low density, but that is not the case for Garden City_Rural.",
+    "crumbs": [
+      "Mourning doves 🕊️"
     ]
   }
 ]

@@ -32,17 +32,248 @@ number-sections: true
 
 ::::
 
-# Get acquainted with data
+# Get acquainted with survey design
 
 ```{r}
-pegg <- read.csv("Distance_2024.csv")
+#| eval: true
+#| echo: true
+pegg <- read.csv("study_design2024.csv")
 ```
 
 
 ```{r}
+#| eval: false
+#| echo: false
 table(pegg$StudyLocation, pegg$Treatment)
 pegg$Treatment <- ifelse(pegg$Treatment=="Rual", "Rural", pegg$Treatment)
 pegg$Treatment <- ifelse(pegg$Treatment=="WM", "WMA", pegg$Treatment)
 table(pegg$StudyLocation, pegg$Treatment)
+```
+
+
+```{r}
+#| eval: true
+#| echo: true
+combos <- unique(pegg$Location_Treatment)
+patch <- vector("numeric", length=length(combos))
+point <- vector("numeric", length=length(combos))
+for(i in 1:length(combos)) {
+  patch[i] <- length(unique(pegg[pegg$Location_Treatment==combos[i], "PatchID"]))
+  point[i] <- length(unique(pegg[pegg$Location_Treatment==combos[i], "PointID"]))
+}
+design <- data.frame(Treatment=combos, Patches=patch, Points=point)
+knitr::kable(design, caption="Pegg study design 2024")
 
 ```
+
+# Get acquainted with survey data
+
+```{r}
+peggdat <- read.csv("2024dovedata2.csv")
+```
+
+Just pick one combination to see what is what
+
+```{r}
+#| eval: false
+#| echo: false
+gcurb <- subset(peggdat, Location_Treatment=="Garden City_Urban")
+mcurb <- subset(peggdat, Location_Treatment=="McPherson_Urban")
+topurb <- subset(peggdat, Location_Treatment=="Topeka_Urban")
+gcwma <- subset(peggdat, Location_Treatment=="Garden City_WMA")
+mcwma <- subset(peggdat, Location_Treatment=="McPherson_WMA")
+topwma <- subset(peggdat, Location_Treatment=="Topeka_WMA")
+gcrur <- subset(peggdat, Location_Treatment=="Garden City_Rural")
+mcrur <- subset(peggdat, Location_Treatment=="McPherson_Rural")
+```
+
+```{r}
+numecdo <- vector("numeric", length=length(combos))
+nummodo <- vector("numeric", length=length(combos))
+for(i in 1:length(combos)) {
+  numecdo[i] <- sum(!is.na(peggdat$Distance) & 
+                      peggdat$Species=="Eurasian Collared Dove" & 
+                      peggdat$Location_Treatment==combos[i])
+  nummodo[i] <- sum(!is.na(peggdat$Distance) & 
+                      peggdat$Species=="Mourning Dove" & 
+                      peggdat$Location_Treatment==combos[i])
+}
+detects <- data.frame(Treatment=combos, ECDOdet=numecdo, MODOdet=nummodo)
+knitr::kable(detects, caption="Detections by Loc x Tmt and species")
+```
+
+
+Garden city urban has lots of ECDO detections
+```{r}
+#| eval: false
+#| echo: false
+hist(gcurb$Distance[gcurb$Species=="Eurasian Collared Dove"])
+```
+
+
+# Sizes of study area treatment combinations
+
+```{r}
+library(readxl)
+sizes <- read_xlsx(path="StudyAreasAndTreatments.xlsx")
+sizes$Location_Treatment <- paste(sizes$`Study Area`, sizes$Treatment, sep="_")
+peggdat.area <- merge(peggdat, sizes, by="Location_Treatment", all.x=TRUE)
+```
+
+# Rename columns
+
+```{r}
+colnames(peggdat.area)[colnames(peggdat.area) == 'Location_Treatment'] <- 'Region.Label'
+colnames(peggdat.area)[colnames(peggdat.area) == 'PointID'] <- 'Sample.Label'
+colnames(peggdat.area)[colnames(peggdat.area) == 'Effort_Point'] <- 'Effort'
+colnames(peggdat.area)[colnames(peggdat.area) == 'hectares'] <- 'Area'
+peggdat.area$Area <- as.numeric(peggdat.area$Area)
+colnames(peggdat.area)[colnames(peggdat.area) == 'Distance'] <- 'distance'
+```
+
+# Toss unusual `Location_Treatment`
+
+```{r}
+removethese <- c("Inman_WMA", "McPherson_Rual", "McPherson_WM")
+clean.data <- peggdat.area[!(peggdat.area$Region.Label %in% removethese), ]
+combo.clean <- unique(clean.data$Region.Label)
+unique(clean.data$Region.Label)
+```
+
+# Also remove from `Study_design2024`
+**don't think this is needed**
+
+```{r}
+clean.design <- pegg[!(pegg$Location_Treatment %in% removethese), ]
+```
+
+# Do we need region and sample tables?
+
+If each visit and point is represented in the data, then we might not need tables. Let's find out.  
+**Not the case, if we subset by species, we destroy all points without detections** overestimate
+
+```{r}
+#| warning: false
+regtab <- data.frame(Region.Label=unique(clean.data$Region.Label),
+                     Area=unique(clean.data$Area))
+
+gcr <- unique(clean.data[clean.data$Region.Label==combo.clean[1], "Sample.Label"])
+pts.gcr <- length(gcr)
+gcu <- unique(clean.data[clean.data$Region.Label==combo.clean[2], "Sample.Label"])
+pts.gcu <- length(gcu)
+gcw <- unique(clean.data[clean.data$Region.Label==combo.clean[3], "Sample.Label"])
+pts.gcw <- length(gcw)
+mr <- unique(clean.data[clean.data$Region.Label==combo.clean[4], "Sample.Label"])
+pts.mr <- length(mr)
+mu <- unique(clean.data[clean.data$Region.Label==combo.clean[5], "Sample.Label"])
+pts.mu <- length(mu)
+mw <- unique(clean.data[clean.data$Region.Label==combo.clean[6], "Sample.Label"])
+pts.mw <- length(mw)
+tu <- unique(clean.data[clean.data$Region.Label==combo.clean[7], "Sample.Label"])
+pts.tu <- length(tu)
+tw <- unique(clean.data[clean.data$Region.Label==combo.clean[8], "Sample.Label"])
+pts.tw <- length(tw)
+
+allpts <- c(gcr, gcu, gcw, mr, mu, mw, tu, tw)
+regionstring <- c(rep(combo.clean[1], pts.gcr),
+                  rep(combo.clean[2], pts.gcu),
+                  rep(combo.clean[3], pts.gcw),
+                  rep(combo.clean[4], pts.mr),
+                  rep(combo.clean[5], pts.mu),
+                  rep(combo.clean[6], pts.mw),
+                  rep(combo.clean[7], pts.tu),
+                  rep(combo.clean[8], pts.tw))
+
+eff <- vector("numeric", length=length(allpts))
+for(i in 1:length(allpts)) {
+  eff[i] <- clean.data[clean.data$Sample.Label==allpts[i], "Effort"]
+}
+
+samtab <- data.frame(Sample.Label=allpts,
+                     Region.Label=regionstring,
+                     Effort=eff)
+
+eff <- vector("numeric", length=length(allpts))
+for(i in 1:length(allpts)) {
+  eff[i] <- clean.data[clean.data$Sample.Label==allpts[i], "Effort"]
+}
+```
+
+# Load package and set conversion units
+
+```{r}
+#| message: false
+library(Distance)
+cu <- convert_units("meter", NULL, "hectare")
+```
+
+# Mourning doves
+
+## Pooled detection function
+
+```{r}
+#| message: false
+modo.pool.unif <- ds(data=clean.data[clean.data$Species=="Mourning Dove",], 
+                   region_table = regtab, sample_table = samtab,
+                   transect = "point", key="unif", truncation = "10%", convert_units = cu)
+modo.pool.hn <- ds(data=clean.data[clean.data$Species=="Mourning Dove",], 
+                   region_table = regtab, sample_table = samtab,
+                   transect = "point", key="hn", adj="herm", truncation = "10%", convert_units = cu)
+modo.pool.hr <- ds(data=clean.data[clean.data$Species=="Mourning Dove",], 
+                   region_table = regtab, sample_table = samtab,
+                   transect = "point", key="hr", adj="poly", truncation = "10%", convert_units = cu)
+```
+
+## Model criticism
+
+
+```{r}
+summarize_ds_models(modo.pool.unif, modo.pool.hn, modo.pool.hr)
+```
+
+## Location x treatment specific detection function
+
+```{r}
+#| message: false
+modo.hn.region <- ds(data=clean.data[clean.data$Species=="Mourning Dove",], 
+                   region_table = regtab, sample_table = samtab,
+                   transect = "point", key="hn",
+                   formula=~Region.Label,
+                   truncation = "10%", convert_units = cu)
+modo.hr.region <- ds(data=clean.data[clean.data$Species=="Mourning Dove",], 
+                   region_table = regtab, sample_table = samtab,
+                   transect = "point", key="hr",
+                   formula=~Region.Label,
+                   truncation = "10%", convert_units = cu)
+```
+
+```{r}
+summarize_ds_models(modo.hn.region, modo.hr.region)
+```
+
+**look at ugly SE(Pa) for both models, convergence trouble**
+
+```{r}
+summary(modo.hr.region$ddf)
+```
+**McPherson Rural and WMA, Garden City Urban all causing problems**
+
+Probably not a surprise given the numbers of detections in those locations x treatments
+
+```{r}
+knitr::kable(modo.hr.region$dht$individuals$summary, digits=3,
+             caption="MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns.")
+```
+
+# Next step would be to eliminate `Garden City_Urban`, `McPherson_Rural` and `McPherson_WMA` 
+
+## For the moment, show estimates from pooled HR model
+
+```{r}
+knitr::kable(modo.pool.hr$dht$individuals$D[,1:6], digits=3, 
+             caption="MODO density (per hectare) using pooled detection function across location x treatment combos")
+```
+
+**Note the magnitude of CVs for `Garden City_Rural`, `Garden City_Urban`, `McPherson_Rural` and `McPherson_WMA`**
+
+Most of those large CVs were caused by very low density, but that is not the case for `Garden City_Rural`.

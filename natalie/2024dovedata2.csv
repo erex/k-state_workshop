@@ -1,0 +1,622 @@
+,Date,StartTime,Wind..mph.,Location_Treatment,PatchID,PointID,Species,Distance,Effort_Point,Effort_Treatment,Effort_Patch
+1,7/10/2024,7:29,4,Topeka_Urban,T3,T3.2,NA,NA,1,61,2
+2,7/10/2024,7:11,4,Topeka_Urban,T3,T3.1,Mourning Dove,31.7,1,61,2
+3,4/25/2024,8:23,11,Topeka_WMA,PL3,PL3.1,NA,NA,3,73,4
+4,4/25/2024,8:47,11,Topeka_WMA,PL3,PL3.2,NA,NA,1,73,4
+5,7/11/2024,9:28,6,Topeka_WMA,PL3,PL3.1,NA,NA,3,73,4
+6,4/15/2024,9:41,11,Topeka_WMA,PL3,PL3.1,NA,NA,3,73,4
+7,7/10/2024,7:44,4,Topeka_Urban,T4,T4.1,Mourning Dove,20.5,1,61,1
+8,4/25/2024,9:07,11,Topeka_WMA,PL4,PL4.1,NA,NA,2,73,6
+9,4/12/2024,9:48,9,Topeka_WMA,PL4,PL4.1,NA,NA,2,73,6
+10,8/15/2024,7:45,8,Topeka_WMA,PL4,PL4.2,NA,NA,3,73,6
+11,4/12/2024,9:59,9,Topeka_WMA,PL4,PL4.2,NA,NA,3,73,6
+12,4/25/2024,9:21,11,Topeka_WMA,PL4,PL4.2,Mourning Dove,84.2,3,73,6
+13,4/25/2024,9:21,11,Topeka_WMA,PL4,PL4.2,Mourning Dove,129.7,3,73,6
+14,7/12/2024,6:22,9,Topeka_Urban,T5,T5.1,Mourning Dove,21.1,2,61,4
+15,4/22/2024,7:52,11,Topeka_Urban,T5,T5.1,Mourning Dove,21.9,2,61,4
+16,7/12/2024,6:38,9,Topeka_Urban,T5,T5.2,NA,NA,2,61,4
+17,4/22/2024,7:35,11,Topeka_Urban,T5,T5.2,NA,NA,2,61,4
+18,4/12/2024,9:11,9,Topeka_WMA,PL5,PL5.2,NA,NA,1,73,3
+19,4/12/2024,9:22,9,Topeka_WMA,PL5,PL5.1,NA,NA,2,73,3
+20,7/29/2024,7:56,9,Topeka_WMA,PL5,PL5.1,NA,NA,2,73,3
+21,7/10/2024,9:30,5,Topeka_Urban,PL6,T6.1,NA,NA,1,61,6
+22,4/25/2024,9:38,11,Topeka_WMA,PL6,PL6.1,Mourning Dove,20.9,2,73,6
+23,4/25/2024,9:51,11,Topeka_WMA,PL6,PL6.2,NA,NA,2,73,6
+24,4/25/2024,9:38,11,Topeka_WMA,PL6,PL6.1,Mourning Dove,31.3,2,73,6
+25,4/10/2024,9:59,4,Topeka_WMA,PL6,PL6.1,NA,NA,2,73,6
+26,8/15/2024,8:54,9,Topeka_WMA,PL6,PL6.2,NA,NA,2,73,6
+27,7/30/2024,9:40,16,Topeka_Urban,T7,T7.1,NA,NA,2,61,3
+28,5/3/2024,10:37,10,Topeka_Urban,T7,T7.2,NA,NA,1,61,3
+29,5/3/2024,10:24,9,Topeka_Urban,T7,T7.1,NA,NA,2,61,3
+30,4/12/2024,8:26,8,Topeka_WMA,PL7,PL7.1,NA,NA,2,73,4
+31,4/12/2024,8:39,8,Topeka_WMA,PL7,PL7.2,NA,NA,2,73,4
+32,7/11/2024,8:32,6,Topeka_WMA,PL7,PL7.2,NA,NA,2,73,4
+33,7/11/2024,8:24,6,Topeka_WMA,PL7,PL7.1,NA,NA,2,73,4
+34,4/29/2024,8:09,3,Topeka_Urban,T8,T8.2,NA,NA,1,61,1
+35,4/25/2024,10:17,11,Topeka_WMA,PL8,PL8.1,NA,NA,3,73,4
+36,8/20/2024,7:15,3,Topeka_WMA,PL8,PL8.2,Mourning Dove,30,1,73,4
+37,8/20/2024,6:59,4,Topeka_WMA,PL8,PL8.1,Mourning Dove,77,3,73,4
+38,4/15/2024,8:52,11,Topeka_WMA,PL8,PL8.1,NA,NA,3,73,4
+39,4/23/2024,9:09,8,Topeka_Urban,T9,T9.2,NA,NA,2,61,4
+40,4/23/2024,8:51,8,Topeka_Urban,T9,T9.1,NA,NA,2,61,4
+41,7/12/2024,8:49,11,Topeka_Urban,T9,T9.2,Mourning Dove,50.4,2,61,4
+42,7/12/2024,8:33,11,Topeka_Urban,T9,T9.1,NA,NA,2,61,4
+43,8/8/2024,9:33,6,Topeka_WMA,PL9,PL9.1,Mourning Dove,80.1,2,73,3
+44,4/10/2024,8:59,4,Topeka_WMA,PL9,PL9.1,NA,NA,2,73,3
+45,4/10/2024,9:18,4,Topeka_WMA,PL9,PL9.2,NA,NA,1,73,3
+46,7/12/2024,7:46,10,Topeka_Urban,T10,T10.1,NA,NA,1,61,2
+47,4/23/2024,10:14,8,Topeka_Urban,T10,T10.2,NA,NA,1,61,2
+48,4/12/2024,8:06,7,Topeka_WMA,PL10,PL10.2,NA,NA,2,73,3
+49,4/12/2024,7:42,7,Topeka_WMA,PL10,PL10.1,NA,NA,1,73,3
+50,7/11/2024,10:11,6,Topeka_WMA,PL10,PL10.2,Mourning Dove,37.1,2,73,3
+51,4/30/2024,8:45,11,Topeka_Urban,T11,T11.1,NA,NA,1,61,3
+52,7/16/2024,6:36,6,Topeka_Urban,T11,T11.2,Mourning Dove,44.6,2,61,3
+53,4/30/2024,9:03,11,Topeka_Urban,T11,T11.2,NA,NA,2,61,3
+54,7/11/2024,7:55,5,Topeka_WMA,PL11,PL11.1,NA,NA,2,73,3
+55,4/10/2024,8:30,4,Topeka_WMA,PL11,PL11.1,NA,NA,2,73,3
+56,4/10/2024,8:46,4,Topeka_WMA,PL11,PL11.2,NA,NA,1,73,3
+57,4/29/2024,9:37,4,Topeka_Urban,T12,T12.1,NA,NA,2,61,3
+58,7/16/2024,6:57,7,Topeka_Urban,T12,T12.1,Mourning Dove,35.2,2,61,3
+59,4/29/2024,9:55,5,Topeka_Urban,T12,T12.2,NA,NA,1,61,3
+60,8/8/2024,10:06,7,Topeka_WMA,PL12,PL12.1,NA,NA,2,73,4
+61,8/8/2024,10:23,7,Topeka_WMA,PL12,PL12.2,NA,NA,2,73,4
+62,4/10/2024,7.44,3,Topeka_WMA,PL12,PL12.1,NA,NA,2,73,4
+63,4/10/2024,8:05,3,Topeka_WMA,PL12,PL12.2,NA,NA,2,73,4
+64,7/12/2024,6:55,10,Topeka_Urban,T13,T13.2,NA,NA,1,61,2
+65,4/23/2024,9:24,8,Topeka_Urban,T13,T13.1,NA,NA,1,61,2
+66,4/15/2024,8:06,10,Topeka_WMA,PL13,PL13.1,NA,NA,2,73,4
+67,8/20/2024,7:55,3,Topeka_WMA,PL13,PL13.2,NA,NA,2,73,4
+68,8/20/2024,7:47,3,Topeka_WMA,PL13,PL13.1,NA,NA,2,73,4
+69,4/15/2024,7:51,10,Topeka_WMA,PL13,PL13.2,NA,NA,2,73,4
+70,4/30/2024,8:23,10,Topeka_Urban,T14,T14.2,NA,NA,2,61,4
+71,4/30/2024,7:58,9,Topeka_Urban,T14,T14.1,NA,NA,1,61,4
+72,7/16/2024,10:38,10,Topeka_Urban,T14,T14.2,Mourning Dove,21.9,2,61,4
+73,7/16/2024,10:38,10,Topeka_Urban,T14,T14.2,Mourning Dove,84.6,2,61,4
+74,8/20/2024,6:17,3,Topeka_WMA,PL14,PL14.1,NA,NA,1,73,2
+75,8/20/2024,6:31,3,Topeka_WMA,PL14,PL14.2,NA,NA,1,73,2
+76,5/3/2024,8:34,5,Topeka_Urban,T15,T15.2,Mourning Dove,20.4,2,61,4
+77,7/12/2024,9:20,11,Topeka_Urban,T15,T15.2,NA,NA,2,61,4
+78,5/3/2024,8:20,6,Topeka_Urban,T15,T15.1,NA,NA,2,61,4
+79,7/12/2024,9:05,11,Topeka_Urban,T15,T15.1,Mourning Dove,53,2,61,4
+80,4/24/2024,7:42,5,Topeka_WMA,PL15,PL15.1,NA,NA,1,73,3
+81,4/24/2024,7:57,4,Topeka_WMA,PL15,PL15.2,NA,NA,2,73,3
+82,8/20/2024,8:27,3,Topeka_WMA,PL15,PL15.2,NA,NA,2,73,3
+83,7/12/2024,7:28,10,Topeka_Urban,T16,T16.2,NA,NA,2,61,3
+84,4/23/2024,9:58,8,Topeka_Urban,T16,T16.2,NA,NA,2,61,3
+85,4/8/2024,9:29,5,Topeka_WMA,PL16,PL16.1,NA,NA,1,73,2
+86,4/8/2024,9:46,5,Topeka_WMA,PL16,PL16.2,NA,NA,1,73,2
+87,5/3/2024,7:50,5,Topeka_Urban,T17,T17.2,NA,NA,2,61,2
+88,7/12/2024,8:08,10,Topeka_Urban,T17,T17.2,NA,NA,2,61,2
+89,8/7/2024,8:54,5,Topeka_WMA,PL17,PL17.1,NA,NA,1,73,3
+90,4/8/2024,10:49,4,Topeka_WMA,PL17,PL17.2,NA,NA,2,73,3
+91,8/7/2024,9:21,6,Topeka_WMA,PL17,PL17.2,Mourning Dove,42.4,2,73,3
+92,4/30/2024,9:43,11,Topeka_Urban,T18,T18.1,NA,NA,2,61,4
+93,7/30/2024,7:02,12,Topeka_Urban,T18,T18.2,Mourning Dove,27,2,61,4
+94,4/30/2024,9:53,11,Topeka_Urban,T18,T18.2,NA,NA,2,61,4
+95,7/30/2024,6:51,12,Topeka_Urban,T18,T18.1,NA,NA,2,61,4
+96,4/9/2024,8:35,7,Topeka_WMA,PL18,PL18.2,NA,NA,1,73,1
+97,5/1/2024,8:14,10,Topeka_Urban,T19,T19.2,NA,NA,2,61,4
+98,5/1/2024,8:00,10,Topeka_Urban,T19,T19.1,NA,NA,2,61,4
+99,7/30/2024,7:51,13,Topeka_Urban,T19,T19.2,Mourning Dove,20.9,2,61,4
+100,7/30/2024,7:30,13,Topeka_Urban,T19,T19.1,NA,NA,2,61,4
+101,4/8/2024,8:41,4,Topeka_WMA,PL19,PL19.2,NA,NA,2,73,3
+102,8/20/2024,9:45,5,Topeka_WMA,PL19,PL19.2,NA,NA,2,73,3
+103,8/20/2024,9:53,5,Topeka_WMA,PL19,PL19.1,NA,NA,1,73,3
+104,7/30/2024,8:39,15,Topeka_Urban,T20,T20.2,NA,NA,2,61,3
+105,4/30/2024,10:30,11,Topeka_Urban,T20,T20.2,NA,NA,2,61,3
+106,4/30/2024,10:08,11,Topeka_Urban,T20,T20.1,NA,NA,1,61,3
+107,4/24/2024,10:50,5,Topeka_WMA,PL20,PL20.1,Mourning Dove,25,2,73,2
+108,8/20/2024,9:22,4,Topeka_WMA,PL20,PL20.1,NA,NA,2,73,2
+109,5/1/2024,8:33,11,Topeka_Urban,T21,T21.1,NA,NA,2,61,4
+110,5/1/2024,8:51,11,Topeka_Urban,T21,T21.2,NA,NA,2,61,4
+111,4/19/2024,9:41,3,Topeka_WMA,T21,T21.2,NA,NA,2,73,4
+112,4/19/2024,9:20,4,Topeka_WMA,T21,T21.1,NA,NA,2,73,4
+113,4/23/2024,8:28,7,Topeka_Urban,T22,T22.2,Mourning Dove,14.1,2,61,5
+114,7/10/2024,6:07,4,Topeka_Urban,T22,T22.1,NA,NA,2,61,5
+115,4/23/2024,8:18,7,Topeka_Urban,T22,T22.1,NA,NA,2,61,5
+116,7/10/2024,6:46,4,Topeka_Urban,T22,T22.2,NA,NA,2,61,5
+117,4/23/2024,8:28,7,Topeka_Urban,T22,T22.2,Mourning Dove,61.1,2,61,5
+118,4/24/2024,8:29,4,Topeka_WMA,PL22,PL22.2,NA,NA,2,73,2
+119,8/16/2024,7:14,3,Topeka_WMA,PL22,PL22.2,NA,NA,2,73,2
+120,8/16/2024,8:01,4,Topeka_WMA,PL23,PL23.2,NA,NA,2,73,3
+121,8/16/2024,8:20,4,Topeka_WMA,PL23,PL23.1,NA,NA,1,73,3
+122,4/24/2024,9:02,4,Topeka_WMA,PL23,PL23.2,NA,NA,2,73,3
+123,4/9/2024,10:41,6,Topeka_WMA,PL25,PL25.2,NA,NA,1,73,2
+124,8/12/2024,7:58,4,Topeka_WMA,PL25,PL25.1,NA,NA,1,73,2
+125,8/16/2024,7:32,9,McPherson_Rural,BB1,BB1.1,NA,NA,2,39,6
+126,8/16/2024,7:54,9,McPherson_Rural,BB1,BB1.3,NA,NA,2,39,6
+127,8/16/2024,9:16,10,McPherson_Rural,BB3,BB3.2,NA,NA,2,39,4
+128,8/23/2024,10:31,15,McPherson_Rual,BB6,BB6.1,NA,NA,2,1,3
+129,8/16/2024,8:08,9,McPherson_Rural,BB1,BB1.2,NA,NA,2,39,6
+130,4/10/2024,NA,5,McPherson_WM,BB1,BB1.2,NA,NA,2,8,6
+131,4/10/2024,8:58,5,McPherson_WM,BB1,BB1.3,NA,NA,2,8,6
+132,4/10/2024,NA,5,McPherson_WM,BB1,BB1.1,NA,NA,2,8,6
+133,7/25/2024,7:50,6,McPherson_Rural,BB11,BB11.1,NA,NA,1,39,2
+134,7/25/2024,7:38,5,McPherson_Rural,BB11,BB11.2,NA,NA,1,39,2
+135,7/15/2024,8:10,13,McPherson_Rural,BB12,BB12.3,NA,NA,1,39,3
+136,7/25/2024,9:26,7,McPherson_Rural,BB12,B12.2,NA,NA,1,39,3
+137,7/15/2024,7:37,12,McPherson_Rural,BB12,BB12.1,NA,NA,1,39,3
+138,7/25/2024,8:39,6,McPherson_Rural,BB13,BB13.1,NA,NA,1,39,3
+139,7/15/2024,8:51,14,McPherson_Rural,BB13,BB13.2,NA,NA,1,39,3
+140,7/25/2024,8:53,7,McPherson_Rural,BB13,BB13.3,NA,NA,1,39,3
+141,4/10/2024,9:31,5,McPherson_WM,BB2,BB2.1,NA,NA,1,8,2
+142,4/10/2024,9:48,6,McPherson_WM,BB2,BB2.2,NA,NA,1,8,2
+143,4/25/2024,8:24,16,McPherson_Rural,BB3,BB3.2,NA,NA,2,39,4
+144,7/15/2024,6:04,14,McPherson_Rural,BB3,BB3.1,NA,NA,1,39,4
+145,4/25/2024,7:36,15,McPherson_Rural,BB3,BB3.3,NA,NA,1,39,4
+146,8/21/2024,9:05,11,McPherson_Rural,BB4,BB4.2,NA,NA,2,39,5
+147,8/21/2024,8:43,11,McPherson_Rural,BB4,BB4.1,NA,NA,2,39,5
+148,4/10/2024,10:28,7,McPherson_WM,BB4,BB4.3,NA,NA,1,8,5
+149,4/10/2024,10:42,7,McPherson_WM,BB4,BB4.2,NA,NA,2,8,5
+150,4/10/2024,10:10,7,McPherson_WM,BB4,BB4.1,NA,NA,2,8,5
+151,4/25/2024,9:11,16,McPherson_Rural,BB5,BB5.2,NA,NA,2,39,4
+152,4/25/2024,7:56,15,McPherson_Rural,BB5,BB5.1,NA,NA,2,39,4
+153,8/21/2024,8:21,103,McPherson_Rural,BB5,BB5.2,NA,NA,2,39,4
+154,8/21/2024,9:30,12,McPherson_Rural,BB5,BB5.1,NA,NA,2,39,4
+155,4/25/2024,9:57,16,McPherson_Rural,BB6,BB6.1,NA,NA,2,39,3
+156,4/25/2024,10:12,16,McPherson_Rural,BB6,BB6.2,NA,NA,1,39,3
+157,7/15/2024,6:24,12,McPherson_Rural,BB7,BB7.2,NA,NA,1,39,2
+158,7/10/2024,6:43,4,McPherson_Rural,BB7,BB7.1,NA,NA,1,39,2
+159,7/10/2024,6:22,4,McPherson_Rural,BB8,BB8.1,NA,NA,2,39,3
+160,7/15/2024,7:03,12,McPherson_Rural,BB8,BB8.2,NA,NA,1,39,3
+161,7/15/2024,6:49,12,McPherson_Rural,BB8,BB8.1,NA,NA,2,39,3
+162,7/22/2024,7:47,2,McPherson_Rural,BB9,BB9.1,NA,NA,1,39,2
+163,7/22/2024,7:21,2,McPherson_Rural,BB9,BB9.2,NA,NA,1,39,2
+164,5/7/2024,8:35,3,Garden City_WMA,BR1,BR1.2,NA,NA,2,41,3
+165,7/30/2024,7:23,2,Garden City_WMA,BR1,BR1.2,NA,NA,2,41,3
+166,7/30/2024,7:52,1,Garden City_WMA,BR1,BR1.1,Mourning Dove,192,1,41,3
+167,4/29/2024,10:06,2,Garden City_WMA,BR10,BR10.2,NA,NA,1,41,1
+168,4/22/2024,9:19,4,Garden City_WMA,BR11,BR11.2,NA,NA,2,41,4
+169,7/29/2024,8:30,1,Garden City_WMA,BR11,BR11.2,NA,NA,2,41,4
+170,7/31/2024,9:10,2,Garden City_WMA,BR11,BR11.1,NA,NA,2,41,4
+171,4/22/2024,9:40,4,Garden City_WMA,BR11,BR11.1,NA,NA,2,41,4
+172,4/22/2024,8:49,3,Garden City_WMA,BR12,BR12.2,NA,NA,1,41,1
+173,4/29/2024,8:19,2,Garden City_WMA,BR13,BR13.1,NA,NA,1,41,2
+174,4/29/2024,8:32,2,Garden City_WMA,BR13,BR13.2,NA,NA,1,41,2
+175,4/29/2024,9:18,2,Garden City_WMA,BR14,BR14.2,NA,NA,1,41,2
+176,4/29/2024,8:04,2,Garden City_WMA,BR14,BR14.1,NA,NA,1,41,2
+177,4/22/2024,8:08,3,Garden City_WMA,BR 15,BR15.2,NA,NA,1,41,2
+178,4/22/2024,8:24,3,Garden City_WMA,BR 15,BR15.1,NA,NA,1,41,2
+179,7/30/2024,7:06,2,Garden City_WMA,BR2,BR2.1,NA,NA,2,41,4
+180,5/7/2024,8:14,3,Garden City_WMA,BR2,BR2.2,Mourning Dove,176.4,2,41,4
+181,5/8/2024,7:43,2,Garden City_WMA,BR2,BR2.1,NA,NA,2,41,4
+182,7/30/2024,6:55,2,Garden City_WMA,BR2,BR2.2,Mourning Dove,218,2,41,4
+183,5/8/2024,8:12,2,Garden City_WMA,BR3,BR3.1,NA,NA,1,41,2
+184,5/8/2024,8:28,2,Garden City_WMA,BR3,BR3.2,NA,NA,1,41,2
+185,4/17/2024,9:54,2,Garden City_WMA,BR4,BR4.1,NA,NA,2,41,4
+186,4/17/2024,9:26,2,Garden City_WMA,BR4,BR4.2,NA,NA,2,41,4
+187,8/5/2024,7:42,3,Garden City_WMA,BR4,BR4.1,Eurasian Collared Dove,243,2,41,4
+188,8/5/2024,8:10,3,Garden City_WMA,BR4,BR4.2,NA,NA,2,41,4
+189,4/17/2024,8:38,2,Garden City_WMA,BR5,BR5.2,NA,NA,1,41,2
+190,4/17/2024,8:23,2,Garden City_WMA,BR5,BR5.1,Mourning Dove,118.4,1,41,2
+191,8/14/2024,6:59,1,Garden City_WMA,BR6,BR6.2,Mourning Dove,10,2,41,8
+192,8/14/2024,6:59,1,Garden City_WMA,BR6,BR6.2,Mourning Dove,25,2,41,8
+193,8/14/2024,6:59,1,Garden City_WMA,BR6,BR6.2,Mourning Dove,30,2,41,8
+194,8/14/2024,6:59,1,Garden City_WMA,BR6,BR6.2,Mourning Dove,35,2,41,8
+195,4/17/2024,7:51,3,Garden City_WMA,BR6,BR6.2,NA,NA,2,41,8
+196,8/14/2024,6:59,1,Garden City_WMA,BR6,BR6.2,Mourning Dove,40,2,41,8
+197,8/14/2024,6:59,1,Garden City_WMA,BR6,BR6.2,Mourning Dove,78,2,41,8
+198,4/17/2024,8:05,3,Garden City_WMA,BR6,BR6.1,NA,NA,1,41,8
+199,8/13/2024,7:47,1,Garden City_WMA,BR7,BR7.2,NA,NA,1,41,2
+200,5/6/2024,8:15,4,Garden City_WMA,BR7,BR7.1,NA,NA,1,41,2
+201,4/17/2024,9:07,2,Garden City_WMA,BR8,BR8.1,NA,NA,2,41,3
+202,8/5/2024,8:23,2,Garden City_WMA,BR8,BR8.1,Mourning Dove,108.1,2,41,3
+203,4/17/2024,10:28,2,Garden City_WMA,BR8,BR8.2,NA,NA,1,41,3
+204,4/29/2024,10:41,2,Garden City_WMA,BR9,BR9.2,NA,NA,1,41,1
+205,8/1/2024,9:15,2,Garden City_Rural,CN1,CN1.3,NA,NA,2,30,6
+206,8/1/2024,8:03,2,Garden City_Rural,CN1,CN1.1,NA,NA,2,30,6
+207,4/24/2024,9:37,2,Garden City_Rural,CN1,CN1.3,NA,NA,2,30,6
+208,4/24/2024,8:48,2,Garden City_Rural,CN1,CN1.1,NA,NA,2,30,6
+209,8/1/2024,8:19,3,Garden City_Rural,CN1,CN1.2,NA,NA,2,30,6
+210,4/24/2024,9:59,2,Garden City_Rural,CN1,CN1.2,NA,NA,2,30,6
+211,8/1/2024,8:37,3,Garden City_Rural,CN2,CN2.1,NA,NA,2,30,5
+212,8/7/2024,7:26,1,Garden City_Rural,CN2,CN2.3,NA,NA,2,30,5
+213,4/24/2024,8:28,2,Garden City_Rural,CN2,CN2.3,NA,NA,2,30,5
+214,4/24/2024,10:11,2,Garden City_Rural,CN2,CN2.1,Mourning Dove,88.1,2,30,5
+215,4/24/2024,8:12,2,Garden City_Rural,CN2,CN2.2,NA,NA,1,30,5
+216,4/24/2024,11:38,2,Garden City_Rural,CN3,CN3.2,NA,NA,2,30,6
+217,8/1/2024,8:03,2,Garden City_Rural,CN3,CN3.3,NA,NA,2,30,6
+218,4/24/2024,9:05,2,Garden City_Rural,CN3,CN3.1,NA,NA,2,30,6
+219,8/1/2024,8:20,2,Garden City_Rural,CN3,CN3.1,NA,NA,2,30,6
+220,4/24/2024,11:20,2,Garden City_Rural,CN3,CN3.3,Mourning Dove,74.7,2,30,6
+221,8/1/2024,7:51,2,Garden City_Rural,CN3,CN3.2,NA,NA,2,30,6
+222,8/1/2024,8:34,2,Garden City_Rural,CN4,CN4.2,NA,NA,2,30,4
+223,4/24/2024,11:10,2,Garden City_Rural,CN4,CN4.3,NA,NA,1,30,4
+224,4/24/2024,9:48,2,Garden City_Rural,CN4,CN4.1,NA,NA,1,30,4
+225,4/24/2024,9:25,2,Garden City_Rural,CN4,CN4.2,NA,NA,2,30,4
+226,4/24/2024,10:31,2,Garden City_Rural,CN5,CN5.3,NA,NA,2,30,9
+227,8/1/2024,7:01,1,Garden City_Rural,CN5,CN5.2,NA,NA,2,30,9
+228,8/7/2024,9:08,1,Garden City_Rural,CN5,CN5.3,NA,NA,2,30,9
+229,8/7/2024,7:58,1,Garden City_Rural,CN5,CN5.1,Mourning Dove,51.1,1,30,9
+230,8/7/2024,7:58,1,Garden City_Rural,CN5,CN5.1,Mourning Dove,51.3,1,30,9
+231,8/7/2024,7:58,1,Garden City_Rural,CN5,CN5.1,Mourning Dove,55.7,1,30,9
+232,8/7/2024,7:58,1,Garden City_Rural,CN5,CN5.1,Mourning Dove,87,1,30,9
+233,4/24/2024,10:58,2,Garden City_Rural,CN5,CN5.2,NA,NA,2,30,9
+234,8/7/2024,7:58,1,Garden City_Rural,CN5,CN5.1,Mourning Dove,122.3,1,30,9
+235,4/5/2024,10:37,4,Garden City_Urban,GC1,GC1.2,Eurasian Collared Dove,44.4,2,242,6
+236,4/5/2024,10:49,4,Garden City_Urban,GC1,GC1.1,Eurasian Collared Dove,50.3,2,242,6
+237,8/28/2024,7:34,3,Garden City_Urban,GC1,GC1.1,Eurasian Collared Dove,53.5,2,242,6
+238,4/5/2024,10:49,4,Garden City_Urban,GC1,GC1.1,Eurasian Collared Dove,72.7,2,242,6
+239,8/28/2024,7:17,3,Garden City_Urban,GC1,GC1.2,Eurasian Collared Dove,150,2,242,6
+240,8/28/2024,7:17,3,Garden City_Urban,GC1,GC1.2,Eurasian Collared Dove,248,2,242,6
+241,4/4/2024,7:58,2,Garden City_Urban,GC10,GC10.2,Eurasian Collared Dove,13.2,2,242,8
+242,4/4/2024,7:58,2,Garden City_Urban,GC10,GC10.2,Eurasian Collared Dove,19.4,2,242,8
+243,4/4/2024,7:42,2,Garden City_Urban,GC10,GC10.1,Eurasian Collared Dove,20.7,2,242,8
+244,4/4/2024,7:58,2,Garden City_Urban,GC10,GC10.2,Eurasian Collared Dove,21.9,2,242,8
+245,4/4/2024,7:42,2,Garden City_Urban,GC10,GC10.1,Eurasian Collared Dove,23.2,2,242,8
+246,8/30/2024,7:30,1,Garden City_Urban,GC10,GC10.1,Eurasian Collared Dove,29.5,2,242,8
+247,8/30/2024,7:30,1,Garden City_Urban,GC10,GC10.1,Eurasian Collared Dove,40,2,242,8
+248,8/30/2024,7:41,1,Garden City_Urban,GC10,GC10.2,Eurasian Collared Dove,139.1,2,242,8
+249,4/4/2024,8:11,2,Garden City_Urban,GC11,GC11.1,Eurasian Collared Dove,8.1,2,242,10
+250,8/29/2024,7:05,1,Garden City_Urban,GC11,GC11.1,Eurasian Collared Dove,12.1,2,242,10
+251,4/4/2024,8:29,2,Garden City_Urban,GC11,GC11.2,Eurasian Collared Dove,13.6,2,242,10
+252,8/29/2024,7:05,1,Garden City_Urban,GC11,GC11.1,Eurasian Collared Dove,15.2,2,242,10
+253,8/30/2024,7:53,1,Garden City_Urban,GC11,GC11.2,Eurasian Collared Dove,23.4,2,242,10
+254,8/29/2024,7:05,1,Garden City_Urban,GC11,GC11.1,Eurasian Collared Dove,35.7,2,242,10
+255,8/29/2024,7:05,1,Garden City_Urban,GC11,GC11.1,Eurasian Collared Dove,55.9,2,242,10
+256,8/30/2024,7:53,1,Garden City_Urban,GC11,GC11.2,Eurasian Collared Dove,81.1,2,242,10
+257,8/29/2024,7:05,1,Garden City_Urban,GC11,GC11.1,Eurasian Collared Dove,82.5,2,242,10
+258,8/30/2024,7:53,1,Garden City_Urban,GC11,GC11.2,Eurasian Collared Dove,104.5,2,242,10
+259,4/4/2024,8:45,2,Garden City_Urban,GC12,GC12.2,Eurasian Collared Dove,11,2,242,11
+260,4/4/2024,8:45,2,Garden City_Urban,GC12,GC12.2,Eurasian Collared Dove,26.1,2,242,11
+261,8/2/2024,7:48,1,Garden City_Urban,GC12,GC12.1,Eurasian Collared Dove,27,1,242,11
+262,4/4/2024,8:55,2,Garden City_Urban,GC12,GC12.2,Eurasian Collared Dove,30.9,2,242,11
+263,8/2/2024,7:48,1,Garden City_Urban,GC12,GC12.1,Eurasian Collared Dove,54,1,242,11
+264,8/29/2024,8:53,1,Garden City_Urban,GC12,GC12.2,Eurasian Collared Dove,73.5,2,242,11
+265,8/2/2024,7:48,1,Garden City_Urban,GC12,GC12.1,Eurasian Collared Dove,74,1,242,11
+266,8/2/2024,7:48,1,Garden City_Urban,GC12,GC12.1,Eurasian Collared Dove,76,1,242,11
+267,8/29/2024,8:53,1,Garden City_Urban,GC12,GC12.2,Eurasian Collared Dove,83.3,2,242,11
+268,8/2/2024,7:48,1,Garden City_Urban,GC12,GC12.1,Eurasian Collared Dove,91,1,242,11
+269,8/29/2024,8:53,1,Garden City_Urban,GC12,GC12.2,Eurasian Collared Dove,94,2,242,11
+270,8/15/2024,8:40,1,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,20,2,242,16
+271,8/15/2024,8:40,1,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,20,2,242,16
+272,8/15/2024,8:40,1,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,23,2,242,16
+273,8/15/2024,8:28,1,Garden City_Urban,GC13,GC13.2,Eurasian Collared Dove,25,2,242,16
+274,8/15/2024,8:40,1,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,31,2,242,16
+275,8/15/2024,8:40,1,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,35,2,242,16
+276,8/15/2024,8:40,1,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,35,2,242,16
+277,8/15/2024,8:51,1,Garden City_Urban,GC13,GC13.1,Eurasian Collared Dove,55,2,242,16
+278,8/15/2024,8:28,1,Garden City_Urban,GC13,GC13.2,Eurasian Collared Dove,76,2,242,16
+279,8/15/2024,8:51,1,Garden City_Urban,GC13,GC13.1,Eurasian Collared Dove,80,2,242,16
+280,4/3/2024,8:37,2,Garden City_Urban,GC14,GC14.2,NA,NA,2,242,10
+281,4/3/2024,8:49,2,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,15,2,242,10
+282,8/29/2024,7:27,1,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,17.3,2,242,10
+283,8/29/2024,7:27,1,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,29.5,2,242,10
+284,4/3/2024,8:49,2,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,32,2,242,10
+285,4/3/2024,8:49,2,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,36.1,2,242,10
+286,8/29/2024,7:46,1,Garden City_Urban,GC14,GC14.2,Eurasian Collared Dove,83.2,2,242,10
+287,8/29/2024,7:27,1,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,83.3,2,242,10
+288,8/29/2024,7:27,1,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,92.8,2,242,10
+289,8/29/2024,7:27,1,Garden City_Urban,GC14,GC14.1,Eurasian Collared Dove,108.6,2,242,10
+290,4/3/2024,9:01,2,Garden City_Urban,GC15,GC15.1,NA,NA,2,242,4
+291,4/3/2024,9:21,2,Garden City_Urban,GC15,GC15.2,NA,NA,2,242,4
+292,8/26/2024,8:59,1,Garden City_Urban,GC15,GC15.2,Eurasian Collared Dove,56.6,2,242,4
+293,8/29/2024,8:32,1,Garden City_Urban,GC15,GC15.1,Eurasian Collared Dove,125,2,242,4
+294,4/3/2024,9:45,2,Garden City_Urban,GC16,GC16.2,Eurasian Collared Dove,17.6,3,242,17
+295,4/3/2024,9:45,2,Garden City_Urban,GC16,GC16.2,Eurasian Collared Dove,20.1,3,242,17
+296,4/3/2024,9:56,2,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,30.5,3,242,17
+297,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,32,3,242,17
+298,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,36,3,242,17
+299,8/26/2024,8:35,1,Garden City_Urban,GC16,GC16.2,Eurasian Collared Dove,36.7,3,242,17
+300,8/2/2024,7:08,1,Garden City_Urban,GC16,GC16.2,Eurasian Collared Dove,42,3,242,17
+301,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,43,3,242,17
+302,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,54,3,242,17
+303,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,56,3,242,17
+304,8/2/2024,7:08,1,Garden City_Urban,GC16,GC16.2,Eurasian Collared Dove,70,3,242,17
+305,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,76,3,242,17
+306,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,86,3,242,17
+307,8/2/2024,6:59,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,102,3,242,17
+308,8/26/2024,8:35,1,Garden City_Urban,GC16,GC16.2,Eurasian Collared Dove,127,3,242,17
+309,8/26/2024,8:24,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,153,3,242,17
+310,8/26/2024,8:24,1,Garden City_Urban,GC16,GC16.1,Eurasian Collared Dove,167.8,3,242,17
+311,8/14/2024,8:37,1,Garden City_Urban,GC17,GC17.1,Eurasian Collared Dove,14,2,242,7
+312,8/14/2024,8:37,1,Garden City_Urban,GC17,GC17.1,Eurasian Collared Dove,22,2,242,7
+313,8/14/2024,8:23,1,Garden City_Urban,GC17,GC17.2,Eurasian Collared Dove,27,2,242,7
+314,8/14/2024,8:37,1,Garden City_Urban,GC17,GC17.1,Eurasian Collared Dove,27,2,242,7
+315,8/14/2024,8:23,1,Garden City_Urban,GC17,GC17.2,Eurasian Collared Dove,34,2,242,7
+316,8/14/2024,8:48,1,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,19,2,242,15
+317,8/14/2024,8:55,1,Garden City_Urban,GC18,GC18.2,Eurasian Collared Dove,28,3,242,15
+318,8/14/2024,8:48,1,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,30,2,242,15
+319,8/14/2024,8:48,1,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,32,2,242,15
+320,8/26/2024,7:27,1,Garden City_Urban,GC18,GC18.2,Eurasian Collared Dove,34,3,242,15
+321,8/14/2024,8:55,1,Garden City_Urban,GC18,GC18.2,Eurasian Collared Dove,39,3,242,15
+322,8/14/2024,8:48,1,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,43,2,242,15
+323,8/14/2024,8:55,1,Garden City_Urban,GC18,GC18.2,Eurasian Collared Dove,47,3,242,15
+324,8/26/2024,7:27,1,Garden City_Urban,GC18,GC18.2,Eurasian Collared Dove,47,3,242,15
+325,8/14/2024,8:55,1,Garden City_Urban,GC18,GC18.2,Eurasian Collared Dove,49,3,242,15
+326,4/2/2024,7:56,3,Garden City_Urban,GC19,GC19.2,Eurasian Collared Dove,16.8,2,242,13
+327,8/26/2024,7:41,0,Garden City_Urban,GC19,GC19.1,Eurasian Collared Dove,17,2,242,13
+328,8/26/2024,7:55,0,Garden City_Urban,GC19,GC19.2,Eurasian Collared Dove,24,2,242,13
+329,8/26/2024,7:41,0,Garden City_Urban,GC19,GC19.1,Eurasian Collared Dove,30,2,242,13
+330,8/26/2024,7:41,0,Garden City_Urban,GC19,GC19.1,Eurasian Collared Dove,37,2,242,13
+331,8/26/2024,7:41,0,Garden City_Urban,GC19,GC19.1,Eurasian Collared Dove,46,2,242,13
+332,4/2/2024,8:08,2,Garden City_Urban,GC19,GC19.3,Eurasian Collared Dove,46.5,2,242,13
+333,4/2/2024,7:56,3,Garden City_Urban,GC19,GC19.2,Eurasian Collared Dove,59.4,2,242,13
+334,4/2/2024,8:08,2,Garden City_Urban,GC19,GC19.3,Eurasian Collared Dove,60.8,2,242,13
+335,4/2/2024,8:08,2,Garden City_Urban,GC19,GC19.3,Eurasian Collared Dove,74.9,2,242,13
+336,8/26/2024,8:05,1,Garden City_Urban,GC19,GC19.3,Eurasian Collared Dove,95,2,242,13
+337,4/5/2024,9:26,4,Garden City_Urban,GC2,GC2.1,NA,NA,1,242,3
+338,4/5/2024,9:04,4,Garden City_Urban,GC2,GC2.2,Eurasian Collared Dove,35.4,2,242,3
+339,8/15/2024,8:57,1,Garden City_Urban,GC2,GC2.2,Eurasian Collared Dove,39,2,242,3
+340,4/3/2024,7:59,2,Garden City_Urban,GC20,GC20.1,Eurasian Collared Dove,13.6,2,242,18
+341,4/3/2024,8:25,2,Garden City_Urban,GC20,GC20.2,Eurasian Collared Dove,22.6,2,242,18
+342,8/29/2024,8:10,1,Garden City_Urban,GC20,GC20.1,Eurasian Collared Dove,23.3,2,242,18
+343,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,33.4,2,242,18
+344,8/29/2024,8:10,1,Garden City_Urban,GC20,GC20.1,Eurasian Collared Dove,37.9,2,242,18
+345,4/3/2024,8:13,2,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,41.1,2,242,18
+346,4/3/2024,8:25,2,Garden City_Urban,GC20,GC20.2,Eurasian Collared Dove,42.1,2,242,18
+347,8/26/2024,7:37,2,Garden City_Urban,GC20,GC20.2,Eurasian Collared Dove,43,2,242,18
+348,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,49.8,2,242,18
+349,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,50,2,242,18
+350,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,58.1,2,242,18
+351,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,61.8,2,242,18
+352,4/3/2024,8:25,2,Garden City_Urban,GC20,GC20.2,Eurasian Collared Dove,66.9,2,242,18
+353,8/26/2024,7:37,2,Garden City_Urban,GC20,GC20.2,Eurasian Collared Dove,72.9,2,242,18
+354,8/26/2024,7:37,2,Garden City_Urban,GC20,GC20.2,Eurasian Collared Dove,85.3,2,242,18
+355,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,87.4,2,242,18
+356,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,90.3,2,242,18
+357,8/26/2024,7:54,1,Garden City_Urban,GC20,GC20.3,Eurasian Collared Dove,98.9,2,242,18
+358,4/2/2024,11:27,4,Garden City_Urban,GC21,GC21.2,NA,NA,2,242,5
+359,8/26/2024,7:23,2,Garden City_Urban,GC21,GC21.2,Eurasian Collared Dove,33.4,2,242,5
+360,4/2/2024,10:15,4,Garden City_Urban,GC21,GC21.1,Eurasian Collared Dove,55.2,2,242,5
+361,8/26/2024,7:23,2,Garden City_Urban,GC21,GC21.1,Eurasian Collared Dove,101.8,2,242,5
+362,8/26/2024,7:23,2,Garden City_Urban,GC21,GC21.1,Eurasian Collared Dove,144.5,2,242,5
+363,8/26/2024,8:15,0,Garden City_Urban,GC22,GC22.2,Eurasian Collared Dove,27,2,242,8
+364,4/2/2024,8:27,2,Garden City_Urban,GC22,GC22.1,Eurasian Collared Dove,28.5,2,242,8
+365,4/2/2024,8:44,3,Garden City_Urban,GC22,GC22.2,Eurasian Collared Dove,30.1,2,242,8
+366,4/2/2024,8:44,3,Garden City_Urban,GC22,GC22.2,Eurasian Collared Dove,53.7,2,242,8
+367,8/26/2024,8:29,1,Garden City_Urban,GC22,GC22.1,Eurasian Collared Dove,54,2,242,8
+368,4/2/2024,8:27,2,Garden City_Urban,GC22,GC22.1,Eurasian Collared Dove,60.1,2,242,8
+369,8/26/2024,8:29,1,Garden City_Urban,GC22,GC22.1,Eurasian Collared Dove,76,2,242,8
+370,4/2/2024,8:44,3,Garden City_Urban,GC22,GC22.2,Eurasian Collared Dove,148.8,2,242,8
+371,4/2/2024,8:56,3,Garden City_Urban,GC23,GC23.3,Eurasian Collared Dove,14.2,2,242,12
+372,4/2/2024,9:24,3,Garden City_Urban,GC23,GC23.2,Eurasian Collared Dove,18.1,2,242,12
+373,8/27/2024,7:32,1,Garden City_Urban,GC23,GC23.3,Eurasian Collared Dove,22,2,242,12
+374,8/27/2024,7:49,1,Garden City_Urban,GC23,GC23.2,NA,NA,2,242,12
+375,8/27/2024,8:02,1,Garden City_Urban,GC23,GC23.1,Eurasian Collared Dove,24.6,2,242,12
+376,4/2/2024,8:56,3,Garden City_Urban,GC23,GC23.3,Eurasian Collared Dove,40,2,242,12
+377,4/2/2024,9:32,4,Garden City_Urban,GC23,GC23.1,Eurasian Collared Dove,80.1,2,242,12
+378,8/27/2024,7:32,1,Garden City_Urban,GC23,GC23.3,Eurasian Collared Dove,84,2,242,12
+379,8/27/2024,8:02,1,Garden City_Urban,GC23,GC23.1,Eurasian Collared Dove,87,2,242,12
+380,8/27/2024,8:02,1,Garden City_Urban,GC23,GC23.1,Mourning Dove,87,2,242,12
+381,8/27/2024,8:02,1,Garden City_Urban,GC23,GC23.1,Eurasian Collared Dove,113.2,2,242,12
+382,8/27/2024,7:32,1,Garden City_Urban,GC23,GC23.3,Eurasian Collared Dove,176.4,2,242,12
+383,4/2/2024,9:42,4,Garden City_Urban,GC24,GC24.1,Eurasian Collared Dove,14.4,2,242,9
+384,8/27/2024,7:14,1,Garden City_Urban,GC24,GC24.1,Eurasian Collared Dove,53,2,242,9
+385,8/27/2024,7:01,1,Garden City_Urban,GC24,GC24.2,Eurasian Collared Dove,59.7,2,242,9
+386,4/2/2024,9:57,4,Garden City_Urban,GC24,GC24.2,NA,NA,2,242,9
+387,8/27/2024,7:01,1,Garden City_Urban,GC24,GC24.2,Eurasian Collared Dove,70.6,2,242,9
+388,4/2/2024,9:42,4,Garden City_Urban,GC24,GC24.1,Eurasian Collared Dove,76.7,2,242,9
+389,8/27/2024,7:14,1,Garden City_Urban,GC24,GC24.1,Eurasian Collared Dove,81.9,2,242,9
+390,8/27/2024,7:14,1,Garden City_Urban,GC24,GC24.1,Mourning Dove,83.4,2,242,9
+391,8/27/2024,7:01,1,Garden City_Urban,GC24,GC24.2,Eurasian Collared Dove,107.5,2,242,9
+392,4/5/2024,8:53,4,Garden City_Urban,GC3,GC3.2,Eurasian Collared Dove,17.1,2,242,5
+393,4/5/2024,8:37,4,Garden City_Urban,GC3,GC3.1,NA,NA,2,242,5
+394,4/5/2024,8:53,4,Garden City_Urban,GC3,GC3.2,Eurasian Collared Dove,68.3,2,242,5
+395,8/15/2024,8:45,1,Garden City_Urban,GC3,GC3.2,Eurasian Collared Dove,122,2,242,5
+396,8/28/2024,7:55,1,Garden City_Urban,GC4,GC4.2,Eurasian Collared Dove,18.9,2,242,15
+397,4/5/2024,8:19,4,Garden City_Urban,GC4,GC4.2,NA,NA,2,242,15
+398,8/28/2024,7:55,1,Garden City_Urban,GC4,GC4.2,Eurasian Collared Dove,23,2,242,15
+399,8/28/2024,7:55,1,Garden City_Urban,GC4,GC4.2,Eurasian Collared Dove,25.1,2,242,15
+400,8/28/2024,7:55,1,Garden City_Urban,GC4,GC4.2,Eurasian Collared Dove,30.1,2,242,15
+401,8/28/2024,7:55,1,Garden City_Urban,GC4,GC4.2,Eurasian Collared Dove,32.8,2,242,15
+402,8/27/2024,8:47,1,Garden City_Urban,GC4,GC4.1,Eurasian Collared Dove,43.1,2,242,15
+403,4/5/2024,7:56,4,Garden City_Urban,GC4,GC4.1,Eurasian Collared Dove,45.2,2,242,15
+404,8/27/2024,8:47,1,Garden City_Urban,GC4,GC4.1,Eurasian Collared Dove,64.5,2,242,15
+405,8/27/2024,8:47,1,Garden City_Urban,GC4,GC4.1,Eurasian Collared Dove,72.5,2,242,15
+406,4/5/2024,8:10,4,Garden City_Urban,GC4,GC4.3,Eurasian Collared Dove,84.7,2,242,15
+407,4/5/2024,8:10,4,Garden City_Urban,GC4,GC4.3,Eurasian Collared Dove,94.6,2,242,15
+408,8/27/2024,8:58,1,Garden City_Urban,GC4,GC4.3,Eurasian Collared Dove,111.9,2,242,15
+409,8/27/2024,8:58,1,Garden City_Urban,GC4,GC4.3,Eurasian Collared Dove,154.6,2,242,15
+410,8/27/2024,8:58,1,Garden City_Urban,GC4,GC4.3,Eurasian Collared Dove,199.9,2,242,15
+411,4/5/2024,10:27,4,Garden City_Urban,GC5,GC5.1,Eurasian Collared Dove,26,1,242,7
+412,4/5/2024,10:13,4,Garden City_Urban,GC5,GC5.2,Eurasian Collared Dove,62.9,2,242,7
+413,8/15/2024,7:17,2,Garden City_Urban,GC5,GC5.3,Eurasian Collared Dove,65.8,2,242,7
+414,4/5/2024,9:55,4,Garden City_Urban,GC5,GC5.3,Eurasian Collared Dove,80.1,2,242,7
+415,8/15/2024,7:04,2,Garden City_Urban,GC5,GC5.2,NA,NA,2,242,7
+416,4/5/2024,9:55,4,Garden City_Urban,GC5,GC5.3,Eurasian Collared Dove,112.6,2,242,7
+417,4/5/2024,10:13,4,Garden City_Urban,GC5,GC5.2,Eurasian Collared Dove,113.9,2,242,7
+418,8/15/2024,7:59,2,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,21.1,2,242,13
+419,8/15/2024,7:59,2,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,22.1,2,242,13
+420,8/15/2024,7:59,2,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,24.5,2,242,13
+421,8/15/2024,7:59,2,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,32,2,242,13
+422,8/15/2024,7:59,2,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,32,2,242,13
+423,4/5/2024,9:39,4,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,33,2,242,13
+424,8/15/2024,7:59,2,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,42,2,242,13
+425,8/28/2024,8:30,1,Garden City_Urban,GC6,GC6.2,Eurasian Collared Dove,44.8,2,242,13
+426,4/5/2024,9:39,4,Garden City_Urban,GC6,GC6.1,Eurasian Collared Dove,52.9,2,242,13
+427,8/28/2024,8:30,1,Garden City_Urban,GC6,GC6.2,Eurasian Collared Dove,56.5,2,242,13
+428,8/28/2024,8:30,1,Garden City_Urban,GC6,GC6.2,Eurasian Collared Dove,80,2,242,13
+429,8/28/2024,8:30,1,Garden City_Urban,GC6,GC6.2,Eurasian Collared Dove,81,2,242,13
+430,4/4/2024,10:15,2,Garden City_Urban,GC6,GC6.2,Eurasian Collared Dove,124.5,2,242,13
+431,8/28/2024,8:44,1,Garden City_Urban,GC7,GC7.2,Eurasian Collared Dove,11.2,2,242,19
+432,8/15/2024,9:09,1,Garden City_Urban,GC7,GC7.1,Eurasian Collared Dove,14,2,242,19
+433,8/15/2024,9:09,1,Garden City_Urban,GC7,GC7.1,Eurasian Collared Dove,15,2,242,19
+434,8/28/2024,8:44,1,Garden City_Urban,GC7,GC7.2,Eurasian Collared Dove,15.2,2,242,19
+435,4/4/2024,9:44,2,Garden City_Urban,GC7,GC7.1,Eurasian Collared Dove,16,2,242,19
+436,8/28/2024,8:44,1,Garden City_Urban,GC7,GC7.2,Eurasian Collared Dove,28.2,2,242,19
+437,4/4/2024,9:52,2,Garden City_Urban,GC7,GC7.2,Eurasian Collared Dove,34.6,2,242,19
+438,4/4/2024,9:44,2,Garden City_Urban,GC7,GC7.1,Eurasian Collared Dove,36.8,2,242,19
+439,4/4/2024,9:52,2,Garden City_Urban,GC7,GC7.2,Eurasian Collared Dove,39.7,2,242,19
+440,4/4/2024,10:01,2,Garden City_Urban,GC7,GC7.3,Eurasian Collared Dove,45.5,2,242,19
+441,8/15/2024,9:09,1,Garden City_Urban,GC7,GC7.1,Eurasian Collared Dove,48,2,242,19
+442,8/15/2024,9:09,1,Garden City_Urban,GC7,GC7.1,Eurasian Collared Dove,53,2,242,19
+443,4/4/2024,9:44,2,Garden City_Urban,GC7,GC7.1,Eurasian Collared Dove,54.4,2,242,19
+444,8/28/2024,8:44,1,Garden City_Urban,GC7,GC7.2,Eurasian Collared Dove,56.9,2,242,19
+445,4/4/2024,9:52,2,Garden City_Urban,GC7,GC7.2,Eurasian Collared Dove,68,2,242,19
+446,8/30/2024,8:05,1,Garden City_Urban,GC7,GC7.3,Eurasian Collared Dove,68.4,2,242,19
+447,4/4/2024,10:01,2,Garden City_Urban,GC7,GC7.3,Eurasian Collared Dove,95.6,2,242,19
+448,8/30/2024,8:05,1,Garden City_Urban,GC7,GC7.3,Eurasian Collared Dove,102.3,2,242,19
+449,8/30/2024,8:05,1,Garden City_Urban,GC7,GC7.3,Eurasian Collared Dove,131.1,2,242,19
+450,4/4/2024,9:27,2,Garden City_Urban,GC8,GC8.2,Eurasian Collared Dove,42.5,2,242,4
+451,8/2/2024,7:19,1,Garden City_Urban,GC8,GC8.2,Eurasian Collared Dove,76,2,242,4
+452,8/2/2024,7:32,1,Garden City_Urban,GC8,GC8.1,Eurasian Collared Dove,76,2,242,4
+453,4/4/2024,9:06,2,Garden City_Urban,GC8,GC8.1,NA,NA,2,242,4
+454,8/15/2024,7:43,2,Garden City_Urban,GC9,GC9.2,Eurasian Collared Dove,38.3,2,242,7
+455,8/15/2024,7:43,2,Garden City_Urban,GC9,GC9.2,Eurasian Collared Dove,57.4,2,242,7
+456,8/15/2024,7:43,2,Garden City_Urban,GC9,GC9.2,Eurasian Collared Dove,64.8,2,242,7
+457,8/15/2024,7:43,2,Garden City_Urban,GC9,GC9.2,Eurasian Collared Dove,68,2,242,7
+458,8/15/2024,7:33,2,Garden City_Urban,GC9,GC9.1,Eurasian Collared Dove,119.8,2,242,7
+459,4/1/2024,10:24,2,Garden City_Urban,GC13,GC13.2,Eurasian Collared Dove,24.9,2,242,16
+460,4/1/2024,9:01,3,Garden City_Urban,GC13,GC13.1,Eurasian Collared Dove,25.8,2,242,16
+461,4/1/2024,9:13,3,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,36.7,2,242,16
+462,4/1/2024,9:13,3,Garden City_Urban,GC13,GC13.3,Eurasian Collared Dove,45.7,2,242,16
+463,4/1/2024,10:24,2,Garden City_Urban,GC13,GC13.2,Eurasian Collared Dove,75.7,2,242,16
+464,4/1/2024,10:24,2,Garden City_Urban,GC13,GC13.2,Eurasian Collared Dove,93.8,2,242,16
+465,4/1/2024,9:40,2,Garden City_Urban,GC17,GC17.1,NA,NA,2,242,7
+466,4/1/2024,9:51,2,Garden City_Urban,GC17,GC17.2,NA,NA,2,242,7
+467,4/1/2024,9:29,3,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,10.1,2,242,15
+468,4/1/2024,9:29,3,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,15.1,2,242,15
+469,4/1/2024,10:02,2,Garden City_Urban,GC18,GC18.2,Eurasian Collared Dove,32.9,3,242,15
+470,4/1/2024,9:29,3,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,37.6,2,242,15
+471,4/1/2024,9:29,3,Garden City_Urban,GC18,GC18.1,Eurasian Collared Dove,51.1,2,242,15
+472,4/1/2024,10:59,2,Garden City_Urban,GC19,GC19.1,Eurasian Collared Dove,42,2,242,13
+473,4/1/2024,10:59,2,Garden City_Urban,GC19,GC19.1,Eurasian Collared Dove,55.4,2,242,13
+474,8/15/2024,8:28,1,Garden City_Urban,GC3,GC3.1,Eurasian Collared Dove,8,2,242,5
+475,4/1/2024,8:50,3,Garden City_Urban,GC9,GC9.2,Eurasian Collared Dove,45.8,2,242,7
+476,4/1/2024,8:20,3,Garden City_Urban,GC9,GC9.1,Eurasian Collared Dove,78.9,2,242,7
+477,4/18/2024,9:27,7,McPherson_WMA,IN4,IN4.4,NA,NA,2,39,10
+478,4/18/2024,9:11,6,McPherson_WMA,IN4,IN4.3,NA,NA,2,39,10
+479,4/17/2024,10:17,5,McPherson_WMA,IN6,IN6.1,NA,NA,2,39,4
+480,4/18/2024,9:57,7,McPherson_WMA,IN4,IN4.1,NA,NA,3,39,10
+481,4/17/2024,9:46,4,McPherson_WMA,IN5,IN5.4,NA,NA,2,39,4
+482,4/18/2024,8:58,6,McPherson_WMA,IN4,IN4.2,NA,NA,3,39,10
+483,4/17/2024,9:57,4,McPherson_WMA,IN6,IN6.4,NA,NA,1,39,4
+484,4/18/2024,10:12,7,McPherson_WMA,IN2,IN2.3,NA,NA,2,39,5
+485,4/18/2024,8:48,6,McPherson_WMA,IN5,IN5.1,NA,NA,1,39,4
+486,7/16/2024,7:28,14,Inman_WMA,IN1,IN1.2,NA,NA,1,5,2
+487,7/16/2024,7:13,11,Inman_WMA,IN1,IN1.1,NA,NA,1,5,2
+488,8/5/2024,8:18,7,McPherson_WMA,IN2,IN2.2,NA,NA,2,39,5
+489,7/16/2024,6:46,11,Inman_WMA,IN2,IN2.1,NA,NA,1,5,5
+490,4/18/2024,10:25,7,McPherson_WMA,IN2,IN2.2,NA,NA,2,39,5
+491,8/5/2024,8:01,6,McPherson_WMA,IN2,IN2.3,NA,NA,2,39,5
+492,7/16/2024,8:07,10,Inman_WMA,IN3,IN3.2,NA,NA,2,5,6
+493,4/17/2024,9:16,4,McPherson_WMA,IN3,IN3.3,NA,NA,2,39,6
+494,7/16/2024,7:55,10,Inman_WMA,IN3,IN3.1,NA,NA,2,5,6
+495,8/5/2024,6:59,7,McPherson_WMA,IN3,IN3.2,NA,NA,2,39,6
+496,8/5/2024,6:49,7,McPherson_WMA,IN3,IN3.1,Mourning Dove,198,2,39,6
+497,8/5/2024,6:29,8,McPherson_WMA,IN3,IN3.3,NA,NA,2,39,6
+498,4/23/2024,10:41,12,McPherson_WMA,IN4,IN4.1,NA,NA,3,39,10
+499,8/2/2024,7:47,2,McPherson_WMA,IN4,IN4.3,NA,NA,2,39,10
+500,4/23/2024,10:28,10,McPherson_WMA,IN4,IN4.2,NA,NA,3,39,10
+501,8/1/2024,8:41,5,McPherson_WMA,IN4,IN4.2,NA,NA,3,39,10
+502,8/2/2024,8:18,3,McPherson_WMA,IN4,IN4.1,NA,NA,3,39,10
+503,8/2/2024,7:35,3,McPherson_WMA,IN4,IN4.4,NA,NA,2,39,10
+504,8/1/2024,7:17,5,McPherson_WMA,IN5,IN5.4,NA,NA,2,39,4
+505,4/17/2024,9:33,4,McPherson_WMA,IN5,IN5.2,NA,NA,1,39,4
+506,7/23/2024,7:38,2,McPherson_WMA,IN6,IN6.2,NA,NA,1,39,4
+507,8/1/2024,7:41,4,McPherson_WMA,IN6,IN6.1,NA,NA,2,39,4
+508,7/24/2024,7:12,4,McPherson_WMA,IN7,IN7.1,NA,NA,1,39,2
+509,7/24/2024,7:35,4,McPherson_WMA,IN7,IN7.2,NA,NA,1,39,2
+510,4/23/2024,9:00,5,McPherson_WMA,IN8,IN8.3,NA,NA,1,39,7
+511,8/1/2024,6:42,5,McPherson_WMA,IN8,IN8.1,NA,NA,2,39,7
+512,7/26/2024,7:23,5,McPherson_WMA,IN8,IN8.4,Mourning Dove,40,2,39,7
+513,4/23/2024,10:11,8,McPherson_WMA,IN8,IN8.1,NA,NA,2,39,7
+514,7/24/2024,8:01,5,McPherson_WMA,IN8,IN8.2,NA,NA,2,39,7
+515,4/23/2024,9:39,6,McPherson_WMA,IN8,IN8.4,NA,NA,2,39,7
+516,7/26/2024,6:58,5,McPherson_WMA,IN8,IN8.2,Mourning Dove,248,2,39,7
+517,4/23/2024,9:13,5,McPherson_WMA,IN9,IN9.1,NA,NA,1,39,3
+518,4/23/2024,9:23,6,McPherson_WMA,IN9,IN9.2,NA,NA,2,39,3
+519,7/26/2024,8:42,7,McPherson_WMA,IN9,IN9.2,NA,NA,2,39,3
+520,4/1/2024,9:58,20,McPherson_Urban,MC1,MC1.1,NA,NA,2,82,4
+521,8/15/2024,7:31,5,McPherson_Urban,MC1,MC1.1,Mourning Dove,35,2,82,4
+522,8/15/2024,7:39,5,McPherson_Urban,MC1,MC1.2,NA,NA,2,82,4
+523,4/1/2024,12:05,10,McPherson_Urban,MC1,MC1.2,Mourning Dove,105.6,2,82,4
+524,8/20/2024,7:27,8,McPherson_Rural,MC10,MC10.2,NA,NA,2,39,4
+525,8/15/2024,8:30,6,McPherson_Urban,MC10,MC10.1,NA,NA,2,82,4
+526,4/5/2024,8:40,9,McPherson_Urban,MC10,MC10.1,Mourning Dove,87.2,2,82,4
+527,4/5/2024,9:32,11,McPherson_Urban,MC10,MC10.2,Mourning Dove,144.2,2,82,4
+528,8/20/2024,7:48,8,McPherson_Rural,MC11,MC11.1,NA,NA,3,39,4
+529,4/5/2024,10:13,12,McPherson_Urban,MC11,MC11.2,NA,NA,1,82,4
+530,4/12/2024,10:08,4,McPherson_Urban,MC11,MC11.1,NA,NA,3,82,4
+531,8/15/2024,9:21,6,McPherson_Urban,MC11,MC11.1,NA,NA,3,82,4
+532,4/16/2024,8:16,17,McPherson_Urban,MC12,MC12.1,NA,NA,2,82,4
+533,8/7/2024,6:38,6,McPherson_Urban,MC12,MC12.1,Mourning Dove,16.5,2,82,4
+534,8/7/2024,6:38,6,McPherson_Urban,MC12,MC12.1,Mourning Dove,28,2,82,4
+535,8/7/2024,6:38,6,McPherson_Urban,MC12,MC12.1,Mourning Dove,206,2,82,4
+536,8/7/2024,7:01,6,McPherson_Urban,MC13,MC13.2,NA,NA,1,82,5
+537,8/7/2024,6:51,6,McPherson_Urban,MC13,MC13.1,Eurasian Collared Dove,32,2,82,5
+538,4/5/2024,12:52,3,McPherson_Urban,MC13,MC13.1,NA,NA,2,82,5
+539,8/7/2024,6:51,6,McPherson_Urban,MC13,MC13.1,Mourning Dove,61,2,82,5
+540,4/5/2024,1:19,17,McPherson_Urban,MC13,MC 13.2,Mourning Dove,84.4,1,82,5
+541,8/7/2024,7:51,8,McPherson_Urban,MC14,MC14.2,NA,NA,1,82,2
+542,8/7/2024,8:08,9,McPherson_Urban,MC14,MC14.1,NA,NA,1,82,2
+543,7/18/2024,8:15,6,McPherson_Urban,MC15,MC15.2,Mourning Dove,22,1,82,4
+544,8/7/2024,8:39,9,McPherson_Urban,MC15,MC15.1,NA,NA,2,82,4
+545,4/5/2024,10:56,13,McPherson_Urban,MC15,MC15.1,NA,NA,2,82,4
+546,7/18/2024,8:15,6,McPherson_Urban,MC15,MC15.2,Eurasian Collared Dove,42,1,82,4
+547,7/18/2024,8:42,6,McPherson_Urban,MC16,MC16.1,NA,NA,1,82,1
+548,4/16/2024,8:58,18,McPherson_Urban,MC17,MC17.1,NA,NA,2,82,3
+549,8/7/2024,7:27,7,McPherson_Urban,MC17,MC17.1,NA,NA,2,82,3
+550,4/5/2024,3:02,13,McPherson_Urban,MC17,MC17.2,NA,NA,1,82,3
+551,4/12/2024,10:29,4,McPherson_Urban,MC18,MC18.2,NA,NA,3,82,6
+552,8/7/2024,8:25,9,McPherson_Urban,MC18,MC18.1,NA,NA,3,82,6
+553,4/12/2024,10:20,4,McPherson_Urban,MC18,MC18.1,Mourning Dove,53.2,3,82,6
+554,7/30/2024,9:09,18,McPherson_Urban,MC18,MC18.2,NA,NA,3,82,6
+555,4/16/2024,9:30,22,McPherson_Urban,MC18,MC18.2,NA,NA,3,82,6
+556,4/16/2024,9:18,20,McPherson_Urban,MC18,MC18.1,NA,NA,3,82,6
+557,7/30/2024,8:24,17,McPherson_Urban,MC19,MC19.2,NA,NA,1,82,3
+558,7/30/2024,8:56,18,McPherson_Urban,MC19,MC19.1,NA,NA,2,82,3
+559,4/16/2024,8:42,18,McPherson_Urban,MC19,MC19.1,NA,NA,2,82,3
+560,4/2/2024,15:35,14,McPherson_Urban,MC2,MC2.2,NA,NA,2,82,4
+561,4/2/2024,14:26,20,McPherson_Urban,MC2,MC2.1,NA,NA,2,82,4
+562,8/13/2024,10:28,12,McPherson_Urban,MC2,MC2.1,Mourning Dove,50,2,82,4
+563,8/13/2024,10:09,11,McPherson_Urban,MC2,MC2.2,Eurasian Collared Dove,88,2,82,4
+564,4/16/2024,9:57,23,McPherson_Urban,MC20,MC20.2,NA,NA,2,82,3
+565,7/30/2024,7:56,15,McPherson_Urban,MC20,MC20.2,NA,NA,2,82,3
+566,7/30/2024,8:11,16,McPherson_Urban,MC20,MC20.1,NA,NA,1,82,3
+567,4/12/2024,9:41,3,McPherson_Urban,MC21,MC21.1,NA,NA,1,82,4
+568,4/12/2024,9:30,3,McPherson_Urban,MC21,MC21.2,NA,NA,2,82,4
+569,7/30/2024,6:58,14,McPherson_Urban,MC21,MC21.2,Mourning Dove,60,2,82,4
+570,7/30/2024,6:58,14,McPherson_Urban,MC21,MC21.2,Eurasian Collared Dove,150,2,82,4
+571,7/19/2024,7:55,9,McPherson_Urban,MC22,MC22.2,NA,NA,1,82,1
+572,7/19/2024,8:20,10,McPherson_Urban,MC23,MC23.1,Mourning Dove,86,1,82,3
+573,7/19/2024,8:20,10,McPherson_Urban,MC23,MC23.1,Mourning Dove,91,1,82,3
+574,7/19/2024,8:20,10,McPherson_Urban,MC23,MC23.1,Mourning Dove,250,1,82,3
+575,7/22/2024,9:26,2,McPherson_Rural,MC24,MC24.1,NA,NA,1,39,2
+576,7/22/2024,9:18,2,McPherson_Rural,MC24,MC24.2,NA,NA,1,39,2
+577,7/18/2024,9:32,7,McPherson_Urban,MC25,MC25.1,Mourning Dove,29,1,82,4
+578,7/18/2024,9:22,7,McPherson_Urban,MC25,MC25.2,NA,NA,1,82,4
+579,7/18/2024,9:32,7,McPherson_Urban,MC25,MC25.1,Eurasian Collared Dove,37,1,82,4
+580,7/18/2024,9:32,7,McPherson_Urban,MC25,MC25.1,Eurasian Collared Dove,53,1,82,4
+581,7/22/2024,8:36,2,McPherson_Rural,MC26,MC26.1,NA,NA,1,39,4
+582,7/22/2024,8:24,2,McPherson_Rural,MC26,MC26.2,Eurasian Collared Dove,42,1,39,4
+583,7/22/2024,8:24,2,McPherson_Rural,MC26,MC26.2,Eurasian Collared Dove,78,1,39,4
+584,7/22/2024,8:24,2,McPherson_Rural,MC26,MC26.2,Mourning Dove,103,1,39,4
+585,7/19/2024,8:29,10,McPherson_Urban,MC27,MC27.1,Mourning Dove,69,1,82,3
+586,7/19/2024,8:29,10,McPherson_Urban,MC27,MC27.1,Mourning Dove,142,1,82,3
+587,7/23/2024,9:22,2,McPherson_WMA,MC27,MC27.3,NA,NA,1,39,3
+588,7/18/2024,7:55,5,McPherson_Urban,MC3,MC3.2,NA,NA,1,82,1
+589,8/20/2024,7:09,8,McPherson_Rural,MC4,MC4.2,Mourning Dove,135,2,39,2
+590,4/3/2024,13:40,20,McPherson_Urban,MC4,MC4.2,NA,NA,2,82,2
+591,8/13/2024,8:59,11,McPherson_Urban,MC5,MC5.2,NA,NA,2,82,4
+592,4/4/2024,9:06,9,McPherson_Urban,MC5,MC5.2,NA,NA,2,82,4
+593,7/29/2024,7:14,11,McPherson_Urban,MC5,MC5.1,Mourning Dove,30,2,82,4
+594,4/4/2024,8:28,8,McPherson_Urban,MC5,MC5.1,Mourning Dove,36.3,2,82,4
+595,8/13/2024,9:39,11,McPherson_Urban,MC6,MC6.1,NA,NA,2,82,5
+596,4/4/2024,9:41,10,McPherson_Urban,MC6,MC6.1,Mourning Dove,37.6,2,82,5
+597,4/4/2024,9:41,10,McPherson_Urban,MC6,MC6.1,Mourning Dove,46.9,2,82,5
+598,8/13/2024,9:48,11,McPherson_Urban,MC6,MC6.2,Mourning Dove,49,2,82,5
+599,4/4/2024,10:14,10,McPherson_Urban,MC6,MC6.2,Mourning Dove,87.7,2,82,5
+600,8/15/2024,8:14,5,McPherson_Urban,MC7,MC7.2,Eurasian Collared Dove,25,2,82,5
+601,4/4/2024,10:56,10,McPherson_Urban,MC7,MC7.1,Mourning Dove,34,2,82,5
+602,4/4/2024,11:29,11,McPherson_Urban,MC7,MC7.2,Eurasian Collared Dove,34.6,2,82,5
+603,4/4/2024,11:29,11,McPherson_Urban,MC7,MC7.2,Mourning Dove,54.7,2,82,5
+604,8/15/2024,7:59,5,McPherson_Urban,MC7,MC7.1,NA,NA,2,82,5
+605,4/4/2024,1:15,10,McPherson_Urban,MC8,MC8.2,NA,NA,2,82,3
+606,8/15/2024,9:38,5,McPherson_Urban,MC8,MC8.2,NA,NA,2,82,3
+607,7/18/2024,7:39,5,McPherson_Urban,MC8,MC8.1,NA,NA,1,82,3
+608,4/4/2024,3:01,9,McPherson_Urban,MC9,MC9.2,NA,NA,2,82,4
+609,7/29/2024,6:50,11,McPherson_Urban,MC9,MC9.1,NA,NA,2,82,4
+610,4/4/2024,2:32,9,McPherson_Urban,MC9,MC9.1,NA,NA,2,82,4
+611,7/29/2024,7:03,11,McPherson_Urban,MC9,MC9.2,NA,NA,2,82,4
+612,8/2/2024,7:30,6,Topeka_WMA,PL1,PL1.2,NA,NA,2,73,2
+613,4/15/2024,10:18,11,Topeka_WMA,PL1,PL1.2,NA,NA,2,73,2
+614,4/19/2024,8:05,4,Topeka_WMA,PL2,PL2.1,NA,NA,1,73,1
+615,7/12/2024,7:12,10,Topeka_Urban,T16,T16.1,Mourning Dove,2,1,61,3
+616,4/22/2024,8:31,11,Topeka_Urban,T2,T2.1,NA,NA,2,61,6
+617,7/10/2024,8:32,4,Topeka_Urban,T2,T2.1,NA,NA,2,61,6
+618,7/10/2024,8:45,4,Topeka_Urban,T2,T2.2,NA,NA,4,61,6
+619,4/22/2024,8:31,11,Topeka_Urban,T2,T2.2,NA,NA,4,61,6
+620,8/2/2024,8:25,7,Topeka_WMA,T2,T2.2,NA,NA,4,73,6
+621,4/19/2024,8:05,4,Topeka_WMA,T2,T2.2,NA,NA,4,73,6
