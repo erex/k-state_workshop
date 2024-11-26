@@ -147,10 +147,9 @@ unique(clean.data$Region.Label)
 clean.design <- pegg[!(pegg$Location_Treatment %in% removethese), ]
 ```
 
-# Do we need region and sample tables?
+# Create region and sample tables
 
-If each visit and point is represented in the data, then we might not need tables. Let's find out.  
-**Not the case, if we subset by species, we destroy all points without detections** overestimate
+**If we subset by species, we destroy all points without detections** resulting in overestimation
 
 ```{r}
 #| warning: false
@@ -192,11 +191,6 @@ for(i in 1:length(allpts)) {
 samtab <- data.frame(Sample.Label=allpts,
                      Region.Label=regionstring,
                      Effort=eff)
-
-eff <- vector("numeric", length=length(allpts))
-for(i in 1:length(allpts)) {
-  eff[i] <- clean.data[clean.data$Sample.Label==allpts[i], "Effort"]
-}
 ```
 
 # Load package and set conversion units
@@ -228,7 +222,9 @@ modo.pool.hr <- ds(data=clean.data[clean.data$Species=="Mourning Dove",],
 
 
 ```{r}
-summarize_ds_models(modo.pool.unif, modo.pool.hn, modo.pool.hr)
+knitr::kable(summarize_ds_models(modo.pool.unif, modo.pool.hn, modo.pool.hr)[,c(1,3:7)], 
+             digits=3, row.names = FALSE,
+             caption="Model criticism for 8 stratum pooled detection function models.")
 ```
 
 ## Location x treatment specific detection function
@@ -248,15 +244,19 @@ modo.hr.region <- ds(data=clean.data[clean.data$Species=="Mourning Dove",],
 ```
 
 ```{r}
-summarize_ds_models(modo.hn.region, modo.hr.region)
+knitr::kable(summarize_ds_models(modo.hn.region, modo.hr.region)[,c(1,3:7)], 
+             digits=3, row.names = FALSE,
+             caption="Model criticism for 8 stratum-specific detection function models.")
 ```
 
-**look at ugly SE(Pa) for both models, convergence trouble**
+**Something is not right about SE(Pa) for both models, suggesting convergence trouble**
 
 ```{r}
-summary(modo.hr.region$ddf)
+knitr::kable(summary(modo.hr.region$ddf)$coeff$key.scale, digits=4,
+             caption="Problems in SEs of beta coefficients")
 ```
-**McPherson Rural and WMA, Garden City Urban all causing problems**
+
+**McPherson Rural and WMA, as well as Garden City Urban causing problems**
 
 Probably not a surprise given the numbers of detections in those locations x treatments
 
@@ -265,7 +265,9 @@ knitr::kable(modo.hr.region$dht$individuals$summary, digits=3,
              caption="MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns.")
 ```
 
-# Next step would be to eliminate `Garden City_Urban`, `McPherson_Rural` and `McPherson_WMA` 
+See @sec-5strata eliminate `Garden City_Urban`, `McPherson_Rural` and `McPherson_WMA` for a more reliable model resulting from elimination of strata with very few detections.
+
+:::{.callout-caution collapse=false appearance='default' icon=true}
 
 ## For the moment, show estimates from pooled HR model
 
@@ -274,6 +276,221 @@ knitr::kable(modo.pool.hr$dht$individuals$D[,1:6], digits=3,
              caption="MODO density (per hectare) using pooled detection function across location x treatment combos")
 ```
 
-**Note the magnitude of CVs for `Garden City_Rural`, `Garden City_Urban`, `McPherson_Rural` and `McPherson_WMA`**
+- **Note the magnitude of CVs for `Garden City_Rural`, `Garden City_Urban`, `McPherson_Rural` and `McPherson_WMA`**
+- Most of those large CVs were caused by very low density, but that is not the case for `Garden City_Rural`.
 
-Most of those large CVs were caused by very low density, but that is not the case for `Garden City_Rural`.
+:::
+
+# Remove `GCR`, `MR`, `MW` {#sec-5strata}
+
+```{r}
+#| label: remove_gcrmrmw
+removemore <- c("Garden City_Urban", "McPherson_Rural", "McPherson_WMA")
+cleaner.data <- clean.data[!(clean.data$Region.Label %in% removemore), ]
+combo.more.clean <- unique(cleaner.data$Region.Label)
+unique(cleaner.data$Region.Label)
+```
+
+Because our strata have changed, we need to reconstruct our region and sample tables
+
+```{r}
+regtab5strata <- data.frame(Region.Label=unique(cleaner.data$Region.Label),
+                            Area=unique(cleaner.data$Area))
+
+```
+
+## Reconstruct sample table
+
+Borrowing from our earlier code and removing the unwanted strata
+
+```{r}
+#| warning: false
+allpts5strat <- c(gcr, gcw, mu, tu, tw)
+regionstring5 <- c(rep(combo.more.clean[1], pts.gcr),
+                   rep(combo.more.clean[2], pts.gcw),
+                   rep(combo.more.clean[3], pts.mu),
+                   rep(combo.more.clean[4], pts.tu),
+                   rep(combo.more.clean[5], pts.tw))
+
+eff5 <- vector("numeric", length=length(allpts5strat))
+for(i in 1:length(allpts5strat)) {
+  eff5[i] <- cleaner.data[cleaner.data$Sample.Label==allpts5strat[i], "Effort"]
+}
+
+samtab5 <- data.frame(Sample.Label=allpts5strat,
+                     Region.Label=regionstring5,
+                     Effort=eff5)
+```
+
+# Refit stratum covariate models to remaining five strata
+
+## Pooled detection function
+
+```{r}
+#| message: false
+modo.pool.unif5 <- ds(data=cleaner.data[cleaner.data$Species=="Mourning Dove",], 
+                      region_table = regtab5strata, sample_table = samtab5,
+                      transect = "point", key="unif", truncation = "10%", convert_units = cu)
+modo.pool.hn5 <- ds(data=cleaner.data[cleaner.data$Species=="Mourning Dove",], 
+                    region_table = regtab5strata, sample_table = samtab5,
+                    transect = "point", key="hn", adj="herm", truncation = "10%", convert_units = cu)
+modo.pool.hr5 <- ds(data=cleaner.data[cleaner.data$Species=="Mourning Dove",], 
+                    region_table = regtab5strata, sample_table = samtab5,
+                    transect = "point", key="hr", adj="poly", truncation = "10%", convert_units = cu)
+```
+
+
+## Model criticism of 5 stratum pooled models
+
+```{r}
+knitr::kable(summarize_ds_models(modo.pool.unif5, modo.pool.hn5, modo.pool.hr5)[,c(1,3:7)],
+             digits=3, row.names = FALSE,
+             caption="Model criticism for 5 stratum pooled detection function models.")
+```
+
+## Stratum-specific detection function
+
+```{r}
+#| message: false
+modo.hn.region5 <- ds(data=cleaner.data[cleaner.data$Species=="Mourning Dove",], 
+                      region_table = regtab5strata, sample_table = samtab5,
+                      transect = "point", key="hn",
+                      formula=~Region.Label,
+                      truncation = "10%", convert_units = cu)
+modo.hr.region5 <- ds(data=cleaner.data[cleaner.data$Species=="Mourning Dove",], 
+                      region_table = regtab5strata, sample_table = samtab5,
+                      transect = "point", key="hr",
+                      formula=~Region.Label,
+                      truncation = "10%", convert_units = cu)
+```
+
+```{r}
+knitr::kable(summarize_ds_models(modo.hn.region, modo.hr.region)[,c(1,3:7)], 
+             digits=3, row.names = FALSE,
+             caption="Model criticism for 5 stratum-specific detection function models.")
+```
+
+### Look for signs of convergence problems in covariate $\hat{\beta_i}$ estimates
+
+```{r}
+bob <- summary(modo.hr.region5$ddf)
+knitr::kable(bob$coeff$key.scale, digits=4)
+```
+
+No reason to be concerned about convergence, so make inference from this model.
+
+## Repeat summary table for 5 strata
+
+```{r}
+knitr::kable(modo.hr.region5$dht$individuals$summary, digits=3,
+             caption="MODO by location X treatment for five strata analysis. Pay attention to Effort, n (detections) and k (points) columns.")
+```
+
+## Examine the shape of the stratum-specific probability density functions
+
+```{r}
+plot(modo.hr.region5, pdf=TRUE, nc=18, pl.col="white")
+for(i in 1:length(combo.more.clean)) {
+  add_df_covar_line(modo.hr.region5, data=data.frame(Region.Label=combo.more.clean[i]),
+                    lwd=3, lty=1, col=i, pdf=TRUE)
+}
+legend("topright", title="Loc x treatment", legend = combo.more.clean,
+       lwd=3, lty=1, col=1:5)
+```
+
+## Finally the density estimates
+
+```{r}
+knitr::kable(modo.hr.region5$dht$individuals$D[,1:6], digits=3, 
+             caption="MODO density (per hectare) using stratum-specific detection function across five location x treatment combinations.")
+```
+
+```{r}
+simplename <- modo.hr.region5$dht$individuals$D
+simplename$index <- 1:dim(simplename)[1]
+yrange <- range(c(simplename$lcl, simplename$ucl))
+plot(simplename$index[1:(max(simplename$index)-1)],
+     simplename$Estimate[1:(max(simplename$index)-1)], 
+     ylim=c(0, yrange[2]), xaxt="n",
+     xlab="Location x treatment", ylab="Density (per hectare)",
+     main="Mourning dove estimates 2024 from covariate model")
+s <- seq((max(simplename$index)-1))
+segments(simplename$index[s], simplename$lcl[s], simplename$index[s], simplename$ucl[s])
+axis(1, at=1:(max(simplename$index)-1), labels=simplename$Label[1:(max(simplename$index)-1)], cex.axis=0.9)
+```
+
+# Final comments
+
+The strength of the `Location x treatment` effect upon detectability, while present is not very strong. Therefore, you might have two questions:
+
+- would model selection differ if a different information-theoretic metric been used and
+- would inference about mourning dove densities have been different had a simpler model (that assumes no difference in detectability between `Location x treatment` combinations).
+
+Let's investigate.
+
+## Alternative model selection metric
+
+The tools for employing different metrics exist, but need to be recrafted a bit for our purposes:
+
+```{r}
+#| label = "altmet"
+altmetric <- function(modelobj) {
+  nval <- length(modelobj$ddf$fitted)
+  AICcall <- AIC(modelobj)
+  k <- AICcall$df
+  AICval <- AICcall$AIC
+  AICc <- AICval + (2*k*(k+1)) / (nval-k-1)
+  BIC <- AIC(modelobj, k = log(nval))$AIC
+  return(c(AICval, AICc, BIC))
+}
+```
+
+Pass each of our five models (three without covariates and two using the stratum as covariate) applied to the five-stratum variant of our analysis to our new tool, admittedly in a clumsy fashion.
+
+```{r}
+results <- data.frame(NULL)
+results <- rbind(results, altmetric(modo.pool.unif5))
+results <- rbind(results, altmetric(modo.pool.hn5))
+results <- rbind(results, altmetric(modo.pool.hr5))
+results <- rbind(results, altmetric(modo.hn.region5))
+results <- rbind(results, altmetric(modo.hr.region5))
+colnames(results) <- c("AIC", "AICc", "BIC")
+rownames(results) <- c("modo.pool.unif5","modo.pool.hn5","modo.pool.hr5",
+                       "modo.hn.region5","modo.hr.region5")
+knitr::kable(results[order(results$AIC),], digits=1, 
+             row.names = TRUE, caption="Models ordered by AIC")
+knitr::kable(results[order(results$AICc),], digits=1, 
+             row.names = TRUE, caption="Models ordered by AICc") 
+knitr::kable(results[order(results$BIC),], digits=1, 
+             row.names = TRUE, caption="Models ordered by BIC")
+```
+
+The upshot of changing metrics is that using AICc vs AIC results in the same model choice, whereas use of BIC leads to the selection of a pooled detection function (with a hazard rate key).
+
+## How much does model choice influence our estimates
+
+```{r}
+#| message: false
+pooled <- modo.pool.hr5$dht$individuals$D[1:5, ]
+strat.spec <- modo.hr.region5$dht$individuals$D[1:5, ]
+
+# interleave
+library(gdata)
+merged <- interleave(pooled, strat.spec)
+
+simplename <- merged
+simplename$index <- c(1,1.1, 2,2.1, 3,3.1, 4,4.1, 5,5.1)
+yrange <- range(c(simplename$lcl, simplename$ucl))
+plot(simplename$index,
+     simplename$Estimate[1:10], 
+     ylim=c(0, yrange[2]), xaxt="n",
+     xlab="Location x treatment", ylab="Density (per hectare)",
+     main="Mourning dove estimates 2024 from covariate model\nLeft=pooled, Right=strat-specific")
+s <- seq(1:10)
+segments(simplename$index[s], simplename$lcl[s], simplename$index[s], simplename$ucl[s])
+axis(1, at=1:5, 
+     labels=simplename$Label[seq(1, 9, by=2)],
+     cex.axis=0.9)
+```
+
+The estimates based upon a pooled detection function resemble one another; differences in detectability between strata are homogenised. Interestingly, `Garden City_Rural` is the stratum with fewest detections (7) and its density estimate shows the greatest sensitivity to model choice; however uncertainty in the density estimate swamps and perceived difference in density estimates. Part of the explanation for this lies in the profound variability in encounter rates between stations in `Garden City_Rural`.

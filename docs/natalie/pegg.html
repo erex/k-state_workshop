@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eric Rexstad University of St Andrews">
-<meta name="dcterms.date" content="2024-11-24">
+<meta name="dcterms.date" content="2024-11-26">
 
 <title>Mourning doves 🕊️ – Kansas State workshop, December 2024</title>
 <style>
@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -199,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#rename-columns" id="toc-rename-columns" class="nav-link" data-scroll-target="#rename-columns"><span class="header-section-number">5</span> Rename columns</a></li>
   <li><a href="#toss-unusual-location_treatment" id="toc-toss-unusual-location_treatment" class="nav-link" data-scroll-target="#toss-unusual-location_treatment"><span class="header-section-number">6</span> Toss unusual <code>Location_Treatment</code></a></li>
   <li><a href="#also-remove-from-study_design2024" id="toc-also-remove-from-study_design2024" class="nav-link" data-scroll-target="#also-remove-from-study_design2024"><span class="header-section-number">7</span> Also remove from <code>Study_design2024</code></a></li>
-  <li><a href="#do-we-need-region-and-sample-tables" id="toc-do-we-need-region-and-sample-tables" class="nav-link" data-scroll-target="#do-we-need-region-and-sample-tables"><span class="header-section-number">8</span> Do we need region and sample tables?</a></li>
+  <li><a href="#create-region-and-sample-tables" id="toc-create-region-and-sample-tables" class="nav-link" data-scroll-target="#create-region-and-sample-tables"><span class="header-section-number">8</span> Create region and sample tables</a></li>
   <li><a href="#load-package-and-set-conversion-units" id="toc-load-package-and-set-conversion-units" class="nav-link" data-scroll-target="#load-package-and-set-conversion-units"><span class="header-section-number">9</span> Load package and set conversion units</a></li>
   <li><a href="#mourning-doves" id="toc-mourning-doves" class="nav-link" data-scroll-target="#mourning-doves"><span class="header-section-number">10</span> Mourning doves</a>
   <ul class="collapse">
@@ -207,9 +236,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#model-criticism" id="toc-model-criticism" class="nav-link" data-scroll-target="#model-criticism"><span class="header-section-number">10.2</span> Model criticism</a></li>
   <li><a href="#location-x-treatment-specific-detection-function" id="toc-location-x-treatment-specific-detection-function" class="nav-link" data-scroll-target="#location-x-treatment-specific-detection-function"><span class="header-section-number">10.3</span> Location x treatment specific detection function</a></li>
   </ul></li>
-  <li><a href="#next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma" id="toc-next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma" class="nav-link" data-scroll-target="#next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma"><span class="header-section-number">11</span> Next step would be to eliminate <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code></a>
+  <li><a href="#sec-5strata" id="toc-sec-5strata" class="nav-link" data-scroll-target="#sec-5strata"><span class="header-section-number">11</span> Remove <code>GCR</code>, <code>MR</code>, <code>MW</code></a>
   <ul class="collapse">
-  <li><a href="#for-the-moment-show-estimates-from-pooled-hr-model" id="toc-for-the-moment-show-estimates-from-pooled-hr-model" class="nav-link" data-scroll-target="#for-the-moment-show-estimates-from-pooled-hr-model"><span class="header-section-number">11.1</span> For the moment, show estimates from pooled HR model</a></li>
+  <li><a href="#reconstruct-sample-table" id="toc-reconstruct-sample-table" class="nav-link" data-scroll-target="#reconstruct-sample-table"><span class="header-section-number">11.1</span> Reconstruct sample table</a></li>
+  </ul></li>
+  <li><a href="#refit-stratum-covariate-models-to-remaining-five-strata" id="toc-refit-stratum-covariate-models-to-remaining-five-strata" class="nav-link" data-scroll-target="#refit-stratum-covariate-models-to-remaining-five-strata"><span class="header-section-number">12</span> Refit stratum covariate models to remaining five strata</a>
+  <ul class="collapse">
+  <li><a href="#pooled-detection-function-1" id="toc-pooled-detection-function-1" class="nav-link" data-scroll-target="#pooled-detection-function-1"><span class="header-section-number">12.1</span> Pooled detection function</a></li>
+  <li><a href="#model-criticism-of-5-stratum-pooled-models" id="toc-model-criticism-of-5-stratum-pooled-models" class="nav-link" data-scroll-target="#model-criticism-of-5-stratum-pooled-models"><span class="header-section-number">12.2</span> Model criticism of 5 stratum pooled models</a></li>
+  <li><a href="#stratum-specific-detection-function" id="toc-stratum-specific-detection-function" class="nav-link" data-scroll-target="#stratum-specific-detection-function"><span class="header-section-number">12.3</span> Stratum-specific detection function</a>
+  <ul class="collapse">
+  <li><a href="#look-for-signs-of-convergence-problems-in-covariate-hatbeta_i-estimates" id="toc-look-for-signs-of-convergence-problems-in-covariate-hatbeta_i-estimates" class="nav-link" data-scroll-target="#look-for-signs-of-convergence-problems-in-covariate-hatbeta_i-estimates"><span class="header-section-number">12.3.1</span> Look for signs of convergence problems in covariate <span class="math inline">\(\hat{\beta_i}\)</span> estimates</a></li>
+  </ul></li>
+  <li><a href="#repeat-summary-table-for-5-strata" id="toc-repeat-summary-table-for-5-strata" class="nav-link" data-scroll-target="#repeat-summary-table-for-5-strata"><span class="header-section-number">12.4</span> Repeat summary table for 5 strata</a></li>
+  <li><a href="#examine-the-shape-of-the-stratum-specific-probability-density-functions" id="toc-examine-the-shape-of-the-stratum-specific-probability-density-functions" class="nav-link" data-scroll-target="#examine-the-shape-of-the-stratum-specific-probability-density-functions"><span class="header-section-number">12.5</span> Examine the shape of the stratum-specific probability density functions</a></li>
+  <li><a href="#finally-the-density-estimates" id="toc-finally-the-density-estimates" class="nav-link" data-scroll-target="#finally-the-density-estimates"><span class="header-section-number">12.6</span> Finally the density estimates</a></li>
+  </ul></li>
+  <li><a href="#final-comments" id="toc-final-comments" class="nav-link" data-scroll-target="#final-comments"><span class="header-section-number">13</span> Final comments</a>
+  <ul class="collapse">
+  <li><a href="#alternative-model-selection-metric" id="toc-alternative-model-selection-metric" class="nav-link" data-scroll-target="#alternative-model-selection-metric"><span class="header-section-number">13.1</span> Alternative model selection metric</a></li>
+  <li><a href="#how-much-does-model-choice-influence-our-estimates" id="toc-how-much-does-model-choice-influence-our-estimates" class="nav-link" data-scroll-target="#how-much-does-model-choice-influence-our-estimates"><span class="header-section-number">13.2</span> How much does model choice influence our estimates</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -236,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">24 November 2024</p>
+      <p class="date">26 November 2024</p>
     </div>
   </div>
   
@@ -492,10 +538,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>clean.design <span class="ot">&lt;-</span> pegg[<span class="sc">!</span>(pegg<span class="sc">$</span>Location_Treatment <span class="sc">%in%</span> removethese), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="do-we-need-region-and-sample-tables" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Do we need region and sample tables?</h1>
-<p>If each visit and point is represented in the data, then we might not need tables. Let’s find out.<br>
-<strong>Not the case, if we subset by species, we destroy all points without detections</strong> overestimate</p>
+<section id="create-region-and-sample-tables" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Create region and sample tables</h1>
+<p><strong>If we subset by species, we destroy all points without detections</strong> resulting in overestimation</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>regtab <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Region.Label=</span><span class="fu">unique</span>(clean.data<span class="sc">$</span>Region.Label),</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Area=</span><span class="fu">unique</span>(clean.data<span class="sc">$</span>Area))</span>
@@ -534,12 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>samtab <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sample.Label=</span>allpts,</span>
 <span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Region.Label=</span>regionstring,</span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Effort=</span>eff)</span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>eff <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(allpts))</span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(allpts)) {</span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>  eff[i] <span class="ot">&lt;-</span> clean.data[clean.data<span class="sc">$</span>Sample.Label<span class="sc">==</span>allpts[i], <span class="st">"Effort"</span>]</span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Effort=</span>eff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="load-package-and-set-conversion-units" class="level1" data-number="9">
@@ -568,85 +608,184 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="model-criticism" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="model-criticism"><span class="header-section-number">10.2</span> Model criticism</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize_ds_models</span>(modo.pool.unif, modo.pool.hn, modo.pool.hr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                     Model                                      Key function
-3   \\texttt{modo.pool.hr}                                       Hazard-rate
-1 \\texttt{modo.pool.unif} Uniform with cosine adjustment terms of order 1,2
-2   \\texttt{modo.pool.hn}                                       Half-normal
-  Formula C-vM p-value $\\hat{P_a}$ se($\\hat{P_a}$) $\\Delta$AIC
-3      ~1    0.8878239    0.1618245       0.04071732     0.000000
-1    &lt;NA&gt;    0.2448428    0.1982327       0.02202525     3.757254
-2      ~1    0.1212906    0.2147303       0.02331904     5.065259</code></pre>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(modo.pool.unif, modo.pool.hn, modo.pool.hr)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>)], </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">digits=</span><span class="dv">3</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Model criticism for 8 stratum pooled detection function models."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model criticism for 8 stratum pooled detection function models.</caption>
+<colgroup>
+<col style="width: 28%">
+<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 18%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: right;">C-vM p-value</th>
+<th style="text-align: right;"><span class="math inline">\(\hat{P_a}\)</span></th>
+<th style="text-align: right;">se(<span class="math inline">\(\hat{P_a}\)</span>)</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta\)</span>AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~1</td>
+<td style="text-align: right;">0.888</td>
+<td style="text-align: right;">0.162</td>
+<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0.245</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.022</td>
+<td style="text-align: right;">3.757</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~1</td>
+<td style="text-align: right;">0.121</td>
+<td style="text-align: right;">0.215</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">5.065</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
 <section id="location-x-treatment-specific-detection-function" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="location-x-treatment-specific-detection-function"><span class="header-section-number">10.3</span> Location x treatment specific detection function</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>modo.hn.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hn"</span>,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>modo.hr.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>modo.hn.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hn"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>modo.hr.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>clean.data[clean.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">region_table =</span> regtab, <span class="at">sample_table =</span> samtab,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize_ds_models</span>(modo.hn.region, modo.hr.region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                     Model Key function       Formula C-vM p-value $\\hat{P_a}$
-2 \\texttt{modo.hr.region}  Hazard-rate ~Region.Label    0.5497442    0.1414494
-1 \\texttt{modo.hn.region}  Half-normal ~Region.Label    0.4812433    0.1575224
-  se($\\hat{P_a}$) $\\Delta$AIC
-2         319.6063     0.000000
-1         901.7174     4.061256</code></pre>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(modo.hn.region, modo.hr.region)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>)], </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">digits=</span><span class="dv">3</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Model criticism for 8 stratum-specific detection function models."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model criticism for 8 stratum-specific detection function models.</caption>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: right;">C-vM p-value</th>
+<th style="text-align: right;"><span class="math inline">\(\hat{P_a}\)</span></th>
+<th style="text-align: right;">se(<span class="math inline">\(\hat{P_a}\)</span>)</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta\)</span>AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~Region.Label</td>
+<td style="text-align: right;">0.550</td>
+<td style="text-align: right;">0.141</td>
+<td style="text-align: right;">319.606</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~Region.Label</td>
+<td style="text-align: right;">0.481</td>
+<td style="text-align: right;">0.158</td>
+<td style="text-align: right;">901.717</td>
+<td style="text-align: right;">4.061</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<p><strong>look at ugly SE(Pa) for both models, convergence trouble</strong></p>
+<p><strong>Something is not right about SE(Pa) for both models, suggesting convergence trouble</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modo.hr.region<span class="sc">$</span>ddf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Summary for ds object
-Number of observations :  70 
-Distance range         :  0  -  142.66 
-AIC                    :  664.5423 
-Optimisation           :  mrds (nlminb) 
-
-Detection function:
- Hazard-rate key function 
-
-Detection function parameters 
-Scale coefficient(s): 
-                                estimate           se
-(Intercept)                    4.3686531 3.520670e-01
-Region.LabelGarden City_Urban  0.2568244 7.067202e+00
-Region.LabelGarden City_WMA   -0.7176506 4.575404e-01
-Region.LabelMcPherson_Rural    1.3277385 6.462278e+04
-Region.LabelMcPherson_Urban   -0.4431121 3.848422e-01
-Region.LabelMcPherson_WMA     -0.6396865 1.000000e+05
-Region.LabelTopeka_Urban      -1.1235875 4.208473e-01
-Region.LabelTopeka_WMA        -0.6590405 4.339164e-01
-
-Shape coefficient(s):  
-            estimate        se
-(Intercept) 1.221442 0.1761784
-
-                       Estimate           SE       CV
-Average p             0.1414494     319.6063 2259.510
-N in covered region 494.8767577 1118179.2180 2259.510
-EDR                  53.6540749   60615.9720 1129.755</code></pre>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summary</span>(modo.hr.region<span class="sc">$</span>ddf)<span class="sc">$</span>coeff<span class="sc">$</span>key.scale, <span class="at">digits=</span><span class="dv">4</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Problems in SEs of beta coefficients"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Problems in SEs of beta coefficients</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">4.3687</td>
+<td style="text-align: right;">0.3521</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region.LabelGarden City_Urban</td>
+<td style="text-align: right;">0.2568</td>
+<td style="text-align: right;">7.0672</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region.LabelGarden City_WMA</td>
+<td style="text-align: right;">-0.7177</td>
+<td style="text-align: right;">0.4575</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region.LabelMcPherson_Rural</td>
+<td style="text-align: right;">1.3277</td>
+<td style="text-align: right;">64622.7824</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region.LabelMcPherson_Urban</td>
+<td style="text-align: right;">-0.4431</td>
+<td style="text-align: right;">0.3848</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region.LabelMcPherson_WMA</td>
+<td style="text-align: right;">-0.6397</td>
+<td style="text-align: right;">99999.9995</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region.LabelTopeka_Urban</td>
+<td style="text-align: right;">-1.1236</td>
+<td style="text-align: right;">0.4208</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region.LabelTopeka_WMA</td>
+<td style="text-align: right;">-0.6590</td>
+<td style="text-align: right;">0.4339</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<p><strong>McPherson Rural and WMA, Garden City Urban all causing problems</strong></p>
+<p><strong>McPherson Rural and WMA, as well as Garden City Urban causing problems</strong></p>
 <p>Probably not a surprise given the numbers of detections in those locations x treatments</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.hr.region<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary, <span class="at">digits=</span><span class="dv">3</span>,</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.hr.region<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary, <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>MODO by location X treatment. Pay attention to Effort, n (detections) and k (points) columns.</caption>
@@ -778,15 +917,22 @@ EDR                  53.6540749   60615.9720 1129.755</code></pre>
 </table>
 </div>
 </div>
-</section>
-</section>
-<section id="next-step-would-be-to-eliminate-garden-city_urban-mcpherson_rural-and-mcpherson_wma" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Next step would be to eliminate <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code></h1>
-<section id="for-the-moment-show-estimates-from-pooled-hr-model" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="for-the-moment-show-estimates-from-pooled-hr-model"><span class="header-section-number">11.1</span> For the moment, show estimates from pooled HR model</h2>
+<p>See <a href="#sec-5strata" class="quarto-xref">Section&nbsp;11</a> eliminate <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code> for a more reliable model resulting from elimination of strata with very few detections.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For the moment, show estimates from pooled HR model
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.pool.hr<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>, </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO density (per hectare) using pooled detection function across location x treatment combos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.pool.hr<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>, </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO density (per hectare) using pooled detection function across location x treatment combos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>MODO density (per hectare) using pooled detection function across location x treatment combos</caption>
@@ -877,8 +1023,659 @@ EDR                  53.6540749   60615.9720 1129.755</code></pre>
 </table>
 </div>
 </div>
-<p><strong>Note the magnitude of CVs for <code>Garden City_Rural</code>, <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code></strong></p>
-<p>Most of those large CVs were caused by very low density, but that is not the case for <code>Garden City_Rural</code>.</p>
+<ul>
+<li><strong>Note the magnitude of CVs for <code>Garden City_Rural</code>, <code>Garden City_Urban</code>, <code>McPherson_Rural</code> and <code>McPherson_WMA</code></strong></li>
+<li>Most of those large CVs were caused by very low density, but that is not the case for <code>Garden City_Rural</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-5strata" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Remove <code>GCR</code>, <code>MR</code>, <code>MW</code></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>removemore <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Garden City_Urban"</span>, <span class="st">"McPherson_Rural"</span>, <span class="st">"McPherson_WMA"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>cleaner.data <span class="ot">&lt;-</span> clean.data[<span class="sc">!</span>(clean.data<span class="sc">$</span>Region.Label <span class="sc">%in%</span> removemore), ]</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>combo.more.clean <span class="ot">&lt;-</span> <span class="fu">unique</span>(cleaner.data<span class="sc">$</span>Region.Label)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(cleaner.data<span class="sc">$</span>Region.Label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Garden City_Rural" "Garden City_WMA"   "McPherson_Urban"  
+[4] "Topeka_Urban"      "Topeka_WMA"       </code></pre>
+</div>
+</div>
+<p>Because our strata have changed, we need to reconstruct our region and sample tables</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>regtab5strata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Region.Label=</span><span class="fu">unique</span>(cleaner.data<span class="sc">$</span>Region.Label),</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">Area=</span><span class="fu">unique</span>(cleaner.data<span class="sc">$</span>Area))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="reconstruct-sample-table" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="reconstruct-sample-table"><span class="header-section-number">11.1</span> Reconstruct sample table</h2>
+<p>Borrowing from our earlier code and removing the unwanted strata</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>allpts5strat <span class="ot">&lt;-</span> <span class="fu">c</span>(gcr, gcw, mu, tu, tw)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>regionstring5 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(combo.more.clean[<span class="dv">1</span>], pts.gcr),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rep</span>(combo.more.clean[<span class="dv">2</span>], pts.gcw),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rep</span>(combo.more.clean[<span class="dv">3</span>], pts.mu),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rep</span>(combo.more.clean[<span class="dv">4</span>], pts.tu),</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rep</span>(combo.more.clean[<span class="dv">5</span>], pts.tw))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>eff5 <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, <span class="at">length=</span><span class="fu">length</span>(allpts5strat))</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(allpts5strat)) {</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  eff5[i] <span class="ot">&lt;-</span> cleaner.data[cleaner.data<span class="sc">$</span>Sample.Label<span class="sc">==</span>allpts5strat[i], <span class="st">"Effort"</span>]</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>samtab5 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sample.Label=</span>allpts5strat,</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Region.Label=</span>regionstring5,</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Effort=</span>eff5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="refit-stratum-covariate-models-to-remaining-five-strata" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Refit stratum covariate models to remaining five strata</h1>
+<section id="pooled-detection-function-1" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="pooled-detection-function-1"><span class="header-section-number">12.1</span> Pooled detection function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>modo.pool.unif5 <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>cleaner.data[cleaner.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">region_table =</span> regtab5strata, <span class="at">sample_table =</span> samtab5,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"unif"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>modo.pool.hn5 <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>cleaner.data[cleaner.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">region_table =</span> regtab5strata, <span class="at">sample_table =</span> samtab5,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adj=</span><span class="st">"herm"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>modo.pool.hr5 <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>cleaner.data[cleaner.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">region_table =</span> regtab5strata, <span class="at">sample_table =</span> samtab5,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">adj=</span><span class="st">"poly"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="model-criticism-of-5-stratum-pooled-models" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="model-criticism-of-5-stratum-pooled-models"><span class="header-section-number">12.2</span> Model criticism of 5 stratum pooled models</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(modo.pool.unif5, modo.pool.hn5, modo.pool.hr5)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>)],</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">digits=</span><span class="dv">3</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Model criticism for 5 stratum pooled detection function models."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model criticism for 5 stratum pooled detection function models.</caption>
+<colgroup>
+<col style="width: 29%">
+<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: right;">C-vM p-value</th>
+<th style="text-align: right;"><span class="math inline">\(\hat{P_a}\)</span></th>
+<th style="text-align: right;">se(<span class="math inline">\(\hat{P_a}\)</span>)</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta\)</span>AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~1</td>
+<td style="text-align: right;">0.916</td>
+<td style="text-align: right;">0.179</td>
+<td style="text-align: right;">0.045</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0.858</td>
+<td style="text-align: right;">0.155</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">3.018</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~1</td>
+<td style="text-align: right;">0.186</td>
+<td style="text-align: right;">0.222</td>
+<td style="text-align: right;">0.026</td>
+<td style="text-align: right;">3.889</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="stratum-specific-detection-function" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="stratum-specific-detection-function"><span class="header-section-number">12.3</span> Stratum-specific detection function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>modo.hn.region5 <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>cleaner.data[cleaner.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">region_table =</span> regtab5strata, <span class="at">sample_table =</span> samtab5,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hn"</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>modo.hr.region5 <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>cleaner.data[cleaner.data<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"Mourning Dove"</span>,], </span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">region_table =</span> regtab5strata, <span class="at">sample_table =</span> samtab5,</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">transect =</span> <span class="st">"point"</span>, <span class="at">key=</span><span class="st">"hr"</span>,</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">formula=</span><span class="sc">~</span>Region.Label,</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(modo.hn.region, modo.hr.region)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>)], </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">digits=</span><span class="dv">3</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Model criticism for 5 stratum-specific detection function models."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model criticism for 5 stratum-specific detection function models.</caption>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: right;">C-vM p-value</th>
+<th style="text-align: right;"><span class="math inline">\(\hat{P_a}\)</span></th>
+<th style="text-align: right;">se(<span class="math inline">\(\hat{P_a}\)</span>)</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta\)</span>AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~Region.Label</td>
+<td style="text-align: right;">0.550</td>
+<td style="text-align: right;">0.141</td>
+<td style="text-align: right;">319.606</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~Region.Label</td>
+<td style="text-align: right;">0.481</td>
+<td style="text-align: right;">0.158</td>
+<td style="text-align: right;">901.717</td>
+<td style="text-align: right;">4.061</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="look-for-signs-of-convergence-problems-in-covariate-hatbeta_i-estimates" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="look-for-signs-of-convergence-problems-in-covariate-hatbeta_i-estimates"><span class="header-section-number">12.3.1</span> Look for signs of convergence problems in covariate <span class="math inline">\(\hat{\beta_i}\)</span> estimates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>bob <span class="ot">&lt;-</span> <span class="fu">summary</span>(modo.hr.region5<span class="sc">$</span>ddf)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bob<span class="sc">$</span>coeff<span class="sc">$</span>key.scale, <span class="at">digits=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">4.4216</td>
+<td style="text-align: right;">0.3798</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region.LabelGarden City_WMA</td>
+<td style="text-align: right;">-0.7825</td>
+<td style="text-align: right;">0.4990</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region.LabelMcPherson_Urban</td>
+<td style="text-align: right;">-0.5401</td>
+<td style="text-align: right;">0.4197</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region.LabelTopeka_Urban</td>
+<td style="text-align: right;">-1.1985</td>
+<td style="text-align: right;">0.4614</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Region.LabelTopeka_WMA</td>
+<td style="text-align: right;">-0.7207</td>
+<td style="text-align: right;">0.4730</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>No reason to be concerned about convergence, so make inference from this model.</p>
+</section>
+</section>
+<section id="repeat-summary-table-for-5-strata" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="repeat-summary-table-for-5-strata"><span class="header-section-number">12.4</span> Repeat summary table for 5 strata</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.hr.region5<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary, <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO by location X treatment for five strata analysis. Pay attention to Effort, n (detections) and k (points) columns."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>MODO by location X treatment for five strata analysis. Pay attention to Effort, n (detections) and k (points) columns.</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Region</th>
+<th style="text-align: right;">Area</th>
+<th style="text-align: right;">CoveredArea</th>
+<th style="text-align: right;">Effort</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">k</th>
+<th style="text-align: right;">ER</th>
+<th style="text-align: right;">se.ER</th>
+<th style="text-align: right;">cv.ER</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Garden City_Rural</td>
+<td style="text-align: right;">20.230</td>
+<td style="text-align: right;">137.405</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0.269</td>
+<td style="text-align: right;">0.332</td>
+<td style="text-align: right;">1.232</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Garden City_WMA</td>
+<td style="text-align: right;">1521.618</td>
+<td style="text-align: right;">190.253</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">0.222</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">0.523</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Urban</td>
+<td style="text-align: right;">1827.561</td>
+<td style="text-align: right;">385.792</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">0.315</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.224</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topeka_Urban</td>
+<td style="text-align: right;">19250.760</td>
+<td style="text-align: right;">332.943</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">0.254</td>
+<td style="text-align: right;">0.062</td>
+<td style="text-align: right;">0.243</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Topeka_WMA</td>
+<td style="text-align: right;">4249.200</td>
+<td style="text-align: right;">396.361</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">0.133</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.298</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">26869.369</td>
+<td style="text-align: right;">1442.755</td>
+<td style="text-align: right;">273</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">168</td>
+<td style="text-align: right;">0.237</td>
+<td style="text-align: right;">0.045</td>
+<td style="text-align: right;">0.192</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="examine-the-shape-of-the-stratum-specific-probability-density-functions" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="examine-the-shape-of-the-stratum-specific-probability-density-functions"><span class="header-section-number">12.5</span> Examine the shape of the stratum-specific probability density functions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modo.hr.region5, <span class="at">pdf=</span><span class="cn">TRUE</span>, <span class="at">nc=</span><span class="dv">18</span>, <span class="at">pl.col=</span><span class="st">"white"</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(combo.more.clean)) {</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_df_covar_line</span>(modo.hr.region5, <span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">Region.Label=</span>combo.more.clean[i]),</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span>i, <span class="at">pdf=</span><span class="cn">TRUE</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">title=</span><span class="st">"Loc x treatment"</span>, <span class="at">legend =</span> combo.more.clean,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pegg_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="finally-the-density-estimates" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="finally-the-density-estimates"><span class="header-section-number">12.6</span> Finally the density estimates</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(modo.hr.region5<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>, </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"MODO density (per hectare) using stratum-specific detection function across five location x treatment combinations."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>MODO density (per hectare) using stratum-specific detection function across five location x treatment combinations.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Label</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">se</th>
+<th style="text-align: right;">cv</th>
+<th style="text-align: right;">lcl</th>
+<th style="text-align: right;">ucl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Garden City_Rural</td>
+<td style="text-align: right;">0.087</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">1.322</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.717</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Garden City_WMA</td>
+<td style="text-align: right;">0.247</td>
+<td style="text-align: right;">0.190</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">0.064</td>
+<td style="text-align: right;">0.959</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McPherson_Urban</td>
+<td style="text-align: right;">0.230</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">0.381</td>
+<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">0.479</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topeka_Urban</td>
+<td style="text-align: right;">0.606</td>
+<td style="text-align: right;">0.316</td>
+<td style="text-align: right;">0.522</td>
+<td style="text-align: right;">0.228</td>
+<td style="text-align: right;">1.607</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Topeka_WMA</td>
+<td style="text-align: right;">0.133</td>
+<td style="text-align: right;">0.076</td>
+<td style="text-align: right;">0.570</td>
+<td style="text-align: right;">0.046</td>
+<td style="text-align: right;">0.382</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">0.485</td>
+<td style="text-align: right;">0.229</td>
+<td style="text-align: right;">0.473</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">1.185</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>simplename <span class="ot">&lt;-</span> modo.hr.region5<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>simplename<span class="sc">$</span>index <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(simplename)[<span class="dv">1</span>]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>yrange <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">c</span>(simplename<span class="sc">$</span>lcl, simplename<span class="sc">$</span>ucl))</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(simplename<span class="sc">$</span>index[<span class="dv">1</span><span class="sc">:</span>(<span class="fu">max</span>(simplename<span class="sc">$</span>index)<span class="sc">-</span><span class="dv">1</span>)],</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>     simplename<span class="sc">$</span>Estimate[<span class="dv">1</span><span class="sc">:</span>(<span class="fu">max</span>(simplename<span class="sc">$</span>index)<span class="sc">-</span><span class="dv">1</span>)], </span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, yrange[<span class="dv">2</span>]), <span class="at">xaxt=</span><span class="st">"n"</span>,</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Location x treatment"</span>, <span class="at">ylab=</span><span class="st">"Density (per hectare)"</span>,</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Mourning dove estimates 2024 from covariate model"</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">seq</span>((<span class="fu">max</span>(simplename<span class="sc">$</span>index)<span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>lcl[s], simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>ucl[s])</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span>(<span class="fu">max</span>(simplename<span class="sc">$</span>index)<span class="sc">-</span><span class="dv">1</span>), <span class="at">labels=</span>simplename<span class="sc">$</span>Label[<span class="dv">1</span><span class="sc">:</span>(<span class="fu">max</span>(simplename<span class="sc">$</span>index)<span class="sc">-</span><span class="dv">1</span>)], <span class="at">cex.axis=</span><span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pegg_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="final-comments" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Final comments</h1>
+<p>The strength of the <code>Location x treatment</code> effect upon detectability, while present is not very strong. Therefore, you might have two questions:</p>
+<ul>
+<li>would model selection differ if a different information-theoretic metric been used and</li>
+<li>would inference about mourning dove densities have been different had a simpler model (that assumes no difference in detectability between <code>Location x treatment</code> combinations).</li>
+</ul>
+<p>Let’s investigate.</p>
+<section id="alternative-model-selection-metric" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="alternative-model-selection-metric"><span class="header-section-number">13.1</span> Alternative model selection metric</h2>
+<p>The tools for employing different metrics exist, but need to be recrafted a bit for our purposes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>altmetric <span class="ot">&lt;-</span> <span class="cf">function</span>(modelobj) {</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  nval <span class="ot">&lt;-</span> <span class="fu">length</span>(modelobj<span class="sc">$</span>ddf<span class="sc">$</span>fitted)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  AICcall <span class="ot">&lt;-</span> <span class="fu">AIC</span>(modelobj)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> AICcall<span class="sc">$</span>df</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  AICval <span class="ot">&lt;-</span> AICcall<span class="sc">$</span>AIC</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  AICc <span class="ot">&lt;-</span> AICval <span class="sc">+</span> (<span class="dv">2</span><span class="sc">*</span>k<span class="sc">*</span>(k<span class="sc">+</span><span class="dv">1</span>)) <span class="sc">/</span> (nval<span class="sc">-</span>k<span class="dv">-1</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  BIC <span class="ot">&lt;-</span> <span class="fu">AIC</span>(modelobj, <span class="at">k =</span> <span class="fu">log</span>(nval))<span class="sc">$</span>AIC</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(AICval, AICc, BIC))</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Pass each of our five models (three without covariates and two using the stratum as covariate) applied to the five-stratum variant of our analysis to our new tool, admittedly in a clumsy fashion.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="cn">NULL</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, <span class="fu">altmetric</span>(modo.pool.unif5))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, <span class="fu">altmetric</span>(modo.pool.hn5))</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, <span class="fu">altmetric</span>(modo.pool.hr5))</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, <span class="fu">altmetric</span>(modo.hn.region5))</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, <span class="fu">altmetric</span>(modo.hr.region5))</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"AIC"</span>, <span class="st">"AICc"</span>, <span class="st">"BIC"</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"modo.pool.unif5"</span>,<span class="st">"modo.pool.hn5"</span>,<span class="st">"modo.pool.hr5"</span>,</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"modo.hn.region5"</span>,<span class="st">"modo.hr.region5"</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(results[<span class="fu">order</span>(results<span class="sc">$</span>AIC),], <span class="at">digits=</span><span class="dv">1</span>, </span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">row.names =</span> <span class="cn">TRUE</span>, <span class="at">caption=</span><span class="st">"Models ordered by AIC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Models ordered by AIC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">AIC</th>
+<th style="text-align: right;">AICc</th>
+<th style="text-align: right;">BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">modo.hr.region5</td>
+<td style="text-align: right;">598.6</td>
+<td style="text-align: right;">600.1</td>
+<td style="text-align: right;">611.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modo.hn.region5</td>
+<td style="text-align: right;">601.2</td>
+<td style="text-align: right;">602.3</td>
+<td style="text-align: right;">612.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">modo.pool.hr5</td>
+<td style="text-align: right;">603.8</td>
+<td style="text-align: right;">604.0</td>
+<td style="text-align: right;">608.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modo.pool.unif5</td>
+<td style="text-align: right;">606.8</td>
+<td style="text-align: right;">607.2</td>
+<td style="text-align: right;">613.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">modo.pool.hn5</td>
+<td style="text-align: right;">607.7</td>
+<td style="text-align: right;">607.7</td>
+<td style="text-align: right;">609.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(results[<span class="fu">order</span>(results<span class="sc">$</span>AICc),], <span class="at">digits=</span><span class="dv">1</span>, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">row.names =</span> <span class="cn">TRUE</span>, <span class="at">caption=</span><span class="st">"Models ordered by AICc"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Models ordered by AICc</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">AIC</th>
+<th style="text-align: right;">AICc</th>
+<th style="text-align: right;">BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">modo.hr.region5</td>
+<td style="text-align: right;">598.6</td>
+<td style="text-align: right;">600.1</td>
+<td style="text-align: right;">611.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modo.hn.region5</td>
+<td style="text-align: right;">601.2</td>
+<td style="text-align: right;">602.3</td>
+<td style="text-align: right;">612.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">modo.pool.hr5</td>
+<td style="text-align: right;">603.8</td>
+<td style="text-align: right;">604.0</td>
+<td style="text-align: right;">608.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modo.pool.unif5</td>
+<td style="text-align: right;">606.8</td>
+<td style="text-align: right;">607.2</td>
+<td style="text-align: right;">613.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">modo.pool.hn5</td>
+<td style="text-align: right;">607.7</td>
+<td style="text-align: right;">607.7</td>
+<td style="text-align: right;">609.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(results[<span class="fu">order</span>(results<span class="sc">$</span>BIC),], <span class="at">digits=</span><span class="dv">1</span>, </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">row.names =</span> <span class="cn">TRUE</span>, <span class="at">caption=</span><span class="st">"Models ordered by BIC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Models ordered by BIC</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">AIC</th>
+<th style="text-align: right;">AICc</th>
+<th style="text-align: right;">BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">modo.pool.hr5</td>
+<td style="text-align: right;">603.8</td>
+<td style="text-align: right;">604.0</td>
+<td style="text-align: right;">608.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modo.pool.hn5</td>
+<td style="text-align: right;">607.7</td>
+<td style="text-align: right;">607.7</td>
+<td style="text-align: right;">609.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">modo.hr.region5</td>
+<td style="text-align: right;">598.6</td>
+<td style="text-align: right;">600.1</td>
+<td style="text-align: right;">611.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modo.hn.region5</td>
+<td style="text-align: right;">601.2</td>
+<td style="text-align: right;">602.3</td>
+<td style="text-align: right;">612.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">modo.pool.unif5</td>
+<td style="text-align: right;">606.8</td>
+<td style="text-align: right;">607.2</td>
+<td style="text-align: right;">613.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The upshot of changing metrics is that using AICc vs AIC results in the same model choice, whereas use of BIC leads to the selection of a pooled detection function (with a hazard rate key).</p>
+</section>
+<section id="how-much-does-model-choice-influence-our-estimates" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="how-much-does-model-choice-influence-our-estimates"><span class="header-section-number">13.2</span> How much does model choice influence our estimates</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>pooled <span class="ot">&lt;-</span> modo.pool.hr5<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>strat.spec <span class="ot">&lt;-</span> modo.hr.region5<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># interleave</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gdata)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>merged <span class="ot">&lt;-</span> <span class="fu">interleave</span>(pooled, strat.spec)</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>simplename <span class="ot">&lt;-</span> merged</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>simplename<span class="sc">$</span>index <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">1.1</span>, <span class="dv">2</span>,<span class="fl">2.1</span>, <span class="dv">3</span>,<span class="fl">3.1</span>, <span class="dv">4</span>,<span class="fl">4.1</span>, <span class="dv">5</span>,<span class="fl">5.1</span>)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>yrange <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">c</span>(simplename<span class="sc">$</span>lcl, simplename<span class="sc">$</span>ucl))</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(simplename<span class="sc">$</span>index,</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>     simplename<span class="sc">$</span>Estimate[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], </span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, yrange[<span class="dv">2</span>]), <span class="at">xaxt=</span><span class="st">"n"</span>,</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Location x treatment"</span>, <span class="at">ylab=</span><span class="st">"Density (per hectare)"</span>,</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Mourning dove estimates 2024 from covariate model</span><span class="sc">\n</span><span class="st">Left=pooled, Right=strat-specific"</span>)</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>lcl[s], simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>ucl[s])</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">labels=</span>simplename<span class="sc">$</span>Label[<span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">9</span>, <span class="at">by=</span><span class="dv">2</span>)],</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.axis=</span><span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pegg_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The estimates based upon a pooled detection function resemble one another; differences in detectability between strata are homogenised. Interestingly, <code>Garden City_Rural</code> is the stratum with fewest detections (7) and its density estimate shows the greatest sensitivity to model choice; however uncertainty in the density estimate swamps and perceived difference in density estimates. Part of the explanation for this lies in the profound variability in encounter rates between stations in <code>Garden City_Rural</code>.</p>
 
 
 </section>
