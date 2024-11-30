@@ -306,7 +306,7 @@ new_sample_table <- data.frame(Sample.Label=rep(seq(1,151), 19),
 ```{r, bigmodelsuite}
 #| message: false
 #| warning: false
-yr24$Region.Label <- paste0(yr24$species, yr24$sample.bout)
+#yr24$Region.Label <- paste0(yr24$species, yr24$sample.bout)
 yr24_hn_2level <- ds(yr24, key="hn", truncation = "10%", convert_units = cu,
                      region_table = new_region_table,
                      sample_table = new_sample_table,
@@ -463,6 +463,54 @@ bomb2_p_int <- integrate(gz, lower=0, upper=xmax, key="HR",
                     beta=coefs["V1"], sigintercept = coefs["X.Intercept."], 
                     sigcoef = c(coefs["speciesbombus"], coefs["as.factor.sample.bout.2"]))$value / xmax
 ```
+
+:::{.callout-tip collapse=false appearance='default' icon=true}
+## An easier way to compute $\hat{P}_a$
+- There exists a function in the `mrds` package called `detfct` that duplicates the job of `gz`
+- your hands do not get quite so dirty when using `detfct`
+- I will demonstrate the use of `detfct` to calculate $\hat{P}_a$ for American bees in bouts 1 and 2
+
+Key to using `detfct` is determining the combination of covariates in your data for which you wish to compute $\hat{P}_a$. We use the `which` command applied to the design matrix created by `ds` and located in an obscure place within the `dsmodel` object.
+
+```{r}
+findam1 <- which(yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$species=="american" &
+                 yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$sample.bout==1)[1]
+findam2 <- which(yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$species=="american" &
+                 yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$sample.bout==2)[1]
+findbomb1 <- which(yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$species=="bombus" &
+                   yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$sample.bout==1)[1]
+findbomb2 <- which(yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$species=="bombus" &
+                   yr24_hr_2level$ddf$ds$aux$ddfobj$xmat$sample.bout==2)[1]
+```
+
+Having found the proper index values, these can be passed to the `detfct` function which serves the same purpose as the `gz` function I created earlier. Note, the `detfct` function is called by the `integrate` function to compute the area under the fitted detection function. The integral ($\hat{\mu}$) is divided by the truncation distance $w$ to arrive at estimates of detection probability for the four species X bout combinations.
+
+```{r}
+am1_pdetfct <- integrate(f=detfct, lower=0, upper=xmax,
+                         ddfobj=yr24_hr_2level$ddf$ds$aux$ddfobj,
+                         index=findam1)$value/xmax
+am2_pdetfct <- integrate(f=detfct, lower=0, upper=xmax,
+                         ddfobj=yr24_hr_2level$ddf$ds$aux$ddfobj,
+                         index=findam2)$value/xmax
+bomb1_pdetfct <- integrate(f=detfct, lower=0, upper=xmax,
+                           ddfobj=yr24_hr_2level$ddf$ds$aux$ddfobj,
+                           index=findbomb1)$value/xmax
+bomb2_pdetfct <- integrate(f=detfct, lower=0, upper=xmax,
+                           ddfobj=yr24_hr_2level$ddf$ds$aux$ddfobj,
+                           index=findbomb2)$value/xmax
+```
+
+With the estimates of $\hat{P}_a$ computed using `detfct`, we can compare them to the estimates we produced using the `gz` function.
+
+```{r}
+compare <- data.frame(gz_values=c(am1_p_int, am2_p_int, bomb1_p_int, bomb2_p_int),
+                      detfct_val=c(am1_pdetfct, am2_pdetfct, bomb1_pdetfct, bomb2_pdetfct))
+knitr::kable(compare, digits=4, caption="Estimates of $\\hat{P}_a$ computed using `gz` function and `detfct` function.")
+```
+
+Yes, the two methods are equivalent. Now back to our original analysis.
+
+:::
 
 ## Do the integrated Pa correspond to reported densities?
 

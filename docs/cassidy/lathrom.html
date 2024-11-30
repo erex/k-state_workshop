@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eric Rexstad University of St Andrews">
-<meta name="dcterms.date" content="2024-11-17">
+<meta name="dcterms.date" content="2024-11-30">
 
 <title>Ft Riley bumblebees 🐝 – Kansas State workshop, December 2024</title>
 <style>
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b663525e4b92bb903b2199e2d401bf36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9c629e3caadcb96871a42e4bc3430b1e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -277,7 +277,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">17 November 2024</p>
+      <p class="date">30 November 2024</p>
     </div>
   </div>
   
@@ -1064,7 +1064,7 @@ The following step is <strong>critical</strong>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Effort=</span><span class="fu">rep</span>(<span class="dv">500</span>, <span class="dv">19</span><span class="sc">*</span><span class="dv">151</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>yr24<span class="sc">$</span>Region.Label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(yr24<span class="sc">$</span>species, yr24<span class="sc">$</span>sample.bout)</span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#yr24$Region.Label &lt;- paste0(yr24$species, yr24$sample.bout)</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>yr24_hn_2level <span class="ot">&lt;-</span> <span class="fu">ds</span>(yr24, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">truncation =</span> <span class="st">"10%"</span>, <span class="at">convert_units =</span> cu,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">region_table =</span> new_region_table,</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample_table =</span> new_sample_table,</span>
@@ -1380,6 +1380,88 @@ Species and bout-specific detection probability estimates
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">beta=</span>coefs[<span class="st">"V1"</span>], <span class="at">sigintercept =</span> coefs[<span class="st">"X.Intercept."</span>], </span>
 <span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sigcoef =</span> <span class="fu">c</span>(coefs[<span class="st">"speciesbombus"</span>], coefs[<span class="st">"as.factor.sample.bout.2"</span>]))<span class="sc">$</span>value <span class="sc">/</span> xmax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+An easier way to compute <span class="math inline">\(\hat{P}_a\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>There exists a function in the <code>mrds</code> package called <code>detfct</code> that duplicates the job of <code>gz</code></li>
+<li>your hands do not get quite so dirty when using <code>detfct</code></li>
+<li>I will demonstrate the use of <code>detfct</code> to calculate <span class="math inline">\(\hat{P}_a\)</span> for American bees in bouts 1 and 2</li>
+</ul>
+<p>Key to using <code>detfct</code> is determining the combination of covariates in your data for which you wish to compute <span class="math inline">\(\hat{P}_a\)</span>. We use the <code>which</code> command applied to the design matrix created by <code>ds</code> and located in an obscure place within the <code>dsmodel</code> object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>findam1 <span class="ot">&lt;-</span> <span class="fu">which</span>(yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>species<span class="sc">==</span><span class="st">"american"</span> <span class="sc">&amp;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                 yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>sample.bout<span class="sc">==</span><span class="dv">1</span>)[<span class="dv">1</span>]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>findam2 <span class="ot">&lt;-</span> <span class="fu">which</span>(yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>species<span class="sc">==</span><span class="st">"american"</span> <span class="sc">&amp;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                 yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>sample.bout<span class="sc">==</span><span class="dv">2</span>)[<span class="dv">1</span>]</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>findbomb1 <span class="ot">&lt;-</span> <span class="fu">which</span>(yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>species<span class="sc">==</span><span class="st">"bombus"</span> <span class="sc">&amp;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                   yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>sample.bout<span class="sc">==</span><span class="dv">1</span>)[<span class="dv">1</span>]</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>findbomb2 <span class="ot">&lt;-</span> <span class="fu">which</span>(yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>species<span class="sc">==</span><span class="st">"bombus"</span> <span class="sc">&amp;</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>                   yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj<span class="sc">$</span>xmat<span class="sc">$</span>sample.bout<span class="sc">==</span><span class="dv">2</span>)[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Having found the proper index values, these can be passed to the <code>detfct</code> function which serves the same purpose as the <code>gz</code> function I created earlier. Note, the <code>detfct</code> function is called by the <code>integrate</code> function to compute the area under the fitted detection function. The integral (<span class="math inline">\(\hat{\mu}\)</span>) is divided by the truncation distance <span class="math inline">\(w\)</span> to arrive at estimates of detection probability for the four species X bout combinations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>am1_pdetfct <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="at">f=</span>detfct, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax,</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ddfobj=</span>yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj,</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">index=</span>findam1)<span class="sc">$</span>value<span class="sc">/</span>xmax</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>am2_pdetfct <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="at">f=</span>detfct, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax,</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ddfobj=</span>yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj,</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">index=</span>findam2)<span class="sc">$</span>value<span class="sc">/</span>xmax</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>bomb1_pdetfct <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="at">f=</span>detfct, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax,</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ddfobj=</span>yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj,</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">index=</span>findbomb1)<span class="sc">$</span>value<span class="sc">/</span>xmax</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>bomb2_pdetfct <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="at">f=</span>detfct, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span>xmax,</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ddfobj=</span>yr24_hr_2level<span class="sc">$</span>ddf<span class="sc">$</span>ds<span class="sc">$</span>aux<span class="sc">$</span>ddfobj,</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">index=</span>findbomb2)<span class="sc">$</span>value<span class="sc">/</span>xmax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With the estimates of <span class="math inline">\(\hat{P}_a\)</span> computed using <code>detfct</code>, we can compare them to the estimates we produced using the <code>gz</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>compare <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">gz_values=</span><span class="fu">c</span>(am1_p_int, am2_p_int, bomb1_p_int, bomb2_p_int),</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">detfct_val=</span><span class="fu">c</span>(am1_pdetfct, am2_pdetfct, bomb1_pdetfct, bomb2_pdetfct))</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(compare, <span class="at">digits=</span><span class="dv">4</span>, <span class="at">caption=</span><span class="st">"Estimates of $</span><span class="sc">\\</span><span class="st">hat{P}_a$ computed using `gz` function and `detfct` function."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Estimates of <span class="math inline">\(\hat{P}_a\)</span> computed using <code>gz</code> function and <code>detfct</code> function.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">gz_values</th>
+<th style="text-align: right;">detfct_val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.3675</td>
+<td style="text-align: right;">0.3675</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.3088</td>
+<td style="text-align: right;">0.3088</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.5023</td>
+<td style="text-align: right;">0.5023</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.4286</td>
+<td style="text-align: right;">0.4286</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Yes, the two methods are equivalent. Now back to our original analysis.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="do-the-integrated-pa-correspond-to-reported-densities" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="do-the-integrated-pa-correspond-to-reported-densities"><span class="header-section-number">4.5</span> Do the integrated Pa correspond to reported densities?</h2>
@@ -1388,28 +1470,28 @@ Species and bout-specific detection probability estimates
 <p>We can rearrange the above formula to solve for <span class="math inline">\(\hat{P}_a\)</span>:</p>
 <p><span class="math display">\[\hat{P}_a = \frac{n}{\hat{D} \cdot a}\]</span> The following code chunk carries out this method of deriving <span class="math inline">\(\hat{P}_a\)</span> and compares them with the original method of computing the integral of the detection function and dividing by truncation distance, <span class="math inline">\(w\)</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>summ <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>coveredarea <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary<span class="sc">$</span>CoveredArea[<span class="dv">1</span>]</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>d_est <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>am1_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"american1"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"american1"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>am2_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"american2"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"american2"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>bomb1_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"bombus1"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"bombus1"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>bomb2_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"bombus2"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"bombus2"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(am1_p_int, am1_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>summ <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>coveredarea <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>summary<span class="sc">$</span>CoveredArea[<span class="dv">1</span>]</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>d_est <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>am1_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"american1"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"american1"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>am2_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"american2"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"american2"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>bomb1_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"bombus1"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"bombus1"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>bomb2_p_data <span class="ot">&lt;-</span> summ[summ<span class="sc">$</span>Region<span class="sc">==</span><span class="st">"bombus2"</span>, <span class="st">"n"</span>] <span class="sc">/</span> (d_est[d_est<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"bombus2"</span>, <span class="st">"Estimate"</span>] <span class="sc">*</span> coveredarea)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(am1_p_int, am1_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean relative difference: 1.076724e-06"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(am2_p_int, am2_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(am2_p_int, am2_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean relative difference: 3.448128e-08"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(bomb1_p_int, bomb1_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(bomb1_p_int, bomb1_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean relative difference: 2.311959e-06"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(bomb2_p_int, bomb2_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(bomb2_p_int, bomb2_p_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Mean relative difference: 4.616678e-07"</code></pre>
 </div>
@@ -1421,8 +1503,8 @@ Species and bout-specific detection probability estimates
 <section id="density-estimates-from-the-hazard-rate-two-level-stratification-model" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Density estimates from the hazard rate two-level stratification model</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>, </span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Density estimates when using hazard with species and bout covariates."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>, </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Density estimates when using hazard with species and bout covariates."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-twolevel" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-twolevel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1614,7 +1696,7 @@ Table&nbsp;2: Density estimates when using hazard with species and bout covariat
 <p>Remember we started the modelling of the 2024 data by looking at the “brown_belted” species in <a href="#sec-brownbelt" class="quarto-xref">Section&nbsp;3</a>. In that analysis, each sampling bout for that species was modelled in isolation, as there were sufficient numbers of detections of that species in each bout.</p>
 <p>After choosing the most appropriate models from that pair of analyses, density estimates were</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(estimates[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),], <span class="at">digits=</span><span class="dv">2</span>, <span class="at">caption=</span><span class="st">"Estimated brown belted densities from 'standalone' analysis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(estimates[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),], <span class="at">digits=</span><span class="dv">2</span>, <span class="at">caption=</span><span class="st">"Estimated brown belted densities from 'standalone' analysis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Estimated brown belted densities from ‘standalone’ analysis</caption>
@@ -1657,10 +1739,10 @@ Table&nbsp;2: Density estimates when using hazard with species and bout covariat
 </div>
 <p>Compare these point and interval estimates to those generated from our 2-level stratification model:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>bb1cov <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"brown_belted1"</span>, ]</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>bb2cov <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"brown_belted2"</span>, ]</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">rbind</span>(bb1cov, bb2cov)[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>,</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Density estimates brown belted from HR covariate model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>bb1cov <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"brown_belted1"</span>, ]</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>bb2cov <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D<span class="sc">$</span>Label<span class="sc">==</span><span class="st">"brown_belted2"</span>, ]</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">rbind</span>(bb1cov, bb2cov)[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Density estimates brown belted from HR covariate model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Density estimates brown belted from HR covariate model</caption>
@@ -1705,19 +1787,19 @@ Table&nbsp;2: Density estimates when using hazard with species and bout covariat
 <h1 data-number="6"><span class="header-section-number">6</span> A plot of species- and bout-specific density estimates</h1>
 <p>Our estimates live in a concise table <a href="#tbl-twolevel" class="quarto-xref">Table&nbsp;2</a> produced by our 2-level stratification model. Perhaps we wish, in addition, to generate a plot of the density estimates and their uncertainty. That is accomplished by the following code chunk. Note I have chosen not to include the <code>twsp</code> or <code>unk</code> species from the plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>simplename <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>simplename<span class="sc">$</span>index <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(simplename)[<span class="dv">1</span>]</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>yrange <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">c</span>(simplename<span class="sc">$</span>lcl, simplename<span class="sc">$</span>ucl))</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(simplename<span class="sc">$</span>index[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>], simplename<span class="sc">$</span>Estimate[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>], </span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, yrange[<span class="dv">2</span>]), <span class="at">xaxt=</span><span class="st">"n"</span>, <span class="at">xlab=</span><span class="st">"Species x bout"</span>, <span class="at">ylab=</span><span class="st">"Density (per hectare)"</span>,</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Bee estimates 2024 from covariate model</span><span class="sc">\n</span><span class="st">with species and sampling bout"</span>)</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">16</span>)</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>lcl[s], simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>ucl[s])</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, <span class="at">labels=</span>simplename<span class="sc">$</span>Label[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>], <span class="at">cex.axis=</span><span class="fl">0.6</span>, <span class="at">las=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>simplename <span class="ot">&lt;-</span> yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>simplename<span class="sc">$</span>index <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(simplename)[<span class="dv">1</span>]</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>yrange <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">c</span>(simplename<span class="sc">$</span>lcl, simplename<span class="sc">$</span>ucl))</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(simplename<span class="sc">$</span>index[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>], simplename<span class="sc">$</span>Estimate[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>], </span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, yrange[<span class="dv">2</span>]), <span class="at">xaxt=</span><span class="st">"n"</span>, <span class="at">xlab=</span><span class="st">"Species x bout"</span>, <span class="at">ylab=</span><span class="st">"Density (per hectare)"</span>,</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Bee estimates 2024 from covariate model</span><span class="sc">\n</span><span class="st">with species and sampling bout"</span>)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">16</span>)</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>lcl[s], simplename<span class="sc">$</span>index[s], simplename<span class="sc">$</span>ucl[s])</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, <span class="at">labels=</span>simplename<span class="sc">$</span>Label[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>], <span class="at">cex.axis=</span><span class="fl">0.6</span>, <span class="at">las=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lathrom_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lathrom_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1726,14 +1808,14 @@ Table&nbsp;2: Density estimates when using hazard with species and bout covariat
 <h2 data-number="6.1" class="anchored" data-anchor-id="magical-estimates-for-rare-species"><span class="header-section-number">6.1</span> Magical estimates for rare species?</h2>
 <p>Density estimates are produced for all species in the data frame <a href="#tbl-readit" class="quarto-xref">Table&nbsp;1</a>; even for species with as few as four detections (eastern2). Is that some kind of magic? No, look closely at the measures of precision associated with the species with small numbers of detection:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">table.attr=</span><span class="st">"quarto-disable-processing=true"</span>,</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">format=</span><span class="st">"html"</span>,</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>             yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>],</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">digits=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>,<span class="dv">13</span><span class="sc">:</span><span class="dv">14</span>,<span class="dv">17</span>), <span class="at">background =</span> <span class="st">"salmon"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">20</span>), <span class="at">strikeout=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">width=</span><span class="st">"4em"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">table.attr=</span><span class="st">"quarto-disable-processing=true"</span>,</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">format=</span><span class="st">"html"</span>,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>             yr24_hr_2level<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D[, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>],</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">digits=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>,<span class="dv">13</span><span class="sc">:</span><span class="dv">14</span>,<span class="dv">17</span>), <span class="at">background =</span> <span class="st">"salmon"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">20</span>), <span class="at">strikeout=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">width=</span><span class="st">"4em"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table quarto-disable-processing="true">
  <thead>
@@ -2005,8 +2087,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -2117,7 +2197,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
