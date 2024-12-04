@@ -26,7 +26,7 @@ number-sections: true
 :::
 
 ::: {.column width='70%'}
-![Map of Kansas](Kansasmap.png)
+![Map of Kansas](bcrstudysites.png)
 
 :::
 
