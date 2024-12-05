@@ -1,9 +1,11 @@
 ---
-title: "About"
+title: "What is on this website?"
 ---
 
-About this site
+## Content
 
-```{r}
-1 + 1
-```
+Material on this website is intended to be used during the December 2024 workshop as "case studies". Three researchers provided me with some of their field data and supporting information.
+
+I've examined those data sets and with some back-and-forth with the researchers, have performed some distance sampling analyses.  The analyses are not intended to be definitive; nor are they intended to be elegant. 
+
+I have included essentially everything I did and presented the analysis in the order in which I conducted it. This includes blind alleys I travelled. Hopefully I have provided narrative to compliment the analyses so readers can understand the rationale for the steps and the interpretation of the findings.

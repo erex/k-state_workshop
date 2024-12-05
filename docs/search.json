@@ -144,11 +144,11 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "What is on this website?",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2",
+    "text": "Material on this website is intended to be used during the December 2024 workshop as “case studies”. Three researchers provided me with some of their field data and supporting information.\nI’ve examined those data sets and with some back-and-forth with the researchers, have performed some distance sampling analyses. The analyses are not intended to be definitive; nor are they intended to be elegant.\nI have included essentially everything I did and presented the analysis in the order in which I conducted it. This includes blind alleys I travelled. Hopefully I have provided narrative to compliment the analyses so readers can understand the rationale for the steps and the interpretation of the findings.",
     "crumbs": [
-      "About"
+      "What is on this website?"
     ]
   },
   {
@@ -352,6 +352,16 @@
     "text": "13.2 How much does model choice influence our estimates\n\npooled &lt;- modo.pool.hr5$dht$individuals$D[1:5, ]\nstrat.spec &lt;- modo.hr.region5$dht$individuals$D[1:5, ]\n\n# interleave\nlibrary(gdata)\nmerged &lt;- interleave(pooled, strat.spec)\n\nsimplename &lt;- merged\nsimplename$index &lt;- c(1,1.1, 2,2.1, 3,3.1, 4,4.1, 5,5.1)\nyrange &lt;- range(c(simplename$lcl, simplename$ucl))\nplot(simplename$index,\n     simplename$Estimate[1:10], \n     ylim=c(0, yrange[2]), xaxt=\"n\",\n     xlab=\"Location x treatment\", ylab=\"Density (per hectare)\",\n     main=\"Mourning dove estimates 2024 from covariate model\\nLeft=pooled, Right=strat-specific\")\ns &lt;- seq(1:10)\nsegments(simplename$index[s], simplename$lcl[s], simplename$index[s], simplename$ucl[s])\naxis(1, at=1:5, \n     labels=simplename$Label[seq(1, 9, by=2)],\n     cex.axis=0.9)\n\n\n\n\n\n\n\n\nThe estimates based upon a pooled detection function resemble one another; differences in detectability between strata are homogenised. Interestingly, Garden City_Rural is the stratum with fewest detections (7) and its density estimate shows the greatest sensitivity to model choice; however uncertainty in the density estimate swamps and perceived difference in density estimates. Part of the explanation for this lies in the profound variability in encounter rates between stations in Garden City_Rural.",
     "crumbs": [
       "Mourning doves 🕊️"
+    ]
+  },
+  {
+    "objectID": "about.html#content",
+    "href": "about.html#content",
+    "title": "What is on this website?",
+    "section": "",
+    "text": "Material on this website is intended to be used during the December 2024 workshop as “case studies”. Three researchers provided me with some of their field data and supporting information.\nI’ve examined those data sets and with some back-and-forth with the researchers, have performed some distance sampling analyses. The analyses are not intended to be definitive; nor are they intended to be elegant.\nI have included essentially everything I did and presented the analysis in the order in which I conducted it. This includes blind alleys I travelled. Hopefully I have provided narrative to compliment the analyses so readers can understand the rationale for the steps and the interpretation of the findings.",
+    "crumbs": [
+      "What is on this website?"
     ]
   }
 ]
