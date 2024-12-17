@@ -1,0 +1,130 @@
+---
+title: "Compare density estimates; groups as strata (WEME)"
+author: Eric Rexstad *University of St Andrews*
+date: "`r Sys.Date()`"
+date-format: "DD MMMM YYYY"
+number-sections: true
+---
+
+We found a difference of opinion regarding choice of model when using AIC and BIC. This is a decision we are to make and we wish to know the consequence of this decision upon our inference.
+
+I demonstrate the consequence for western meadowlark. This should also be done for the other species of interest; I expect the results to be similar.
+
+```{r}
+#| eval: false
+#| echo: false
+
+alldata <- read.csv(file="data/Rusten_GrasslandBird_dist24_NEW.csv")
+colnames(alldata)[colnames(alldata) == 'Region.Label'] <- 'formerRegion.Label'
+colnames(alldata)[colnames(alldata) == 'Area'] <- 'formerArea'
+colnames(alldata)[colnames(alldata) == 'Group'] <- 'Region.Label'
+colnames(alldata)[colnames(alldata) == 'GroupArea'] <- 'Area'
+(namstrat <- unique(alldata$Region.Label))
+(namspec <- unique(alldata$Species))
+threespec <- subset(alldata, subset = Species %in% c("GRSP", "WEME", "DICK"))
+knitr::kable(table(threespec$Region.Label, threespec$Species),
+caption="This table identical to second table in report of first analysis.")
+GroupArea <- mat.or.vec(length(namstrat),1)
+j <- 0
+for (i in namstrat) {
+j <- j+1
+GroupArea[j] <- unique(alldata[alldata$Region.Label==i, "Area"])
+}
+regionTable <- data.frame(Region.Label=namstrat, Area=GroupArea)
+numtran <- mat.or.vec(length(namstrat),1)
+namtran <- list()
+j <- 0
+for (i in namstrat) {
+j <- j+1
+numtran[j] <- length(unique(alldata[alldata$Region.Label==i, "Sample.Label"]))
+namtran[[j]] <- unique(alldata[alldata$Region.Label==i, "Sample.Label"])
+#  print(paste(i, numtran[j], sep=" "))
+}
+repeatGroups <- c(rep(namstrat[1], numtran[1]),
+rep(namstrat[2], numtran[2]),
+rep(namstrat[3], numtran[3]),
+rep(namstrat[4], numtran[4]),
+rep(namstrat[5], numtran[5]),
+rep(namstrat[6], numtran[6]),
+rep(namstrat[7], numtran[7]),
+rep(namstrat[8], numtran[8]),
+rep(namstrat[9], numtran[9]),
+rep(namstrat[10], numtran[10]),
+rep(namstrat[11], numtran[11]),
+rep(namstrat[12], numtran[12]),
+rep(namstrat[13], numtran[13]),
+rep(namstrat[14], numtran[14]),
+rep(namstrat[15], numtran[15]),
+rep(namstrat[16], numtran[16]),
+rep(namstrat[17], numtran[17]),
+rep(namstrat[18], numtran[18]),
+rep(namstrat[19], numtran[19]))
+pointStations <- c(namtran, recursive=TRUE)
+sampleTable <- data.frame(Sample.Label=pointStations,
+Region.Label=repeatGroups,
+Effort=1)
+alldata <- subset(alldata, subset = distance> -1)
+library(Distance)
+cu <- convert_units("meter", NULL, "hectare")
+three <- function(dframe=alldata, spec, trunpct="10%",
+rt=regionTable, st=sampleTable) {
+thisspec <- subset(dframe, Species==spec)
+this.hn <- ds(data=thisspec, transect = "point",
+region_table = rt, sample_table = st,
+key="hn", truncation = trunpct,  convert_units = cu,
+adjustment = "herm")
+this.uncos <- ds(data=thisspec, transect = "point",
+region_table = rt, sample_table = st,
+key="unif", truncation = trunpct, convert_units = cu)
+this.hr <- ds(data=thisspec, transect = "point",
+region_table = rt, sample_table = st,
+key="hr", truncation = trunpct,  convert_units = cu,
+adjustment = "poly")
+criticism <- summarize_ds_models(this.hn, this.uncos, this.hr)
+print(knitr::kable(criticism[,2:7], row.names = FALSE, digits=3,
+caption=paste("Model criticism for", spec)))
+mytitle <- paste(spec, criticism$'Key function'[1], " pooled over Groups")
+if(grepl("uncos", criticism$Model[1])) plot(this.uncos, pdf=TRUE, nc=40, main=mytitle)
+if(grepl("hn", criticism$Model[1])) plot(this.hn, pdf=TRUE, nc=40,main=mytitle)
+if(grepl("hr", criticism$Model[1])) plot(this.hr, pdf=TRUE, nc=40,main=mytitle)
+return(list(hn=this.hn, unicos=this.uncos, hr=this.hr))
+}
+wemeres <- three(alldata, "WEME", 170, rt=regionTable, st=sampleTable)
+weme.hrstrat <- ds(data=alldata[alldata$Species=="WEME",], transect="point",
+key="hr", truncation=170,
+region_table = regionTable, sample_table = sampleTable,
+convert_units = cu, formula=~Region.Label)
+
+
+pooled <- wemeres$hr$dht$individuals$D[1:19, ]
+strat.spec <- weme.hrstrat$dht$individuals$D[1:19, ]
+
+# interleave
+library(gdata)
+merged <- interleave(pooled, strat.spec)
+
+simplename <- merged
+simplename$index <- c(1,1.1, 2,2.1, 3,3.1, 4,4.1, 5,5.1,
+                      6,6.1, 7,7.1, 8,8.1, 9,9.1, 10,10.1,
+                      11,11.1, 12,12.1, 13,13.1, 14,14.1, 15,15.1,
+                      16,16.1, 17,17.1, 18,18.1, 19,19.1)
+yrange <- range(c(simplename$lcl, simplename$ucl))
+plot(simplename$index,
+     simplename$Estimate[1:38], 
+     ylim=c(0, yrange[2]), xaxt="n",
+     xlab="Groups", ylab="Density (per hectare)",
+     main="Western meadowlark 2024 from covariate model\nLeft=pooled, Right=strat-specific")
+s <- seq(1:38)
+segments(simplename$index[s], simplename$lcl[s], simplename$index[s], simplename$ucl[s])
+axis(1, at=1:19, 
+     labels=simplename$Label[seq(1, 37, by=2)],
+     cex.axis=0.9)
+```
+
+```{r}
+#| echo: false
+#| fig.width: 10
+#| fig.height: 7.5
+knitr::include_graphics("weme pooled vs stratum density estimates.png")
+```
+
