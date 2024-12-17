@@ -369,6 +369,10 @@
     "href": "rachel/modelsel_compare.html",
     "title": "Compare density estimates; groups as strata (WEME)",
     "section": "",
-    "text": "We found a difference of opinion regarding choice of model when using AIC and BIC. This is a decision we are to make and we wish to know the consequence of this decision upon our inference.\nI demonstrate the consequence for western meadowlark. This should also be done for the other species of interest; I expect the results to be similar."
+    "text": "We found a difference of opinion regarding choice of model when using AIC and BIC. This is a decision we are to make and we wish to know the consequence of this decision upon our inference.\nI demonstrate the consequence for western meadowlark. This should also be done for the other species of interest; I expect the results to be similar.",
+    "crumbs": [
+      "Sandhill birds 🐦",
+      "Compare density estimates; groups as strata (WEME)"
+    ]
   }
 ]
