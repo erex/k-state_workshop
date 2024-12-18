@@ -222,7 +222,7 @@ modo.pool.hr <- ds(data=clean.data[clean.data$Species=="Mourning Dove",],
 
 
 ```{r}
-knitr::kable(summarize_ds_models(modo.pool.unif, modo.pool.hn, modo.pool.hr)[,c(1,3:7)], 
+knitr::kable(summarize_ds_models(modo.pool.unif, modo.pool.hn, modo.pool.hr)[, 2:7], 
              digits=3, row.names = FALSE,
              caption="Model criticism for 8 stratum pooled detection function models.")
 ```
@@ -244,7 +244,7 @@ modo.hr.region <- ds(data=clean.data[clean.data$Species=="Mourning Dove",],
 ```
 
 ```{r}
-knitr::kable(summarize_ds_models(modo.hn.region, modo.hr.region)[,c(1,3:7)], 
+knitr::kable(summarize_ds_models(modo.hn.region, modo.hr.region)[, 2:7], 
              digits=3, row.names = FALSE,
              caption="Model criticism for 8 stratum-specific detection function models.")
 ```
@@ -339,10 +339,9 @@ modo.pool.hr5 <- ds(data=cleaner.data[cleaner.data$Species=="Mourning Dove",],
                     transect = "point", key="hr", adj="poly", truncation = "10%", convert_units = cu)
 ```
 
-
-## Model criticism of 5 stratum pooled models
-
 ```{r}
+#| eval: false
+#| echo: false
 knitr::kable(summarize_ds_models(modo.pool.unif5, modo.pool.hn5, modo.pool.hr5)[,c(1,3:7)],
              digits=3, row.names = FALSE,
              caption="Model criticism for 5 stratum pooled detection function models.")
@@ -364,11 +363,17 @@ modo.hr.region5 <- ds(data=cleaner.data[cleaner.data$Species=="Mourning Dove",],
                       truncation = "10%", convert_units = cu)
 ```
 
+
+## Model criticism of 5 stratum detection function models (pooled and strat-specific)
+
 ```{r}
-knitr::kable(summarize_ds_models(modo.hn.region, modo.hr.region)[,c(1,3:7)], 
+knitr::kable(summarize_ds_models(modo.pool.unif5, modo.pool.hn5, modo.pool.hr5,
+                                 modo.hn.region5, modo.hr.region5)[, 2:7], 
              digits=3, row.names = FALSE,
-             caption="Model criticism for 5 stratum-specific detection function models.")
+             caption="Model criticism for 5 stratum detection function models.")
 ```
+
+Models with stratum-specific detection probabilities are preferred and hazard preferred over half normal.
 
 ### Look for signs of convergence problems in covariate $\hat{\beta_i}$ estimates
 
