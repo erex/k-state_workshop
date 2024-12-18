@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eric Rexstad University of St Andrews">
-<meta name="dcterms.date" content="2024-12-17">
+<meta name="dcterms.date" content="2024-12-18">
 
-<title>Compare density estimates; groups as strata (WEME) – Kansas State workshop, December 2024</title>
+<title>Compare density estimates; WEME detection functions and flocks vs individuals – Kansas State workshop, December 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -82,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../rachel/rusten.html">Sandhill birds 🐦</a></li><li class="breadcrumb-item"><a href="../rachel/modelsel_compare.html">Compare density estimates; groups as strata (WEME)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../rachel/rusten.html">Sandhill birds 🐦</a></li><li class="breadcrumb-item"><a href="../rachel/modelsel_compare.html">Compare density estimates; WEME detection functions and flocks vs individuals</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -137,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../rachel/modelsel_compare.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Compare density estimates; groups as strata (WEME)</span></a>
+ <span class="menu-text">Compare density estimates; WEME detection functions and flocks vs individuals</span></a>
   </div>
 </li>
       </ul>
@@ -159,15 +222,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#adding-group-size-to-the-analysis" id="toc-adding-group-size-to-the-analysis" class="nav-link active" data-scroll-target="#adding-group-size-to-the-analysis"><span class="header-section-number">1</span> Adding group size to the analysis</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">2</span> Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../rachel/rusten.html">Sandhill birds 🐦</a></li><li class="breadcrumb-item"><a href="../rachel/modelsel_compare.html">Compare density estimates; groups as strata (WEME)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../rachel/rusten.html">Sandhill birds 🐦</a></li><li class="breadcrumb-item"><a href="../rachel/modelsel_compare.html">Compare density estimates; WEME detection functions and flocks vs individuals</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Compare density estimates; groups as strata (WEME)</h1>
+<h1 class="title">Compare density estimates; WEME detection functions and flocks vs individuals</h1>
 </div>
 
 
@@ -184,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">17 December 2024</p>
+      <p class="date">18 December 2024</p>
     </div>
   </div>
   
@@ -199,16 +269,139 @@ ul.task-list li input[type="checkbox"] {
 <p>We found a difference of opinion regarding choice of model when using AIC and BIC. This is a decision we are to make and we wish to know the consequence of this decision upon our inference.</p>
 <p>I demonstrate the consequence for western meadowlark. This should also be done for the other species of interest; I expect the results to be similar.</p>
 <div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+Table: Model criticism for WEME
+
+|Key function                                                   |Formula | C-vM p-value| $\hat{P_a}$| se($\hat{P_a}$)| $\Delta$AIC|
+|:--------------------------------------------------------------|:-------|------------:|-----------:|---------------:|-----------:|
+|Hazard-rate                                                    |~1      |        0.450|       0.514|           0.017|       0.000|
+|Uniform with cosine adjustment terms of order 1,2              |NA      |        0.154|       0.479|           0.038|       5.350|
+|Half-normal with Hermite polynomial adjustment term of order 4 |~1      |        0.057|       0.458|           0.044|      11.222|</code></pre>
+</div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="weme pooled vs stratum density estimates.png" class="img-fluid figure-img" width="791"></p>
+<div id="fig-first" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="modelsel_compare_files/figure-html/fig-first-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Comparison of flock density estimates from pooled and stratum-specific detection functions.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<section id="adding-group-size-to-the-analysis" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="adding-group-size-to-the-analysis"><span class="header-section-number">1</span> Adding group size to the analysis</h2>
+<p>In the previous analysis, I treated all detections as detections of single individuals; ignoring that some detections were of flocks of size &gt;1. Here I repeat some of the WEME analysis incorporating group size. By simply changing the column name from <code>Flock</code> to <code>size</code>, the <code>ds</code> function will estimate both individuals and group densities.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(alldata)[<span class="fu">colnames</span>(alldata) <span class="sc">==</span> <span class="st">'Flock'</span>] <span class="ot">&lt;-</span> <span class="st">"size"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(threespec)[<span class="fu">colnames</span>(threespec) <span class="sc">==</span> <span class="st">'Flock'</span>] <span class="ot">&lt;-</span> <span class="st">"size"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">aggregate</span>(size<span class="sc">~</span>Species,<span class="at">data=</span>threespec, <span class="at">FUN=</span>mean), <span class="at">digits=</span><span class="dv">4</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Average flock size across all groups"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-size" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Average flock size across all groups
+</figcaption>
+<div aria-describedby="tbl-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DICK</td>
+<td style="text-align: right;">1.0271</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GRSP</td>
+<td style="text-align: right;">1.0179</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WEME</td>
+<td style="text-align: right;">1.0302</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Average group size is not much greater than one (<a href="#tbl-size" class="quarto-xref">Table&nbsp;1</a>), because detections of “flocks” is much less common than detections of singles. Nevertheless, check for influence of group size upon detectability.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>we.size <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>alldata[alldata<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"WEME"</span>,], <span class="at">transect=</span><span class="st">"point"</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="dv">170</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">region_table =</span> regionTable, <span class="at">sample_table =</span> sampleTable,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">convert_units =</span> cu, <span class="at">formula=</span><span class="sc">~</span>size)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>we.nosize <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>alldata[alldata<span class="sc">$</span>Species<span class="sc">==</span><span class="st">"WEME"</span>,], <span class="at">transect=</span><span class="st">"point"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="dv">170</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">region_table =</span> regionTable, <span class="at">sample_table =</span> sampleTable,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">convert_units =</span> cu)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(we.size, we.nosize)[,<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>], <span class="at">digits=</span><span class="dv">4</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption=</span><span class="st">"Model comparison, WEME, HR, looking for group size effect."</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model comparison, WEME, HR, looking for group size effect.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Formula</th>
+<th style="text-align: right;">C-vM p-value</th>
+<th style="text-align: right;"><span class="math inline">\(\hat{P_a}\)</span></th>
+<th style="text-align: right;">se(<span class="math inline">\(\hat{P_a}\)</span>)</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta\)</span>AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">~1</td>
+<td style="text-align: right;">0.4503</td>
+<td style="text-align: right;">0.5141</td>
+<td style="text-align: right;">0.0174</td>
+<td style="text-align: right;">0.0000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">~size</td>
+<td style="text-align: right;">0.4588</td>
+<td style="text-align: right;">0.5142</td>
+<td style="text-align: right;">0.0174</td>
+<td style="text-align: right;">1.1615</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>There is no discernable effect of group size upon detectability, so we need not include that effect in subsequent detection function modelling.</p>
+<p>As seen in our previous analysis and <a href="#fig-first" class="quarto-xref">Figure&nbsp;1</a>, when estimating stratum-specific flock densities (treating flocks as if they were all of size 1), there was little difference in the interval estimates when using stratum-specific detection functions (as suggested by AIC) and when using a pooled detection function (as suggested by BIC). I will now contrast the stratum-specific <strong>individual</strong> densities with a pooled detection function and stratum-specific <strong>flock</strong> densities, computed earlier. This will demonstrate the adjustment from flock to individual density estimates resulting from explicit treatment of group size recorded in the data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-two" class="quarto-float quarto-figure quarto-figure-center anchored" width="960">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="modelsel_compare_files/figure-html/fig-two-1.png" id="fig-two" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">2</span> Conclusion</h2>
+<p>Average flock size is computed separately for each stratum. In many instances all flocks detected in a stratum were single birds. For a few strata (e.g.&nbsp;BLA049, <a href="#fig-two" class="quarto-xref">Figure&nbsp;2</a>), average flock size was &gt;1, but there is also variability in estimated flock size such that the point estimate of individual density is larger than the point estimate of flock density, but the uncertainty is also greater; hence wider confidence intervals.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

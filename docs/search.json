@@ -367,12 +367,34 @@
   {
     "objectID": "rachel/modelsel_compare.html",
     "href": "rachel/modelsel_compare.html",
-    "title": "Compare density estimates; groups as strata (WEME)",
+    "title": "Compare density estimates; WEME detection functions and flocks vs individuals",
     "section": "",
-    "text": "We found a difference of opinion regarding choice of model when using AIC and BIC. This is a decision we are to make and we wish to know the consequence of this decision upon our inference.\nI demonstrate the consequence for western meadowlark. This should also be done for the other species of interest; I expect the results to be similar.",
+    "text": "We found a difference of opinion regarding choice of model when using AIC and BIC. This is a decision we are to make and we wish to know the consequence of this decision upon our inference.\nI demonstrate the consequence for western meadowlark. This should also be done for the other species of interest; I expect the results to be similar.\nTable: Model criticism for WEME\n\n|Key function                                                   |Formula | C-vM p-value| $\\hat{P_a}$| se($\\hat{P_a}$)| $\\Delta$AIC|\n|:--------------------------------------------------------------|:-------|------------:|-----------:|---------------:|-----------:|\n|Hazard-rate                                                    |~1      |        0.450|       0.514|           0.017|       0.000|\n|Uniform with cosine adjustment terms of order 1,2              |NA      |        0.154|       0.479|           0.038|       5.350|\n|Half-normal with Hermite polynomial adjustment term of order 4 |~1      |        0.057|       0.458|           0.044|      11.222|\n\n\n\n\n\n\n\n\nFigure 1: Comparison of flock density estimates from pooled and stratum-specific detection functions.",
     "crumbs": [
       "Sandhill birds 🐦",
-      "Compare density estimates; groups as strata (WEME)"
+      "Compare density estimates; WEME detection functions\nand flocks vs individuals"
+    ]
+  },
+  {
+    "objectID": "rachel/modelsel_compare.html#adding-group-size-to-the-analysis",
+    "href": "rachel/modelsel_compare.html#adding-group-size-to-the-analysis",
+    "title": "Compare density estimates; WEME detection functions and flocks vs individuals",
+    "section": "1 Adding group size to the analysis",
+    "text": "1 Adding group size to the analysis\nIn the previous analysis, I treated all detections as detections of single individuals; ignoring that some detections were of flocks of size &gt;1. Here I repeat some of the WEME analysis incorporating group size. By simply changing the column name from Flock to size, the ds function will estimate both individuals and group densities.\n\ncolnames(alldata)[colnames(alldata) == 'Flock'] &lt;- \"size\"\ncolnames(threespec)[colnames(threespec) == 'Flock'] &lt;- \"size\"\nknitr::kable(aggregate(size~Species,data=threespec, FUN=mean), digits=4,\n             caption=\"Average flock size across all groups\")\n\n\n\nTable 1: Average flock size across all groups\n\n\n\n\n\n\nSpecies\nsize\n\n\n\n\nDICK\n1.0271\n\n\nGRSP\n1.0179\n\n\nWEME\n1.0302\n\n\n\n\n\n\n\n\nAverage group size is not much greater than one (Table 1), because detections of “flocks” is much less common than detections of singles. Nevertheless, check for influence of group size upon detectability.\n\nwe.size &lt;- ds(data=alldata[alldata$Species==\"WEME\",], transect=\"point\",\n              key=\"hr\", truncation=170,\n              region_table = regionTable, sample_table = sampleTable,\n              convert_units = cu, formula=~size)\nwe.nosize &lt;- ds(data=alldata[alldata$Species==\"WEME\",], transect=\"point\",\n                key=\"hr\", truncation=170,\n                region_table = regionTable, sample_table = sampleTable,\n                convert_units = cu)\nknitr::kable(summarize_ds_models(we.size, we.nosize)[,3:7], digits=4,\n             caption=\"Model comparison, WEME, HR, looking for group size effect.\",\n             row.names = FALSE)\n\n\nModel comparison, WEME, HR, looking for group size effect.\n\n\nFormula\nC-vM p-value\n\\(\\hat{P_a}\\)\nse(\\(\\hat{P_a}\\))\n\\(\\Delta\\)AIC\n\n\n\n\n~1\n0.4503\n0.5141\n0.0174\n0.0000\n\n\n~size\n0.4588\n0.5142\n0.0174\n1.1615\n\n\n\n\n\nThere is no discernable effect of group size upon detectability, so we need not include that effect in subsequent detection function modelling.\nAs seen in our previous analysis and Figure 1, when estimating stratum-specific flock densities (treating flocks as if they were all of size 1), there was little difference in the interval estimates when using stratum-specific detection functions (as suggested by AIC) and when using a pooled detection function (as suggested by BIC). I will now contrast the stratum-specific individual densities with a pooled detection function and stratum-specific flock densities, computed earlier. This will demonstrate the adjustment from flock to individual density estimates resulting from explicit treatment of group size recorded in the data.\n\n\n\n\n\n\n\n\nFigure 2",
+    "crumbs": [
+      "Sandhill birds 🐦",
+      "Compare density estimates; WEME detection functions\nand flocks vs individuals"
+    ]
+  },
+  {
+    "objectID": "rachel/modelsel_compare.html#conclusion",
+    "href": "rachel/modelsel_compare.html#conclusion",
+    "title": "Compare density estimates; WEME detection functions and flocks vs individuals",
+    "section": "2 Conclusion",
+    "text": "2 Conclusion\nAverage flock size is computed separately for each stratum. In many instances all flocks detected in a stratum were single birds. For a few strata (e.g. BLA049, Figure 2), average flock size was &gt;1, but there is also variability in estimated flock size such that the point estimate of individual density is larger than the point estimate of flock density, but the uncertainty is also greater; hence wider confidence intervals.",
+    "crumbs": [
+      "Sandhill birds 🐦",
+      "Compare density estimates; WEME detection functions\nand flocks vs individuals"
     ]
   }
 ]
